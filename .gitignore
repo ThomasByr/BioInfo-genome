@@ -73,5 +73,3 @@ script/
 
 # Environments
 .env
-assets/*
-!assets/.gitkeep
