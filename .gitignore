@@ -61,7 +61,6 @@ docs/_build/
 target/
 
 # VS Code
-.vscode
 .pytest_cache
 .pypirc
 
