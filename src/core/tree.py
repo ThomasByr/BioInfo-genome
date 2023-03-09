@@ -8,13 +8,18 @@ import pandas as pd
 
 from ..helper.lib import *
 
-__all__ = ['Tree']
+__all__ = ['Tree', 'SubGroup', 'Group', 'Kingdom']
 datetime_format = '%Y-%m-%d %H:%M:%S'
 timeouts = (5, 10)
 
 
 @dataclass
 class SubGroup:
+  """
+  A subgroup struct that holds :
+  - `name` : a string representing the name of the entity
+  - `id` : a string representing the genes ids
+  """
   name: str
   id: str
 
@@ -28,6 +33,11 @@ class SubGroup:
 
 @dataclass
 class Group:
+  """
+  A group struct that holds :
+  - `name` : a string representing the name of the entity
+  - `subgroups` : a dictionnary of subgroups names and objects
+  """
   name: str
   subgroups: dict[str, SubGroup]
 
@@ -40,6 +50,11 @@ class Group:
 
 @dataclass
 class Kingdom:
+  """
+  A group struct that holds :
+  - `name` : a string representing the name of the entity
+  - `groupe` : a dictionnary of groups names and objects
+  """
   name: str
   groups: dict[str, Group]
 
@@ -72,6 +87,10 @@ class Tree:
     self.__entries: dict[str, Kingdom] = {}
 
   def build(self) -> None:
+    """
+    Build the tree from the given name.\\
+    This method should only be called once IF the tree does NOT comes from `union`.
+    """
     r = requests.get(f'{self.BASE_URL}{self.__name}.txt', stream=True, timeout=timeouts)
     if r.status_code != 200:
       panic(f'failed to fetch {self.__name}.txt')
@@ -114,7 +133,7 @@ class Tree:
   @property
   def tree(self) -> dict[str, Kingdom]:
     """
-    This getter returns the tree. This property is read-only.\\
+    This getter returns the underlying tree. This property is read-only.\\
     You can browse the tree by using the following code:
 
     ## Example
