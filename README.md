@@ -9,7 +9,7 @@
 
 [![GitHub version](https://badge.fury.io/gh/ThomasByr%2FBioInfo-genome.svg)](https://github.com/ThomasByr/BioInfo-genome)
 [![Author](https://img.shields.io/badge/author-@ThomasByr-blue)](https://github.com/ThomasByr)
-[![Author](https://img.shields.io/badge/author-@MaximeP)](https://github.com/m7415r)
+[![Author](https://img.shields.io/badge/author-@MaximeP-blue)](https://github.com/m7415r)
 
 1. [✏️ Setup](#️-setup)
 2. [👩‍🏫 Usage](#-usage)
@@ -39,6 +39,10 @@ python .\genome.py
 
 ## 👩‍🏫 Usage
 
+The program is pretty simple to use, just follow the instructions and you'll be fine ! 🙂
+
+A window should pop up, and the first run might take a while, but after that, it should be pretty fast !
+
 ## 💁 Get Help
 
 ## 🧪 Testing
@@ -50,6 +54,8 @@ Still, make sure you have `pytest` up and ready and then run :
 ```ps1
 pytest .\src\
 ```
+
+You can also use the vscode UI to run the tests, just click on the `Run All Tests` button on the left of the `Test Explorer` tab.
 
 ## 🧑‍🏫 Contributing
 
