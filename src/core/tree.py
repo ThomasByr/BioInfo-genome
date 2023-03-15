@@ -30,7 +30,7 @@ class SubGroup:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'id': self.id}
-  
+
   @classmethod
   def from_json(cls, data: dict[str, str]) -> 'SubGroup':
     return cls(data['name'], data['id'])
@@ -51,7 +51,7 @@ class Group:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'subgroups': [subgroup.to_json() for subgroup in self.subgroups.values()]}
-  
+
   @classmethod
   def from_json(cls, data: dict[str, str]) -> 'Group':
     return cls(data['name'], {subgroup['name']: SubGroup(subgroup['name'], subgroup['id']) for subgroup in data['subgroups']})
@@ -72,7 +72,7 @@ class Kingdom:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'groups': [group.to_json() for group in self.groups.values()]}
-  
+
   @classmethod
   def from_json(cls, data: dict[str, str]) -> 'Kingdom':
     return cls(data['name'], {group['name']: Group(group['name'], {subgroup['name']: SubGroup(subgroup['name'], subgroup['id']) for subgroup in group['subgroups']}) for group in data['groups']})

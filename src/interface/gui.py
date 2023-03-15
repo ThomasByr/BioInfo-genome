@@ -1,5 +1,3 @@
-# the definition of the GenomeGUI class
-
 import PySimpleGUI as sg
 from ..core.tree import *
 
