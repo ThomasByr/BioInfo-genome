@@ -3,6 +3,7 @@ from dataclasses import dataclass
 from datetime import datetime
 
 import json
+from typing import Any
 import requests
 import pandas as pd
 
@@ -29,6 +30,10 @@ class SubGroup:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'id': self.id}
+  
+  @classmethod
+  def from_json(cls, data: dict[str, str]) -> 'SubGroup':
+    return cls(data['name'], data['id'])
 
 
 @dataclass
@@ -46,6 +51,10 @@ class Group:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'subgroups': [subgroup.to_json() for subgroup in self.subgroups.values()]}
+  
+  @classmethod
+  def from_json(cls, data: dict[str, str]) -> 'Group':
+    return cls(data['name'], {subgroup['name']: SubGroup(subgroup['name'], subgroup['id']) for subgroup in data['subgroups']})
 
 
 @dataclass
@@ -63,7 +72,27 @@ class Kingdom:
 
   def to_json(self) -> dict[str, str]:
     return {'name': self.name, 'groups': [group.to_json() for group in self.groups.values()]}
+  
+  @classmethod
+  def from_json(cls, data: dict[str, str]) -> 'Kingdom':
+    return cls(data['name'], {group['name']: Group(group['name'], {subgroup['name']: SubGroup(subgroup['name'], subgroup['id']) for subgroup in group['subgroups']}) for group in data['groups']})
+  
+  
+def to_lower(s: str | Any) -> str:
+  """
+  Convert a string to lowercase.
 
+  ## Parameters
+  ```py
+  s : str
+  ```
+  the string to convert
+  """
+  match s:
+    case str(s):
+      return s.lower()
+    case _:
+      return str(s).lower()
 
 class Tree:
   BASE_URL = 'https://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/'
@@ -120,6 +149,7 @@ class Tree:
       except KeyError:
         id_name = None
       group_name, subgroup_name = row['Group'], row['SubGroup']
+      kingdom_name, group_name, subgroup_name = to_lower(kingdom_name), to_lower(group_name), to_lower(subgroup_name)
       kingdom = self.__entries.get(kingdom_name, Kingdom(kingdom_name, {}))
       group = kingdom.groups.get(group_name, Group(group_name, {}))
       subgroup = group.subgroups.get(subgroup_name, SubGroup(subgroup_name, id_name))
@@ -127,7 +157,7 @@ class Tree:
       kingdom.groups[group_name] = group
       group.subgroups[subgroup_name] = subgroup
       self.__entries[kingdom_name] = kingdom
-    
+
     self.__last_build = datetime.now().strftime(datetime_format)
 
   @property
@@ -286,19 +316,19 @@ class Tree:
     """
     try:
       with open(f'data/{name}.json', 'r', encoding='utf-8') as f:
-        return cls.from_json(json.load(f))
+        return cls.from_json(json.load(f), name)
     except FileNotFoundError:
       error(f'failed to load {name}.json (file does not exist)')
       return cls()
 
   @classmethod
-  def from_json(cls, data: dict[str, Kingdom]) -> 'Tree':
+  def from_json(cls, data: dict[str, str], name: str = None) -> 'Tree':
     """
     This function creates a new tree from a JSON object.
 
     ## Parameters
     ```py
-      data : dict[str, Kingdom]
+      data : dict[str, str]
     ```
     The JSON object.
 
@@ -308,5 +338,6 @@ class Tree:
     ```
     """
     tree = cls()
-    tree.__entries = data
+    tree.__name = name
+    tree.__entries = {k: Kingdom.from_json(data) for k, data in data.items()}
     return tree
