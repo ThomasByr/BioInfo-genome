@@ -3,288 +3,288 @@
     "name": "eukaryotes",
     "groups": [
       {
-        "name": "Other",
+        "name": "other",
         "subgroups": [
           {
-            "name": "Other",
+            "name": "other",
             "id": "chromosome 1:CM020618.1; chromosome 2:CM020619.1; chromosome 3:CM020620.1"
           }
         ]
       },
       {
-        "name": "Protists",
+        "name": "protists",
         "subgroups": [
           {
-            "name": "Other Protists",
+            "name": "other protists",
             "id": "-"
           },
           {
-            "name": "Kinetoplasts",
+            "name": "kinetoplasts",
             "id": "chromosome 1:NC_001905.3/FR796397.1; chromosome 2:NC_007244.2/FR796398.1; chromosome 3:NC_004916.2/FR796399.1; chromosome 4:NC_007245.2/FR796400.1; chromosome 5:NC_007246.2/FR796401.1; chromosome 6:NC_007247.2/FR796402.1; chromosome 7:NC_007248.2/FR796403.1; chromosome 8:NC_007249.2/FR796404.1; chromosome 9:NC_007250.2/FR796405.1; chromosome 10:NC_007251.2/FR796406.1; chromosome 11:NC_007252.2/FR796407.1; chromosome 12:NC_007253.2/FR796408.1; chromosome 13:NC_007254.2/FR796409.1; chromosome 14:NC_007255.2/FR796410.1; chromosome 15:NC_007256.2/FR796411.1; chromosome 16:NC_007257.2/FR796412.1; chromosome 17:NC_007258.2/FR796413.1; chromosome 18:NC_007259.2/FR796414.1; chromosome 19:NC_007260.2/FR796415.1; chromosome 20:NC_007261.2/FR796416.1; chromosome 21:NC_007262.2/FR796417.1; chromosome 22:NC_007263.2/FR796418.1; chromosome 23:NC_007264.2/FR796419.1; chromosome 24:NC_007265.2/FR796420.1; chromosome 25:NC_007266.2/FR796421.1; chromosome 26:NC_007267.2/FR796422.1; chromosome 27:NC_007268.2/FR796423.1; chromosome 28:NC_007269.2/FR796424.1; chromosome 29:NC_007270.2/FR796425.1; chromosome 30:NC_007271.2/FR796426.1; chromosome 31:NC_007272.2/FR796427.1; chromosome 32:NC_007273.2/FR796428.1; chromosome 33:NC_007285.2/FR796429.1; chromosome 34:NC_007286.2/FR796430.1; chromosome 35:NC_007284.2/FR796431.1; chromosome 36:NC_007287.2/FR796432.1"
           },
           {
-            "name": "Apicomplexans",
+            "name": "apicomplexans",
             "id": "apicoplast Pltd:NC_004823.1/"
           }
         ]
       },
       {
-        "name": "Plants",
+        "name": "plants",
         "subgroups": [
           {
-            "name": "Land Plants",
+            "name": "land plants",
             "id": "chromosome 1:NC_003070.9/CP002684.1; chromosome 2:NC_003071.7/CP002685.1; chromosome 3:NC_003074.8/CP002686.1; chromosome 4:NC_003075.7/CP002687.1; chromosome 5:NC_003076.8/CP002688.1; mitochondrion MT:NC_037304.1/BK010421.1; chloroplast Pltd:NC_000932.1/AP000423.1"
           },
           {
-            "name": "Green Algae",
+            "name": "green algae",
             "id": "chromosome 1:NC_057004.1/CM008962.1; chromosome 2:NC_057005.1/CM008963.1; chromosome 3:NC_057006.1/CM008964.1; chromosome 4:NC_057007.1/CM008965.1; chromosome 5:NC_057008.1/CM008966.1; chromosome 6:NC_057009.1/CM008967.1; chromosome 7:NC_057010.1/CM008968.1; chromosome 8:NC_057011.1/CM008969.1; chromosome 9:NC_057012.1/CM008970.1; chromosome 10:NC_057013.1/CM008971.1; chromosome 11:NC_057014.1/CM008972.1; chromosome 12:NC_057015.1/CM008973.1; chromosome 13:NC_057016.1/CM008974.1; chromosome 14:NC_057017.1/CM008975.1; chromosome 15:NC_057018.1/CM008976.1; chromosome 16:NC_057019.1/CM008977.1; chromosome 17:NC_057020.1/CM008978.1"
           },
           {
-            "name": "Other Plants",
+            "name": "other plants",
             "id": "-"
           }
         ]
       },
       {
-        "name": "Fungi",
+        "name": "fungi",
         "subgroups": [
           {
-            "name": "Ascomycetes",
+            "name": "ascomycetes",
             "id": "-"
           },
           {
-            "name": "Other Fungi",
+            "name": "other fungi",
             "id": "chromosome I:NC_003242.2/AL391737.2; chromosome II:NC_003229.1/AL590442.1; chromosome III:NC_003230.1/AL590443.1; chromosome IV:NC_003231.1/AL590444.1; chromosome V:NC_003232.1/AL590445.1; chromosome VI:NC_003233.1/AL590446.1; chromosome VII:NC_003234.1/AL590447.1; chromosome VIII:NC_003235.1/AL590448.1; chromosome IX:NC_003238.2/AL590451.2; chromosome X:NC_003236.1/AL590449.1; chromosome XI:NC_003237.2/AL590450.2"
           },
           {
-            "name": "Basidiomycetes",
+            "name": "basidiomycetes",
             "id": "chromosome 1:NC_006670.1/AE017341.1; chromosome 2:NC_006684.1/AE017342.1; chromosome 3:NC_006685.1/AE017343.1; chromosome 4:NC_006686.1/AE017344.1; chromosome 5:NC_006687.1/AE017345.1; chromosome 6:NC_006691.1/AE017346.1; chromosome 7:NC_006692.1/AE017347.1; chromosome 8:NC_006693.1/AE017348.1; chromosome 9:NC_006694.1/AE017349.1; chromosome 10:NC_006679.1/AE017350.1; chromosome 11:NC_006680.1/AE017351.1; chromosome 12:NC_006681.1/AE017352.1; chromosome 13:NC_006682.1/AE017353.1; chromosome 14:NC_006683.1/AE017356.1"
           }
         ]
       },
       {
-        "name": "Animals",
+        "name": "animals",
         "subgroups": [
           {
-            "name": "Roundworms",
+            "name": "roundworms",
             "id": "chromosome I:NC_013489.2/FR847112.2; chromosome II:NC_013486.2/FR847113.2; chromosome III:NC_013490.2/FR847114.2; chromosome IV:NC_013487.2/FR847118.2; chromosome V:NC_013488.2/FR847121.2; chromosome X:NC_013491.2/FR847123.2"
           },
           {
-            "name": "Insects",
+            "name": "insects",
             "id": "chromosome 1:NC_035107.1/CM008043.1; chromosome 2:NC_035108.1/CM008044.1; chromosome 3:NC_035109.1/CM008045.1; mitochondrion MT:NC_035159.1/MF194022.1"
           },
           {
-            "name": "Other Animals",
+            "name": "other animals",
             "id": "chromosome 1:NC_020166.2/HT000001.2; chromosome 2:NC_020167.2/HT000007.2; chromosome 3:NC_020168.2/HT000008.2; chromosome 4:NC_020169.2/HT000009.2; chromosome 5:NC_020170.2/HT000010.2; chromosome 6:NC_020171.2/HT000011.2; chromosome 7:NC_020172.2/HT000012.2; chromosome 8:NC_020173.2/HT000013.2; chromosome 9:NC_020174.2/HT000014.2; chromosome 10:NC_020175.2/HT000002.2; chromosome 11:NC_020176.2/HT000003.2; chromosome 12:NC_020177.2/HT000004.2; chromosome 13:NC_020178.2/HT000005.2; chromosome 14:NC_020179.2/HT000006.2; mitochondrion MT:NC_017929.1/HT000188.1"
           },
           {
-            "name": "Fishes",
+            "name": "fishes",
             "id": "chromosome 1:NC_007112.7/CM002885.2; chromosome 2:NC_007113.7/CM002886.2; chromosome 3:NC_007114.7/CM002887.2; chromosome 4:NC_007115.7/CM002888.2; chromosome 5:NC_007116.7/CM002889.2; chromosome 6:NC_007117.7/CM002890.2; chromosome 7:NC_007118.7/CM002891.2; chromosome 8:NC_007119.7/CM002892.2; chromosome 9:NC_007120.7/CM002893.2; chromosome 10:NC_007121.7/CM002894.2; chromosome 11:NC_007122.7/CM002895.2; chromosome 12:NC_007123.7/CM002896.2; chromosome 13:NC_007124.7/CM002897.2; chromosome 14:NC_007125.7/CM002898.2; chromosome 15:NC_007126.7/CM002899.2; chromosome 16:NC_007127.7/CM002900.2; chromosome 17:NC_007128.7/CM002901.2; chromosome 18:NC_007129.7/CM002902.2; chromosome 19:NC_007130.7/CM002903.2; chromosome 20:NC_007131.7/CM002904.2; chromosome 21:NC_007132.7/CM002905.2; chromosome 22:NC_007133.7/CM002906.2; chromosome 23:NC_007134.7/CM002907.2; chromosome 24:NC_007135.7/CM002908.2; chromosome 25:NC_007136.7/CM002909.2; mitochondrion MT:NC_002333.2/"
           },
           {
-            "name": "Mammals",
+            "name": "mammals",
             "id": "chromosome 1:NC_000001.11/CM000663.2; chromosome 2:NC_000002.12/CM000664.2; chromosome 3:NC_000003.12/CM000665.2; chromosome 4:NC_000004.12/CM000666.2; chromosome 5:NC_000005.10/CM000667.2; chromosome 6:NC_000006.12/CM000668.2; chromosome 7:NC_000007.14/CM000669.2; chromosome 8:NC_000008.11/CM000670.2; chromosome 9:NC_000009.12/CM000671.2; chromosome 10:NC_000010.11/CM000672.2; chromosome 11:NC_000011.10/CM000673.2; chromosome 12:NC_000012.12/CM000674.2; chromosome 13:NC_000013.11/CM000675.2; chromosome 14:NC_000014.9/CM000676.2; chromosome 15:NC_000015.10/CM000677.2; chromosome 16:NC_000016.10/CM000678.2; chromosome 17:NC_000017.11/CM000679.2; chromosome 18:NC_000018.10/CM000680.2; chromosome 19:NC_000019.10/CM000681.2; chromosome 20:NC_000020.11/CM000682.2; chromosome 21:NC_000021.9/CM000683.2; chromosome 22:NC_000022.11/CM000684.2; chromosome X:NC_000023.11/CM000685.2; chromosome Y:NC_000024.10/CM000686.2; mitochondrion MT:NC_012920.1/J01415.2"
           },
           {
-            "name": "Amphibians",
+            "name": "amphibians",
             "id": "chromosome 1:NC_030677.2/CM004443.2; chromosome 2:NC_030678.2/CM004444.2; chromosome 3:NC_030679.2/CM004445.2; chromosome 4:NC_030680.2/CM004446.2; chromosome 5:NC_030681.2/CM004447.2; chromosome 6:NC_030682.2/CM004448.2; chromosome 7:NC_030683.2/CM004449.2; chromosome 8:NC_030684.2/CM004450.2; chromosome 9:NC_030685.2/CM004451.2; chromosome 10:NC_030686.2/CM004452.2; mitochondrion MT:NC_006839.1/"
           },
           {
-            "name": "Birds",
+            "name": "birds",
             "id": "chromosome 1:NC_052532.1/CM028482.1; chromosome 2:NC_052533.1/CM028483.1; chromosome 3:NC_052534.1/CM028484.1; chromosome 4:NC_052535.1/CM028485.1; chromosome 5:NC_052536.1/CM028486.1; chromosome 6:NC_052537.1/CM028487.1; chromosome 7:NC_052538.1/CM028488.1; chromosome 8:NC_052539.1/CM028489.1; chromosome 9:NC_052540.1/CM028490.1; chromosome 10:NC_052541.1/CM028491.1; chromosome 11:NC_052542.1/CM028492.1; chromosome 12:NC_052543.1/CM028493.1; chromosome 13:NC_052544.1/CM028494.1; chromosome 14:NC_052545.1/CM028495.1; chromosome 15:NC_052546.1/CM028496.1; chromosome 16:NC_052547.1/CM028497.1; chromosome 17:NC_052548.1/CM028498.1; chromosome 18:NC_052549.1/CM028499.1; chromosome 19:NC_052550.1/CM028500.1; chromosome 20:NC_052551.1/CM028501.1; chromosome 21:NC_052552.1/CM028502.1; chromosome 22:NC_052553.1/CM028503.1; chromosome 23:NC_052554.1/CM028504.1; chromosome 24:NC_052555.1/CM028505.1; chromosome 25:NC_052556.1/CM028506.1; chromosome 26:NC_052557.1/CM028507.1; chromosome 27:NC_052558.1/CM028508.1; chromosome 28:NC_052559.1/CM028509.1; chromosome 29:NC_052560.1/CM028510.1; chromosome 30:NC_052561.1/CM028511.1; chromosome 31:NC_052562.1/CM028512.1; chromosome 32:NC_052563.1/CM028513.1; chromosome 33:NC_052564.1/CM028514.1; chromosome 34:NC_052565.1/CM028515.1; chromosome 35:NC_052566.1/CM028516.1; chromosome 36:NC_052567.1/CM028517.1; chromosome 37:NC_052568.1/CM028518.1; chromosome 38:NC_052569.1/CM028519.1; chromosome 39:NC_052570.1/CM028520.1; chromosome W:NC_052571.1/CM028521.1; chromosome Z:NC_052572.1/CM028522.1; mitochondrion MT:NC_053523.1/CM028585.1"
           },
           {
-            "name": "Flatworms",
+            "name": "flatworms",
             "id": "chromosome 1:CM039679.1; chromosome 2:CM039680.1; chromosome 3:CM039681.1; chromosome 4:CM039682.1"
           },
           {
-            "name": "Reptiles",
+            "name": "reptiles",
             "id": "chromosome 1:NC_014776.1/CM000937.1; chromosome 2:NC_014777.1/CM000938.1; chromosome 3:NC_014778.1/CM000939.1; chromosome 4:NC_014779.1/CM000940.1; chromosome 5:NC_014780.1/CM000941.1; chromosome 6:NC_014781.1/CM000942.1; linkage group a:NC_014782.1/CM000943.1; linkage group b:NC_014783.1/CM000944.1; linkage group c:NC_014784.1/CM000945.1; linkage group d:NC_014785.1/CM000946.1; linkage group f:NC_014786.1/CM000947.1; linkage group g:NC_014787.1/CM000948.1; linkage group h:NC_014788.1/CM000949.1; mitochondrion MT:EU747728.2"
           }
         ]
       }
     ]
   },
-  "Bacteria": {
-    "name": "Bacteria",
+  "bacteria": {
+    "name": "bacteria",
     "groups": [
       {
-        "name": "Terrabacteria group",
+        "name": "terrabacteria group",
         "subgroups": [
           {
-            "name": "Abditibacteriota",
+            "name": "abditibacteriota",
             "id": null
           },
           {
-            "name": "Cyanobacteriota/Melainabacteria group",
+            "name": "cyanobacteriota/melainabacteria group",
             "id": null
           },
           {
-            "name": "Mycoplasmatota",
+            "name": "mycoplasmatota",
             "id": null
           },
           {
-            "name": "Actinomycetota",
+            "name": "actinomycetota",
             "id": null
           },
           {
-            "name": "Bacillota",
+            "name": "bacillota",
             "id": null
           },
           {
-            "name": "Deinococcota",
+            "name": "deinococcota",
             "id": null
           },
           {
-            "name": "Chloroflexota",
+            "name": "chloroflexota",
             "id": null
           },
           {
-            "name": "Thermomicrobiota",
+            "name": "thermomicrobiota",
             "id": null
           }
         ]
       },
       {
-        "name": "Pseudomonadota",
+        "name": "pseudomonadota",
         "subgroups": [
           {
-            "name": "Alphaproteobacteria",
+            "name": "alphaproteobacteria",
             "id": null
           },
           {
-            "name": "Betaproteobacteria",
+            "name": "betaproteobacteria",
             "id": null
           },
           {
-            "name": "Gammaproteobacteria",
+            "name": "gammaproteobacteria",
             "id": null
           },
           {
-            "name": "Acidithiobacillia",
+            "name": "acidithiobacillia",
             "id": null
           },
           {
-            "name": "Hydrogenophilia",
+            "name": "hydrogenophilia",
             "id": null
           },
           {
-            "name": "Pseudomonadota incertae sedis",
+            "name": "pseudomonadota incertae sedis",
             "id": null
           }
         ]
       },
       {
-        "name": "Acidobacteriota",
+        "name": "acidobacteriota",
         "subgroups": [
           {
-            "name": "Terriglobia",
+            "name": "terriglobia",
             "id": null
           }
         ]
       },
       {
-        "name": "Other",
+        "name": "other",
         "subgroups": [
           {
-            "name": "Other",
+            "name": "other",
             "id": null
           }
         ]
       },
       {
-        "name": "FCB group",
+        "name": "fcb group",
         "subgroups": [
           {
-            "name": "Bacteroidetes/Chlorobi group",
+            "name": "bacteroidetes/chlorobi group",
             "id": null
           },
           {
-            "name": "Gemmatimonadota",
+            "name": "gemmatimonadota",
             "id": null
           }
         ]
       },
       {
-        "name": "PVC group",
+        "name": "pvc group",
         "subgroups": [
           {
-            "name": "Verrucomicrobiota",
+            "name": "verrucomicrobiota",
             "id": null
           },
           {
-            "name": "Planctomycetota",
+            "name": "planctomycetota",
             "id": null
           },
           {
-            "name": "Chlamydiota",
+            "name": "chlamydiota",
             "id": null
           }
         ]
       },
       {
-        "name": "Campylobacterota",
+        "name": "campylobacterota",
         "subgroups": [
           {
-            "name": "Epsilonproteobacteria",
+            "name": "epsilonproteobacteria",
             "id": null
           }
         ]
       },
       {
-        "name": "Aquificota",
+        "name": "aquificota",
         "subgroups": [
           {
-            "name": "Aquificae",
+            "name": "aquificae",
             "id": null
           }
         ]
       },
       {
-        "name": "Thermotogota",
+        "name": "thermotogota",
         "subgroups": [
           {
-            "name": "Thermotogae",
+            "name": "thermotogae",
             "id": null
           }
         ]
       },
       {
-        "name": "Spirochaetota",
+        "name": "spirochaetota",
         "subgroups": [
           {
-            "name": "Spirochaetia",
+            "name": "spirochaetia",
             "id": null
           }
         ]
       },
       {
-        "name": "Deferribacterota",
+        "name": "deferribacterota",
         "subgroups": [
           {
-            "name": "Deferribacteres",
+            "name": "deferribacteres",
             "id": null
           }
         ]
       },
       {
-        "name": "Elusimicrobiota",
+        "name": "elusimicrobiota",
         "subgroups": [
           {
-            "name": "Endomicrobiia",
+            "name": "endomicrobiia",
             "id": null
           }
         ]
       },
       {
-        "name": "Fusobacteriota",
+        "name": "fusobacteriota",
         "subgroups": [
           {
-            "name": "Fusobacteriia",
+            "name": "fusobacteriia",
             "id": null
           },
           {
-            "name": "unclassified Fusobacteriota",
+            "name": "unclassified fusobacteriota",
             "id": null
           }
         ]
@@ -293,63 +293,63 @@
         "name": "delta/epsilon subdivisions",
         "subgroups": [
           {
-            "name": "Deltaproteobacteria",
+            "name": "deltaproteobacteria",
             "id": null
           }
         ]
       },
       {
-        "name": "Thermodesulfobacteriota",
+        "name": "thermodesulfobacteriota",
         "subgroups": [
           {
-            "name": "Desulfobacteria",
+            "name": "desulfobacteria",
             "id": null
           },
           {
-            "name": "Desulfobulbia",
+            "name": "desulfobulbia",
             "id": null
           },
           {
-            "name": "Desulfovibrionia",
+            "name": "desulfovibrionia",
             "id": null
           },
           {
-            "name": "Desulfomonilia",
+            "name": "desulfomonilia",
             "id": null
           },
           {
-            "name": "Desulfuromonadia",
+            "name": "desulfuromonadia",
             "id": null
           }
         ]
       },
       {
-        "name": "Bdellovibrionota",
+        "name": "bdellovibrionota",
         "subgroups": [
           {
-            "name": "Oligoflexia",
+            "name": "oligoflexia",
             "id": null
           },
           {
-            "name": "Bacteriovoracia",
+            "name": "bacteriovoracia",
             "id": null
           }
         ]
       },
       {
-        "name": "Myxococcota",
+        "name": "myxococcota",
         "subgroups": [
           {
-            "name": "Myxococcia",
+            "name": "polyangia",
             "id": null
           }
         ]
       },
       {
-        "name": "Synergistota",
+        "name": "synergistota",
         "subgroups": [
           {
-            "name": "Synergistia",
+            "name": "synergistia",
             "id": null
           }
         ]
@@ -360,2761 +360,6 @@
           {
             "name": "uncultured bacterium",
             "id": null
-          }
-        ]
-      }
-    ]
-  },
-  "Viruses": {
-    "name": "Viruses",
-    "groups": [
-      {
-        "name": "Other",
-        "subgroups": [
-          {
-            "name": "Inoviridae",
-            "id": null
-          }
-        ]
-      }
-    ]
-  },
-  "Archaea": {
-    "name": "Archaea",
-    "groups": [
-      {
-        "name": "Euryarchaeota",
-        "subgroups": [
-          {
-            "name": "Archaeoglobi",
-            "id": null
-          },
-          {
-            "name": "Stenosarchaea group",
-            "id": null
-          },
-          {
-            "name": "Methanomada group",
-            "id": null
-          },
-          {
-            "name": "Thermococci",
-            "id": null
-          }
-        ]
-      },
-      {
-        "name": "DPANN group",
-        "subgroups": [
-          {
-            "name": "Candidatus Micrarchaeota",
-            "id": null
-          }
-        ]
-      },
-      {
-        "name": "Other",
-        "subgroups": [
-          {
-            "name": "Other",
-            "id": null
-          }
-        ]
-      },
-      {
-        "name": "TACK group",
-        "subgroups": [
-          {
-            "name": "Thermoproteota",
-            "id": null
-          }
-        ]
-      }
-    ]
-  },
-  "Eukaryota": {
-    "name": "Eukaryota",
-    "groups": [
-      {
-        "name": "Plants",
-        "subgroups": [
-          {
-            "name": "Land Plants",
-            "id": null
-          }
-        ]
-      },
-      {
-        "name": "Protists",
-        "subgroups": [
-          {
-            "name": "Other Protists",
-            "id": null
-          }
-        ]
-      },
-      {
-        "name": "Fungi",
-        "subgroups": [
-          {
-            "name": "Ascomycetes",
-            "id": null
-          }
-        ]
-      }
-    ]
-  },
-  "prokaryotes": {
-    "name": "prokaryotes",
-    "groups": [
-      {
-        "name": "Campylobacterota",
-        "subgroups": [
-          {
-            "name": "Epsilonproteobacteria",
-            "id": "chromosome:NC_002163.1/AL111168.1"
-          },
-          {
-            "name": "Desulfurellia",
-            "id": "chromosome:NC_015318.1/CP002606.1"
-          },
-          {
-            "name": "unclassified Campylobacterota",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Pseudomonadota",
-        "subgroups": [
-          {
-            "name": "Gammaproteobacteria",
-            "id": "chromosome I:NZ_LT907842.1/LT907842.1"
-          },
-          {
-            "name": "Betaproteobacteria",
-            "id": "chromosome:NZ_CP021520.1/CP021520.1"
-          },
-          {
-            "name": "Alphaproteobacteria",
-            "id": "chromosome circular:NZ_CP033031.1/CP033031.1; chromosome linear:NZ_CP033032.1/CP033032.1; plasmid pAt12D1:NZ_CP033033.1/CP033033.1"
-          },
-          {
-            "name": "Acidithiobacillia",
-            "id": "chromosome:NZ_CP040511.1/CP040511.1; plasmid p1:NZ_CP040512.1/CP040512.1"
-          },
-          {
-            "name": "Zetaproteobacteria",
-            "id": "-"
-          },
-          {
-            "name": "Pseudomonadota incertae sedis",
-            "id": "plasmid pADP1:CM003636.1"
-          },
-          {
-            "name": "Hydrogenophilia",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Pseudomonadota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Lambdaproteobacteria",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Muproteobacteria",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Terrabacteria group",
-        "subgroups": [
-          {
-            "name": "Bacillota",
-            "id": "chromosome:NC_007795.1/CP000253.1"
-          },
-          {
-            "name": "Actinomycetota",
-            "id": "chromosome:NZ_CP018019.1/CP018019.1"
-          },
-          {
-            "name": "Cyanobacteriota/Melainabacteria group",
-            "id": "chromosome:NC_005042.1/AE017126.1"
-          },
-          {
-            "name": "Mycoplasmatota",
-            "id": "chromosome:NC_021283.1/CP003131.1"
-          },
-          {
-            "name": "Deinococcota",
-            "id": "chromosome 1:NC_006461.1/AP008226.1; plasmid pTT8:NC_006463.1/AP008228.1; plasmid pTT27:NC_006462.1/AP008227.1"
-          },
-          {
-            "name": "Thermomicrobiota",
-            "id": "chromosome:NC_011959.1/CP001275.1; plasmid unnamed:NC_011961.1/CP001276.1"
-          },
-          {
-            "name": "Chloroflexota",
-            "id": "chromosome:NC_010175.1/CP000909.1"
-          },
-          {
-            "name": "Armatimonadota",
-            "id": "chromosome:NZ_CP007139.1/CP007139.1"
-          },
-          {
-            "name": "candidate division WS1",
-            "id": "-"
-          },
-          {
-            "name": "Abditibacteriota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Dormibacteraeota",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Terrabacteria group",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Eremiobacterota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Lithacetigenota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "PVC group",
-        "subgroups": [
-          {
-            "name": "Chlamydiota",
-            "id": "chromosome:NC_005043.1/AE009440.1"
-          },
-          {
-            "name": "Verrucomicrobiota",
-            "id": "-"
-          },
-          {
-            "name": "Planctomycetota",
-            "id": "chromosome:NC_005027.1/BX119912.1"
-          },
-          {
-            "name": "Lentisphaerota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Omnitrophica",
-            "id": "-"
-          },
-          {
-            "name": "unclassified PVC group",
-            "id": "-"
-          },
-          {
-            "name": "Kiritimatiellota",
-            "id": "chromosome:NZ_CP010904.1/CP010904.1"
-          },
-          {
-            "name": "Candidatus Abyssubacteria",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Auribacterota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Spirochaetota",
-        "subgroups": [
-          {
-            "name": "Spirochaetia",
-            "id": "chromosome:NZ_CP020414.2/CP020414.2; plasmid unnamed1:NZ_CP020413.2/CP020413.2"
-          },
-          {
-            "name": "unclassified Spirochaetota",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "chromosome TRIP_e:LR026960.1"
-          }
-        ]
-      },
-      {
-        "name": "Fusobacteriota",
-        "subgroups": [
-          {
-            "name": "Fusobacteriia",
-            "id": "chromosome 1:NZ_LN831027.1/LN831027.1; plasmid 2:NZ_LN831028.1/LN831028.1"
-          },
-          {
-            "name": "unclassified Fusobacteriota",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "FCB group",
-        "subgroups": [
-          {
-            "name": "Bacteroidetes/Chlorobi group",
-            "id": "chromosome:NC_008639.1/CP000492.1"
-          },
-          {
-            "name": "Fibrobacterota",
-            "id": "chromosome:NC_017448.1/CP002158.1"
-          },
-          {
-            "name": "Gemmatimonadota",
-            "id": "chromosome:NC_012489.1/AP009153.1"
-          },
-          {
-            "name": "Candidatus Cloacimonetes",
-            "id": "chromosome:NC_020449.1/CU466930.1"
-          },
-          {
-            "name": "Candidatus Marinimicrobia",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Hydrogenedentes",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Latescibacteria",
-            "id": "-"
-          },
-          {
-            "name": "candidate division Zixibacteria",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Kryptonia",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Fermentibacteria",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Aegiribacteria",
-            "id": "-"
-          },
-          {
-            "name": "candidate division LCP-89",
-            "id": "-"
-          },
-          {
-            "name": "unclassified FCB group",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Thermotogota",
-        "subgroups": [
-          {
-            "name": "Thermotogae",
-            "id": "chromosome:NC_011978.1/CP000916.1"
-          },
-          {
-            "name": "unclassified Thermotogota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Thermodesulfobacteriota",
-        "subgroups": [
-          {
-            "name": "Desulfovibrionia",
-            "id": "chromosome:NC_008751.1/CP000527.1; plasmid pDVUL01:NC_008741.1/CP000528.1"
-          },
-          {
-            "name": "Desulfuromonadia",
-            "id": "chromosome:NC_007517.1/CP000148.1; plasmid unnamed:NC_007515.1/CP000149.1"
-          },
-          {
-            "name": "Desulfobulbia",
-            "id": "chromosome:NC_006138.1/CR522870.1; plasmid large:NC_006139.1/CR522871.1; plasmid small:NC_006140.1/CR522872.1"
-          },
-          {
-            "name": "Syntrophobacteria",
-            "id": "chromosome:NC_008554.1/CP000478.1"
-          },
-          {
-            "name": "Syntrophia",
-            "id": "chromosome:NC_007759.1/CP000252.1"
-          },
-          {
-            "name": "Desulfobacteria",
-            "id": "chromosome:NC_009943.1/CP000859.1"
-          },
-          {
-            "name": "Desulfarculia",
-            "id": "chromosome:NC_014365.1/CP002085.1"
-          },
-          {
-            "name": "Thermodesulfobacteria",
-            "id": "chromosome:NC_015681.1/CP002683.1"
-          },
-          {
-            "name": "Desulfomonilia",
-            "id": "chromosome:NC_018025.1/CP003360.1; plasmid pDESTI.01:NC_018026.1/CP003361.1"
-          },
-          {
-            "name": "Desulfobaccia",
-            "id": "chromosome:NC_015388.1/CP002629.1"
-          },
-          {
-            "name": "Syntrophorhabdia",
-            "id": "-"
-          },
-          {
-            "name": "Deferrisomatia",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Desulfofervidia",
-            "id": "chromosome:NZ_CP013015.1/CP013015.1"
-          },
-          {
-            "name": "Dissulfuribacteria",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Thermodesulfobacteriota",
-            "id": "chromosome:CP113000.1"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Euryarchaeota",
-        "subgroups": [
-          {
-            "name": "Methanomada group",
-            "id": "chromosome:NZ_CP026606.1/CP026606.1"
-          },
-          {
-            "name": "Stenosarchaea group",
-            "id": "chromosome:NZ_CP009530.1/CP009530.1; plasmid unnamed:NZ_CP009529.1/CP009529.1"
-          },
-          {
-            "name": "Archaeoglobi",
-            "id": "chromosome:NZ_CP006577.1/CP006577.1"
-          },
-          {
-            "name": "Thermococci",
-            "id": "chromosome:NC_000868.1/AL096836.1; plasmid pGT5:NC_001773.1/U49503.1"
-          },
-          {
-            "name": "Euryarchaeota incertae sedis",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Euryarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Hadesarchaea",
-            "id": "-"
-          },
-          {
-            "name": "Theionarchaea",
-            "id": "-"
-          },
-          {
-            "name": "Methanonatronarchaeia",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Methanoliparia",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "TACK group",
-        "subgroups": [
-          {
-            "name": "Nitrososphaerota",
-            "id": "chromosome:DP000238.1"
-          },
-          {
-            "name": "Thermoproteota",
-            "id": "chromosome:NC_013769.1/CP001731.1; plasmid pLD8501:NC_013770.1/CP001732.1"
-          },
-          {
-            "name": "Candidatus Korarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Bathyarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Verstraetearchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Geothermarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Marsarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "unclassified TACK group",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Nezhaarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Geoarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Brockarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Culexarchaeota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Myxococcota",
-        "subgroups": [
-          {
-            "name": "Myxococcia",
-            "id": "chromosome:NC_011891.1/CP001359.1"
-          },
-          {
-            "name": "unclassified Myxococcota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Candidatus Thermoplasmatota",
-        "subgroups": [
-          {
-            "name": "Thermoplasmata",
-            "id": "chromosome:NC_002578.1/AL139299.1"
-          },
-          {
-            "name": "DHVE2 group",
-            "id": "chromosome:NC_013926.1/CP001941.1"
-          },
-          {
-            "name": "Candidatus Poseidoniia",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Candidatus Thermoplasmatota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Aquificota",
-        "subgroups": [
-          {
-            "name": "Aquificae",
-            "id": "chromosome:NC_000918.1/AE000657.1; plasmid ece1:NC_001880.1/AE000667.1"
-          },
-          {
-            "name": "unclassified Aquificae",
-            "id": "chromosome:CP076324.1"
-          }
-        ]
-      },
-      {
-        "name": "Acidobacteriota",
-        "subgroups": [
-          {
-            "name": "Terriglobia",
-            "id": "chromosome:NC_012483.1/CP001472.1"
-          },
-          {
-            "name": "Holophagae",
-            "id": "-"
-          },
-          {
-            "name": "Blastocatellia",
-            "id": "chromosome 1:NC_016024.1/CP002514.1; chromosome 2:NC_016025.1/CP002515.1"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Acidobacteriota",
-            "id": "-"
-          },
-          {
-            "name": "Thermoanaerobaculia",
-            "id": "-"
-          },
-          {
-            "name": "Acidobacteriota incertae sedis",
-            "id": "chromosome:CP011806.1"
-          },
-          {
-            "name": "Vicinamibacteria",
-            "id": "chromosome:NZ_CP015136.1/CP015136.1"
-          },
-          {
-            "name": "Candidatus Polarisedimenticolia",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "DPANN group",
-        "subgroups": [
-          {
-            "name": "Nanoarchaeota",
-            "id": "chromosome:AE017199.1"
-          },
-          {
-            "name": "Candidatus Parvarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Micrarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Aenigmarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Diapherotrites",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Altiarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Pacearchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Woesearchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Huberarchaea",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Nanohaloarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "unclassified DPANN group",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Undinarchaeota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Bdellovibrionota",
-        "subgroups": [
-          {
-            "name": "Bacteriovoracia",
-            "id": "chromosome:NC_016620.1/FQ312005.1; plasmid pBMS1:NC_019100.1/HE610506.1"
-          },
-          {
-            "name": "Bdellovibrionia",
-            "id": "chromosome:NZ_CP007656.1/CP007656.1"
-          },
-          {
-            "name": "Oligoflexia",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Bacteria incertae sedis",
-        "subgroups": [
-          {
-            "name": "Bacteria candidate phyla",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Moduliflexus",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Vecturithrix",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Scatousia",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Galligastranaerophilus",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Ventrenecus",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Spyradomonas",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Avacholeplasma",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Avigastranaerophilus",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Scatenecus",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Hydrothermota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Elusimicrobiota",
-        "subgroups": [
-          {
-            "name": "Elusimicrobia",
-            "id": "chromosome:NC_010644.1/CP001055.1"
-          },
-          {
-            "name": "Endomicrobiia",
-            "id": "chromosome:NZ_CP009498.1/CP009498.1"
-          },
-          {
-            "name": "unclassified Elusimicrobiota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Dictyoglomota",
-        "subgroups": [
-          {
-            "name": "Dictyoglomia",
-            "id": "chromosome:NC_011661.1/CP001251.1"
-          },
-          {
-            "name": "unclassified Dictyoglomota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Coprothermobacterota",
-        "subgroups": [
-          {
-            "name": "Coprothermobacteria",
-            "id": "chromosome:NC_011295.1/CP001145.1"
-          },
-          {
-            "name": "unclassified Coprothermobacterota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Nitrospirota",
-        "subgroups": [
-          {
-            "name": "Thermodesulfovibrionia",
-            "id": "chromosome:NC_011296.1/CP001147.1"
-          },
-          {
-            "name": "Nitrospiria",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Nitrospirota",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          },
-          {
-            "name": "Nitrospirota incertae sedis",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Synergistota",
-        "subgroups": [
-          {
-            "name": "Synergistia",
-            "id": "chromosome:NC_014011.1/CP001997.1"
-          },
-          {
-            "name": "unclassified Synergistota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Chrysiogenota",
-        "subgroups": [
-          {
-            "name": "Chrysiogenetes",
-            "id": "chromosome:NC_014836.1/CP002432.1"
-          }
-        ]
-      },
-      {
-        "name": "environmental samples",
-        "subgroups": [
-          {
-            "name": "uncultured bacterium",
-            "id": "-"
-          },
-          {
-            "name": "uncultured archaeon A07HR67",
-            "id": "-"
-          },
-          {
-            "name": "uncultured archaeon A07HB70",
-            "id": "-"
-          },
-          {
-            "name": "uncultured archaeon A07HN63",
-            "id": "-"
-          },
-          {
-            "name": "uncultured archaeon A07HR60",
-            "id": "-"
-          },
-          {
-            "name": "uncultured archaeon",
-            "id": "-"
-          },
-          {
-            "name": "nitrifying bacterium enrichment culture",
-            "id": "-"
-          },
-          {
-            "name": "uncultured PS1 clade bacterium",
-            "id": "-"
-          },
-          {
-            "name": "unidentified prokaryotic organism",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Deferribacterota",
-        "subgroups": [
-          {
-            "name": "Deferribacteres",
-            "id": "chromosome:NC_015672.1/CP002858.1"
-          }
-        ]
-      },
-      {
-        "name": "delta/epsilon subdivisions",
-        "subgroups": [
-          {
-            "name": "Deltaproteobacteria",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Nitrospinae/Tectomicrobia group",
-        "subgroups": [
-          {
-            "name": "Nitrospinota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Tectomicrobia",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Caldisericota/Cryosericota group",
-        "subgroups": [
-          {
-            "name": "Caldisericota",
-            "id": "chromosome:NC_017096.1/AP012051.1"
-          },
-          {
-            "name": "Candidatus Cryosericota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Calditrichota",
-        "subgroups": [
-          {
-            "name": "Calditrichia",
-            "id": "chromosome:NZ_CP018099.1/CP018099.1"
-          },
-          {
-            "name": "unclassified Calditrichota",
-            "id": "-"
-          },
-          {
-            "name": "environmental samples",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Other",
-        "subgroups": [
-          {
-            "name": "Other",
-            "id": "chromosome:NZ_CP085154.1/CP085154.1; plasmid pDSM107133_a:NZ_CP085155.1/CP085155.1; plasmid pDSM107133_b:NZ_CP085156.1/CP085156.1; plasmid pDSM107133_c:NZ_CP085157.1/CP085157.1; plasmid pDSM107133_d:NZ_CP085158.1/CP085158.1; plasmid pDSM107133_e:NZ_CP085159.1/CP085159.1; plasmid pDSM107133_f:NZ_CP085160.1/CP085160.1; plasmid pDSM107133_g:NZ_CP085161.1/CP085161.1; plasmid pDSM107133_h:NZ_CP085162.1/CP085162.1; plasmid pDSM107133_i:NZ_CP085163.1/CP085163.1; plasmid pDSM107133_j:NZ_CP085164.1/CP085164.1; plasmid pDSM107133_k:NZ_CP085165.1/CP085165.1; plasmid pDSM107133_l:NZ_CP085166.1/CP085166.1"
-          }
-        ]
-      },
-      {
-        "name": "Atribacterota",
-        "subgroups": [
-          {
-            "name": "unclassified Atribacterota",
-            "id": "-"
-          },
-          {
-            "name": "Atribacterota incertae sedis",
-            "id": "-"
-          },
-          {
-            "name": "Atribacteria",
-            "id": "chromosome:NZ_CP065383.1/CP065383.1"
-          }
-        ]
-      },
-      {
-        "name": "unclassified Bacteria",
-        "subgroups": [
-          {
-            "name": "bacterium UW 659-2-F09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JKG1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium YEK0313",
-            "id": "-"
-          },
-          {
-            "name": "bacterium LF-3",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MS4",
-            "id": "-"
-          },
-          {
-            "name": "bacterium OL-1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SM23_31",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SM23_57",
-            "id": "-"
-          },
-          {
-            "name": "bacterium GBS-1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium Ga0077546",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 42_11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BRH_c32",
-            "id": "-"
-          },
-          {
-            "name": "bacterium F082",
-            "id": "-"
-          },
-          {
-            "name": "bacterium P3",
-            "id": "-"
-          },
-          {
-            "name": "bacterium P201",
-            "id": "-"
-          },
-          {
-            "name": "bacterium F083",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SPGG8",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SCGC AG-212-C10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SCN 62-11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SCN 57-13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AB1",
-            "id": "chromosome:CP017117.1"
-          },
-          {
-            "name": "bacterium A37T11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG1_02_42_9",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG2_30_33_46",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG2_30_37_16",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG2_30_54_10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG2_30_40_12",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG10_46_32",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG10_37_50",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG09_39_24",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG10_49_38",
-            "id": "-"
-          },
-          {
-            "name": "methanotrophic endosymbiont of Bathymodiolus azoricus (Menez Gwen)",
-            "id": "-"
-          },
-          {
-            "name": "bacterium EBM-40",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JdFR-53",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JdFR-67",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JdFR-70",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JdFR-65",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JdFR-66",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.BinA186",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin429",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin425",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin374",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.BinA028",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin478",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin431",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin400",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin363",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin270",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin243",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin236",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin212",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin157",
-            "id": "-"
-          },
-          {
-            "name": "bacterium ADurb.Bin132",
-            "id": "-"
-          },
-          {
-            "name": "Osedax symbiont bacterium Rs2_46_30_T18",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED46",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED6",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED277",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED264",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED250",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED221",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED217",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED190",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED181",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED144",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED80",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED198",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED161",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED88",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED274",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED178",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TMED15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium B13(2017)",
-            "id": "-"
-          },
-          {
-            "name": "bacterium F11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium F16",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium I07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium K02(2017)",
-            "id": "-"
-          },
-          {
-            "name": "bacterium B17",
-            "id": "-"
-          },
-          {
-            "name": "bacterium E08(2017)",
-            "id": "-"
-          },
-          {
-            "name": "bacterium G20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium J17",
-            "id": "-"
-          },
-          {
-            "name": "bacterium EC214 bin63",
-            "id": "-"
-          },
-          {
-            "name": "bacterium EF100-94H03 bin56",
-            "id": "-"
-          },
-          {
-            "name": "bacterium OM1 bin76",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TK85 bin110",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA951",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA732",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA1228",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA1143",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA1790",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA1459",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2214",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2220",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2219",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2229",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2927",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2916",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA2872",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA3756",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA3734",
-            "id": "-"
-          },
-          {
-            "name": "bacterium JGI 053",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4392",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4272",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4943",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4901",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4883",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4868",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4835",
-            "id": "-"
-          },
-          {
-            "name": "bacterium",
-            "id": "chromosome:CP064957.1"
-          },
-          {
-            "name": "bacterium UBA5178",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5125",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5820",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5646",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA4637",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5581",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5577",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA6115",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA6025",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA5966",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA6154",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA6875",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7390",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7470",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7760",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7758",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7751",
-            "id": "-"
-          },
-          {
-            "name": "bacterium UBA7393",
-            "id": "-"
-          },
-          {
-            "name": "bacterium DOLZORAL124_38_8",
-            "id": "-"
-          },
-          {
-            "name": "bacterium DOLZORAL124_64_63",
-            "id": "-"
-          },
-          {
-            "name": "bacterium DOLJORAL78_65_58",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Howlettbacteria) CG23_combo_of_CG06-09_8_20_14_all_37_9",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG10_big_fil_rev_8_21_14_0_10_33_18",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Moisslbacteria) CG02_land_8_20_14_3_00_36_53",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG17_big_fil_post_rev_8_21_14_2_50_64_8",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Moisslbacteria) CG12_big_fil_rev_8_21_14_0_65_36_11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Torokbacteria) CG09_land_8_20_14_0_10_42_11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG06_land_8_20_14_3_00_33_50",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_8_14_3_um_filter_33_28",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_10_14_0_8_um_filter_33_57",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Howlettbacteria) CG_4_10_14_3_um_filter_37_10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Howlettbacteria) CG_4_10_14_0_8_um_filter_40_9",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Moisslbacteria) CG_4_9_14_0_8_um_filter_36_20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Howlettbacteria) CG_4_9_14_3_um_filter_37_10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_9_14_3_um_filter_65_15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_9_14_3_um_filter_33_26",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Torokbacteria) CG_4_10_14_0_2_um_filter_35_8",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_10_14_0_2_um_filter_48_144",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CG_4_10_14_0_2_um_filter_33_32",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (Candidatus Moisslbacteria) CG_4_10_14_0_2_um_filter_36_61",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin14",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin02",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin14",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin01",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin08",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin12",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin12",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin05",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin06",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin06",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin08",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin05",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin02",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR29",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR35",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR28",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR40",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR19",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR18",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR37",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR17",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR25",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR38",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR24",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR08",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR30",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR14",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR41",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR26",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR16",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR12",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR32",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR39",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR27",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR36",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Abin15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BMS3Bbin01",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR23",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR31",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR33",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HR34",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-345-J02",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-345-J16",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-345-N06",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-345-I14",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-345-A04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-323-O19",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-323-L21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-323-L13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-P04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-J07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-D23",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-M09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-B04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AG-316-A20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 0207-2",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 0218",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 0274-1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium HD9-500m-PIT-SAG08",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-36",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1xD42-87",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-56",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-54",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD8-76",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-51",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-59",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1xD42-67",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 0.1xD8-71",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1xD8-6",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 0.1xD8-82",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-50",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-34",
-            "id": "-"
-          },
-          {
-            "name": "bacterium C-53",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD42-54",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD42-8",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD42-1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium endosymbiont of Escarpia laminata",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD21-70",
-            "id": "-"
-          },
-          {
-            "name": "bacterium J10(2018)",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.230.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.194.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.228.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.227.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.221.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.191.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.205.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.199.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.179.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.222.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.159.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.157.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.229.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.152.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.177.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.180.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.155.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.163.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.156.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.141.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.146.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.168.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium NHP-B",
-            "id": "-"
-          },
-          {
-            "name": "bacterium M00.F.Ca.ET.162.01.1.1",
-            "id": "-"
-          },
-          {
-            "name": "bacterium (candidate division B38) B3_B38",
-            "id": "-"
-          },
-          {
-            "name": "Bathymodiolus heckerae thiotrophic gill symbiont",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MnTg02",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MnTg03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MnTg04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium c-19",
-            "id": "-"
-          },
-          {
-            "name": "bacterium D16-76",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1xD8-48",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1xD42-62",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD42-94",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD42-76",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 1XD21-13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium LRH843",
-            "id": "-"
-          },
-          {
-            "name": "bacterium C1-4",
-            "id": "-"
-          },
-          {
-            "name": "bacterium SGD-2",
-            "id": "-"
-          },
-          {
-            "name": "bacterium BFN5",
-            "id": "chromosome:CP053389.1"
-          },
-          {
-            "name": "bacterium Scap17",
-            "id": "-"
-          },
-          {
-            "name": "bacterium Unc6",
-            "id": "-"
-          },
-          {
-            "name": "sulfur-oxidizing endosymbiont of Gigantopelta aegis",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-N14",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-J21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-L15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-L21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-M10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-J23",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-K03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-N22",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-O15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-M05",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-K05",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-J04",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-I18",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-I20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-I11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-I07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-G11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-P15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-P07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-J19",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-N03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-K20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-K15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-P13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-P11",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-A03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-G05",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-F03",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-F18",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-E10",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-E09",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-D21",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-E07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-C20",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-C08",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-C07",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-B15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-B06",
-            "id": "-"
-          },
-          {
-            "name": "bacterium AH-315-A23",
-            "id": "-"
-          },
-          {
-            "name": "thermophilic bacterium 3443-3Ac",
-            "id": "chromosome:CP060096.1"
-          },
-          {
-            "name": "butyrate-producing bacterium",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MSK17_88",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TM223",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MSK18_59",
-            "id": "-"
-          },
-          {
-            "name": "bacterium MSK20_81",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TM473",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210928-DFI.3.100",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210917-SL.2.15",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210917-DFI.7.65",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210820-DFI.6.52",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210820-DFI.6.37",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210820-DFI.6.38",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210820-DFI.5.26",
-            "id": "-"
-          },
-          {
-            "name": "bacterium 210702-DFI.5.13",
-            "id": "-"
-          },
-          {
-            "name": "bacterium TM462",
-            "id": "-"
-          },
-          {
-            "name": "Bathymodiolus brooksi methanotrophic gill symbiont",
-            "id": "-"
-          },
-          {
-            "name": "bacterium CPR1",
-            "id": "-"
-          },
-          {
-            "name": "unidentified bacterial endosymbiont",
-            "id": "chromosome 1:NZ_OU907312.1/OU907312.1"
-          },
-          {
-            "name": "bacterium SCSIO 12844",
-            "id": "chromosome:CP073743.1"
-          },
-          {
-            "name": "bacterium SCSIO 12696",
-            "id": "chromosome:CP073744.1"
-          },
-          {
-            "name": "bacterium SCSIO 12827",
-            "id": "chromosome:CP073746.1"
-          },
-          {
-            "name": "bacterium SCSIO 12741",
-            "id": "chromosome:CP073749.1"
-          },
-          {
-            "name": "bacterium SCSIO 12643",
-            "id": "chromosome:CP073750.1"
-          },
-          {
-            "name": "bacterium 3DAC",
-            "id": "chromosome:CP046447.1"
-          }
-        ]
-      },
-      {
-        "name": "unclassified Archaea",
-        "subgroups": [
-          {
-            "name": "archaeon GW2011_AR6",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR9",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR16",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR13",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR17",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR19",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR21",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR1",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR3",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR4",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR5",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR11",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR18",
-            "id": "-"
-          },
-          {
-            "name": "archaeon GW2011_AR10",
-            "id": "chromosome:CP010424.1"
-          },
-          {
-            "name": "archaeon GW2011_AR15",
-            "id": "chromosome:CP010425.1"
-          },
-          {
-            "name": "archaeon GW2011_AR20",
-            "id": "chromosome:CP010426.1"
-          },
-          {
-            "name": "archaeon RBG_16_50_20",
-            "id": "-"
-          },
-          {
-            "name": "archaeon CG2_30_31_98",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_2_20CM_2_53_6",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_2_20CM_2_52_21",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_40CM_4_53_4",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_40CM_2_52_4",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_40CM_2_52_13",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_20CM_52_20",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_20CM_2_54_9",
-            "id": "-"
-          },
-          {
-            "name": "archaeon 13_1_20CM_2_51_12",
-            "id": "-"
-          },
-          {
-            "name": "archaeon ADurb.Bin336",
-            "id": "-"
-          },
-          {
-            "name": "archaeon D22",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA490",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA55",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA140",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA543",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA431",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA460",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA583",
-            "id": "-"
-          },
-          {
-            "name": "archaeon UBA168",
-            "id": "-"
-          },
-          {
-            "name": "archaeon",
-            "id": "chromosome:CP066694.1"
-          },
-          {
-            "name": "archaeon CG10_big_fil_rev_8_21_14_0_10_43_11",
-            "id": "-"
-          },
-          {
-            "name": "archaeon CG07_land_8_20_14_0_80_38_8",
-            "id": "-"
-          },
-          {
-            "name": "archaeon CG06_land_8_20_14_3_00_37_11",
-            "id": "-"
-          },
-          {
-            "name": "archaeon CG_4_8_14_3_um_filter_38_5",
-            "id": "-"
-          },
-          {
-            "name": "archaeon CG_4_10_14_0_2_um_filter_Archaea_38_6",
-            "id": "-"
-          },
-          {
-            "name": "archaeon BMS3Abin17",
-            "id": "-"
-          },
-          {
-            "name": "archaeon BMS3Bbin15",
-            "id": "-"
-          },
-          {
-            "name": "archaeon BMS3Bbin16",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR01",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR02",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR05",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR03",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR04",
-            "id": "-"
-          },
-          {
-            "name": "archaeon HR06",
-            "id": "-"
-          },
-          {
-            "name": "archaeon BMS3Abin16",
-            "id": "-"
-          },
-          {
-            "name": "archaeon SCG-AAA382B04",
-            "id": "-"
-          },
-          {
-            "name": "marine archaeum AG-341-O08",
-            "id": "-"
-          },
-          {
-            "name": "marine archaeum AG-339-F18",
-            "id": "-"
-          },
-          {
-            "name": "marine archaeum AG-323-C04",
-            "id": "-"
-          },
-          {
-            "name": "archaeon MnTg01",
-            "id": "-"
-          },
-          {
-            "name": "archaeon AH-315-M20",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Asgard group",
-        "subgroups": [
-          {
-            "name": "Candidatus Lokiarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Thorarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Heimdallarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Odinarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Helarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Asgard group",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Sifarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Hermodarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Hodarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Kariarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Borrarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Wukongarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Baldrarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Gerdarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Asgard group incertae sedis",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Candidatus Hydrothermarchaeota",
-        "subgroups": [
-          {
-            "name": "unclassified Candidatus Hydrothermarchaeota",
-            "id": "-"
-          },
-          {
-            "name": "Candidatus Hydrothermarchaeum",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Candidatus Krumholzibacteriota",
-        "subgroups": [
-          {
-            "name": "Candidatus Krumholzibacteria",
-            "id": "-"
-          },
-          {
-            "name": "unclassified Candidatus Krumholzibacteriota",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Candidatus Tharpellota",
-        "subgroups": [
-          {
-            "name": "Candidatus Tharpellia",
-            "id": "-"
-          }
-        ]
-      },
-      {
-        "name": "Candidatus Deferrimicrobiota",
-        "subgroups": [
-          {
-            "name": "Candidatus Deferrimicrobia",
-            "id": "-"
           }
         ]
       }
@@ -3124,922 +369,922 @@
     "name": "viruses",
     "groups": [
       {
-        "name": "Other",
+        "name": "other",
         "subgroups": [
           {
-            "name": "Plasmaviridae",
+            "name": "plasmaviridae",
             "id": null
           },
           {
-            "name": "Corticoviridae",
+            "name": "corticoviridae",
             "id": null
           },
           {
-            "name": "Barnaviridae",
+            "name": "barnaviridae",
             "id": null
           },
           {
-            "name": "Nimaviridae",
+            "name": "nimaviridae",
             "id": null
           },
           {
-            "name": "Marnaviridae",
+            "name": "marnaviridae",
             "id": null
           },
           {
-            "name": "Gammaflexiviridae",
+            "name": "gammaflexiviridae",
             "id": null
           },
           {
-            "name": "Malacoherpesviridae",
+            "name": "malacoherpesviridae",
             "id": null
           },
           {
-            "name": "Picobirnaviridae",
+            "name": "picobirnaviridae",
             "id": null
           },
           {
-            "name": "Secoviridae",
+            "name": "secoviridae",
             "id": null
           },
           {
-            "name": "Sphaerolipoviridae",
+            "name": "sphaerolipoviridae",
             "id": null
           },
           {
-            "name": "Kitaviridae",
+            "name": "kitaviridae",
             "id": null
           },
           {
-            "name": "Tobaniviridae",
+            "name": "tobaniviridae",
             "id": null
           },
           {
-            "name": "Ampullaviridae",
+            "name": "ampullaviridae",
             "id": null
           },
           {
-            "name": "Other",
+            "name": "other",
             "id": null
           },
           {
-            "name": "Roniviridae",
+            "name": "roniviridae",
             "id": null
           },
           {
-            "name": "Botourmiaviridae",
+            "name": "botourmiaviridae",
             "id": null
           },
           {
-            "name": "Lavidaviridae",
+            "name": "lavidaviridae",
             "id": null
           },
           {
-            "name": "Solemoviridae",
+            "name": "solemoviridae",
             "id": null
           },
           {
-            "name": "Nyamiviridae",
+            "name": "nyamiviridae",
             "id": null
           },
           {
-            "name": "Picornaviridae",
+            "name": "picornaviridae",
             "id": null
           },
           {
-            "name": "Betaflexiviridae",
+            "name": "betaflexiviridae",
             "id": null
           },
           {
-            "name": "Closteroviridae",
+            "name": "closteroviridae",
             "id": null
           },
           {
-            "name": "Partitiviridae",
+            "name": "partitiviridae",
             "id": null
           },
           {
-            "name": "Flaviviridae",
+            "name": "flaviviridae",
             "id": null
           },
           {
-            "name": "Geminiviridae",
+            "name": "geminiviridae",
             "id": null
           },
           {
-            "name": "Papillomaviridae",
+            "name": "papillomaviridae",
             "id": null
           },
           {
-            "name": "Herpesviridae",
+            "name": "herpesviridae",
             "id": null
           },
           {
-            "name": "Hafunaviridae",
+            "name": "hafunaviridae",
             "id": null
           },
           {
-            "name": "Alphaflexiviridae",
+            "name": "alphaflexiviridae",
             "id": null
           },
           {
-            "name": "Totiviridae",
+            "name": "totiviridae",
             "id": null
           },
           {
-            "name": "Arenaviridae",
+            "name": "arenaviridae",
             "id": null
           },
           {
-            "name": "Astroviridae",
+            "name": "astroviridae",
             "id": null
           },
           {
-            "name": "Nanoviridae",
+            "name": "sedoreoviridae",
             "id": null
           },
           {
-            "name": "Sedoreoviridae",
+            "name": "nanoviridae",
             "id": null
           },
           {
-            "name": "Rhabdoviridae",
+            "name": "genomoviridae",
             "id": null
           },
           {
-            "name": "Potyviridae",
+            "name": "mayoviridae",
             "id": null
           },
           {
-            "name": "Caulimoviridae",
+            "name": "rhabdoviridae",
             "id": null
           },
           {
-            "name": "Bromoviridae",
+            "name": "potyviridae",
             "id": null
           },
           {
-            "name": "Genomoviridae",
+            "name": "caulimoviridae",
             "id": null
           },
           {
-            "name": "Mayoviridae",
+            "name": "bromoviridae",
             "id": null
           },
           {
-            "name": "Nodaviridae",
+            "name": "kyanoviridae",
             "id": null
           },
           {
-            "name": "Kyanoviridae",
+            "name": "autographiviridae",
             "id": null
           },
           {
-            "name": "Autographiviridae",
+            "name": "fuselloviridae",
             "id": null
           },
           {
-            "name": "Fuselloviridae",
+            "name": "nodaviridae",
             "id": null
           },
           {
-            "name": "Tolecusatellitidae",
+            "name": "togaviridae",
             "id": null
           },
           {
-            "name": "Alloherpesviridae",
+            "name": "alphasatellitidae",
             "id": null
           },
           {
-            "name": "Togaviridae",
+            "name": "tolecusatellitidae",
             "id": null
           },
           {
-            "name": "Ackermannviridae",
+            "name": "alloherpesviridae",
             "id": null
           },
           {
-            "name": "Schitoviridae",
+            "name": "ackermannviridae",
             "id": null
           },
           {
-            "name": "Marseilleviridae",
+            "name": "schitoviridae",
             "id": null
           },
           {
-            "name": "Pleolipoviridae",
+            "name": "marseilleviridae",
             "id": null
           },
           {
-            "name": "Baculoviridae",
+            "name": "pleolipoviridae",
             "id": null
           },
           {
-            "name": "Circoviridae",
+            "name": "baculoviridae",
             "id": null
           },
           {
-            "name": "Alphasatellitidae",
+            "name": "circoviridae",
             "id": null
           },
           {
-            "name": "Polyomaviridae",
+            "name": "tymoviridae",
             "id": null
           },
           {
-            "name": "Poxviridae",
+            "name": "straboviridae",
             "id": null
           },
           {
-            "name": "Tymoviridae",
+            "name": "casjensviridae",
             "id": null
           },
           {
-            "name": "Straboviridae",
+            "name": "peduoviridae",
             "id": null
           },
           {
-            "name": "Casjensviridae",
+            "name": "polyomaviridae",
             "id": null
           },
           {
-            "name": "Peduoviridae",
+            "name": "poxviridae",
             "id": null
           },
           {
-            "name": "Graaviviridae",
+            "name": "phycodnaviridae",
             "id": null
           },
           {
-            "name": "Phycodnaviridae",
+            "name": "graaviviridae",
             "id": null
           },
           {
-            "name": "Anelloviridae",
+            "name": "anelloviridae",
             "id": null
           },
           {
-            "name": "Turriviridae",
+            "name": "turriviridae",
             "id": null
           },
           {
-            "name": "Carmotetraviridae",
+            "name": "carmotetraviridae",
             "id": null
           },
           {
-            "name": "Iflaviridae",
+            "name": "iflaviridae",
             "id": null
           },
           {
-            "name": "Spinareoviridae",
+            "name": "spinareoviridae",
             "id": null
           },
           {
-            "name": "Parvoviridae",
+            "name": "parvoviridae",
             "id": null
           },
           {
-            "name": "Coronaviridae",
+            "name": "filoviridae",
             "id": null
           },
           {
-            "name": "Retroviridae",
+            "name": "vilmaviridae",
             "id": null
           },
           {
-            "name": "Amalgaviridae",
+            "name": "chrysoviridae",
             "id": null
           },
           {
-            "name": "Soleiviridae",
+            "name": "coronaviridae",
             "id": null
           },
           {
-            "name": "Virgaviridae",
+            "name": "retroviridae",
             "id": null
           },
           {
-            "name": "Adenoviridae",
+            "name": "amalgaviridae",
             "id": null
           },
           {
-            "name": "Filoviridae",
+            "name": "soleiviridae",
             "id": null
           },
           {
-            "name": "Vilmaviridae",
+            "name": "virgaviridae",
             "id": null
           },
           {
-            "name": "Chrysoviridae",
+            "name": "adenoviridae",
             "id": null
           },
           {
-            "name": "Mimiviridae",
+            "name": "mimiviridae",
             "id": null
           },
           {
-            "name": "Dicistroviridae",
+            "name": "dicistroviridae",
             "id": null
           },
           {
-            "name": "Endornaviridae",
+            "name": "endornaviridae",
             "id": null
           },
           {
-            "name": "Tombusviridae",
+            "name": "tombusviridae",
             "id": null
           },
           {
-            "name": "Zobellviridae",
+            "name": "inoviridae",
             "id": null
           },
           {
-            "name": "Inoviridae",
+            "name": "herelleviridae",
             "id": null
           },
           {
-            "name": "Herelleviridae",
+            "name": "demerecviridae",
             "id": null
           },
           {
-            "name": "Demerecviridae",
+            "name": "zobellviridae",
             "id": null
           },
           {
-            "name": "Phenuiviridae",
+            "name": "phenuiviridae",
             "id": null
           },
           {
-            "name": "Microviridae",
+            "name": "microviridae",
             "id": null
           },
           {
-            "name": "Plectroviridae",
+            "name": "plectroviridae",
             "id": null
           },
           {
-            "name": "Tectiviridae",
+            "name": "tectiviridae",
             "id": null
           },
           {
-            "name": "Hepadnaviridae",
+            "name": "hepadnaviridae",
             "id": null
           },
           {
-            "name": "Iridoviridae",
+            "name": "iridoviridae",
             "id": null
           },
           {
-            "name": "Lipothrixviridae",
+            "name": "lipothrixviridae",
             "id": null
           },
           {
-            "name": "Leisingerviridae",
+            "name": "leisingerviridae",
             "id": null
           },
           {
-            "name": "Paulinoviridae",
+            "name": "paulinoviridae",
             "id": null
           },
           {
-            "name": "Vertoviridae",
+            "name": "vertoviridae",
             "id": null
           },
           {
-            "name": "Nudiviridae",
+            "name": "nudiviridae",
             "id": null
           },
           {
-            "name": "Salasmaviridae",
+            "name": "salasmaviridae",
             "id": null
           },
           {
-            "name": "Rountreeviridae",
+            "name": "rountreeviridae",
             "id": null
           },
           {
-            "name": "Ungulaviridae",
+            "name": "ungulaviridae",
             "id": null
           },
           {
-            "name": "Globuloviridae",
+            "name": "globuloviridae",
             "id": null
           },
           {
-            "name": "Rudiviridae",
+            "name": "rudiviridae",
             "id": null
           },
           {
-            "name": "Polydnaviriformidae",
+            "name": "polydnaviriformidae",
             "id": null
           },
           {
-            "name": "Bicaudaviridae",
+            "name": "bicaudaviridae",
             "id": null
           },
           {
-            "name": "Fiersviridae",
+            "name": "peribunyaviridae",
             "id": null
           },
           {
-            "name": "Peribunyaviridae",
+            "name": "alphatetraviridae",
             "id": null
           },
           {
-            "name": "Alphatetraviridae",
+            "name": "orthomyxoviridae",
             "id": null
           },
           {
-            "name": "Orthomyxoviridae",
+            "name": "fiersviridae",
             "id": null
           },
           {
-            "name": "Hypoviridae",
+            "name": "hypoviridae",
             "id": null
           },
           {
-            "name": "Pneumoviridae",
+            "name": "pneumoviridae",
             "id": null
           },
           {
-            "name": "Arteriviridae",
+            "name": "arteriviridae",
             "id": null
           },
           {
-            "name": "Caliciviridae",
+            "name": "caliciviridae",
             "id": null
           },
           {
-            "name": "Duinviridae",
+            "name": "duinviridae",
             "id": null
           },
           {
-            "name": "Paramyxoviridae",
+            "name": "paramyxoviridae",
             "id": null
           },
           {
-            "name": "Cystoviridae",
+            "name": "cystoviridae",
             "id": null
           },
           {
-            "name": "Permutotetraviridae",
+            "name": "permutotetraviridae",
             "id": null
           },
           {
-            "name": "Benyviridae",
+            "name": "benyviridae",
             "id": null
           },
           {
-            "name": "Tospoviridae",
+            "name": "tospoviridae",
             "id": null
           },
           {
-            "name": "Mitoviridae",
+            "name": "mitoviridae",
             "id": null
           },
           {
-            "name": "Narnaviridae",
+            "name": "narnaviridae",
             "id": null
           },
           {
-            "name": "Birnaviridae",
+            "name": "birnaviridae",
             "id": null
           },
           {
-            "name": "Aspiviridae",
+            "name": "aspiviridae",
             "id": null
           },
           {
-            "name": "Hantaviridae",
+            "name": "hantaviridae",
             "id": null
           },
           {
-            "name": "Fusariviridae",
+            "name": "fusariviridae",
             "id": null
           },
           {
-            "name": "Mesyanzhinovviridae",
+            "name": "mesyanzhinovviridae",
             "id": null
           },
           {
-            "name": "Drexlerviridae",
+            "name": "drexlerviridae",
             "id": null
           },
           {
-            "name": "Halspiviridae",
+            "name": "halspiviridae",
             "id": null
           },
           {
-            "name": "Ascoviridae",
+            "name": "ascoviridae",
             "id": null
           },
           {
-            "name": "Polycipiviridae",
+            "name": "zierdtviridae",
             "id": null
           },
           {
-            "name": "Zierdtviridae",
+            "name": "polycipiviridae",
             "id": null
           },
           {
-            "name": "Chaseviridae",
+            "name": "chaseviridae",
             "id": null
           },
           {
-            "name": "Hytrosaviridae",
+            "name": "hytrosaviridae",
             "id": null
           },
           {
-            "name": "Curvulaviridae",
+            "name": "curvulaviridae",
             "id": null
           },
           {
-            "name": "Alternaviridae",
+            "name": "alternaviridae",
             "id": null
           },
           {
-            "name": "Solinviviridae",
+            "name": "solinviviridae",
             "id": null
           },
           {
-            "name": "Megabirnaviridae",
+            "name": "megabirnaviridae",
             "id": null
           },
           {
-            "name": "Hepeviridae",
+            "name": "hepeviridae",
             "id": null
           },
           {
-            "name": "Pospiviroidae",
+            "name": "avsunviroidae",
             "id": null
           },
           {
-            "name": "Avsunviroidae",
+            "name": "pospiviroidae",
             "id": null
           },
           {
-            "name": "Mesoniviridae",
+            "name": "mesoniviridae",
             "id": null
           },
           {
-            "name": "Asfarviridae",
+            "name": "asfarviridae",
             "id": null
           },
           {
-            "name": "Matonaviridae",
+            "name": "matonaviridae",
             "id": null
           },
           {
-            "name": "Quadriviridae",
+            "name": "quadriviridae",
             "id": null
           },
           {
-            "name": "Smacoviridae",
+            "name": "smacoviridae",
             "id": null
           },
           {
-            "name": "Guelinviridae",
+            "name": "guelinviridae",
             "id": null
           },
           {
-            "name": "Steitzviridae",
+            "name": "steitzviridae",
             "id": null
           },
           {
-            "name": "Druskaviridae",
+            "name": "druskaviridae",
             "id": null
           },
           {
-            "name": "Bidnaviridae",
+            "name": "bidnaviridae",
             "id": null
           },
           {
-            "name": "Haloferuviridae",
+            "name": "haloferuviridae",
             "id": null
           },
           {
-            "name": "Saparoviridae",
+            "name": "saparoviridae",
             "id": null
           },
           {
-            "name": "Madisaviridae",
+            "name": "madisaviridae",
             "id": null
           },
           {
-            "name": "Halomagnusviridae",
+            "name": "halomagnusviridae",
             "id": null
           },
           {
-            "name": "Shortaselviridae",
+            "name": "shortaselviridae",
             "id": null
           },
           {
-            "name": "Assiduviridae",
+            "name": "assiduviridae",
             "id": null
           },
           {
-            "name": "Pachyviridae",
+            "name": "pachyviridae",
             "id": null
           },
           {
-            "name": "Steigviridae",
+            "name": "steigviridae",
             "id": null
           },
           {
-            "name": "Pervagoviridae",
+            "name": "pervagoviridae",
             "id": null
           },
           {
-            "name": "Duneviridae",
+            "name": "duneviridae",
             "id": null
           },
           {
-            "name": "Bacilladnaviridae",
+            "name": "bacilladnaviridae",
             "id": null
           },
           {
-            "name": "Polymycoviridae",
+            "name": "polymycoviridae",
             "id": null
           },
           {
-            "name": "Sunviridae",
+            "name": "sunviridae",
             "id": null
           },
           {
-            "name": "Mymonaviridae",
+            "name": "mymonaviridae",
             "id": null
           },
           {
-            "name": "Nairoviridae",
+            "name": "nairoviridae",
             "id": null
           },
           {
-            "name": "Matshushitaviridae",
+            "name": "matshushitaviridae",
             "id": null
           },
           {
-            "name": "Bornaviridae",
+            "name": "bornaviridae",
             "id": null
           },
           {
-            "name": "Chuviridae",
+            "name": "chuviridae",
             "id": null
           },
           {
-            "name": "Guttaviridae",
+            "name": "guttaviridae",
             "id": null
           },
           {
-            "name": "Yadokariviridae",
+            "name": "yadokariviridae",
             "id": null
           },
           {
-            "name": "Luteoviridae",
+            "name": "luteoviridae",
             "id": null
           },
           {
-            "name": "Amnoonviridae",
+            "name": "amnoonviridae",
             "id": null
           },
           {
-            "name": "Deltaflexiviridae",
+            "name": "deltaflexiviridae",
             "id": null
           },
           {
-            "name": "Phasmaviridae",
+            "name": "phasmaviridae",
             "id": null
           },
           {
-            "name": "Lispiviridae",
+            "name": "lispiviridae",
             "id": null
           },
           {
-            "name": "Aliusviridae",
+            "name": "aliusviridae",
             "id": null
           },
           {
-            "name": "Xinmoviridae",
+            "name": "xinmoviridae",
             "id": null
           },
           {
-            "name": "Natareviridae",
+            "name": "natareviridae",
             "id": null
           },
           {
-            "name": "Tristromaviridae",
+            "name": "tristromaviridae",
             "id": null
           },
           {
-            "name": "Cruliviridae",
+            "name": "cruliviridae",
             "id": null
           },
           {
-            "name": "Myriaviridae",
+            "name": "myriaviridae",
             "id": null
           },
           {
-            "name": "Qinviridae",
+            "name": "qinviridae",
             "id": null
           },
           {
-            "name": "Yueviridae",
+            "name": "yueviridae",
             "id": null
           },
           {
-            "name": "Medioniviridae",
+            "name": "medioniviridae",
             "id": null
           },
           {
-            "name": "Sinhaliviridae",
+            "name": "sinhaliviridae",
             "id": null
           },
           {
-            "name": "Euroniviridae",
+            "name": "euroniviridae",
             "id": null
           },
           {
-            "name": "Artoviridae",
+            "name": "artoviridae",
             "id": null
           },
           {
-            "name": "Mypoviridae",
+            "name": "mypoviridae",
             "id": null
           },
           {
-            "name": "Fimoviridae",
+            "name": "fimoviridae",
             "id": null
           },
           {
-            "name": "Alvernaviridae",
+            "name": "alvernaviridae",
             "id": null
           },
           {
-            "name": "Finnlakeviridae",
+            "name": "finnlakeviridae",
             "id": null
           },
           {
-            "name": "Portogloboviridae",
+            "name": "portogloboviridae",
             "id": null
           },
           {
-            "name": "Suoliviridae",
+            "name": "suoliviridae",
             "id": null
           },
           {
-            "name": "Clavaviridae",
+            "name": "clavaviridae",
             "id": null
           },
           {
-            "name": "Sarthroviridae",
+            "name": "sarthroviridae",
             "id": null
           },
           {
-            "name": "Metaviridae",
+            "name": "metaviridae",
             "id": null
           },
           {
-            "name": "Spiraviridae",
+            "name": "ovaliviridae",
             "id": null
           },
           {
-            "name": "Ovaliviridae",
+            "name": "spiraviridae",
             "id": null
           },
           {
-            "name": "Orlajensenviridae",
+            "name": "orlajensenviridae",
             "id": null
           },
           {
-            "name": "Anaerodiviridae",
+            "name": "anaerodiviridae",
             "id": null
           },
           {
-            "name": "Vilyaviridae",
+            "name": "vilyaviridae",
             "id": null
           },
           {
-            "name": "Autolykiviridae",
+            "name": "autolykiviridae",
             "id": null
           },
           {
-            "name": "Mononiviridae",
+            "name": "mononiviridae",
             "id": null
           },
           {
-            "name": "Wupedeviridae",
+            "name": "wupedeviridae",
             "id": null
           },
           {
-            "name": "Nenyaviridae",
+            "name": "nenyaviridae",
             "id": null
           },
           {
-            "name": "Leishbuviridae",
+            "name": "leishbuviridae",
             "id": null
           },
           {
-            "name": "Thaspiviridae",
+            "name": "thaspiviridae",
             "id": null
           },
           {
-            "name": "Winoviridae",
+            "name": "winoviridae",
             "id": null
           },
           {
-            "name": "Nanhypoviridae",
+            "name": "nanhypoviridae",
             "id": null
           },
           {
-            "name": "Olifoviridae",
+            "name": "olifoviridae",
             "id": null
           },
           {
-            "name": "Gresnaviridae",
+            "name": "gresnaviridae",
             "id": null
           },
           {
-            "name": "Nanghoshaviridae",
+            "name": "nanghoshaviridae",
             "id": null
           },
           {
-            "name": "Cremegaviridae",
+            "name": "cremegaviridae",
             "id": null
           },
           {
-            "name": "Redondoviridae",
+            "name": "redondoviridae",
             "id": null
           },
           {
-            "name": "Simuloviridae",
+            "name": "simuloviridae",
             "id": null
           },
           {
-            "name": "Intestiviridae",
+            "name": "intestiviridae",
             "id": null
           },
           {
-            "name": "Crevaviridae",
+            "name": "crevaviridae",
             "id": null
           },
           {
-            "name": "Naomviridae",
+            "name": "naomviridae",
             "id": null
           },
           {
-            "name": "Adintoviridae",
+            "name": "adintoviridae",
             "id": null
           },
           {
-            "name": "Blumeviridae",
+            "name": "blumeviridae",
             "id": null
           },
           {
-            "name": "Solspiviridae",
+            "name": "solspiviridae",
             "id": null
           },
           {
-            "name": "Atkinsviridae",
+            "name": "atkinsviridae",
             "id": null
           },
           {
-            "name": "Forsetiviridae",
+            "name": "forsetiviridae",
             "id": null
           },
           {
-            "name": "Aggregaviridae",
+            "name": "aggregaviridae",
             "id": null
           },
           {
-            "name": "Helgolandviridae",
+            "name": "helgolandviridae",
             "id": null
           },
           {
-            "name": "Molycolviridae",
+            "name": "molycolviridae",
             "id": null
           },
           {
-            "name": "Kolmioviridae",
+            "name": "kolmioviridae",
             "id": null
           },
           {
-            "name": "Pyrstoviridae",
+            "name": "pyrstoviridae",
             "id": null
           },
           {
-            "name": "Suolaviridae",
+            "name": "suolaviridae",
             "id": null
           },
           {
-            "name": "Naryaviridae",
+            "name": "naryaviridae",
             "id": null
           },
           {
-            "name": "Hadakaviridae",
+            "name": "hadakaviridae",
             "id": null
           },
           {
-            "name": "Discoviridae",
+            "name": "discoviridae",
             "id": null
           }
         ]
@@ -4052,15 +1297,15 @@
             "id": null
           },
           {
-            "name": "Pithoviridae",
+            "name": "pithoviridae",
             "id": null
           },
           {
-            "name": "Cruciviridae",
+            "name": "cruciviridae",
             "id": null
           },
           {
-            "name": "Adomaviridae",
+            "name": "adomaviridae",
             "id": null
           }
         ]
@@ -4075,7 +1320,7 @@
         ]
       },
       {
-        "name": "dsRNA viruses",
+        "name": "dsrna viruses",
         "subgroups": [
           {
             "name": "unclassified",
@@ -4084,7 +1329,7 @@
         ]
       },
       {
-        "name": "Satellites",
+        "name": "satellites",
         "subgroups": [
           {
             "name": "unclassified",
@@ -4102,7 +1347,7 @@
         ]
       },
       {
-        "name": "Deltavirus",
+        "name": "deltavirus",
         "subgroups": [
           {
             "name": "unclassified",
@@ -4116,6 +1361,2751 @@
           {
             "name": "unclassified",
             "id": null
+          }
+        ]
+      }
+    ]
+  },
+  "archaea": {
+    "name": "archaea",
+    "groups": [
+      {
+        "name": "euryarchaeota",
+        "subgroups": [
+          {
+            "name": "archaeoglobi",
+            "id": null
+          },
+          {
+            "name": "stenosarchaea group",
+            "id": null
+          },
+          {
+            "name": "methanomada group",
+            "id": null
+          },
+          {
+            "name": "thermococci",
+            "id": null
+          }
+        ]
+      },
+      {
+        "name": "dpann group",
+        "subgroups": [
+          {
+            "name": "candidatus micrarchaeota",
+            "id": null
+          }
+        ]
+      },
+      {
+        "name": "other",
+        "subgroups": [
+          {
+            "name": "other",
+            "id": null
+          }
+        ]
+      },
+      {
+        "name": "tack group",
+        "subgroups": [
+          {
+            "name": "thermoproteota",
+            "id": null
+          }
+        ]
+      }
+    ]
+  },
+  "eukaryota": {
+    "name": "eukaryota",
+    "groups": [
+      {
+        "name": "plants",
+        "subgroups": [
+          {
+            "name": "land plants",
+            "id": null
+          }
+        ]
+      },
+      {
+        "name": "protists",
+        "subgroups": [
+          {
+            "name": "other protists",
+            "id": null
+          }
+        ]
+      },
+      {
+        "name": "fungi",
+        "subgroups": [
+          {
+            "name": "ascomycetes",
+            "id": null
+          }
+        ]
+      }
+    ]
+  },
+  "prokaryotes": {
+    "name": "prokaryotes",
+    "groups": [
+      {
+        "name": "campylobacterota",
+        "subgroups": [
+          {
+            "name": "epsilonproteobacteria",
+            "id": "chromosome:NC_002163.1/AL111168.1"
+          },
+          {
+            "name": "desulfurellia",
+            "id": "chromosome:NC_015318.1/CP002606.1"
+          },
+          {
+            "name": "unclassified campylobacterota",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "pseudomonadota",
+        "subgroups": [
+          {
+            "name": "gammaproteobacteria",
+            "id": "chromosome I:NZ_LT907842.1/LT907842.1"
+          },
+          {
+            "name": "betaproteobacteria",
+            "id": "chromosome:NZ_CP021520.1/CP021520.1"
+          },
+          {
+            "name": "alphaproteobacteria",
+            "id": "chromosome circular:NZ_CP033031.1/CP033031.1; chromosome linear:NZ_CP033032.1/CP033032.1; plasmid pAt12D1:NZ_CP033033.1/CP033033.1"
+          },
+          {
+            "name": "acidithiobacillia",
+            "id": "chromosome:NZ_CP040511.1/CP040511.1; plasmid p1:NZ_CP040512.1/CP040512.1"
+          },
+          {
+            "name": "zetaproteobacteria",
+            "id": "-"
+          },
+          {
+            "name": "pseudomonadota incertae sedis",
+            "id": "plasmid pADP1:CM003636.1"
+          },
+          {
+            "name": "hydrogenophilia",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          },
+          {
+            "name": "unclassified pseudomonadota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus lambdaproteobacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidatus muproteobacteria",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "terrabacteria group",
+        "subgroups": [
+          {
+            "name": "bacillota",
+            "id": "chromosome:NC_007795.1/CP000253.1"
+          },
+          {
+            "name": "actinomycetota",
+            "id": "chromosome:NZ_CP018019.1/CP018019.1"
+          },
+          {
+            "name": "cyanobacteriota/melainabacteria group",
+            "id": "chromosome:NC_005042.1/AE017126.1"
+          },
+          {
+            "name": "mycoplasmatota",
+            "id": "chromosome:NC_021283.1/CP003131.1"
+          },
+          {
+            "name": "deinococcota",
+            "id": "chromosome 1:NC_006461.1/AP008226.1; plasmid pTT8:NC_006463.1/AP008228.1; plasmid pTT27:NC_006462.1/AP008227.1"
+          },
+          {
+            "name": "thermomicrobiota",
+            "id": "chromosome:NC_011959.1/CP001275.1; plasmid unnamed:NC_011961.1/CP001276.1"
+          },
+          {
+            "name": "chloroflexota",
+            "id": "chromosome:NC_010175.1/CP000909.1"
+          },
+          {
+            "name": "armatimonadota",
+            "id": "chromosome:NZ_CP007139.1/CP007139.1"
+          },
+          {
+            "name": "candidate division ws1",
+            "id": "-"
+          },
+          {
+            "name": "abditibacteriota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus dormibacteraeota",
+            "id": "-"
+          },
+          {
+            "name": "unclassified terrabacteria group",
+            "id": "-"
+          },
+          {
+            "name": "candidatus eremiobacterota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus lithacetigenota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "pvc group",
+        "subgroups": [
+          {
+            "name": "chlamydiota",
+            "id": "chromosome:NC_005043.1/AE009440.1"
+          },
+          {
+            "name": "verrucomicrobiota",
+            "id": "-"
+          },
+          {
+            "name": "planctomycetota",
+            "id": "chromosome:NC_005027.1/BX119912.1"
+          },
+          {
+            "name": "lentisphaerota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus omnitrophica",
+            "id": "-"
+          },
+          {
+            "name": "unclassified pvc group",
+            "id": "-"
+          },
+          {
+            "name": "kiritimatiellota",
+            "id": "chromosome:NZ_CP010904.1/CP010904.1"
+          },
+          {
+            "name": "candidatus abyssubacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidatus auribacterota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "spirochaetota",
+        "subgroups": [
+          {
+            "name": "spirochaetia",
+            "id": "chromosome:NZ_CP020414.2/CP020414.2; plasmid unnamed1:NZ_CP020413.2/CP020413.2"
+          },
+          {
+            "name": "unclassified spirochaetota",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "chromosome TRIP_e:LR026960.1"
+          }
+        ]
+      },
+      {
+        "name": "fusobacteriota",
+        "subgroups": [
+          {
+            "name": "fusobacteriia",
+            "id": "chromosome 1:NZ_LN831027.1/LN831027.1; plasmid 2:NZ_LN831028.1/LN831028.1"
+          },
+          {
+            "name": "unclassified fusobacteriota",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "fcb group",
+        "subgroups": [
+          {
+            "name": "bacteroidetes/chlorobi group",
+            "id": "chromosome:NC_008639.1/CP000492.1"
+          },
+          {
+            "name": "fibrobacterota",
+            "id": "chromosome:NC_017448.1/CP002158.1"
+          },
+          {
+            "name": "gemmatimonadota",
+            "id": "chromosome:NC_012489.1/AP009153.1"
+          },
+          {
+            "name": "candidatus cloacimonetes",
+            "id": "chromosome:NC_020449.1/CU466930.1"
+          },
+          {
+            "name": "candidatus marinimicrobia",
+            "id": "-"
+          },
+          {
+            "name": "candidatus hydrogenedentes",
+            "id": "-"
+          },
+          {
+            "name": "candidatus latescibacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidate division zixibacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidatus kryptonia",
+            "id": "-"
+          },
+          {
+            "name": "candidatus fermentibacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidatus aegiribacteria",
+            "id": "-"
+          },
+          {
+            "name": "candidate division lcp-89",
+            "id": "-"
+          },
+          {
+            "name": "unclassified fcb group",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "thermotogota",
+        "subgroups": [
+          {
+            "name": "thermotogae",
+            "id": "chromosome:NC_011978.1/CP000916.1"
+          },
+          {
+            "name": "unclassified thermotogota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "thermodesulfobacteriota",
+        "subgroups": [
+          {
+            "name": "desulfovibrionia",
+            "id": "chromosome:NC_008751.1/CP000527.1; plasmid pDVUL01:NC_008741.1/CP000528.1"
+          },
+          {
+            "name": "desulfuromonadia",
+            "id": "chromosome:NC_007517.1/CP000148.1; plasmid unnamed:NC_007515.1/CP000149.1"
+          },
+          {
+            "name": "desulfobulbia",
+            "id": "chromosome:NC_006138.1/CR522870.1; plasmid large:NC_006139.1/CR522871.1; plasmid small:NC_006140.1/CR522872.1"
+          },
+          {
+            "name": "syntrophobacteria",
+            "id": "chromosome:NC_008554.1/CP000478.1"
+          },
+          {
+            "name": "syntrophia",
+            "id": "chromosome:NC_007759.1/CP000252.1"
+          },
+          {
+            "name": "desulfobacteria",
+            "id": "chromosome:NC_009943.1/CP000859.1"
+          },
+          {
+            "name": "desulfarculia",
+            "id": "chromosome:NC_014365.1/CP002085.1"
+          },
+          {
+            "name": "thermodesulfobacteria",
+            "id": "chromosome:NC_015681.1/CP002683.1"
+          },
+          {
+            "name": "desulfomonilia",
+            "id": "chromosome:NC_018025.1/CP003360.1; plasmid pDESTI.01:NC_018026.1/CP003361.1"
+          },
+          {
+            "name": "desulfobaccia",
+            "id": "chromosome:NC_015388.1/CP002629.1"
+          },
+          {
+            "name": "syntrophorhabdia",
+            "id": "-"
+          },
+          {
+            "name": "deferrisomatia",
+            "id": "-"
+          },
+          {
+            "name": "candidatus desulfofervidia",
+            "id": "chromosome:NZ_CP013015.1/CP013015.1"
+          },
+          {
+            "name": "dissulfuribacteria",
+            "id": "-"
+          },
+          {
+            "name": "unclassified thermodesulfobacteriota",
+            "id": "chromosome:CP113000.1"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "euryarchaeota",
+        "subgroups": [
+          {
+            "name": "methanomada group",
+            "id": "chromosome:NZ_CP026606.1/CP026606.1"
+          },
+          {
+            "name": "stenosarchaea group",
+            "id": "chromosome:NZ_CP009530.1/CP009530.1; plasmid unnamed:NZ_CP009529.1/CP009529.1"
+          },
+          {
+            "name": "archaeoglobi",
+            "id": "chromosome:NZ_CP006577.1/CP006577.1"
+          },
+          {
+            "name": "thermococci",
+            "id": "chromosome:NC_000868.1/AL096836.1; plasmid pGT5:NC_001773.1/U49503.1"
+          },
+          {
+            "name": "euryarchaeota incertae sedis",
+            "id": "-"
+          },
+          {
+            "name": "unclassified euryarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "hadesarchaea",
+            "id": "-"
+          },
+          {
+            "name": "theionarchaea",
+            "id": "-"
+          },
+          {
+            "name": "methanonatronarchaeia",
+            "id": "-"
+          },
+          {
+            "name": "candidatus methanoliparia",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "tack group",
+        "subgroups": [
+          {
+            "name": "nitrososphaerota",
+            "id": "chromosome:DP000238.1"
+          },
+          {
+            "name": "thermoproteota",
+            "id": "chromosome:NC_013769.1/CP001731.1; plasmid pLD8501:NC_013770.1/CP001732.1"
+          },
+          {
+            "name": "candidatus korarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus bathyarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus verstraetearchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus geothermarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus marsarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "unclassified tack group",
+            "id": "-"
+          },
+          {
+            "name": "candidatus nezhaarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus geoarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus brockarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus culexarchaeota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "myxococcota",
+        "subgroups": [
+          {
+            "name": "myxococcia",
+            "id": "chromosome:NC_011891.1/CP001359.1"
+          },
+          {
+            "name": "polyangia",
+            "id": "-"
+          },
+          {
+            "name": "unclassified myxococcota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "candidatus thermoplasmatota",
+        "subgroups": [
+          {
+            "name": "thermoplasmata",
+            "id": "chromosome:NC_002578.1/AL139299.1"
+          },
+          {
+            "name": "dhve2 group",
+            "id": "chromosome:NC_013926.1/CP001941.1"
+          },
+          {
+            "name": "candidatus poseidoniia",
+            "id": "-"
+          },
+          {
+            "name": "unclassified candidatus thermoplasmatota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "aquificota",
+        "subgroups": [
+          {
+            "name": "aquificae",
+            "id": "chromosome:NC_000918.1/AE000657.1; plasmid ece1:NC_001880.1/AE000667.1"
+          },
+          {
+            "name": "unclassified aquificae",
+            "id": "chromosome:CP076324.1"
+          }
+        ]
+      },
+      {
+        "name": "acidobacteriota",
+        "subgroups": [
+          {
+            "name": "terriglobia",
+            "id": "chromosome:NC_012483.1/CP001472.1"
+          },
+          {
+            "name": "holophagae",
+            "id": "-"
+          },
+          {
+            "name": "blastocatellia",
+            "id": "chromosome 1:NC_016024.1/CP002514.1; chromosome 2:NC_016025.1/CP002515.1"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          },
+          {
+            "name": "unclassified acidobacteriota",
+            "id": "-"
+          },
+          {
+            "name": "thermoanaerobaculia",
+            "id": "-"
+          },
+          {
+            "name": "acidobacteriota incertae sedis",
+            "id": "chromosome:CP011806.1"
+          },
+          {
+            "name": "vicinamibacteria",
+            "id": "chromosome:NZ_CP015136.1/CP015136.1"
+          },
+          {
+            "name": "candidatus polarisedimenticolia",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "dpann group",
+        "subgroups": [
+          {
+            "name": "nanoarchaeota",
+            "id": "chromosome:AE017199.1"
+          },
+          {
+            "name": "candidatus parvarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus micrarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus aenigmarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus diapherotrites",
+            "id": "-"
+          },
+          {
+            "name": "candidatus altiarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus pacearchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus woesearchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus huberarchaea",
+            "id": "-"
+          },
+          {
+            "name": "candidatus nanohaloarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "unclassified dpann group",
+            "id": "-"
+          },
+          {
+            "name": "candidatus undinarchaeota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "bdellovibrionota",
+        "subgroups": [
+          {
+            "name": "bacteriovoracia",
+            "id": "chromosome:NC_016620.1/FQ312005.1; plasmid pBMS1:NC_019100.1/HE610506.1"
+          },
+          {
+            "name": "bdellovibrionia",
+            "id": "chromosome:NZ_CP007656.1/CP007656.1"
+          },
+          {
+            "name": "oligoflexia",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "bacteria incertae sedis",
+        "subgroups": [
+          {
+            "name": "bacteria candidate phyla",
+            "id": "-"
+          },
+          {
+            "name": "candidatus moduliflexus",
+            "id": "-"
+          },
+          {
+            "name": "candidatus vecturithrix",
+            "id": "-"
+          },
+          {
+            "name": "candidatus scatousia",
+            "id": "-"
+          },
+          {
+            "name": "candidatus galligastranaerophilus",
+            "id": "-"
+          },
+          {
+            "name": "candidatus ventrenecus",
+            "id": "-"
+          },
+          {
+            "name": "candidatus spyradomonas",
+            "id": "-"
+          },
+          {
+            "name": "candidatus avacholeplasma",
+            "id": "-"
+          },
+          {
+            "name": "candidatus avigastranaerophilus",
+            "id": "-"
+          },
+          {
+            "name": "candidatus scatenecus",
+            "id": "-"
+          },
+          {
+            "name": "candidatus hydrothermota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "elusimicrobiota",
+        "subgroups": [
+          {
+            "name": "elusimicrobia",
+            "id": "chromosome:NC_010644.1/CP001055.1"
+          },
+          {
+            "name": "endomicrobiia",
+            "id": "chromosome:NZ_CP009498.1/CP009498.1"
+          },
+          {
+            "name": "unclassified elusimicrobiota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "dictyoglomota",
+        "subgroups": [
+          {
+            "name": "dictyoglomia",
+            "id": "chromosome:NC_011661.1/CP001251.1"
+          },
+          {
+            "name": "unclassified dictyoglomota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "coprothermobacterota",
+        "subgroups": [
+          {
+            "name": "coprothermobacteria",
+            "id": "chromosome:NC_011295.1/CP001145.1"
+          },
+          {
+            "name": "unclassified coprothermobacterota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "nitrospirota",
+        "subgroups": [
+          {
+            "name": "thermodesulfovibrionia",
+            "id": "chromosome:NC_011296.1/CP001147.1"
+          },
+          {
+            "name": "nitrospiria",
+            "id": "-"
+          },
+          {
+            "name": "unclassified nitrospirota",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          },
+          {
+            "name": "nitrospirota incertae sedis",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "synergistota",
+        "subgroups": [
+          {
+            "name": "synergistia",
+            "id": "chromosome:NC_014011.1/CP001997.1"
+          },
+          {
+            "name": "unclassified synergistota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "chrysiogenota",
+        "subgroups": [
+          {
+            "name": "chrysiogenetes",
+            "id": "chromosome:NC_014836.1/CP002432.1"
+          }
+        ]
+      },
+      {
+        "name": "environmental samples",
+        "subgroups": [
+          {
+            "name": "uncultured bacterium",
+            "id": "-"
+          },
+          {
+            "name": "uncultured archaeon a07hr67",
+            "id": "-"
+          },
+          {
+            "name": "uncultured archaeon a07hb70",
+            "id": "-"
+          },
+          {
+            "name": "uncultured archaeon a07hn63",
+            "id": "-"
+          },
+          {
+            "name": "uncultured archaeon a07hr60",
+            "id": "-"
+          },
+          {
+            "name": "uncultured archaeon",
+            "id": "-"
+          },
+          {
+            "name": "nitrifying bacterium enrichment culture",
+            "id": "-"
+          },
+          {
+            "name": "uncultured ps1 clade bacterium",
+            "id": "-"
+          },
+          {
+            "name": "unidentified prokaryotic organism",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "deferribacterota",
+        "subgroups": [
+          {
+            "name": "deferribacteres",
+            "id": "chromosome:NC_015672.1/CP002858.1"
+          }
+        ]
+      },
+      {
+        "name": "delta/epsilon subdivisions",
+        "subgroups": [
+          {
+            "name": "deltaproteobacteria",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "nitrospinae/tectomicrobia group",
+        "subgroups": [
+          {
+            "name": "nitrospinota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus tectomicrobia",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "caldisericota/cryosericota group",
+        "subgroups": [
+          {
+            "name": "caldisericota",
+            "id": "chromosome:NC_017096.1/AP012051.1"
+          },
+          {
+            "name": "candidatus cryosericota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "calditrichota",
+        "subgroups": [
+          {
+            "name": "calditrichia",
+            "id": "chromosome:NZ_CP018099.1/CP018099.1"
+          },
+          {
+            "name": "unclassified calditrichota",
+            "id": "-"
+          },
+          {
+            "name": "environmental samples",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "other",
+        "subgroups": [
+          {
+            "name": "other",
+            "id": "chromosome:NZ_CP085154.1/CP085154.1; plasmid pDSM107133_a:NZ_CP085155.1/CP085155.1; plasmid pDSM107133_b:NZ_CP085156.1/CP085156.1; plasmid pDSM107133_c:NZ_CP085157.1/CP085157.1; plasmid pDSM107133_d:NZ_CP085158.1/CP085158.1; plasmid pDSM107133_e:NZ_CP085159.1/CP085159.1; plasmid pDSM107133_f:NZ_CP085160.1/CP085160.1; plasmid pDSM107133_g:NZ_CP085161.1/CP085161.1; plasmid pDSM107133_h:NZ_CP085162.1/CP085162.1; plasmid pDSM107133_i:NZ_CP085163.1/CP085163.1; plasmid pDSM107133_j:NZ_CP085164.1/CP085164.1; plasmid pDSM107133_k:NZ_CP085165.1/CP085165.1; plasmid pDSM107133_l:NZ_CP085166.1/CP085166.1"
+          }
+        ]
+      },
+      {
+        "name": "atribacterota",
+        "subgroups": [
+          {
+            "name": "unclassified atribacterota",
+            "id": "-"
+          },
+          {
+            "name": "atribacterota incertae sedis",
+            "id": "-"
+          },
+          {
+            "name": "atribacteria",
+            "id": "chromosome:NZ_CP065383.1/CP065383.1"
+          }
+        ]
+      },
+      {
+        "name": "unclassified bacteria",
+        "subgroups": [
+          {
+            "name": "bacterium uw 659-2-f09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jkg1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium yek0313",
+            "id": "-"
+          },
+          {
+            "name": "bacterium lf-3",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ms4",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ol-1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium sm23_31",
+            "id": "-"
+          },
+          {
+            "name": "bacterium sm23_57",
+            "id": "-"
+          },
+          {
+            "name": "bacterium gbs-1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ga0077546",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 42_11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium brh_c32",
+            "id": "-"
+          },
+          {
+            "name": "bacterium f082",
+            "id": "-"
+          },
+          {
+            "name": "bacterium p3",
+            "id": "-"
+          },
+          {
+            "name": "bacterium p201",
+            "id": "-"
+          },
+          {
+            "name": "bacterium f083",
+            "id": "-"
+          },
+          {
+            "name": "bacterium spgg8",
+            "id": "-"
+          },
+          {
+            "name": "bacterium scgc ag-212-c10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium scn 62-11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium scn 57-13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ab1",
+            "id": "chromosome:CP017117.1"
+          },
+          {
+            "name": "bacterium a37t11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg1_02_42_9",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg2_30_33_46",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg2_30_37_16",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg2_30_54_10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg2_30_40_12",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg10_46_32",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg10_37_50",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg09_39_24",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg10_49_38",
+            "id": "-"
+          },
+          {
+            "name": "methanotrophic endosymbiont of bathymodiolus azoricus (menez gwen)",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ebm-40",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jdfr-53",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jdfr-67",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jdfr-70",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jdfr-65",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jdfr-66",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bina186",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin429",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin425",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin374",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bina028",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin478",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin431",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin400",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin363",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin270",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin243",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin236",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin212",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin157",
+            "id": "-"
+          },
+          {
+            "name": "bacterium adurb.bin132",
+            "id": "-"
+          },
+          {
+            "name": "osedax symbiont bacterium rs2_46_30_t18",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed46",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed6",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed277",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed264",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed250",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed221",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed217",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed190",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed181",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed144",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed80",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed198",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed161",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed88",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed274",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed178",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tmed15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium b13(2017)",
+            "id": "-"
+          },
+          {
+            "name": "bacterium f11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium f16",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium i07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium k02(2017)",
+            "id": "-"
+          },
+          {
+            "name": "bacterium b17",
+            "id": "-"
+          },
+          {
+            "name": "bacterium e08(2017)",
+            "id": "-"
+          },
+          {
+            "name": "bacterium g20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium j17",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ec214 bin63",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ef100-94h03 bin56",
+            "id": "-"
+          },
+          {
+            "name": "bacterium om1 bin76",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tk85 bin110",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba951",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba732",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba1228",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba1143",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba1790",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba1459",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2214",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2220",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2219",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2229",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2927",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2916",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba2872",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba3756",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba3734",
+            "id": "-"
+          },
+          {
+            "name": "bacterium jgi 053",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4392",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4272",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4943",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4901",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4883",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4868",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4835",
+            "id": "-"
+          },
+          {
+            "name": "bacterium",
+            "id": "chromosome:CP064957.1"
+          },
+          {
+            "name": "bacterium uba5178",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5125",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5820",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5646",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba4637",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba6154",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5581",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5577",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba6115",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba6875",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba6025",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba5966",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7393",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7390",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7470",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7760",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7758",
+            "id": "-"
+          },
+          {
+            "name": "bacterium uba7751",
+            "id": "-"
+          },
+          {
+            "name": "bacterium dolzoral124_38_8",
+            "id": "-"
+          },
+          {
+            "name": "bacterium dolzoral124_64_63",
+            "id": "-"
+          },
+          {
+            "name": "bacterium doljoral78_65_58",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus howlettbacteria) cg23_combo_of_cg06-09_8_20_14_all_37_9",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg10_big_fil_rev_8_21_14_0_10_33_18",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus torokbacteria) cg09_land_8_20_14_0_10_42_11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg06_land_8_20_14_3_00_33_50",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus moisslbacteria) cg02_land_8_20_14_3_00_36_53",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg17_big_fil_post_rev_8_21_14_2_50_64_8",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus moisslbacteria) cg12_big_fil_rev_8_21_14_0_65_36_11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_8_14_3_um_filter_33_28",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_10_14_0_8_um_filter_33_57",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus howlettbacteria) cg_4_10_14_3_um_filter_37_10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus howlettbacteria) cg_4_10_14_0_8_um_filter_40_9",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus moisslbacteria) cg_4_9_14_0_8_um_filter_36_20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus howlettbacteria) cg_4_9_14_3_um_filter_37_10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_9_14_3_um_filter_65_15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_9_14_3_um_filter_33_26",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus torokbacteria) cg_4_10_14_0_2_um_filter_35_8",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_10_14_0_2_um_filter_48_144",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cg_4_10_14_0_2_um_filter_33_32",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidatus moisslbacteria) cg_4_10_14_0_2_um_filter_36_61",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin14",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin02",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin14",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin01",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin08",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin12",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin12",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin05",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin06",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin06",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin08",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin05",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin02",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr29",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr35",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr28",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr40",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr19",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr18",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr37",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr17",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr25",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr38",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr24",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr08",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr30",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr14",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr41",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr26",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr16",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr12",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr32",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr39",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr27",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr36",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3abin15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bms3bbin01",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr23",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr31",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr33",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hr34",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-345-j02",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-345-j16",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-345-n06",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-345-i14",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-345-a04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-323-o19",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-323-l21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-323-l13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-p04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-j07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-d23",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-m09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-b04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ag-316-a20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 0207-2",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 0218",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 0274-1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium hd9-500m-pit-sag08",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-36",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-87",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-56",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-54",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd8-76",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-67",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 0.1xd8-71",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd8-6",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 0.1xd8-82",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-50",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-34",
+            "id": "-"
+          },
+          {
+            "name": "bacterium c-53",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-51",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-59",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-54",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-8",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium endosymbiont of escarpia laminata",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd21-70",
+            "id": "-"
+          },
+          {
+            "name": "bacterium j10(2018)",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.230.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.194.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.228.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.227.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.221.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.191.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.205.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.199.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.179.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.222.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.159.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.157.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.229.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.152.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.177.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.180.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.155.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.163.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.156.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.141.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.146.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.168.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium nhp-b",
+            "id": "-"
+          },
+          {
+            "name": "bacterium m00.f.ca.et.162.01.1.1",
+            "id": "-"
+          },
+          {
+            "name": "bacterium (candidate division b38) b3_b38",
+            "id": "-"
+          },
+          {
+            "name": "bathymodiolus heckerae thiotrophic gill symbiont",
+            "id": "-"
+          },
+          {
+            "name": "bacterium mntg02",
+            "id": "-"
+          },
+          {
+            "name": "bacterium mntg03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium mntg04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium c-19",
+            "id": "-"
+          },
+          {
+            "name": "bacterium d16-76",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd8-48",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-62",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-94",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd42-76",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 1xd21-13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium lrh843",
+            "id": "-"
+          },
+          {
+            "name": "bacterium c1-4",
+            "id": "-"
+          },
+          {
+            "name": "bacterium sgd-2",
+            "id": "-"
+          },
+          {
+            "name": "bacterium bfn5",
+            "id": "chromosome:CP053389.1"
+          },
+          {
+            "name": "bacterium scap17",
+            "id": "-"
+          },
+          {
+            "name": "bacterium unc6",
+            "id": "-"
+          },
+          {
+            "name": "sulfur-oxidizing endosymbiont of gigantopelta aegis",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-n14",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-j21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-l15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-l21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-m10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-j23",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-k03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-n22",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-o15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-m05",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-k05",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-j04",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-i18",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-i20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-i11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-i07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-g11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-p15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-p07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-j19",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-n03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-k20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-k15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-p13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-p11",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-a03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-g05",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-f03",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-f18",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-e10",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-e09",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-d21",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-e07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-c20",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-c08",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-c07",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-b15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-b06",
+            "id": "-"
+          },
+          {
+            "name": "bacterium ah-315-a23",
+            "id": "-"
+          },
+          {
+            "name": "thermophilic bacterium 3443-3ac",
+            "id": "chromosome:CP060096.1"
+          },
+          {
+            "name": "butyrate-producing bacterium",
+            "id": "-"
+          },
+          {
+            "name": "bacterium msk17_88",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tm223",
+            "id": "-"
+          },
+          {
+            "name": "bacterium msk18_59",
+            "id": "-"
+          },
+          {
+            "name": "bacterium msk20_81",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tm473",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210928-dfi.3.100",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210917-sl.2.15",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210917-dfi.7.65",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210820-dfi.6.52",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210820-dfi.6.37",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210820-dfi.6.38",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210820-dfi.5.26",
+            "id": "-"
+          },
+          {
+            "name": "bacterium 210702-dfi.5.13",
+            "id": "-"
+          },
+          {
+            "name": "bacterium tm462",
+            "id": "-"
+          },
+          {
+            "name": "bathymodiolus brooksi methanotrophic gill symbiont",
+            "id": "-"
+          },
+          {
+            "name": "bacterium cpr1",
+            "id": "-"
+          },
+          {
+            "name": "unidentified bacterial endosymbiont",
+            "id": "chromosome 1:NZ_OU907312.1/OU907312.1"
+          },
+          {
+            "name": "bacterium scsio 12844",
+            "id": "chromosome:CP073743.1"
+          },
+          {
+            "name": "bacterium scsio 12696",
+            "id": "chromosome:CP073744.1"
+          },
+          {
+            "name": "bacterium scsio 12827",
+            "id": "chromosome:CP073746.1"
+          },
+          {
+            "name": "bacterium scsio 12741",
+            "id": "chromosome:CP073749.1"
+          },
+          {
+            "name": "bacterium scsio 12643",
+            "id": "chromosome:CP073750.1"
+          },
+          {
+            "name": "bacterium 3dac",
+            "id": "chromosome:CP046447.1"
+          }
+        ]
+      },
+      {
+        "name": "unclassified archaea",
+        "subgroups": [
+          {
+            "name": "archaeon gw2011_ar6",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar9",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar16",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar13",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar17",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar19",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar21",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar1",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar3",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar4",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar5",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar11",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar18",
+            "id": "-"
+          },
+          {
+            "name": "archaeon gw2011_ar10",
+            "id": "chromosome:CP010424.1"
+          },
+          {
+            "name": "archaeon gw2011_ar15",
+            "id": "chromosome:CP010425.1"
+          },
+          {
+            "name": "archaeon gw2011_ar20",
+            "id": "chromosome:CP010426.1"
+          },
+          {
+            "name": "archaeon rbg_16_50_20",
+            "id": "-"
+          },
+          {
+            "name": "archaeon cg2_30_31_98",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_2_20cm_2_53_6",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_2_20cm_2_52_21",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_40cm_4_53_4",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_40cm_2_52_4",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_40cm_2_52_13",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_20cm_52_20",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_20cm_2_54_9",
+            "id": "-"
+          },
+          {
+            "name": "archaeon 13_1_20cm_2_51_12",
+            "id": "-"
+          },
+          {
+            "name": "archaeon adurb.bin336",
+            "id": "-"
+          },
+          {
+            "name": "archaeon d22",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba490",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba55",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba140",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba543",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba431",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba460",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba583",
+            "id": "-"
+          },
+          {
+            "name": "archaeon uba168",
+            "id": "-"
+          },
+          {
+            "name": "archaeon",
+            "id": "chromosome:CP066694.1"
+          },
+          {
+            "name": "archaeon cg10_big_fil_rev_8_21_14_0_10_43_11",
+            "id": "-"
+          },
+          {
+            "name": "archaeon cg07_land_8_20_14_0_80_38_8",
+            "id": "-"
+          },
+          {
+            "name": "archaeon cg06_land_8_20_14_3_00_37_11",
+            "id": "-"
+          },
+          {
+            "name": "archaeon cg_4_8_14_3_um_filter_38_5",
+            "id": "-"
+          },
+          {
+            "name": "archaeon cg_4_10_14_0_2_um_filter_archaea_38_6",
+            "id": "-"
+          },
+          {
+            "name": "archaeon bms3abin17",
+            "id": "-"
+          },
+          {
+            "name": "archaeon bms3bbin15",
+            "id": "-"
+          },
+          {
+            "name": "archaeon bms3bbin16",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr01",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr02",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr05",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr03",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr04",
+            "id": "-"
+          },
+          {
+            "name": "archaeon hr06",
+            "id": "-"
+          },
+          {
+            "name": "archaeon bms3abin16",
+            "id": "-"
+          },
+          {
+            "name": "archaeon scg-aaa382b04",
+            "id": "-"
+          },
+          {
+            "name": "marine archaeum ag-341-o08",
+            "id": "-"
+          },
+          {
+            "name": "marine archaeum ag-339-f18",
+            "id": "-"
+          },
+          {
+            "name": "marine archaeum ag-323-c04",
+            "id": "-"
+          },
+          {
+            "name": "archaeon mntg01",
+            "id": "-"
+          },
+          {
+            "name": "archaeon ah-315-m20",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "asgard group",
+        "subgroups": [
+          {
+            "name": "candidatus lokiarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus thorarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus heimdallarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus odinarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus helarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "unclassified asgard group",
+            "id": "-"
+          },
+          {
+            "name": "candidatus sifarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus hermodarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus gerdarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus hodarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus kariarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus borrarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus wukongarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus baldrarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "asgard group incertae sedis",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "candidatus hydrothermarchaeota",
+        "subgroups": [
+          {
+            "name": "unclassified candidatus hydrothermarchaeota",
+            "id": "-"
+          },
+          {
+            "name": "candidatus hydrothermarchaeum",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "candidatus krumholzibacteriota",
+        "subgroups": [
+          {
+            "name": "candidatus krumholzibacteria",
+            "id": "-"
+          },
+          {
+            "name": "unclassified candidatus krumholzibacteriota",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "candidatus tharpellota",
+        "subgroups": [
+          {
+            "name": "candidatus tharpellia",
+            "id": "-"
+          }
+        ]
+      },
+      {
+        "name": "candidatus deferrimicrobiota",
+        "subgroups": [
+          {
+            "name": "candidatus deferrimicrobia",
+            "id": "-"
           }
         ]
       }
