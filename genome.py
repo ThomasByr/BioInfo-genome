@@ -41,5 +41,8 @@ if __name__ == '__main__':
     main_tree.save('main_tree')
     debug(f'wrote to file: {main_tree.filepath}')
 
-  gui = GenomeGUI(main_tree)
+  main_tree.to_folders()
+  # Tree.update_ids()
+  gui = GenomeGUI()
   gui.run()
+  # Tree.clean_folders()
