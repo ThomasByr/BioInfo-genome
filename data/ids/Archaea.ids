@@ -24,7 +24,7 @@
 768672	NC_018001	390937752	0	CP003321	Desulfurococcus amylolyticus DSM 16532
 765177	NC_014961	320100209	0	CP002363	Desulfurococcus mucosus DSM 2162
 589924	NC_013849	288930407	0	CP001899	Ferroglobus placidus DSM 10642
-333146	NC_021592	518651360	0	CP004145	Ferroplasma acidarmanus fer1
+333146	NC_021592	518651360	0	CP004145	Ferroplasma acidarmanus Fer1
 1163730	NC_017461	385805051	0	CP003423	Fervidicoccus fontis Kam940
 795797	NC_014297	300709370	0	CP002062	Halalkalicoccus jeotgali B3
 795797	NC_014298	300712406	0	CP002063	Halalkalicoccus jeotgali B3	plasmid 1  
@@ -68,8 +68,8 @@
 523841	NC_017944	389848879	0	CP001871	Haloferax mediterranei ATCC 33500	plasmid pHM500  
 309800	NC_013967	292654178	0	CP001956	Haloferax volcanii DS2
 309800	NC_013968	292657124	0	CP001957	Haloferax volcanii DS2	plasmid pHV1  
-309800	NC_001375	9507302	0	J03014	Haloferax volcanii DS2	plasmid pHV2  
 309800	NC_013965	292494315	0	CP001954	Haloferax volcanii DS2	plasmid pHV2  
+309800	NC_001375	9507302	0	J03014	Haloferax volcanii DS2	plasmid pHV2  
 309800	NC_013964	292493938	0	CP001953	Haloferax volcanii DS2	plasmid pHV3  
 309800	NC_013966	292653566	0	CP001955	Haloferax volcanii DS2	plasmid pHV4  
 469382	NC_014729	313124788	0	CP001690	Halogeometricum borinquense DSM 11551
@@ -98,7 +98,6 @@
 416348	NC_012030	222481151	0	CP001367	Halorubrum lacusprofundi ATCC 49239	plasmid pHLAC01  
 2248	NC_004531	27753932	0	AF389188	Halorubrum saccharovorum	plasmid pZMX101  
 1194088	NC_025188	691491815	0	KC545797	Halorubrum sp. T3	plasmid HRDV1  
-121872	NC_013536	270208374	0	DQ400913	Haloterrigena thermotolerans	plasmid pSN  
 543526	NC_013743	284163295	0	CP001860	Haloterrigena turkmenica DSM 5511
 543526	NC_013744	284167035	0	CP001861	Haloterrigena turkmenica DSM 5511	plasmid pHTUR01  
 543526	NC_013745	284172524	0	CP001862	Haloterrigena turkmenica DSM 5511	plasmid pHTUR02  
@@ -142,8 +141,8 @@
 406327	NC_009634	150398760	0	CP000742	Methanococcus vannielii SB
 456320	NC_014222	297618528	0	CP002057	Methanococcus voltae A3
 410358	NC_008942	124484829	0	CP000559	Methanocorpusculum labreanum Z
-1201294	NC_018227	590000579	0	HE964772	Methanoculleus bourgensis MS2	chromosome I  
 1201294	NC_018227	397779166	0	HE964772	Methanoculleus bourgensis MS2	chromosome I  
+1201294	NC_018227	590000579	0	HE964772	Methanoculleus bourgensis MS2	chromosome I  
 368407	NC_009051	126177952	0	CP000562	Methanoculleus marisnigri JR1
 644295	NC_014253	298673978	0	CP002069	Methanohalobium evestigatum Z-7303
 644295	NC_014254	298676127	0	CP002070	Methanohalobium evestigatum Z-7303	plasmid pMETEV01  
@@ -155,27 +154,28 @@
 190192	NC_003551	20093440	0	AE009439	Methanopyrus kandleri AV19
 456442	NC_009712	154149549	0	CP000780	Methanoregula boonei 6A8
 593750	NC_019943	432329452	0	CP003167	Methanoregula formicica SMSP
-1110509	NC_017527	386000717	0	CP003117	Methanosaeta harundinacea 6Ac
-1110509	NC_016637	386003071	0	CP003118	Methanosaeta harundinacea 6Ac	plasmid pH6Ac  
 679901	NC_015676	336475959	0	CP002101	Methanosalsum zhilinae DSM 4017
 2214	NC_002097	10954579	0	U78295	Methanosarcina acetivorans	plasmid pC2A  
 188937	NC_003552	20088899	0	AE010299	Methanosarcina acetivorans C2A
 269797	NC_007355	73667559	0	CP000099	Methanosarcina barkeri str. Fusaro
 269797	NC_007349	73663826	0	CP000098	Methanosarcina barkeri str. Fusaro	plasmid 1  
 192952	NC_003901	21226102	0	AE008384	Methanosarcina mazei Go1
+1236903	NC_020389	452208619	0	CP004144	Methanosarcina mazei Tuc01
 339860	NC_007681	84488831	0	CP000102	Methanosphaera stadtmanae DSM 3091
 521011	NC_011832	219850687	0	CP001338	Methanosphaerula palustris E1-9c
 323259	NC_007796	88601322	0	CP000254	Methanospirillum hungatei JF-1
 79929	NC_014408	304313778	0	CP001710	Methanothermobacter marburgensis str. Marburg
 79929	NC_014409	304315532	0	CP001711	Methanothermobacter marburgensis str. Marburg	plasmid pMTBMA4  
-145262	NC_001336	10954462	0	X68366	Methanothermobacter thermautotrophicus
 145262	NC_001337	10954476	0	X68367	Methanothermobacter thermautotrophicus
+145262	NC_001336	10954462	0	X68366	Methanothermobacter thermautotrophicus
 145262	NC_002125	10954595	0	X17205	Methanothermobacter thermautotrophicus	plasmid pME2001  
 145262	NC_000905	10954572	0	AF145236	Methanothermobacter thermautotrophicus	plasmid pME2200  
 187420	NC_000916	15678031	0	AE000666	Methanothermobacter thermautotrophicus str. Delta H
 647113	NC_015636	336121001	0	CP002792	Methanothermococcus okinawensis IH1
 647113	NC_015632	336120990	0	CP002793	Methanothermococcus okinawensis IH1	plasmid pMETOK01  
 523846	NC_014658	312136230	0	CP002278	Methanothermus fervidus DSM 2088
+1110509	NC_017527	386000717	0	CP003117	Methanothrix harundinacea 6Ac
+1110509	NC_016637	386003071	0	CP003118	Methanothrix harundinacea 6Ac	plasmid pH6Ac  
 990316	NC_015416	330506319	0	CP002565	Methanothrix soehngenii GP6
 990316	NC_015430	330506028	0	CP002566	Methanothrix soehngenii GP6	plasmid pGP6  
 349307	NC_008553	116753325	0	CP000477	Methanothrix thermoacetophila PT
@@ -190,6 +190,7 @@
 290611	NC_006996	64204361	0	AY588480	Natrinema sp. CX2021	plasmid pZMX201  
 406552	NC_018224	397771790	0	CP003412	Natrinema sp. J7-2
 406552	NC_018225	397771726	0	CP003413	Natrinema sp. J7-2	plasmid pJ7-1  
+121872	NC_013536	270208374	0	DQ400913	Natrinema thermotolerans	plasmid pSN  
 797304	NC_019792	429190045	0	CP003377	Natronobacterium gregoryi SP2
 198929	NC_005239	38640509	0	AF474073	Natronobacterium sp. AS-7091	plasmid pNB101  
 694430	NC_019974	435845424	0	CP003929	Natronococcus occultus SP4
