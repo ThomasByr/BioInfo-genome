@@ -1,3 +1,5 @@
+import os
+
 import PySimpleGUI as sg
 from ..core.tree import *
 
@@ -6,7 +8,7 @@ __all__ = ['GenomeGUI']
 
 class GenomeGUI:
 
-  def __init__(self, tree: Tree):
+  def __init__(self, tree: Tree = None):
     self.__window = None
     self.__tree = tree
     self.__data = sg.TreeData()
@@ -20,15 +22,24 @@ class GenomeGUI:
                          [sg.Column(self.__log, vertical_alignment='top')]]
 
   def __build_tree(self):
-    if self.__tree is None:
-      return
-    for kingdom in self.__tree.tree.items():
-      kingdom = kingdom[1]
-      self.__data.Insert('', kingdom.name, kingdom.name, values=['', ''])
-      for group in kingdom.groups.values():
-        self.__data.Insert(kingdom.name, group.name, group.name, values=['', ''])
-        for subgroup in group.subgroups.values():
-          self.__data.Insert(group.name, subgroup.name, subgroup.name, values=['', ''])
+    if self.__tree is not None:
+      for kingdom in self.__tree.tree.items():
+        kingdom = kingdom[1]
+        self.__data.Insert('', kingdom.name, kingdom.name, values=['', ''])
+        for group in kingdom.groups.values():
+          self.__data.Insert(kingdom.name, group.name, group.name, values=['', ''])
+          for subgroup in group.subgroups.values():
+            self.__data.Insert(group.name, subgroup.name, subgroup.name, values=['', ''])
+    else:
+      # tries to build data from `Results` folder
+      for kingdom in os.listdir('Results'):
+        self.__data.Insert('', kingdom, kingdom, values=['', ''])
+        for group in os.listdir(os.path.join('Results', kingdom)):
+          self.__data.Insert(kingdom, group, group, values=['', ''])
+          for subgroup in os.listdir(os.path.join('Results', kingdom, group)):
+            self.__data.Insert(group, subgroup, subgroup, values=['', ''])
+            for organism in os.listdir(os.path.join('Results', kingdom, group, subgroup)):
+              self.__data.Insert(subgroup, organism, organism, values=['', ''])
 
   def __build_layout(self):
     layout = [[sg.Text('GENOME', font=self.__font)], [sg.HSeparator()],
