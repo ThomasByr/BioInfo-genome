@@ -70,6 +70,8 @@ script/
 
 # VS
 .vs/
+out/
+Results/
 
 # Environments
 .env
