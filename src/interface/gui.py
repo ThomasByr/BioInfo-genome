@@ -14,11 +14,13 @@ file_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEg
 class GenomeGUI:
 
   def __init__(self, results_folder: str = 'Results'):
-    self.__window = None
+    self.__window: sg.Window = None
     self.__results_folder = results_folder
     self.__font = ('Helvetica', 11)
-    self.__file_tree = None
-    self.__tree_data = None
+    self.__monospace_font = ('Courier', 7)
+    self.__file_tree: list[list[sg.Tree]] = None
+    self.__tree_data: sg.TreeData = None
+    self.__selected_organism: str = None
     self.__info = [[sg.Text('Information', font=self.__font)], [sg.Multiline(
         size=(50, 10),
         key='-INFO-',
@@ -26,11 +28,15 @@ class GenomeGUI:
     self.__log = [[sg.Text('Logs', font=self.__font)],
                   [
                       sg.Multiline(
-                          size=(50, 10),
                           key='-LOG-',
+                          size=(60, 20),
+                          expand_x=True,
                           echo_stdout_stderr=True,
                           reroute_stdout=True,
                           reroute_stderr=True,
+                          autoscroll=True,
+                          write_only=True,
+                          font=self.__monospace_font,
                       )
                   ]]
     self.__right_side = [
@@ -54,8 +60,11 @@ class GenomeGUI:
                   sg.VSeparator(),
                   sg.Column(self.__right_side)
               ], [sg.HSeparator()],
-              [sg.Button('Run', font=self.__font),
-               sg.Button('Cancel', font=self.__font)]]
+              [
+                  sg.Button('Run', font=self.__font, size=(10, 2)),
+                  sg.Button('Cancel', font=self.__font, size=(10, 2)),
+                  sg.Button('Confirm Selection', font=self.__font, size=(10, 2)),
+              ]]
     return layout
 
   def __build_file_tree(self):
@@ -63,9 +72,9 @@ class GenomeGUI:
         sg.Tree(
             data=self.__build_tree(),
             headings=[],
-            auto_size_columns=True,
+            auto_size_columns=False,
             num_rows=20,
-            col0_width=20,
+            col0_width=40,
             key='-TREE-',
             show_expanded=True,
             enable_events=True,
@@ -73,10 +82,20 @@ class GenomeGUI:
     ]]
 
   def __build_window(self):
-    self.__window = sg.Window('Genome', self.__build_layout(), size=(800, 600), finalize=True)
+    bioinformatics: bytes
+    with open(os.path.join('assets', 'bioinformatics.png'), 'rb') as f:
+      bioinformatics = f.read()
+    self.__window = sg.Window(
+        'Genome',
+        self.__build_layout(),
+        size=(800, 600),
+        auto_size_text=False,
+        auto_size_buttons=False,
+        icon=bioinformatics,
+        finalize=True,
+    )
 
   def run(self):
-    # Define the theme
     sg.theme('DarkTeal9')
     self.__build_tree()
     self.__build_file_tree()
@@ -92,8 +111,9 @@ class GenomeGUI:
     if isinstance(tree, sg.ErrorElement):
       panic('Tree not found')
 
-    tree.Widget.configure(show='tree')  # Hide header
+    tree.Widget.configure(show='tree')
     tree.bind('<Double-1>', "DOUBLE-CLICK-")
+    tree.bind('<Button-3>', "RIGHT-CLICK-")
 
     DIR, FILE = True, False  #pylint: disable=unused-variable
     data = {
@@ -109,6 +129,14 @@ class GenomeGUI:
       event, values = self.__window.read()
       if event in (sg.WIN_CLOSED, 'Exit'):
         break
+
+      if event == 'Confirm Selection':
+        try:
+          selected = values['-TREE-'][0]
+          self.__selected_organism = data[selected]['file']
+          info(f'Selected organism: {self.__selected_organism}')
+        except IndexError:
+          error('Nothing selected in the tree')
 
       if event == '-TREE-DOUBLE-CLICK-':
         parent_key = values['-TREE-'][0]

@@ -49,7 +49,14 @@ class Tree:
   def build(self, force_rebuild: bool = False) -> None:
     """
     Build the tree from the given name.\\
-    This method should only be called once IF the tree does NOT comes from `union`.
+    This method should only be called once.
+
+    ## Parameters
+    ```py
+    >>> force_rebuild : bool, (optional)
+    ```
+    force the tree to be rebuilt from https request\\
+    defaults to `False`
     """
     pickle_path = os.path.join('data', 'tree.pkl')
     if not force_rebuild and os.path.exists(pickle_path):
