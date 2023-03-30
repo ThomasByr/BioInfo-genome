@@ -99,5 +99,5 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 **Known Bugs** (latest fix)
 
 - selection can be made with anything in the tree (including not leafs folders and even files)
-- dynamic selection does not display newly created files
+- ~~dynamic selection does not display newly created files~~
 - removed `if __name__ == "__main__":` from `genome.py` (for double click to work)
