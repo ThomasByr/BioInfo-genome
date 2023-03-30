@@ -20217,9 +20217,6 @@
 797299	NZ_CP007059	909712042	0	CP007059	Halostagnicola larsenii XH-48	plasmid unnamed4  
 2816475	NZ_CP084319	2119835852	0	CP084319	Haloterrigena alkaliphila	plasmid unnamed1  
 2816475	NZ_CP084320	2119835853	0	CP084320	Haloterrigena alkaliphila	plasmid unnamed2  
-588898	NZ_CP019328	1147362685	0	CP019328	Haloterrigena daqingensis	plasmid unnamed1  
-588898	NZ_CP019329	1147362700	0	CP019329	Haloterrigena daqingensis	plasmid unnamed2  
-588898	NZ_CP019330	1147362713	0	CP019330	Haloterrigena daqingensis	plasmid unnamed3  
 2675099	NZ_CP069189	1993089905	0	CP069189	Haloterrigena salifodinae	plasmid pHTS138  
 2675099	NZ_CP069190	1993089906	0	CP069190	Haloterrigena salifodinae	plasmid pHTS171  
 2675099	NZ_CP069191	1993089907	0	CP069191	Haloterrigena salifodinae	plasmid pHTS220  
@@ -22433,6 +22430,7 @@
 573	NZ_CP040548	1672715712	0	CP040548	Klebsiella pneumoniae	plasmid pCR-HvKP5-p3  
 573	NZ_CP040549	1672715720	0	CP040549	Klebsiella pneumoniae	plasmid pCR-HvKP5-p4  
 573	NZ_CP040550	1672715723	0	CP040550	Klebsiella pneumoniae	plasmid pCR-HvKP5-p5  
+573	NZ_CP119014	2469898856	0	CP119014	Klebsiella pneumoniae	plasmid pCR-hvKP005-KPC-P1  
 573	NZ_CP015393	1148487267	0	CP015393	Klebsiella pneumoniae	plasmid pCR14_1  
 573	NZ_CP015394	1148487268	0	CP015394	Klebsiella pneumoniae	plasmid pCR14_2  
 573	NZ_CP015395	1148487269	0	CP015395	Klebsiella pneumoniae	plasmid pCR14_3  
@@ -24880,6 +24878,7 @@
 573	NZ_CP106913	2317215401	0	CP106913	Klebsiella pneumoniae	plasmid unnamed1  
 573	NZ_CP115702	2428658640	0	CP115702	Klebsiella pneumoniae	plasmid unnamed1  
 573	NZ_CP118399	2450001994	0	CP118399	Klebsiella pneumoniae	plasmid unnamed1  
+573	NZ_CP119015	2469898879	0	CP119015	Klebsiella pneumoniae	plasmid unnamed1  
 573	NZ_CP070188	1993063352	0	CP070188	Klebsiella pneumoniae	plasmid unnamed10  
 573	NZ_CP027151	1357971313	0	CP027151	Klebsiella pneumoniae	plasmid unnamed10  
 573	NZ_CP069839	1993117526	0	CP069839	Klebsiella pneumoniae	plasmid unnamed10  
@@ -25086,6 +25085,7 @@
 573	NZ_CP106908	2317215373	0	CP106908	Klebsiella pneumoniae	plasmid unnamed2  
 573	NZ_CP104680	2310646736	0	CP104680	Klebsiella pneumoniae	plasmid unnamed2  
 573	NZ_CP115703	2428658641	0	CP115703	Klebsiella pneumoniae	plasmid unnamed2  
+573	NZ_CP119016	2469898885	0	CP119016	Klebsiella pneumoniae	plasmid unnamed2  
 573	NZ_CP115839	2431567219	0	CP115839	Klebsiella pneumoniae	plasmid unnamed2  
 573	NZ_CP118400	2450001995	0	CP118400	Klebsiella pneumoniae	plasmid unnamed2  
 573	NZ_CP017988	1134316532	0	CP017988	Klebsiella pneumoniae	plasmid unnamed3  
@@ -29467,11 +29467,11 @@
 2171623	NZ_CP029050	1385140775	0	CP029050	Miniimonas sp. S16	plasmid pS16-1  
 2171623	NZ_CP029051	1385140776	0	CP029051	Miniimonas sp. S16	plasmid pS16-2  
 1658665	NZ_CP011515	1055644385	0	CP011515	Mitsuaria sp. 7	plasmid unnamed  
+2872648	NZ_CP082905	2245058699	0	CP082905	Mixta hanseatica	plasmid pX22927_1  
+2872648	NZ_CP082906	2245058700	0	CP082906	Mixta hanseatica	plasmid pX22927_2  
+2872648	NZ_CP082907	2245058701	0	CP082907	Mixta hanseatica	plasmid pX22927_3  
+2872648	NZ_CP082908	2245058702	0	CP082908	Mixta hanseatica	plasmid pX22927_4  
 1615494	NZ_CP028272	1800949437	0	CP028272	Mixta intestinalis	plasmid unnamed1  
-2872648	NZ_CP082905	2245058699	0	CP082905	Mixta sp. X22927	plasmid pX22927_1  
-2872648	NZ_CP082906	2245058700	0	CP082906	Mixta sp. X22927	plasmid pX22927_2  
-2872648	NZ_CP082907	2245058701	0	CP082907	Mixta sp. X22927	plasmid pX22927_3  
-2872648	NZ_CP082908	2245058702	0	CP082908	Mixta sp. X22927	plasmid pX22927_4  
 1458355	NZ_CP028274	1800174379	0	CP028274	Mixta theicola	plasmid unnamed1  
 158849	NZ_CP093256	2209146595	0	CP093256	Moellerella wisconsensis	plasmid pW1-a  
 158849	NZ_CP093257	2209146596	0	CP093257	Moellerella wisconsensis	plasmid pW1-b  
@@ -29893,14 +29893,17 @@
 61858	NZ_CP031307	1624213052	0	CP031307	Natronorubrum bangense	plasmid unnamed2  
 61858	NZ_CP031308	1624213053	0	CP031308	Natronorubrum bangense	plasmid unnamed3  
 61858	NZ_CP031309	1624213055	0	CP031309	Natronorubrum bangense	plasmid unnamed4  
-485	NZ_LT592156	1655183654	0	LT592156	Neisseria gonorrhoeae	plasmid 2  
+588898	NZ_CP019328	1147362685	0	CP019328	Natronorubrum daqingense	plasmid unnamed1  
+588898	NZ_CP019329	1147362700	0	CP019329	Natronorubrum daqingense	plasmid unnamed2  
+588898	NZ_CP019330	1147362713	0	CP019330	Natronorubrum daqingense	plasmid unnamed3  
 485	NZ_LT592160	1655183687	0	LT592160	Neisseria gonorrhoeae	plasmid 2  
-485	NZ_LT591909	1655186940	0	LT591909	Neisseria gonorrhoeae	plasmid 2  
+485	NZ_LT592156	1655183654	0	LT592156	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT591905	1655186944	0	LT591905	Neisseria gonorrhoeae	plasmid 2  
-485	NZ_LT592147	1655183694	0	LT592147	Neisseria gonorrhoeae	plasmid 2  
+485	NZ_LT591909	1655186940	0	LT591909	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT592151	1655186955	0	LT592151	Neisseria gonorrhoeae	plasmid 2  
-485	NZ_LT591902	1718562950	0	LT591902	Neisseria gonorrhoeae	plasmid 2  
+485	NZ_LT592147	1655183694	0	LT592147	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT592154	1718450521	0	LT592154	Neisseria gonorrhoeae	plasmid 2  
+485	NZ_LT591902	1718562950	0	LT591902	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT591911	1718490505	0	LT591911	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT592158	1718491746	0	LT592158	Neisseria gonorrhoeae	plasmid 2  
 485	NZ_LT592162	1718561405	0	LT592162	Neisseria gonorrhoeae	plasmid 2  
@@ -30150,13 +30153,13 @@
 480035	NZ_AP023397	1899540785	0	AP023397	Nocardia wallacei	plasmid pFMUON74  
 2592334	NZ_CP050903	1833043222	0	CP050903	Nocardioides sp. JQ2195	plasmid pNOC1  
 196162	NC_008697	119714007	0	CP000508	Nocardioides sp. JS614	plasmid pNOCA01  
+2831969	NZ_CP074134	2305925271	0	CP074134	Nocardiopsis changdeensis	plasmid unnamed2  
+2831969	NZ_CP074135	2305925272	0	CP074135	Nocardiopsis changdeensis	plasmid unnamed3  
+2831969	NZ_CP074136	2305925273	0	CP074136	Nocardiopsis changdeensis	plasmid unnamed4  
 163604	NZ_CP099838	2271946032	0	CP099838	Nocardiopsis exhalans	plasmid unnamed1  
 2865672	NZ_CP080600	2082585763	0	CP080600	Nocardiopsis sp. MT53	plasmid unnamed2  
 2865672	NZ_CP080601	2082585764	0	CP080601	Nocardiopsis sp. MT53	plasmid unnamed3  
 2865672	NZ_CP080602	2082585765	0	CP080602	Nocardiopsis sp. MT53	plasmid unnamed4  
-2831969	NZ_CP074134	2305925271	0	CP074134	Nocardiopsis sp. Mg02	plasmid unnamed2  
-2831969	NZ_CP074135	2305925272	0	CP074135	Nocardiopsis sp. Mg02	plasmid unnamed3  
-2831969	NZ_CP074136	2305925273	0	CP074136	Nocardiopsis sp. Mg02	plasmid unnamed4  
 1914872	NZ_CP020115	1381926706	0	CP020115	Nodularia spumigena UHCC 0039	plasmid pUHCC0039a  
 870484	NZ_CM009579	1360623579	0	CM009579	Nonlabens agnitus	plasmid p1  
 870484	NZ_CM009580	1360623580	0	CM009580	Nonlabens agnitus	plasmid p2  
@@ -41239,11 +41242,11 @@
 632	NZ_CP045639	1957516240	0	CP045639	Yersinia pestis	plasmid pS96127  
 632	NZ_CP045152	1769169003	0	CP045152	Yersinia pestis	plasmid pTP33  
 632	NZ_CP045261	1769981318	0	CP045261	Yersinia pestis	plasmid pTP33  
-632	NZ_CP009702	756144240	0	CP009702	Yersinia pestis	plasmid unnamed1  
-632	NZ_CP033697	1520150088	0	CP033697	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP084337	2281162891	0	CP084337	Yersinia pestis	plasmid unnamed1  
-632	NZ_CP033689	1520113251	0	CP033689	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP033697	1520150088	0	CP033697	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP009702	756144240	0	CP009702	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP084340	2281173655	0	CP084340	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP033689	1520113251	0	CP033689	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP033694	1520150343	0	CP033694	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP084344	2281173766	0	CP084344	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP033691	1520114127	0	CP033691	Yersinia pestis	plasmid unnamed2  
