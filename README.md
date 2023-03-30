@@ -13,12 +13,10 @@
 
 1. [✏️ Setup](#️-setup)
 2. [👩‍🏫 Usage](#-usage)
-3. [💁 Get Help](#-get-help)
-4. [🧪 Testing](#-testing)
-5. [🧑‍🏫 Contributing](#-contributing)
-6. [⚖️ License](#️-license)
-7. [🔄 Changelog](#-changelog)
-8. [🐛 Bugs and TODO](#-bugs-and-todo)
+3. [🧪 Testing](#-testing)
+4. [🧑‍🏫 Contributing](#-contributing)
+5. [⚖️ License](#️-license)
+6. [🐛 Bugs and TODO](#-bugs-and-todo)
 
 ## ✏️ Setup
 
@@ -42,8 +40,6 @@ python .\genome.py
 The program is pretty simple to use, just follow the instructions and you'll be fine ! 🙂
 
 A window should pop up, and the first run might take a while, but after that, it should be pretty fast !
-
-## 💁 Get Help
 
 ## 🧪 Testing
 
@@ -88,14 +84,6 @@ This project is licensed under the AGPL-3.0 new or revised license. Please read 
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-## 🔄 Changelog
-
-Please read the [changelog](changelog.md) file for the full history !
-
-<details>
-
-</details>
-
 ## 🐛 Bugs and TODO
 
 **TODO** (first implementation version)
@@ -106,3 +94,4 @@ Please read the [changelog](changelog.md) file for the full history !
 
 - selection can be made with anything in the tree (including not leafs folders and even files)
 - dynamic selection does not display newly created files
+- removed `if __name__ == "__main__":` from `genome.py` (for double click to work)
