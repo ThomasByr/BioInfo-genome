@@ -100,8 +100,9 @@ Please read the [changelog](changelog.md) file for the full history !
 
 **TODO** (first implementation version)
 
-- [ ] add region selection feature
+- [x] add region selection feature
 
 **Known Bugs** (latest fix)
 
 - selection can be made with anything in the tree (including not leafs folders and even files)
+- dynamic selection does not display newly created files
