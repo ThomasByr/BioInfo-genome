@@ -2,6 +2,7 @@ pandas      >= 1.5
 numpy       >= 1.24
 
 termcolor   >= 2.2
+tqdm        >= 4.65
 
 requests    >= 2.28
 biopython   >= 1.81
