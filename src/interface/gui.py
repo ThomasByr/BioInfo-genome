@@ -1,10 +1,9 @@
 import os
 
-from ..helper import panic, error, info, debug
 from pathlib import Path
-
 import PySimpleGUI as sg
-from ..core.tree import *
+
+from ..helper import panic, error, info, debug
 
 __all__ = ['GenomeGUI']
 
@@ -24,18 +23,16 @@ class GenomeGUI:
         size=(50, 10),
         key='-INFO-',
     )]]
-    self.__log = [
-        [sg.Text('Logs', font=self.__font)],
-        [
-            sg.Multiline(
-                size=(50, 10),
-                key='-LOG-',
-                echo_stdout_stderr=True,
-                reroute_stdout=True,
-                reroute_stderr=True,
-            )
-        ]
-    ]
+    self.__log = [[sg.Text('Logs', font=self.__font)],
+                  [
+                      sg.Multiline(
+                          size=(50, 10),
+                          key='-LOG-',
+                          echo_stdout_stderr=True,
+                          reroute_stdout=True,
+                          reroute_stderr=True,
+                      )
+                  ]]
     self.__right_side = [
         [sg.Column(self.__info, vertical_alignment='top')],
         [sg.HSeparator()],
@@ -70,6 +67,7 @@ class GenomeGUI:
             num_rows=20,
             col0_width=20,
             key='-TREE-',
+            show_expanded=True,
             enable_events=True,
         )
     ]]
@@ -83,11 +81,11 @@ class GenomeGUI:
     self.__build_tree()
     self.__build_file_tree()
     self.__build_window()
-    
+
     def new_key() -> int:
       key = 1
       while key in data:
-          key += 1
+        key += 1
       return key
 
     tree = self.__window['-TREE-']
@@ -97,7 +95,7 @@ class GenomeGUI:
     tree.Widget.configure(show='tree')  # Hide header
     tree.bind('<Double-1>', "DOUBLE-CLICK-")
 
-    DIR, FILE = True, False
+    DIR, FILE = True, False  #pylint: disable=unused-variable
     data = {
         0: {
             'kind': DIR,
@@ -107,7 +105,6 @@ class GenomeGUI:
         },
     }
 
-    # main loop
     while True:
       event, values = self.__window.read()
       if event in (sg.WIN_CLOSED, 'Exit'):
@@ -116,24 +113,27 @@ class GenomeGUI:
       if event == '-TREE-DOUBLE-CLICK-':
         parent_key = values['-TREE-'][0]
         node = data[parent_key]
-        
+
         if node['kind'] == DIR and node['children'] is None:
           parent_path = Path(node['path']).joinpath(node['file'])
           files: list
           try:
-            files = sorted(list(parent_path.iterdir()), key=lambda file:file.is_file())
+            files = sorted(list(parent_path.iterdir()), key=lambda file: file.is_file())
           except PermissionError:
             error(f'Permission denied: {parent_path}')
             continue
-          
+
           node['children'] = []
           for item in files:
             key = new_key()
             kind, path, file = item.is_dir(), str(item.parent), item.name
-            self.__tree_data.insert(parent_key, key, str(file), [], icon=folder_icon if kind == DIR else file_icon)
+            self.__tree_data.insert(parent_key,
+                                    key,
+                                    str(file), [],
+                                    icon=folder_icon if kind == DIR else file_icon)
             node['children'].append(key)
-            data[key] = {'kind':kind, 'path':path, 'file':file, 'children':None}
-          
+            data[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
+
           debug(f'Loaded {len(files)} items from {parent_path}')
           tree.update(values=self.__tree_data)
           iid = tree.KeyToID[parent_key]

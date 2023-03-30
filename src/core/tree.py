@@ -5,6 +5,9 @@ from datetime import datetime
 import string
 import pickle
 import json
+import re
+import pandas as pd
+import tqdm
 
 from typing import Any
 import requests
@@ -18,23 +21,11 @@ non_valid_chars = string.punctuation.join(string.whitespace)
 timeouts = (5, 10)
 
 
-def to_lower(s: str | Any) -> str:
-  """
-  Convert a string to lowercase.
-
-  ## Parameters
-  ```py
-  s : str
-  ```
-  the string to convert
-  """
-  return str(s).lower()
-
-
 @dataclass
 class Value:
   name: str
-  nc: str
+  path: str
+  nc: list[str]
 
 
 class Tree:
@@ -55,11 +46,21 @@ class Tree:
     self.__name = 'overview' if name is None else name
     self.__data: dict[str, Value] = {}
 
-  def build(self) -> None:
+  def build(self, force_rebuild: bool = False) -> None:
     """
     Build the tree from the given name.\\
     This method should only be called once IF the tree does NOT comes from `union`.
     """
+    pickle_path = os.path.join('data', 'tree.pkl')
+    if not force_rebuild and os.path.exists(pickle_path):
+      info(f'loading tree ({pickle_path}) from pickle')
+      with open(pickle_path, 'rb') as f:
+        self.__data = pickle.load(f)
+      for organism in tqdm.tqdm(self.__data, desc='building tree'):
+        path = self.__data[organism].path
+        os.makedirs(path, exist_ok=True)
+      return
+
     r = requests.get(f'{self.BASE_URL}{self.__name}.txt', stream=True, timeout=timeouts)
     if r.status_code != 200:
       panic(f'failed to fetch {self.__name}.txt')
@@ -73,8 +74,44 @@ class Tree:
       error(f'failed to parse {self.__name}.txt (file is empty)')
       return
 
-    for _, row in df.iterrows():
-      pass
+    total_rows = len(df.index)
+    for _, row in tqdm.tqdm(df.iterrows(), total=total_rows, desc='building tree'):
+      # transform non valid chars to underscores
+      organism = re.sub(f'[{non_valid_chars}]', '_', row['#Organism/Name'])
+      subgroup = re.sub(f'[{non_valid_chars}]', '_', row['SubGroup'])
+      group = re.sub(f'[{non_valid_chars}]', '_', row['Group'])
+      kingdom = re.sub(f'[{non_valid_chars}]', '_', row['Kingdom'])
+      path = os.path.join('Results', kingdom, group, subgroup, organism)
+
+      if organism not in self.__data:
+        self.__data[organism] = Value(organism, path, [])
+
+    valid_organisms: set[str] = set()
+    ids_files = os.listdir('data/ids')
+    for ids in ids_files:
+      debug(f'updating ids data from ({ids})')
+      with open(f'data/ids/{ids}', 'r') as f:
+        for line in f.readlines():
+          row = line.split('\t')
+          if not row[1].startswith('NC'):
+            continue
+          organism = re.sub(f'[{non_valid_chars}]', '_', row[5])
+          if organism in self.__data:
+            self.__data[organism].nc.append(row[1])
+            valid_organisms.add(organism)
+
+    info(f'found {len(valid_organisms)} valid organisms')
+    for organism in tqdm.tqdm(valid_organisms, desc='creating folders'):
+      path = self.__data[organism].path
+      os.makedirs(path, exist_ok=True)
+
+    # filter out invalid organisms
+    self.__data = {k: v for k, v in self.__data.items() if k in valid_organisms}
+    info(f'filtered out {total_rows - len(self.__data)} invalid organisms')
+
+    # save the tree
+    with open('data/tree.pkl', 'wb') as f:
+      pickle.dump(self.__data, f)
 
   @staticmethod
   def clean_folders() -> None:
@@ -107,3 +144,4 @@ class Tree:
       # if the file is found
       with open(f'data/ids/{file}', 'wb') as f:
         f.write(r.content)
+      info(f'updated {file}')
