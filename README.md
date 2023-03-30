@@ -41,6 +41,12 @@ The program is pretty simple to use, just follow the instructions and you'll be 
 
 A window should pop up, and the first run might take a while, but after that, it should be pretty fast !
 
+To enable `debug` mode, just add `DEBUG=True` to the environment variables. This could be done by adding `Debug=True` to an `.env` file in the root directory, or by running the following command in a terminal :
+
+```ps1
+$env:DEBUG = "True"
+```
+
 ## 🧪 Testing
 
 Oh god... please don't.
