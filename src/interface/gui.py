@@ -1,9 +1,12 @@
 import os
 
+from threading import Thread
+
 from pathlib import Path
 import PySimpleGUI as sg
 
-from ..helper import panic, error, info, debug
+from ..core import Tree, Value, create_data_from_NC
+from ..helper import debug, info, error, panic
 
 __all__ = ['GenomeGUI']
 
@@ -13,7 +16,7 @@ file_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEg
 
 class GenomeGUI:
 
-  def __init__(self, results_folder: str = 'Results'):
+  def __init__(self, tree: Tree, results_folder: str = 'Results'):
     self.__window: sg.Window = None
     self.__results_folder = results_folder
     self.__font = ('Helvetica', 11)
@@ -21,10 +24,30 @@ class GenomeGUI:
     self.__file_tree: list[list[sg.Tree]] = None
     self.__tree_data: sg.TreeData = None
     self.__selected_organism: str = None
-    self.__info = [[sg.Text('Information', font=self.__font)], [sg.Multiline(
-        size=(50, 10),
-        key='-INFO-',
-    )]]
+    self.__selected_region: str = 'CDS'
+    self.__tree = tree
+
+    self.__info = [[sg.Text('Region Selection', font=self.__font)],
+                   [
+                       sg.Combo(
+                           [
+                               'CDS',
+                               'centromere',
+                               'intron',
+                               'mobile_element',
+                               'ncRNA',
+                               'rRNA',
+                               'telomere',
+                               'tRNA',
+                               '3\'UTR',
+                               '5\'UTR',
+                           ],
+                           enable_events=True,
+                           default_value='CDS',
+                           key='-SELECT-',
+                       )
+                   ]]
+
     self.__log = [[sg.Text('Logs', font=self.__font)],
                   [
                       sg.Multiline(
@@ -138,9 +161,33 @@ class GenomeGUI:
         except IndexError:
           error('Nothing selected in the tree')
 
+      if event == '-SELECT-':
+        self.__selected_region = values['-SELECT-']
+        info(f'Selected region: {self.__selected_region}')
+
+      if event == 'Run':
+        if self.__selected_organism is None:
+          error('No organism selected')
+          continue
+        if self.__selected_region is None:
+          error('No region selected')
+          continue
+        val: Value
+        try:
+          val = self.__tree.get_info(self.__selected_organism)
+        except KeyError:
+          error(f'No data for {self.__selected_organism} : '
+                f'this could be because {self.__selected_organism} is not a valid organism')
+          continue
+        Thread(target=create_data_from_NC,
+               args=(self.__selected_organism, val.path, val.nc, self.__selected_region)).start()
+
       if event == '-TREE-DOUBLE-CLICK-':
-        parent_key = values['-TREE-'][0]
-        node = data[parent_key]
+        try:
+          parent_key = values['-TREE-'][0]
+          node = data[parent_key]
+        except IndexError:
+          continue
 
         if node['kind'] == DIR and node['children'] is None:
           parent_path = Path(node['path']).joinpath(node['file'])

@@ -3,9 +3,17 @@ import os
 import inspect
 from typing import Any, NoReturn
 
+from dotenv import load_dotenv
 from termcolor import colored
 
 __all__ = ['debug', 'info', 'error', 'panic']
+
+load_dotenv()
+
+__debug = os.getenv('DEBUG')
+__is_debug: bool = False
+if __debug is not None:
+  __is_debug = True
 
 
 def _print_msg(msg: str | Any) -> None:
@@ -23,6 +31,8 @@ def debug(msg: str | Any = None) -> None:
   ```
     string to print
   """
+  if not __is_debug:
+    return
   print(colored('  [debug]', 'green'), file=sys.stderr, end=' ')
   _print_msg(msg)
 

@@ -8,7 +8,7 @@ from ..helper import info, debug
 from Bio import Entrez, SeqIO
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 
-__all__ = []
+__all__ = ['create_data_from_NC']
 
 
 def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -> int:
@@ -19,7 +19,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   NC_i = 1
   no_region_found = 0
   info()
-  info('downloading [' + name + ']')
+  info(f'downloading [{name}]')
   for NC in NC_list:
     info('NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
     name = name.replace(' ', '_')
@@ -27,7 +27,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     name = name.replace(']', '_')
     name = name.replace(':', '_')
     NC_i += 1
-    debug('NC id  =', NC)
+    debug(f'NC id  = {NC}')
     debug('----------------------------')
     handle_fasta = Entrez.efetch(db='nucleotide', id=NC, rettype='fasta', retmode='text')
     record_fasta = SeqIO.read(handle_fasta, 'fasta')
@@ -47,7 +47,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
       no_region_found += 1
       NC_filename = str(name) + '_' + feature_key + '_NC_' + str(NC_i) + '.txt'
 
-      file_path = os.path.join(path, name, NC_filename)
+      file_path = os.path.join(path, NC_filename)
       if len(list_file) != 0:
         if NC_filename not in list_file:
           os.remove(file_path)
@@ -58,8 +58,9 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
         except FileNotFoundError:
           pass
         list_file.append(NC_filename)
+
       with open(file_path, 'a+') as out:
-        debug(i + 1, '/', len(record[0]['GBSeq_feature-table']))
+        debug(f'{i + 1}/' + str(len(record[0]['GBSeq_feature-table'])))
         debug(feature_location)
         # todo: tests on regions (part 2.3)
         out.write(feature_key + ' ' + feature_location + '\n')

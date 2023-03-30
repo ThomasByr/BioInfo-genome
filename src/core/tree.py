@@ -1,21 +1,18 @@
 import os
 from dataclasses import dataclass
-from datetime import datetime
 
 import string
 import pickle
-import json
 import re
 import pandas as pd
 import tqdm
 
-from typing import Any
 import requests
 import pandas as pd
 
-from ..helper.lib import *
+from ..helper.lib import info, error, panic
 
-__all__ = ['Tree']
+__all__ = ['Tree', 'Value']
 datetime_format = '%Y-%m-%d %H:%M:%S'
 non_valid_chars = string.punctuation.join(string.whitespace)
 timeouts = (5, 10)
@@ -94,9 +91,10 @@ class Tree:
         self.__data[organism] = Value(organism, path, [])
 
     valid_organisms: set[str] = set()
+    self.update_ids()
     ids_files = os.listdir('data/ids')
     for ids in ids_files:
-      debug(f'updating ids data from ({ids})')
+      info(f'updating ids data from ({ids})')
       with open(f'data/ids/{ids}', 'r') as f:
         for line in f.readlines():
           row = line.split('\t')
@@ -108,6 +106,7 @@ class Tree:
             valid_organisms.add(organism)
 
     info(f'found {len(valid_organisms)} valid organisms')
+    self.clean_folders()
     for organism in tqdm.tqdm(valid_organisms, desc='creating folders'):
       path = self.__data[organism].path
       os.makedirs(path, exist_ok=True)
@@ -119,6 +118,18 @@ class Tree:
     # save the tree
     with open('data/tree.pkl', 'wb') as f:
       pickle.dump(self.__data, f)
+  
+  def get_info(self, organism: str) -> Value:
+    """
+    returns the value of the given organism.
+
+    ## Parameters
+    ```py
+    >>> organism : str
+    ```
+    the name of the organism to get the value of
+    """
+    return self.__data[organism]
 
   @staticmethod
   def clean_folders() -> None:
