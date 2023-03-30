@@ -100,4 +100,8 @@ Please read the [changelog](changelog.md) file for the full history !
 
 **TODO** (first implementation version)
 
-**Bugs** (latest fix)
+- [ ] add region selection feature
+
+**Known Bugs** (latest fix)
+
+- selection can be made with anything in the tree (including not leafs folders and even files)
