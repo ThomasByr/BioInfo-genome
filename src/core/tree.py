@@ -10,7 +10,7 @@ import tqdm
 import requests
 import pandas as pd
 
-from ..helper.lib import info, error, panic
+from ..helper import info, error, panic, capture
 
 __all__ = ['Tree', 'Value']
 datetime_format = '%Y-%m-%d %H:%M:%S'
@@ -43,7 +43,7 @@ class Tree:
     self.__name = 'overview' if name is None else name
     self.__data: dict[str, Value] = {}
 
-  def build(self, force_rebuild: bool = False) -> None:
+  def build(self, force_rebuild: bool = False, silent: bool = False) -> None:
     """
     Build the tree from the given name.\\
     This method should only be called once.
@@ -58,11 +58,16 @@ class Tree:
     pickle_path = os.path.join('data', 'tree.pkl')
     if not force_rebuild and os.path.exists(pickle_path):
       info(f'loading tree ({pickle_path}) from pickle')
+      if silent:
+        capture.redirect()
       with open(pickle_path, 'rb') as f:
         self.__data = pickle.load(f)
       for organism in tqdm.tqdm(self.__data, desc='building tree'):
         path = self.__data[organism].path
         os.makedirs(path, exist_ok=True)
+      if silent:
+        capture.stop_redirect()
+        info(f'loaded tree ({pickle_path}) from pickle')
       return
 
     r = requests.get(f'{self.BASE_URL}{self.__name}.txt', stream=True, timeout=timeouts)
@@ -79,6 +84,9 @@ class Tree:
       return
 
     total_rows = len(df.index)
+    info(f'building tree from {self.__name}.txt ({total_rows} rows)')
+    if silent:
+      capture.redirect()
     for _, row in tqdm.tqdm(df.iterrows(), total=total_rows, desc='building tree'):
       # transform non valid chars to underscores
       organism = re.sub(f'[{non_valid_chars}]', '_', row['#Organism/Name'])
@@ -91,10 +99,12 @@ class Tree:
         self.__data[organism] = Value(organism, path, [])
 
     valid_organisms: set[str] = set()
+    if silent:
+      capture.stop_redirect()
     self.update_ids()
     ids_files = os.listdir('data/ids')
     for ids in ids_files:
-      info(f'updating ids data from ({ids})')
+      info(f'updating ids data from {ids}')
       with open(f'data/ids/{ids}', 'r') as f:
         for line in f.readlines():
           row = line.split('\t')
@@ -107,6 +117,8 @@ class Tree:
 
     info(f'found {len(valid_organisms)} valid organisms')
     self.clean_folders()
+    if silent:
+      capture.redirect()
     for organism in tqdm.tqdm(valid_organisms, desc='creating folders'):
       path = self.__data[organism].path
       os.makedirs(path, exist_ok=True)
@@ -114,6 +126,9 @@ class Tree:
     # filter out invalid organisms
     self.__data = {k: v for k, v in self.__data.items() if k in valid_organisms}
     info(f'filtered out {total_rows - len(self.__data)} invalid organisms')
+    if silent:
+      capture.stop_redirect()
+      info(f'system file tree reset successfully')
 
     # save the tree
     with open('data/tree.pkl', 'wb') as f:

@@ -1,12 +1,14 @@
 import os
 
+from copy import deepcopy
 from threading import Thread
 
 from pathlib import Path
+from typing import Any
 import PySimpleGUI as sg
 
 from ..core import Tree, Value, create_data_from_NC
-from ..helper import debug, info, error, panic
+from ..helper import debug, info, error, panic, capture
 
 __all__ = ['GenomeGUI']
 
@@ -85,8 +87,11 @@ class GenomeGUI:
               ], [sg.HSeparator()],
               [
                   sg.Button('Run', font=self.__font, size=(10, 2)),
-                  sg.Button('Cancel', font=self.__font, size=(10, 2)),
                   sg.Button('Confirm Selection', font=self.__font, size=(10, 2)),
+                  sg.VSeparator(),
+                  sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
+                  sg.Button('Reset', font=self.__font, size=(10, 2)),
+                  sg.Button('Refresh', font=self.__font, size=(10, 2)),
               ]]
     return layout
 
@@ -120,9 +125,10 @@ class GenomeGUI:
 
   def run(self):
     sg.theme('DarkTeal9')
-    self.__build_tree()
     self.__build_file_tree()
     self.__build_window()
+    
+    capture.enable_proxy()
 
     def new_key() -> int:
       key = 1
@@ -147,6 +153,8 @@ class GenomeGUI:
             'children': None
         },
     }
+    displayed_files:set[str] = set()
+    base_data = deepcopy(data)
 
     while True:
       event, values = self.__window.read()
@@ -182,6 +190,17 @@ class GenomeGUI:
         Thread(target=create_data_from_NC,
                args=(self.__selected_organism, val.path, val.nc, self.__selected_region)).start()
 
+      if event == 'Dry Reload':
+        Thread(target=self.__tree.build, args=[False, True]).start()
+      if event == 'Reset':
+        r = sg.popup_ok_cancel('Are you sure you want to reset the tree?\nThis will delete all data in "Results" folder!')
+        if r == 'OK':
+          Thread(target=self.__tree.build, args=[True, True]).start()
+      if event == 'Refresh':
+        self.__build_file_tree()
+        data = deepcopy(base_data)
+        tree.update(values=self.__tree_data)
+
       if event == '-TREE-DOUBLE-CLICK-':
         try:
           parent_key = values['-TREE-'][0]
@@ -189,7 +208,7 @@ class GenomeGUI:
         except IndexError:
           continue
 
-        if node['kind'] == DIR and node['children'] is None:
+        if node['kind'] == DIR:
           parent_path = Path(node['path']).joinpath(node['file'])
           files: list
           try:
@@ -198,20 +217,34 @@ class GenomeGUI:
             error(f'Permission denied: {parent_path}')
             continue
 
-          node['children'] = []
-          for item in files:
-            key = new_key()
-            kind, path, file = item.is_dir(), str(item.parent), item.name
-            self.__tree_data.insert(parent_key,
-                                    key,
-                                    str(file), [],
-                                    icon=folder_icon if kind == DIR else file_icon)
-            node['children'].append(key)
-            data[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
+          if node['children'] is not None:  # here we only search for new files
+            for item in files:
+              if item.is_file() and str(item) not in displayed_files:
+                displayed_files.add(str(item))
+                key = new_key()
+                kind, path, file = item.is_dir(), str(item.parent), item.name
+                self.__tree_data.insert(parent_key,
+                                        key,
+                                        str(file), [],
+                                        icon=folder_icon if kind == DIR else file_icon)
+                node['children'].append(key)
+                data[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
+          else:  # here we search for new files and new folders that were never expanded
+            node['children'] = []
+            for item in files:
+              key = new_key()
+              kind, path, file = item.is_dir(), str(item.parent), item.name
+              self.__tree_data.insert(parent_key,
+                                      key,
+                                      str(file), [],
+                                      icon=folder_icon if kind == DIR else file_icon)
+              node['children'].append(key)
+              data[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
 
           debug(f'Loaded {len(files)} items from {parent_path}')
           tree.update(values=self.__tree_data)
           iid = tree.KeyToID[parent_key]
           tree.Widget.see(iid)
 
+    capture.disable_proxy()
     self.__window.close()
