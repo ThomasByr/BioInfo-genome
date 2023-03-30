@@ -13,7 +13,11 @@ load_dotenv()
 __debug = os.getenv('DEBUG')
 __is_debug: bool = False
 if __debug is not None:
-  __is_debug = True
+  if isinstance(__debug, str):
+    if __debug.lower() in ['true', '1']:
+      __is_debug = True
+  elif isinstance(__debug, bool):
+    __is_debug = __debug
 
 
 def _print_msg(msg: str | Any) -> None:
