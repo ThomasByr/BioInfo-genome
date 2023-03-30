@@ -5,7 +5,5 @@ if __name__ == '__main__':
   overview = Tree()
   overview.build()
 
-  # Tree.update_ids()
-  gui = GenomeGUI()
+  gui = GenomeGUI(overview)
   gui.run()
-  # Tree.clean_folders()
