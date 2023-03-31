@@ -47,6 +47,12 @@ To enable `debug` mode, just add `DEBUG=True` to the environment variables. This
 $env:DEBUG = "True"
 ```
 
+If you ever want to force base rebuild of the system tree, you can either pass `True` as the first argument from `overview.build()` in [genome.py](genome.py), or add `REBUILD=True` to the environment variables.
+
+```ps1
+$env:REBUILD = "True"
+```
+
 ## 🧪 Testing
 
 Oh god... please don't.
