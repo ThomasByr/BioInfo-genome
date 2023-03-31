@@ -16,6 +16,9 @@ if __debug is not None:
   if isinstance(__debug, str):
     if __debug.lower() in {'true', '1'}:
       __is_debug = True
+  elif isinstance(__debug, int):
+    if __debug == 1:
+      __is_debug = True
   elif isinstance(__debug, bool):
     __is_debug = __debug
 

@@ -52,6 +52,9 @@ class Tree:
       if isinstance(__rebuild, str):
         if __rebuild.lower() in {'true', '1'}:
           self.__is_rebuild = True
+      elif isinstance(__rebuild, int):
+        if __rebuild == 1:
+          self.__is_rebuild = True
       elif isinstance(__rebuild, bool):
         self.__is_rebuild = __rebuild
 
