@@ -9,7 +9,9 @@
 
 [![GitHub version](https://badge.fury.io/gh/ThomasByr%2FBioInfo-genome.svg)](https://github.com/ThomasByr/BioInfo-genome)
 [![Author](https://img.shields.io/badge/author-@ThomasByr-blue)](https://github.com/ThomasByr)
-[![Author](https://img.shields.io/badge/author-@MaximeP-blue)](https://github.com/m7415r)
+[![Author](https://img.shields.io/badge/author-@MaximeP-blue)](https://github.com/m7415)
+[![Author](https://img.shields.io/badge/author-@JBrandstaedt-blue)](https://github.com/JBrandstaedt)
+[![Author](https://img.shields.io/badge/author-@Bas6700-blue)](https://github.com/Bas6700)
 
 1. [✏️ Setup](#️-setup)
 2. [👩‍🏫 Usage](#-usage)
@@ -35,6 +37,15 @@ Then, you can run the program with :
 python .\genome.py
 ```
 
+<details><summary>and for Linux ...</summary>
+
+```bash
+python3 genome.py
+```
+
+</details>
+
+<br>
 On a side note, we use [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/) to build the GUI, so you might want to check out their [documentation](https://pysimplegui.readthedocs.io/en/latest/) if you want to contribute to the project ! 🙂 We also use [BioPython](https://biopython.org/) to parse the genome files with ease. We strongly advise to check for solid internet connection when running the program for the first time, as it will download the genome files from [NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/) and build the system tree from scratch.
 
 ## 👩‍🏫 Usage
@@ -49,12 +60,30 @@ To enable `debug` mode, just add `DEBUG=True` to the environment variables. This
 $env:DEBUG = "True"
 ```
 
+<details><summary>and for Linux ...</summary>
+
+```bash
+export DEBUG=True
+```
+
+</details>
+
+<br>
 If you ever want to force base rebuild of the system tree, you can either pass `True` as the first argument from `overview.build()` in [genome.py](genome.py), or add `REBUILD=True` to the environment variables.
 
 ```ps1
 $env:REBUILD = "True"
 ```
 
+<details><summary>and for Linux again ...</summary>
+
+```bash
+export REBUILD=True
+```
+
+</details>
+
+<br>
 Anyways, here's a screenshot of the GUI :
 
 ![GUI](assets/GUI.png)
@@ -127,7 +156,7 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 **TODO** (first implementation version)
 
 - [x] add region selection feature
-- [ ] add multi organism selection feature and thread it
+- [ ] add multi organisms selection feature and thread it
 - [ ] open txt file on double click
 
 **Known Bugs** (latest fix)
