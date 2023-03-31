@@ -14,7 +14,7 @@ __debug = os.getenv('DEBUG')
 __is_debug: bool = False
 if __debug is not None:
   if isinstance(__debug, str):
-    if __debug.lower() in ['true', '1']:
+    if __debug.lower() in {'true', '1'}:
       __is_debug = True
   elif isinstance(__debug, bool):
     __is_debug = __debug
@@ -31,9 +31,9 @@ def debug(msg: str | Any = None) -> None:
   
   ## Parameters
   ```py
-    msg : str
+  >>> msg : str
   ```
-    string to print
+  string to print
   """
   if not __is_debug:
     return
@@ -47,9 +47,9 @@ def info(msg: str | Any = None) -> None:
   
   ## Parameters
   ```py
-    msg : str
+  >>> msg : str
   ```
-    string to print
+  string to print
   """
   print(colored('   [info]', 'blue'), file=sys.stderr, end=' ')
   _print_msg(msg)
@@ -61,9 +61,9 @@ def error(msg: str | Any = None) -> None:
   
   ## Parameters
   ```py
-    msg : str
+  >>> msg : str
   ```
-    string to print
+  string to print
   """
   print(colored('  [error]', 'yellow'), file=sys.stderr, end=' ')
   _print_msg(msg)
@@ -76,12 +76,12 @@ def panic(msg: str | Any = None) -> NoReturn:
 
   ## Parameters
   ```py
-    msg : str
+  >>> msg : str
   ```
     string to print
   ## Raises
   ```py
-    RuntimeError
+  RuntimeError
   ```
   """
   # yapf: disable

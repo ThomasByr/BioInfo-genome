@@ -3,7 +3,8 @@ import sys
 from io import StringIO
 from werkzeug import local
 
-# Save all of the objects for use later.
+# save all of the objects for use later
+
 orig___stdout__ = sys.__stdout__
 orig___stderr__ = sys.__stderr__
 orig_stdout = sys.stdout
@@ -13,32 +14,36 @@ thread_proxies = {}
 __all__ = ['redirect', 'stop_redirect', 'enable_proxy', 'disable_proxy']
 
 
-def redirect():
+def redirect() -> StringIO:
   """
   Enables the redirect for the current thread's output to a single cStringIO
   object and returns the object.
 
-  :return: The StringIO object.
-  :rtype: ``cStringIO.StringIO``
+  ## Returns
+  ```py
+  thread_proxies[ident] : StringIO
+  ```
   """
   # Get the current thread's identity.
-  ident = threading.currentThread().ident
+  ident = threading.current_thread().ident
 
   # Enable the redirect and return the cStringIO object.
   thread_proxies[ident] = StringIO()
   return thread_proxies[ident]
 
 
-def stop_redirect():
+def stop_redirect() -> str:
   """
   Enables the redirect for the current thread's output to a single cStringIO
   object and returns the object.
 
-  :return: The final string value.
-  :rtype: ``str``
+  ## Returns
+  ```py
+  thread_proxies[ident].getvalue() : str
+  ```
   """
   # Get the current thread's identity.
-  ident = threading.currentThread().ident
+  ident = threading.current_thread().ident
 
   # Only act on proxied threads.
   if ident not in thread_proxies:
@@ -70,7 +75,7 @@ def _get_stream(original):
     :rtype: ``file``
     """
     # Get the current thread's identity.
-    ident = threading.currentThread().ident
+    ident = threading.current_thread().ident
 
     # Return the proxy, otherwise return the original.
     return thread_proxies.get(ident, original)

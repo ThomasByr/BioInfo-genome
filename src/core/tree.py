@@ -8,7 +8,6 @@ import pandas as pd
 import tqdm
 
 import requests
-import pandas as pd
 
 from dotenv import load_dotenv
 
@@ -51,7 +50,7 @@ class Tree:
     self.__is_rebuild: bool = False
     if __rebuild is not None:
       if isinstance(__rebuild, str):
-        if __rebuild.lower() in ['true', '1']:
+        if __rebuild.lower() in {'true', '1'}:
           self.__is_rebuild = True
       elif isinstance(__rebuild, bool):
         self.__is_rebuild = __rebuild
@@ -66,6 +65,11 @@ class Tree:
     >>> force_rebuild : bool, (optional)
     ```
     force the tree to be rebuilt from https request\\
+    defaults to `False`
+    ```py
+    >>> silent : bool, (optional)
+    ```
+    suppress all excessively spamming output\\
     defaults to `False`
     """
     pickle_path = os.path.join('data', 'tree.pkl')
@@ -158,6 +162,11 @@ class Tree:
     >>> organism : str
     ```
     the name of the organism to get the value of
+
+    ## Returns
+    ```py
+    Value : Value
+    ```
     """
     return self.__data[organism]
 

@@ -3,17 +3,54 @@ import os
 import string
 import random
 
-from ..helper import info, debug
+from abc import ABCMeta, abstractmethod
+from typing import Any, TypeVar
 
 from Bio import Entrez, SeqIO
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
+
+from ..helper import info, debug
+
+
+# yapf: disable
+class Comparable(metaclass=ABCMeta):
+  @abstractmethod
+  def __lt__(self, other: Any) -> bool: ...
+# yapf: enable
+
+CT = TypeVar('CT', bound=Comparable)
 
 __all__ = ['create_data_from_NC']
 
 
 def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -> int:
-  # todo: add docstring
+  """
+  create data from list of NC ids and region\\
+  saves data in a file in the given path
 
+  ## Parameters
+  ```py
+  >>> name : str
+  ```
+  name of the organism to create data from
+  ```py
+  >>> path : str
+  ```
+  path to save the data in (must be a directory, .txt files will be created in it)
+  ```py
+  >>> NC_list : list[str]
+  ```
+  list of NC ids `['NC_000001', 'NC_000002', ...]`
+  ```py
+  >>> region : str
+  ```
+  region to create data from (e.g. 'CDS', 'tRNA', 'rRNA', 'gene', ...)
+
+  ## Returns
+  ```py
+  int : no of regions found
+  ```
+  """
   letters = string.ascii_lowercase
   Entrez.email = ''.join(random.choice(letters) for _ in range(10)) + '@gmail.com'
   NC_i = 1
@@ -26,7 +63,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     name = name.replace('[', '_')
     name = name.replace(']', '_')
     name = name.replace(':', '_')
-    NC_i += 1
+    NC_i += 1  # increment here so we do not forget after continue
     debug(f'NC id  = {NC}')
     debug('----------------------------')
     handle_fasta = Entrez.efetch(db='nucleotide', id=NC, rettype='fasta', retmode='text')
@@ -38,14 +75,16 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     record = Entrez.read(handle_text)
     handle_text.close()
     list_file = []
-    for i in range(len(record[0]['GBSeq_feature-table'])):
-      info('\tfeature : ' + str(i + 1) + ' / ' + str(len(record[0]['GBSeq_feature-table'])))
+    no_total_features = len(record[0]['GBSeq_feature-table'])
+    info(f'\tno total features : {no_total_features}' )
+    for i in range(no_total_features):
       feature_location = record[0]['GBSeq_feature-table'][i]['GBFeature_location']
       feature_key = record[0]['GBSeq_feature-table'][i]['GBFeature_key']
       if feature_key != region:
         continue
-      no_region_found += 1
-      NC_filename = str(name) + '_' + feature_key + '_NC_' + str(NC_i) + '.txt'
+      no_region_found += 1  # we found a region
+      # make sure we decrement NC_i because we incremented it at the beginning of the loop
+      NC_filename = str(name) + '_' + feature_key + '_NC_' + str(NC_i - 1) + '.txt'
 
       file_path = os.path.join(path, NC_filename)
       if len(list_file) != 0:
@@ -177,11 +216,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   if no_region_found == 0:
     info(f'Selected functional region not found for organism : [{name}]')
     return 0
-  info(f'{name} downloaded')
+  info(f'{name} downloaded successfully')
   return no_region_found
 
 
-def check_inf_sup(inf, sup) -> bool:
+# wtf is this atrocious code and why is it here ??
+def check_inf_sup(inf: CT, sup: CT) -> bool:
   if (inf <= sup):
     return True
   else:
