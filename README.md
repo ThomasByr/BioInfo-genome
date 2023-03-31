@@ -35,6 +35,8 @@ Then, you can run the program with :
 python .\genome.py
 ```
 
+On a side note, we use [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/) to build the GUI, so you might want to check out their [documentation](https://pysimplegui.readthedocs.io/en/latest/) if you want to contribute to the project ! 🙂 We also use [BioPython](https://biopython.org/) to parse the genome files with ease. We strongly advise to check for solid internet connection when running the program for the first time, as it will download the genome files from [NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/) and build the system tree from scratch.
+
 ## 👩‍🏫 Usage
 
 The program is pretty simple to use, just follow the instructions and you'll be fine ! 🙂
@@ -53,6 +55,30 @@ If you ever want to force base rebuild of the system tree, you can either pass `
 $env:REBUILD = "True"
 ```
 
+Anyways, here's a screenshot of the GUI :
+
+![GUI](assets/GUI.png)
+
+It is pretty self-explanatory, but here's a quick rundown :
+
+- `Results` : On the left panel, you can see the system tree.
+
+This tree is built from https requests to the NCBI FTP server, and is used to navigate through the genome files. Because there are a lot of files, this tree view is generated on the fly, when you double click on a node. Files and folders are displayed with their respective icons, and the tree is sorted alphabetically.
+
+To preselect an organism, simply click on it in the tree view.
+
+- `Region Selection` : On the right panel, you can see the region selection.
+
+This is a dropdown menu that allows you to select a region of the genome.
+
+- `Log` : On the bottom-right panel, you can see the log.
+
+This is a redirection of the standard output, so you can see what's going on under the hood. All threads outputs are also redirected here ; but spammy outputs are being proxied.
+
+- `Buttons` : On the bottom-left panel, you can see 4 buttons.
+
+The first one is the `Run` button, which will run the program with the selected organism and region. The second one is the `Confirm Selection` button, which will confirm the preselection from the tree view. Then the third one is `Dry Reload` which will reload the tree view without altering anything. The fourth one is `Reset`, which will reset the system tree and the tree view entirely.
+
 ## 🧪 Testing
 
 Oh god... please don't.
@@ -67,7 +93,7 @@ You can also use the vscode UI to run the tests, just click on the `Run All Test
 
 ## 🧑‍🏫 Contributing
 
-If you ever want to contribute, either request the contributor status, or, more manually, fork the repo and make a full request !.
+If you ever want to contribute, either request the contributor status, or, more manually, fork the repo and make a pull request !
 
 > The standard procedure is :
 >
@@ -101,6 +127,8 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 **TODO** (first implementation version)
 
 - [x] add region selection feature
+- [ ] add multi organism selection feature and thread it
+- [ ] open txt file on double click
 
 **Known Bugs** (latest fix)
 
