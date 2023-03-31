@@ -10,7 +10,6 @@ orig_stdout = sys.stdout
 orig_stderr = sys.stderr
 thread_proxies = {}
 
-
 __all__ = ['redirect', 'stop_redirect', 'enable_proxy', 'disable_proxy']
 
 

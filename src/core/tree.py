@@ -10,6 +10,8 @@ import tqdm
 import requests
 import pandas as pd
 
+from dotenv import load_dotenv
+
 from ..helper import info, error, panic, capture
 
 __all__ = ['Tree', 'Value']
@@ -42,6 +44,17 @@ class Tree:
     """
     self.__name = 'overview' if name is None else name
     self.__data: dict[str, Value] = {}
+    
+    load_dotenv()
+
+    __rebuild = os.getenv('REBUILD')
+    self.__is_rebuild: bool = False
+    if __rebuild is not None:
+      if isinstance(__rebuild, str):
+        if __rebuild.lower() in ['true', '1']:
+          self.__is_rebuild = True
+      elif isinstance(__rebuild, bool):
+        self.__is_rebuild = __rebuild
 
   def build(self, force_rebuild: bool = False, silent: bool = False) -> None:
     """
@@ -56,11 +69,12 @@ class Tree:
     defaults to `False`
     """
     pickle_path = os.path.join('data', 'tree.pkl')
-    if not force_rebuild and os.path.exists(pickle_path):
+    if not (force_rebuild or self.__is_rebuild) and os.path.exists(pickle_path):
       info(f'loading tree ({pickle_path}) from pickle')
       if silent:
         capture.redirect()
       with open(pickle_path, 'rb') as f:
+        self.__data.clear()
         self.__data = pickle.load(f)
       for organism in tqdm.tqdm(self.__data, desc='building tree'):
         path = self.__data[organism].path
@@ -84,6 +98,7 @@ class Tree:
       return
 
     total_rows = len(df.index)
+    self.__data.clear()
     info(f'building tree from {self.__name}.txt ({total_rows} rows)')
     if silent:
       capture.redirect()
@@ -133,7 +148,7 @@ class Tree:
     # save the tree
     with open('data/tree.pkl', 'wb') as f:
       pickle.dump(self.__data, f)
-  
+
   def get_info(self, organism: str) -> Value:
     """
     returns the value of the given organism.
