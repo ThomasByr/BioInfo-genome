@@ -76,4 +76,5 @@ Results/
 
 # Environments
 .env
+data/*.pkl
 assets/*.csv
