@@ -7271,6 +7271,8 @@
 188913	NZ_CP092525	2203223797	0	CP092525	Cetobacterium somerae	plasmid unnamed6  
 1173020	NC_020053	436736818	0	CP003601	Chamaesiphon minutus PCC 6605	plasmid pCHA6605.01  
 1173020	NC_019698	434389900	0	CP003602	Chamaesiphon minutus PCC 6605	plasmid pCHA6605.02  
+3028735	NZ_CP120362	2471036232	0	CP120362	Chelativorans sp. AA-79	plasmid unnamed1  
+3028735	NZ_CP120363	2471036233	0	CP120363	Chelativorans sp. AA-79	plasmid unnamed2  
 266779	NC_008242	110346917	0	CP000389	Chelativorans sp. BNC1	plasmid 1  
 266779	NC_008243	110347235	0	CP000391	Chelativorans sp. BNC1	plasmid 2  
 266779	NC_008244	110347349	0	CP000392	Chelativorans sp. BNC1	plasmid 3  
@@ -33496,6 +33498,8 @@
 190721	NZ_CP016025	1039446067	0	CP016025	Ralstonia insidiosa	plasmid pRI-2  
 190721	NZ_CP012607	1034525723	0	CP012607	Ralstonia insidiosa	plasmid unnamed  
 105219	NZ_CP010801	771609785	0	CP010801	Ralstonia mannitolilytica	plasmid pRMAN01  
+1262456	NC_021745	525710956	0	CP004013	Ralstonia nicotianae FQY_4	plasmid megaplasmid  
+267608	NC_003296	17548221	0	AL646053	Ralstonia nicotianae GMI1000	plasmid pGMI1000MP  
 329	NZ_CP066773	1952188155	0	CP066773	Ralstonia pickettii	plasmid pRP6297_1  
 329	NZ_CP084361	2108942463	0	CP084361	Ralstonia pickettii	plasmid unnamed1  
 329	NZ_CP084362	2108942473	0	CP084362	Ralstonia pickettii	plasmid unnamed2  
@@ -33625,8 +33629,6 @@
 859655	NC_017558	410683901	0	FP885893	Ralstonia solanacearum CMR15	plasmid pRSC35  
 1130828	NZ_CP016555	1110667747	0	CP016555	Ralstonia solanacearum FJAT-1458	plasmid plas1  
 1130829	NZ_CP016613	1197760474	0	CP016613	Ralstonia solanacearum FJAT-91	plasmid unnamed1  
-1262456	NC_021745	525710956	0	CP004013	Ralstonia solanacearum FQY_4	plasmid megaplasmid  
-267608	NC_003296	17548221	0	AL646053	Ralstonia solanacearum GMI1000	plasmid pGMI1000MP  
 1429399	NZ_CP009763	1103294991	0	CP009763	Ralstonia solanacearum OE1-1	plasmid unnamed  
 859657	NC_014310	300693042	0	FP885891	Ralstonia solanacearum PSI07	plasmid mpPSI07  
 1031711	NC_017575	386335008	0	CP002820	Ralstonia solanacearum Po82	plasmid megaplasmid  
@@ -34491,8 +34493,10 @@
 1829	NZ_CP083975	2329420413	0	CP083975	Rhodococcus rhodochrous	plasmid pGD02.2.1  
 1829	NZ_CP083976	2329420418	0	CP083976	Rhodococcus rhodochrous	plasmid pGD02.2.2  
 1829	NZ_CP032676	1798120240	0	CP032676	Rhodococcus rhodochrous	plasmid pNit  
+1829	NZ_CP120357	2471047488	0	CP120357	Rhodococcus rhodochrous	plasmid unnamed1  
 1829	NZ_CP027558	1914476323	0	CP027558	Rhodococcus rhodochrous	plasmid unnamed1  
 1829	NZ_CP027559	1914476336	0	CP027559	Rhodococcus rhodochrous	plasmid unnamed2  
+1829	NZ_CP120358	2471047491	0	CP120358	Rhodococcus rhodochrous	plasmid unnamed2  
 1829	NZ_CP027560	1914476341	0	CP027560	Rhodococcus rhodochrous	plasmid unnamed3  
 1830	NZ_CP024892	1327628524	0	CP024892	Rhodococcus ruber	plasmid pYYL1.1  
 1830	NZ_CP024891	1327628523	0	CP024891	Rhodococcus ruber	plasmid pYYL1.2  
@@ -41242,11 +41246,11 @@
 632	NZ_CP045639	1957516240	0	CP045639	Yersinia pestis	plasmid pS96127  
 632	NZ_CP045152	1769169003	0	CP045152	Yersinia pestis	plasmid pTP33  
 632	NZ_CP045261	1769981318	0	CP045261	Yersinia pestis	plasmid pTP33  
-632	NZ_CP084337	2281162891	0	CP084337	Yersinia pestis	plasmid unnamed1  
-632	NZ_CP033697	1520150088	0	CP033697	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP009702	756144240	0	CP009702	Yersinia pestis	plasmid unnamed1  
-632	NZ_CP084340	2281173655	0	CP084340	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP033697	1520150088	0	CP033697	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP084337	2281162891	0	CP084337	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP033689	1520113251	0	CP033689	Yersinia pestis	plasmid unnamed1  
+632	NZ_CP084340	2281173655	0	CP084340	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP033694	1520150343	0	CP033694	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP084344	2281173766	0	CP084344	Yersinia pestis	plasmid unnamed1  
 632	NZ_CP033691	1520114127	0	CP033691	Yersinia pestis	plasmid unnamed2  
