@@ -95,9 +95,7 @@ It is pretty self-explanatory, but here's a quick rundown :
 
 - `Results` : On the left panel, you can see the system tree.
 
-This tree is built from https requests to the NCBI FTP server, and is used to navigate through the genome files. Because there are a lot of files, this tree view is generated on the fly, when you double click on a node. Files and folders are displayed with their respective icons, and the tree is sorted alphabetically.
-
-To preselect an organism, simply click on it in the tree view.
+This tree is built from https requests to the NCBI FTP server, and is used to navigate through the genome files. All files are loaded once in startup, and then cached in memory. To preselect an organism, simply click on it in the tree view.
 
 - `Region Selection` : On the right panel, you can see the region selection.
 
