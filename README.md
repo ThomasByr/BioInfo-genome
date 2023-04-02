@@ -106,7 +106,7 @@ This is a redirection of the standard output, so you can see what's going on und
 
 - `Buttons` : On the bottom-left panel, you can see 4 buttons.
 
-The first one is the `Run` button, which will run the program with the selected organism and region. The second one is the `Confirm Selection` button, which will confirm the preselection from the tree view. Then the third one is `Dry Reload` which will reload the tree view without altering anything. The fourth one is `Reset`, which will reset the system tree and the tree view entirely.
+The first one is the `Run` button, which will run the program with the selected organism and region. The second one is the `Toggle Selection` button, which will toggle all preselection from the tree view (alternatively, you can select and right-click). Then the third one is `Dry Reload` which will reload the tree view without altering anything. The fourth one is `Reset`, which will reset the system tree and the tree view entirely.
 
 ## 🧪 Testing
 
@@ -115,7 +115,7 @@ Oh god... please don't.
 Still, make sure you have `pytest` up and ready and then run :
 
 ```ps1
-pytest .\src\
+pytest src
 ```
 
 You can also use the vscode UI to run the tests, just click on the `Run All Tests` button on the left of the `Test Explorer` tab.
@@ -123,6 +123,12 @@ You can also use the vscode UI to run the tests, just click on the `Run All Test
 ## 🧑‍🏫 Contributing
 
 If you ever want to contribute, either request the contributor status, or, more manually, fork the repo and make a pull request !
+
+We are using [yapf](https://github.com/google/yapf) to format the code, so make sure you have it installed and run :
+
+```ps1
+yapf -ir src
+```
 
 > The standard procedure is :
 >
@@ -156,12 +162,13 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 **TODO** (first implementation version)
 
 - [x] add region selection feature
-- [ ] add multi organisms selection feature and thread it
+- [x] add multi organisms selection feature and thread it
 - [ ] open txt file on double click
+- [x] add checkboxes to select organisms
 
 **Known Bugs** (latest fix)
 
 - selection can be made with anything in the tree (including not leafs folders and even files)
 - ~~dynamic selection does not display newly created files~~
 - removed `if __name__ == "__main__":` from `genome.py` (for double click to work)
-- bad paths hopefully fixed by removing `.pkl` files from sync to force rebuild on unknown OS
+- ~~bad paths~~ (hopefully fixed by removing `.pkl` files from sync to force rebuild on unknown OS)
