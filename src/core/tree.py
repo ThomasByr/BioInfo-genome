@@ -43,7 +43,7 @@ class Tree:
     """
     self.__name = 'overview' if name is None else name
     self.__data: dict[str, Value] = {}
-    
+
     load_dotenv()
 
     __rebuild = os.getenv('REBUILD')

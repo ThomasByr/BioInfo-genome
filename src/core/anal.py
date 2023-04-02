@@ -55,7 +55,6 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   Entrez.email = ''.join(random.choice(letters) for _ in range(10)) + '@gmail.com'
   NC_i = 1
   no_region_found = 0
-  info()
   info(f'downloading [{name}]')
   for NC in NC_list:
     info('NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
@@ -76,7 +75,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     handle_text.close()
     list_file = []
     no_total_features = len(record[0]['GBSeq_feature-table'])
-    info(f'\tno total features : {no_total_features}' )
+    info(f'\tno total features : {no_total_features}')
     for i in range(no_total_features):
       feature_location = record[0]['GBSeq_feature-table'][i]['GBFeature_location']
       feature_key = record[0]['GBSeq_feature-table'][i]['GBFeature_key']

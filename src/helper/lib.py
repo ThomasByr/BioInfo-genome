@@ -24,8 +24,7 @@ if __debug is not None:
 
 
 def _print_msg(msg: str | Any) -> None:
-  print(msg if msg is not None else '', file=sys.stderr)
-  sys.stderr.flush()
+  print(msg if msg is not None else '', file=sys.stderr, flush=True)
 
 
 def debug(msg: str | Any = None) -> None:
@@ -40,8 +39,7 @@ def debug(msg: str | Any = None) -> None:
   """
   if not __is_debug:
     return
-  print(colored('  [debug]', 'green'), file=sys.stderr, end=' ')
-  _print_msg(msg)
+  _print_msg(colored('  [debug] ', 'green') + msg)
 
 
 def info(msg: str | Any = None) -> None:
@@ -54,8 +52,7 @@ def info(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  print(colored('   [info]', 'blue'), file=sys.stderr, end=' ')
-  _print_msg(msg)
+  _print_msg(colored('   [info] ', 'blue') + msg)
 
 
 def error(msg: str | Any = None) -> None:
@@ -68,8 +65,7 @@ def error(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  print(colored('  [error]', 'yellow'), file=sys.stderr, end=' ')
-  _print_msg(msg)
+  _print_msg(colored('  [error] ', 'yellow') + msg)
 
 
 def panic(msg: str | Any = None) -> NoReturn:

@@ -1,10 +1,11 @@
+import base64
+from io import BytesIO
 import os
 
-from copy import deepcopy
 from threading import Thread
+from multiprocessing import Pool
 
-from pathlib import Path
-from typing import Any
+from PIL import Image, ImageDraw
 import PySimpleGUI as sg
 
 from ..core import Tree, Value, create_data_from_NC
@@ -14,6 +15,22 @@ __all__ = ['GenomeGUI']
 
 folder_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABnUlEQVQ4y8WSv2rUQRSFv7vZgJFFsQg2EkWb4AvEJ8hqKVilSmFn3iNvIAp21oIW9haihBRKiqwElMVsIJjNrprsOr/5dyzml3UhEQIWHhjmcpn7zblw4B9lJ8Xag9mlmQb3AJzX3tOX8Tngzg349q7t5xcfzpKGhOFHnjx+9qLTzW8wsmFTL2Gzk7Y2O/k9kCbtwUZbV+Zvo8Md3PALrjoiqsKSR9ljpAJpwOsNtlfXfRvoNU8Arr/NsVo0ry5z4dZN5hoGqEzYDChBOoKwS/vSq0XW3y5NAI/uN1cvLqzQur4MCpBGEEd1PQDfQ74HYR+LfeQOAOYAmgAmbly+dgfid5CHPIKqC74L8RDyGPIYy7+QQjFWa7ICsQ8SpB/IfcJSDVMAJUwJkYDMNOEPIBxA/gnuMyYPijXAI3lMse7FGnIKsIuqrxgRSeXOoYZUCI8pIKW/OHA7kD2YYcpAKgM5ABXk4qSsdJaDOMCsgTIYAlL5TQFTyUIZDmev0N/bnwqnylEBQS45UKnHx/lUlFvA3fo+jwR8ALb47/oNma38cuqiJ9AAAAAASUVORK5CYII='
 file_icon = b'iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAACXBIWXMAAAsSAAALEgHS3X78AAABU0lEQVQ4y52TzStEURiHn/ecc6XG54JSdlMkNhYWsiILS0lsJaUsLW2Mv8CfIDtr2VtbY4GUEvmIZnKbZsY977Uwt2HcyW1+dTZvt6fn9557BGB+aaNQKBR2ifkbgWR+cX13ubO1svz++niVTA1ArDHDg91UahHFsMxbKWycYsjze4muTsP64vT43v7hSf/A0FgdjQPQWAmco68nB+T+SFSqNUQgcIbN1bn8Z3RwvL22MAvcu8TACFgrpMVZ4aUYcn77BMDkxGgemAGOHIBXxRjBWZMKoCPA2h6qEUSRR2MF6GxUUMUaIUgBCNTnAcm3H2G5YQfgvccYIXAtDH7FoKq/AaqKlbrBj2trFVXfBPAea4SOIIsBeN9kkCwxsNkAqRWy7+B7Z00G3xVc2wZeMSI4S7sVYkSk5Z/4PyBWROqvox3A28PN2cjUwinQC9QyckKALxj4kv2auK0xAAAAAElFTkSuQmCC'
+
+folder_img = Image.open(BytesIO(base64.b64decode(folder_icon)))
+file_img = Image.open(BytesIO(base64.b64decode(file_icon)))
+tick_lines = [(4, 8), (7, 11), (12, 4)]
+
+folder_draw = ImageDraw.Draw(folder_img)
+folder_draw.line(tick_lines, fill=(0, 155, 0), width=2)
+with BytesIO() as output:
+  folder_img.save(output, format='PNG')
+  folder_checked_icon = output.getvalue()
+
+file_draw = ImageDraw.Draw(file_img)
+file_draw.line(tick_lines, fill=(0, 155, 0), width=2)
+with BytesIO() as output:
+  file_img.save(output, format='PNG')
+  file_checked_icon = output.getvalue()
 
 
 class GenomeGUI:
@@ -25,14 +42,14 @@ class GenomeGUI:
     self.__monospace_font = ('Courier', 7)  # font for the log window
     self.__file_tree: list[list[sg.Tree]] = None  # file tree layout
     self.__tree_data: sg.TreeData = None  # file tree data
-    self.__selected_organism: str = None  # selected organism
+
+    self.__selected_organisms: set[str] = set()  # selected organisms
     self.__selected_region: str = 'CDS'  # selected region
     self.__tree = tree  # tree stored to recieve `Value` data
 
-    # these two bellow are stored here
+    # this one bellow is stored here
     # because the reset thread recieve `self` as argument
 
-    self.__data_component: dict[str, dict[str, Any]] = {}
     self.__tree_component = None
 
     # some layouts
@@ -80,10 +97,21 @@ class GenomeGUI:
     ]
 
   def __build_tree(self, path: str = None) -> sg.TreeData:
+
+    def add_folder(parent: str, folder: str):
+      files = os.listdir(folder)
+      for f in files:
+        fullname = os.path.join(folder, f)
+        if os.path.isdir(fullname):
+          self.__tree_data.insert(parent, fullname, f, values=[], icon=folder_icon)
+          add_folder(fullname, fullname)
+        # else:
+        #   self.__tree_data.insert(parent, fullname, f, values=[], icon=file_icon)
+
     path = self.__results_folder if path is None else path
     self.__tree_data = sg.TreeData()
 
-    self.__tree_data.insert('', 0, os.path.basename(self.__results_folder), [], icon=folder_icon)
+    add_folder('', path)
 
     return self.__tree_data
 
@@ -96,7 +124,7 @@ class GenomeGUI:
               ], [sg.HSeparator()],
               [
                   sg.Button('Run', font=self.__font, size=(10, 2)),
-                  sg.Button('Confirm Selection', font=self.__font, size=(10, 2)),
+                  sg.Button('Toggle Selection', font=self.__font, size=(10, 2)),
                   sg.VSeparator(),
                   sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
                   sg.Button('Reset', font=self.__font, size=(10, 2)),
@@ -104,7 +132,8 @@ class GenomeGUI:
               [
                   sg.Text('by: @ThomasByr, @m7415, @JBrandstaedt and @Bas6700',
                           font=self.__font,
-                          justification='right', expand_x=True)
+                          justification='right',
+                          expand_x=True)
               ]]
     return layout
 
@@ -117,7 +146,7 @@ class GenomeGUI:
             num_rows=25,
             col0_width=40,
             key='-TREE-',
-            show_expanded=True,
+            show_expanded=False,
             enable_events=True,
         )
     ]]
@@ -147,71 +176,49 @@ class GenomeGUI:
 
     capture.enable_proxy()  # enable capture stdout and stderr for all children threads
 
-    def new_key() -> int:  # get a new key for the tree
-      key = 1
-      while key in self.__data_component:
-        key += 1
-      return key
-
     def reset(gui: 'GenomeGUI') -> None:  # reset the system tree
       gui.__tree.build(True, True)
       gui.__build_file_tree()
-      gui.__data_component = deepcopy(base_data)
       gui.__tree_component.update(values=gui.__tree_data)
+
+    def get_data(gui: 'GenomeGUI', val: Value) -> None:
+      create_data_from_NC(val.name, val.path, val.nc, gui.__selected_region)
 
     self.__tree_component = self.__window['-TREE-']  # get the tree component
     if isinstance(self.__tree_component, sg.ErrorElement):
       panic('Tree not found')
 
     self.__tree_component.Widget.configure(show='tree')
-    self.__tree_component.bind('<Double-1>', "DOUBLE-CLICK-")  # expand/explore on double click
-
-    DIR, FILE = True, False
-    self.__data_component = {
-        0: {
-            'kind': DIR,
-            'path': '',
-            'file': os.path.basename(self.__results_folder),
-            'children': None
-        },
-    }
-    displayed_files: set[str] = set()  # do NOT expand a file twice
-    base_data = deepcopy(self.__data_component)  # base data to reset the tree
+    self.__tree_component.bind('<Button-3>', "RIGHT-CLICK-")  # select on right click
 
     running = True  # main loop
+    key = None
     while running:
       event, values = self.__window.read()
       if event in (sg.WIN_CLOSED, 'Exit'):
         running = False
-
-      if event == 'Confirm Selection':
-        try:
-          selected = values['-TREE-'][0]
-          self.__selected_organism = self.__data_component[selected]['file']
-          info(f'Selected organism: {self.__selected_organism}')
-        except IndexError:
-          error('Nothing selected in the tree')
 
       if event == '-SELECT-':
         self.__selected_region = values['-SELECT-']
         info(f'Selected region: {self.__selected_region}')
 
       if event == 'Run':
-        if self.__selected_organism is None:
+        if len(self.__selected_organisms) == 0:
           error('No organism selected')
           continue
         if self.__selected_region is None:
           error('No region selected')
           continue
-        val: Value
-        try:
-          val = self.__tree.get_info(self.__selected_organism)
-        except KeyError:
-          error(f'No data for {self.__selected_organism} : '
-                f'this could be because {self.__selected_organism} is not a valid organism')
-          continue
-        Thread(target=create_data_from_NC,
-               args=(self.__selected_organism, val.path, val.nc, self.__selected_region)).start()
+        values: list[Value] = []
+        for organism in self.__selected_organisms:
+          try:
+            values.append(self.__tree.get_info(organism))
+          except KeyError:
+            error(f'No data for {organism} : '
+                  f'this could be because {organism} is not a valid organism')
+            continue
+        for val in values:
+          Thread(target=get_data, args=(self, val)).start()
 
       if event == 'Dry Reload':
         Thread(target=self.__tree.build, args=[False, True]).start()
@@ -219,56 +226,22 @@ class GenomeGUI:
         r = sg.popup_ok_cancel('Are you sure you want to reset the tree?\n'
                                'This will delete all data in "Results" folder!')
         if r == 'OK':
-          displayed_files.clear()
           Thread(target=reset, args=[self]).start()
 
-      if event == '-TREE-DOUBLE-CLICK-':
-        try:
-          parent_key = values['-TREE-'][0]
-          node = self.__data_component[parent_key]
-        except IndexError:
-          continue
+      if event in {'-TREE-RIGHT-CLICK-', 'Toggle Selection'}:
+        for item in self.__tree_component.Widget.selection():
+          key = self.__tree_component.IdToKey[item]
+          name = key.split(os.sep)[-1]
+          if name in self.__selected_organisms:
+            self.__selected_organisms.remove(name)
+            self.__tree_component.update(key=key,
+                                      icon=folder_icon if os.path.isdir(key) else file_icon)
+          else:
+            self.__selected_organisms.add(name)
+            self.__tree_component.update(key=key,
+                                      icon=folder_checked_icon if os.path.isdir(key) else file_checked_icon)
+          info(f'Selected organisms: {self.__selected_organisms}')
 
-        if node['kind'] == DIR:
-          parent_path = Path(node['path']).joinpath(node['file'])
-          files: list
-          try:
-            files = sorted(list(parent_path.iterdir()), key=lambda file: file.is_file())
-          except PermissionError:
-            error(f'Permission denied: {parent_path}')
-            continue
-
-          if node['children'] is not None:  # here we only search for new files
-            for item in files:
-              if item.is_file() and str(item) not in displayed_files:
-                displayed_files.add(str(item))
-                key = new_key()
-                kind, path, file = item.is_dir(), str(item.parent), item.name
-                self.__tree_data.insert(parent_key,
-                                        key,
-                                        str(file), [],
-                                        icon=folder_icon if kind == DIR else file_icon)
-                node['children'].append(key)
-                self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
-          else:  # here we search for new files and new folders that were never expanded
-            node['children'] = []
-            for item in files:
-              kind, path, file = item.is_dir(), str(item.parent), item.name
-              if kind == FILE and str(item) in displayed_files:
-                continue
-              key = new_key()
-              displayed_files.add(str(item))
-              self.__tree_data.insert(parent_key,
-                                      key,
-                                      str(file), [],
-                                      icon=folder_icon if kind == DIR else file_icon)
-              node['children'].append(key)
-              self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
-
-          debug(f'Loaded {len(files)} items from {parent_path}')
-          self.__tree_component.update(values=self.__tree_data)
-          iid = self.__tree_component.KeyToID[parent_key]
-          self.__tree_component.Widget.see(iid)
 
     capture.disable_proxy()
     self.__window.close()
