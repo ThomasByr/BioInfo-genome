@@ -46,6 +46,7 @@ python3 genome.py
 </details>
 
 <br>
+
 On a side note, we use [PySimpleGUI](https://pysimplegui.readthedocs.io/en/latest/) to build the GUI, so you might want to check out their [documentation](https://pysimplegui.readthedocs.io/en/latest/) if you want to contribute to the project ! 🙂 We also use [BioPython](https://biopython.org/) to parse the genome files with ease. We strongly advise to check for solid internet connection when running the program for the first time, as it will download the genome files from [NCBI](https://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/) and build the system tree from scratch.
 
 ## 👩‍🏫 Usage
@@ -69,6 +70,7 @@ export DEBUG=True
 </details>
 
 <br>
+
 If you ever want to force base rebuild of the system tree, you can either pass `True` as the first argument from `overview.build()` in [genome.py](genome.py), or add `REBUILD=True` to the environment variables.
 
 ```ps1
@@ -84,6 +86,7 @@ export REBUILD=True
 </details>
 
 <br>
+
 Anyways, here's a screenshot of the GUI :
 
 ![GUI](assets/GUI.png)
