@@ -140,7 +140,7 @@ class GenomeGUI:
   def __build_file_tree(self):
     self.__file_tree = [[
       sg.Tree(
-        data=self.__build_tree(),
+        data=sg.TreeData(),  # empty tree, will be filled later
         headings=[],
         auto_size_columns=False,
         num_rows=25,
@@ -190,6 +190,13 @@ class GenomeGUI:
 
     self.__tree_component.Widget.configure(show='tree')
     self.__tree_component.bind('<Button-3>', "RIGHT-CLICK-")  # select on right click
+
+    def load_tree(gui: 'GenomeGUI') -> None:
+      gui.__tree_component.update(values=gui.__build_tree())
+      info('Tree has been loaded')
+      return
+
+    Thread(target=load_tree, args=(self,)).start()  # update the tree in a new thread
 
     running = True  # main loop
     key = None
