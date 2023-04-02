@@ -56,44 +56,44 @@ class GenomeGUI:
 
     self.__info = [[sg.Text('Region Selection', font=self.__font)],
                    [
-                       sg.Combo(
-                           [
-                               'CDS',
-                               'centromere',
-                               'intron',
-                               'mobile_element',
-                               'ncRNA',
-                               'rRNA',
-                               'telomere',
-                               'tRNA',
-                               '3\'UTR',
-                               '5\'UTR',
-                           ],
-                           enable_events=True,
-                           expand_x=True,
-                           default_value='CDS',
-                           key='-SELECT-',
-                       )
+                     sg.Combo(
+                       [
+                         'CDS',
+                         'centromere',
+                         'intron',
+                         'mobile_element',
+                         'ncRNA',
+                         'rRNA',
+                         'telomere',
+                         'tRNA',
+                         '3\'UTR',
+                         '5\'UTR',
+                       ],
+                       enable_events=True,
+                       expand_x=True,
+                       default_value='CDS',
+                       key='-SELECT-',
+                     )
                    ]]
 
     self.__log = [[sg.Text('Logs', font=self.__font)],
                   [
-                      sg.Multiline(
-                          key='-LOG-',
-                          size=(60, 25),
-                          expand_x=True,
-                          echo_stdout_stderr=True,
-                          reroute_stdout=True,
-                          reroute_stderr=True,
-                          autoscroll=True,
-                          write_only=True,
-                          font=self.__monospace_font,
-                      )
+                    sg.Multiline(
+                      key='-LOG-',
+                      size=(60, 25),
+                      expand_x=True,
+                      echo_stdout_stderr=True,
+                      reroute_stdout=True,
+                      reroute_stderr=True,
+                      autoscroll=True,
+                      write_only=True,
+                      font=self.__monospace_font,
+                    )
                   ]]
     self.__right_side = [
-        [sg.Column(self.__info, vertical_alignment='top')],
-        [sg.HSeparator()],
-        [sg.Column(self.__log, vertical_alignment='top')],
+      [sg.Column(self.__info, vertical_alignment='top')],
+      [sg.HSeparator()],
+      [sg.Column(self.__log, vertical_alignment='top')],
     ]
 
   def __build_tree(self, path: str = None) -> sg.TreeData:
@@ -118,37 +118,37 @@ class GenomeGUI:
   def __build_layout(self):
     layout = [[sg.Text('GENOME', font=self.__font)], [sg.HSeparator()],
               [
-                  sg.Column(self.__file_tree, justification='center'),
-                  sg.VSeparator(),
-                  sg.Column(self.__right_side)
+                sg.Column(self.__file_tree, justification='center'),
+                sg.VSeparator(),
+                sg.Column(self.__right_side)
               ], [sg.HSeparator()],
               [
-                  sg.Button('Run', font=self.__font, size=(10, 2)),
-                  sg.Button('Toggle Selection', font=self.__font, size=(10, 2)),
-                  sg.VSeparator(),
-                  sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
-                  sg.Button('Reset', font=self.__font, size=(10, 2)),
+                sg.Button('Run', font=self.__font, size=(10, 2)),
+                sg.Button('Toggle Selection', font=self.__font, size=(10, 2)),
+                sg.VSeparator(),
+                sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
+                sg.Button('Reset', font=self.__font, size=(10, 2)),
               ], [sg.Text('Developed with ❤', font=self.__font, justification='right', expand_x=True)],
               [
-                  sg.Text('by: @ThomasByr, @m7415, @JBrandstaedt and @Bas6700',
-                          font=self.__font,
-                          justification='right',
-                          expand_x=True)
+                sg.Text('by: @ThomasByr, @m7415, @JBrandstaedt and @Bas6700',
+                        font=self.__font,
+                        justification='right',
+                        expand_x=True)
               ]]
     return layout
 
   def __build_file_tree(self):
     self.__file_tree = [[
-        sg.Tree(
-            data=self.__build_tree(),
-            headings=[],
-            auto_size_columns=False,
-            num_rows=25,
-            col0_width=40,
-            key='-TREE-',
-            show_expanded=False,
-            enable_events=True,
-        )
+      sg.Tree(
+        data=self.__build_tree(),
+        headings=[],
+        auto_size_columns=False,
+        num_rows=25,
+        col0_width=40,
+        key='-TREE-',
+        show_expanded=False,
+        enable_events=True,
+      )
     ]]
 
   def __build_window(self):
@@ -156,13 +156,13 @@ class GenomeGUI:
     with open(os.path.join('assets', 'bioinformatics.png'), 'rb') as f:
       bioinformatics = f.read()
     self.__window = sg.Window(
-        'Genome',
-        self.__build_layout(),
-        size=(800, 600),
-        auto_size_text=False,
-        auto_size_buttons=False,
-        icon=bioinformatics,
-        finalize=True,
+      'Genome',
+      self.__build_layout(),
+      size=(800, 600),
+      auto_size_text=False,
+      auto_size_buttons=False,
+      icon=bioinformatics,
+      finalize=True,
     )
 
   def run(self):
@@ -234,14 +234,12 @@ class GenomeGUI:
           name = key.split(os.sep)[-1]
           if name in self.__selected_organisms:
             self.__selected_organisms.remove(name)
-            self.__tree_component.update(key=key,
-                                      icon=folder_icon if os.path.isdir(key) else file_icon)
+            self.__tree_component.update(key=key, icon=folder_icon if os.path.isdir(key) else file_icon)
           else:
             self.__selected_organisms.add(name)
-            self.__tree_component.update(key=key,
-                                      icon=folder_checked_icon if os.path.isdir(key) else file_checked_icon)
+            self.__tree_component.update(
+              key=key, icon=folder_checked_icon if os.path.isdir(key) else file_checked_icon)
           info(f'Selected organisms: {self.__selected_organisms}')
-
 
     capture.disable_proxy()
     self.__window.close()
