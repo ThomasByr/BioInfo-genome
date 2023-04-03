@@ -33,6 +33,8 @@
 #! ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 #! POSSIBILITY OF SUCH DAMAGE.
 
+import sys
+
 from src import Tree, GenomeGUI
 
 overview = Tree()
@@ -40,3 +42,4 @@ overview.build()
 
 gui = GenomeGUI(overview)
 gui.run()
+sys.exit()
