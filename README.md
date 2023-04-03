@@ -164,12 +164,12 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 - [x] add region selection feature
 - [x] add multi organisms selection feature and thread it
-- [ ] open txt file on double click
+- [x] open txt file on double click
 - [x] add checkboxes to select organisms
 
 **Known Bugs** (latest fix)
 
 - selection can be made with anything in the tree (including not leafs folders and even files)
 - ~~dynamic selection does not display newly created files~~
-- removed `if __name__ == "__main__":` from `genome.py` (for double click to work)
+- ~~double click not working~~ (removed `if __name__ == "__main__":` from `genome.py`)
 - ~~bad paths~~ (hopefully fixed by removing `.pkl` files from sync to force rebuild on unknown OS)
