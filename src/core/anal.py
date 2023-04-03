@@ -62,7 +62,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     name = name.replace('[', '_')
     name = name.replace(']', '_')
     name = name.replace(':', '_')
-    NC_i += 1  # increment here so we do not forget after continue
+    NC_i += 1              # increment here so we do not forget after continue
     debug(f'NC id  = {NC}')
     debug('----------------------------')
     handle_fasta = Entrez.efetch(db='nucleotide', id=NC, rettype='fasta', retmode='text')
@@ -81,7 +81,8 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
       feature_key = record[0]['GBSeq_feature-table'][i]['GBFeature_key']
       if feature_key != region:
         continue
-      no_region_found += 1  # we found a region
+      no_region_found += 1 # we found a region
+
       # make sure we decrement NC_i because we incremented it at the beginning of the loop
       NC_filename = str(name) + '_' + feature_key + '_NC_' + str(NC_i - 1) + '.txt'
 
