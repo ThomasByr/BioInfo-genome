@@ -127,13 +127,12 @@ class Tree:
     ids_files = os.listdir('data/ids')
     for ids in ids_files:
       info(f'updating ids data from {ids}')
-      with open(f'data/ids/{ids}', 'r') as f:
+      with open(f'data/ids/{ids}', 'r', encoding='utf-8') as f:
         for line in f.readlines():
           row = line.split('\t')
           if not row[1].startswith('NC'):
             continue
-          organism = re.sub(f'[{non_valid_chars}]', '_', row[5])
-          if organism in self.__data:
+          if (organism := re.sub(f'[{non_valid_chars}]', '_', row[5])) in self.__data:
             self.__data[organism].nc.append(row[1])
             valid_organisms.add(organism)
 
@@ -150,7 +149,7 @@ class Tree:
     info(f'filtered out {total_rows - len(self.__data)} invalid organisms')
     if silent:
       capture.stop_redirect()
-      info(f'system file tree reset successfully')
+      info('system file tree reset successfully')
 
     # save the tree
     with open('data/tree.pkl', 'wb') as f:
@@ -202,6 +201,6 @@ class Tree:
         error(f'failed to update {name} (file not found)')
         continue
       # if the file is found
-      with open(f'data/ids/{file}', 'wb') as f:
+      with open(f'data/ids/{file}', 'wb', encoding='utf-8') as f:
         f.write(r.content)
       info(f'updated {file}')

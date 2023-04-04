@@ -43,10 +43,8 @@ def stop_redirect() -> str:
   ```
   """
   # Get the current thread's identity.
-  ident = threading.current_thread().ident
-
   # Only act on proxied threads.
-  if ident not in thread_proxies:
+  if (ident := threading.current_thread().ident) not in thread_proxies:
     return
 
   # Read the value, close/remove the buffer, and return the value.

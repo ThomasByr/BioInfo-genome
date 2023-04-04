@@ -75,11 +75,10 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
     handle_text.close()
     list_file = []
     no_total_features = len(record[0]['GBSeq_feature-table'])
-    info(f'\tno total features : {no_total_features}')
+    info(f'\tn° total features : {no_total_features}')
     for i in range(no_total_features):
       feature_location = record[0]['GBSeq_feature-table'][i]['GBFeature_location']
-      feature_key = record[0]['GBSeq_feature-table'][i]['GBFeature_key']
-      if feature_key != region:
+      if (feature_key := record[0]['GBSeq_feature-table'][i]['GBFeature_key']) != region:
         continue
       no_region_found += 1 # we found a region
 
