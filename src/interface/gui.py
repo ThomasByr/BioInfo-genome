@@ -4,7 +4,7 @@ import os
 
 from copy import deepcopy
 from pathlib import Path
-from threading import Thread
+from threading import Thread, Lock
 from typing import Any
 
 from PIL import Image, ImageDraw
@@ -54,6 +54,7 @@ class GenomeGUI:
 
     self.__tree_component = None # tree component (to update it)
     self.__data_component: dict[str, dict[str, Any]] = {}
+    self.__component_lock = Lock()
 
     self.__known_files: set[str] = set() # known files
 
@@ -185,10 +186,11 @@ class GenomeGUI:
 
     def reset(gui: 'GenomeGUI') -> None: # reset the system tree
       gui.__tree.build(True, True)
-      load_tree(gui)
       gui.__known_files.clear()
+      gui.__component_lock.acquire()
       gui.__data_component = deepcopy(base_data)
-      gui.__tree_component.update(values=gui.__tree_data)
+      gui.__component_lock.release()
+      load_tree(gui)
 
     def get_data(gui: 'GenomeGUI', val: Value, parent_key: int) -> None:
       create_data_from_NC(val.name, val.path, val.nc, gui.__selected_region)
@@ -205,9 +207,14 @@ class GenomeGUI:
           }
           gui.__tree_data.insert(parent_key, key, f, [], icon=file_icon)
           gui.__known_files.add(fullname)
+
+      gui.__component_lock.acquire()
       gui.__tree_component.update(values=gui.__tree_data)
       iid = gui.__tree_component.KeyToID[parent_key]
       gui.__tree_component.Widget.see(iid)
+      gui.__component_lock.release()
+
+    # here we do not need to lock outside of the loop
 
     self.__tree_component = self.__window['-TREE-'] # get the tree component
     if isinstance(self.__tree_component, sg.ErrorElement):
@@ -218,7 +225,9 @@ class GenomeGUI:
     self.__tree_component.bind('<Button-3>', "RIGHT-CLICK-")  # select on right click
 
     def load_tree(gui: 'GenomeGUI') -> None:
+      gui.__component_lock.acquire()
       gui.__tree_component.update(values=gui.__build_tree())
+      gui.__component_lock.release()
       info('Tree has been loaded')
       return
 
@@ -266,13 +275,17 @@ class GenomeGUI:
             if len(values) != len(keys):
               # here normally we only have one item more in values
               # because we failed to get the key
+              # otherwise we would have failed to get the value (so both would be missing)
+              # or we would have got both (so both would be present, but we wouldn't have failed)
               values.pop()
             continue
         for i, val in enumerate(values):
           Thread(target=get_data, args=(self, val, keys[i])).start()
         for organism, val in self.__selected_organisms.items():
           full_path = self.__data_component[val]['path']
+          self.__component_lock.acquire()
           self.__tree_component.update(key=val, icon=folder_icon if os.path.isdir(full_path) else file_icon)
+          self.__component_lock.release()
         self.__selected_organisms.clear()
 
       if event == 'Dry Reload':
@@ -290,19 +303,26 @@ class GenomeGUI:
           full_path = os.path.join(full_path, name)
           if name in self.__selected_organisms:
             self.__selected_organisms.pop(name)
+            self.__component_lock.acquire()
             self.__tree_component.update(key=selected,
                                          icon=folder_icon if os.path.isdir(full_path) else file_icon)
+            self.__component_lock.release()
           else:
             self.__selected_organisms[name] = selected
+            self.__component_lock.acquire()
             self.__tree_component.update(
               key=selected, icon=folder_checked_icon if os.path.isdir(full_path) else file_checked_icon)
+            self.__component_lock.release()
           info(f'Selected organisms: {self.__selected_organisms.keys()}')
 
       if event == '-TREE-DOUBLE-CLICK-':
         try:
+          self.__component_lock.acquire()
           parent_key = values['-TREE-'][0]
           node = self.__data_component[parent_key]
+          self.__component_lock.release()
         except IndexError:
+          self.__component_lock.release()
           continue
 
         if node['kind'] == DIR:
@@ -325,8 +345,10 @@ class GenomeGUI:
                                         key,
                                         str(file), [],
                                         icon=folder_icon if kind == DIR else file_icon)
+                self.__component_lock.acquire()
                 node['children'].append(key)
                 self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
+                self.__component_lock.release()
           else:
             # here we search for new files and new folders that were never expanded
             node['children'] = []
@@ -340,13 +362,17 @@ class GenomeGUI:
                                       key,
                                       str(file), [],
                                       icon=folder_icon if kind == DIR else file_icon)
+              self.__component_lock.acquire()
               node['children'].append(key)
               self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
+              self.__component_lock.release()
 
           debug(f'Loaded {len(files)} items from {parent_path}')
+          self.__component_lock.acquire()
           self.__tree_component.update(values=self.__tree_data)
           iid = self.__tree_component.KeyToID[parent_key]
           self.__tree_component.Widget.see(iid)
+          self.__component_lock.release()
 
         else:
           # here we open the file
