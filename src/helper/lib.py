@@ -1,6 +1,7 @@
 import sys
 import os
 import inspect
+import threading
 from typing import Any, NoReturn
 
 from dotenv import load_dotenv
@@ -22,9 +23,13 @@ if __debug is not None:
   elif isinstance(__debug, bool):
     __is_debug = __debug
 
+__print_msg_lock = threading.Lock()
 
-def _print_msg(msg: str | Any) -> None:
+
+def __print_msg(msg: str | Any) -> None:
+  __print_msg_lock.acquire()
   print(msg if msg is not None else '', file=sys.stderr, flush=True)
+  __print_msg_lock.release()
 
 
 def debug(msg: str | Any = None) -> None:
@@ -39,7 +44,7 @@ def debug(msg: str | Any = None) -> None:
   """
   if not __is_debug:
     return
-  _print_msg(colored('  [debug] ', 'green') + msg)
+  __print_msg(colored('  [debug] ', 'green') + msg)
 
 
 def info(msg: str | Any = None) -> None:
@@ -52,7 +57,7 @@ def info(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  _print_msg(colored('   [info] ', 'blue') + msg)
+  __print_msg(colored('   [info] ', 'blue') + msg)
 
 
 def error(msg: str | Any = None) -> None:
@@ -65,7 +70,7 @@ def error(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  _print_msg(colored('  [error] ', 'yellow') + msg)
+  __print_msg(colored('  [error] ', 'yellow') + msg)
 
 
 def panic(msg: str | Any = None) -> NoReturn:

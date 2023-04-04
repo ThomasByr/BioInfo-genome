@@ -52,7 +52,8 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   ```
   """
   letters = string.ascii_lowercase
-  Entrez.email = ''.join(random.choice(letters) for _ in range(10)) + '@gmail.com'
+  local_random = random.Random(hash(name))
+  Entrez.email = ''.join(local_random.choice(letters) for _ in range(10)) + '@gmail.com'
   NC_i = 1
   no_region_found = 0
   info(f'downloading [{name}]')

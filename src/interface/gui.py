@@ -52,9 +52,9 @@ class GenomeGUI:
     # this one bellow is stored here
     # because the reset thread recieve `self` as argument
 
-    self.__tree_component = None # tree component (to update it)
-    self.__data_component: dict[str, dict[str, Any]] = {}
-    self.__component_lock = Lock()
+    self.__tree_component = None   # tree component (to update it)
+    self.__data_component: dict[int, dict[str, Any]] = {}
+    self.__component_lock = Lock() # this lock is to ensure data consistency
 
     self.__known_files: set[str] = set() # known files
 
@@ -180,14 +180,16 @@ class GenomeGUI:
       return key
 
     def dry_reload(gui: 'GenomeGUI') -> None: # reload the tree without reseting the data
+      gui.__component_lock.acquire()
       gui.__known_files.clear()
       gui.__data_component = deepcopy(base_data)
       gui.__tree_component.update(values=gui.__build_tree())
+      gui.__component_lock.release()
 
     def reset(gui: 'GenomeGUI') -> None: # reset the system tree
       gui.__tree.build(True, True)
-      gui.__known_files.clear()
       gui.__component_lock.acquire()
+      gui.__known_files.clear()
       gui.__data_component = deepcopy(base_data)
       gui.__component_lock.release()
       load_tree(gui)
@@ -196,6 +198,7 @@ class GenomeGUI:
       create_data_from_NC(val.name, val.path, val.nc, gui.__selected_region)
       files = os.listdir(val.path)
       for f in files:
+        gui.__component_lock.acquire()
         if (fullname := os.path.join(val.path, f)) not in gui.__known_files:
           gui.__known_files.add(f)
           key = new_key()
@@ -207,12 +210,13 @@ class GenomeGUI:
           }
           gui.__tree_data.insert(parent_key, key, f, [], icon=file_icon)
           gui.__known_files.add(fullname)
+        gui.__component_lock.release()
 
       gui.__component_lock.acquire()
       gui.__tree_component.update(values=gui.__tree_data)
       iid = gui.__tree_component.KeyToID[parent_key]
-      gui.__tree_component.Widget.see(iid)
       gui.__component_lock.release()
+      gui.__tree_component.Widget.see(iid)
 
     # here we do not need to lock outside of the loop
 
@@ -230,9 +234,7 @@ class GenomeGUI:
       gui.__component_lock.release()
       info('Tree has been loaded')
       return
-
-    Thread(target=load_tree, args=(self,)).start() # update the tree in a new thread
-                                                   # load_tree(self)
+    load_tree(self)
 
     DIR, FILE = True, False
     self.__data_component = {
@@ -281,12 +283,12 @@ class GenomeGUI:
             continue
         for i, val in enumerate(values):
           Thread(target=get_data, args=(self, val, keys[i])).start()
+        self.__component_lock.acquire()
         for organism, val in self.__selected_organisms.items():
           full_path = self.__data_component[val]['path']
-          self.__component_lock.acquire()
           self.__tree_component.update(key=val, icon=folder_icon if os.path.isdir(full_path) else file_icon)
-          self.__component_lock.release()
         self.__selected_organisms.clear()
+        self.__component_lock.release()
 
       if event == 'Dry Reload':
         Thread(target=dry_reload, args=(self,)).start()
@@ -298,8 +300,11 @@ class GenomeGUI:
 
       if event in {'-TREE-RIGHT-CLICK-', 'Toggle Selection'}:
         for selected in values['-TREE-']:
+          self.__component_lock.acquire()
           name = self.__data_component[selected]['file']
           full_path = self.__data_component[selected]['path']
+          self.__component_lock.release()
+
           full_path = os.path.join(full_path, name)
           if name in self.__selected_organisms:
             self.__selected_organisms.pop(name)
@@ -338,14 +343,14 @@ class GenomeGUI:
             # here we only search for new files
             for item in files:
               if item.is_file() and str(item) not in self.__known_files:
-                self.__known_files.add(str(item))
-                key = new_key()
                 kind, path, file = item.is_dir(), str(item.parent), item.name
+                self.__known_files.add(str(item))
+                self.__component_lock.acquire()
+                key = new_key()
                 self.__tree_data.insert(parent_key,
                                         key,
                                         str(file), [],
                                         icon=folder_icon if kind == DIR else file_icon)
-                self.__component_lock.acquire()
                 node['children'].append(key)
                 self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
                 self.__component_lock.release()
@@ -354,15 +359,17 @@ class GenomeGUI:
             node['children'] = []
             for item in files:
               kind, path, file = item.is_dir(), str(item.parent), item.name
+              self.__component_lock.acquire()
               if kind == FILE and str(item) in self.__known_files:
+                self.__component_lock.release()
                 continue
               key = new_key()
-              self.__known_files.add(str(item))
+              if kind == FILE:
+                self.__known_files.add(str(item))
               self.__tree_data.insert(parent_key,
                                       key,
                                       str(file), [],
                                       icon=folder_icon if kind == DIR else file_icon)
-              self.__component_lock.acquire()
               node['children'].append(key)
               self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
               self.__component_lock.release()
