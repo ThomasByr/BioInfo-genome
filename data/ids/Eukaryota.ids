@@ -3689,6 +3689,7 @@
 124943	NC_023792	595789659	0	KF986530	Azadirachta indica	plastid   chloroplast
 77060	NC_041433	1610618018	0	MH719101	Azara serrata	plastid   chloroplast
 8773	NC_030781	1052488627	0	KJ872487	Azemiops feae	mitochondrion   mitochondrion
+43153	NC_043808	1707508128	0	MK726028	Azima tetracantha	plastid   chloroplast
 1267105	NC_061999	2216738162	0	OL616213	Azoriella bayeri	mitochondrion   mitochondrion
 381977	NC_034898	1199893461	0	KX063935	Aztecaster matudae	plastid   chloroplast
 106299	NC_056656	2088231997	0	EF473269	Azumapecten farreri	mitochondrion   mitochondrion
@@ -5607,6 +5608,7 @@
 330490	NC_071224	2440030026	0	OP758347	Callisia insignis	plastid   chloroplast
 2558238	NC_042198	1642522394	0	MG456836	Callispa bowringii	mitochondrion   mitochondrion
 990943	NC_056193	2055406770	0	MT742541	Callista chinensis	mitochondrion   mitochondrion
+2559493	NC_043793	1707506923	0	MK726008	Callisthene erythroclada	plastid   chloroplast
 102869	NC_039848	1511250846	0	KX757020	Callistoctopus luteus	mitochondrion   mitochondrion
 515824	NC_015896	342240303	0	HQ638215	Callistoctopus minor	mitochondrion   mitochondrion
 1245211	NC_025496	722489306	0	JX844627	Callitettix biformis	mitochondrion   mitochondrion
@@ -6904,6 +6906,7 @@
 2969358	NC_065816	2289435396	0	ON961020	Cavelerius yunnanensis	mitochondrion   mitochondrion
 261658	NC_010653	187764061	0	EU275727	Cavenderia fasciculata	mitochondrion   mitochondrion
 2884899	NC_067077	2314989080	0	OK586148	Cavernularia habereri	mitochondrion   mitochondrion
+2749905	NC_053319	1999190274	0	MT270117	Cavernulicola chilensis	mitochondrion   mitochondrion
 37548	NC_046949	1829777422	0	MT017566	Cavia aperea	mitochondrion   mitochondrion
 10141	NC_000884	5835988	0	AJ222767	Cavia porcellus	mitochondrion MT mitochondrion
 187529	NC_034097	1152281317	0	KY224568	Cavitermes tuberosus	mitochondrion   mitochondrion
@@ -8475,6 +8478,7 @@
 1857146	NC_039578	1509838049	0	MG675222	Clematis repens	plastid   chloroplast
 748712	NC_065288	2281552268	0	MT876512	Clematis reticulata	plastid   chloroplast
 748713	NC_065289	2281552379	0	MT876513	Clematis rutoides	plastid   chloroplast
+231659	NC_060523	2192923014	0	OL022305	Clematis serratifolia	plastid   chloroplast
 1324461	NC_065290	2281552494	0	MT876515	Clematis songorica	plastid   chloroplast
 2793139	NC_054335	2026158986	0	MW201572	Clematis taeguensis	plastid   chloroplast
 231663	NC_028000	937546338	0	KJ956785	Clematis terniflora	plastid   chloroplast
@@ -9761,6 +9765,8 @@
 1980398	NC_034675	1197709967	0	KY249560	Cromileptes altivelis x Epinephelus lanceolatus	mitochondrion   mitochondrion
 2802206	NC_056997	2088244114	0	MT937084	Cromileptes altivelis x Epinephelus tukula	mitochondrion   mitochondrion
 49664	NC_039673	1511252233	0	MH191379	Croomia heterosepala	plastid   chloroplast
+167570	NC_039672	1511252145	0	MH177871	Croomia japonica	plastid   chloroplast
+101609	NC_039674	1511252321	0	MH191380	Croomia pauciflora	plastid   chloroplast
 268442	NC_061632	2214670836	0	OK360635	Croscherichia paykulli	mitochondrion   mitochondrion
 1096449	NC_053966	2018132854	0	MW257212	Crossarchus platycephalus	mitochondrion   mitochondrion
 60567	NC_053361	1999117732	0	MW046047	Crossaster papposus	mitochondrion   mitochondrion
@@ -10170,7 +10176,6 @@
 280699	NC_010135	544212087	0	AP006491	Cyanidioschyzon merolae strain 10D	chromosome 9 chromosome
 2771	NC_053320	1999190310	0	MT270118	Cyanidium caldarium	mitochondrion   mitochondrion
 2771	NC_001840	11465393	0	AF022186	Cyanidium caldarium	plastid   chloroplast
-2749905	NC_053319	1999190274	0	MT270117	Cyanidium chilense	mitochondrion   mitochondrion
 181631	NC_030771	1052488395	0	KU362930	Cyanoderma ruficeps	mitochondrion   mitochondrion
 1489483	NC_038216	1442329883	0	MG601103	Cyanophora biloba	plastid   plastid
 1489483	NC_054207	2026152779	0	MT919636	Cyanophora biloba	mitochondrion   mitochondrion
@@ -13275,6 +13280,7 @@
 694358	NC_053828	2018124928	0	MT991060	Eriophyton wallichii	plastid   chloroplast
 1993611	NC_057449	2091524592	0	MN966628	Eriosema crinitum	plastid   chloroplast
 133082	NC_033352	1133407716	0	KP722582	Eriosoma lanigerum	mitochondrion   mitochondrion
+2559494	NC_043794	1707507008	0	MK726009	Erisma bracteosum	plastid   chloroplast
 2017640	NC_042911	1693301432	0	MH321208	Eristalinus aeneus	mitochondrion   mitochondrion
 2583382	NC_042908	1693301388	0	MH321205	Eristalinus barclayi	mitochondrion   mitochondrion
 2804676	NC_070297	2431526511	0	MW531962	Eristalinus euzonus	mitochondrion   mitochondrion
@@ -14269,7 +14275,7 @@
 56918	NC_043887	1707501143	0	MK749462	Fossombronia foveolata	mitochondrion   mitochondrion
 137271	NC_028089	938340540	0	KT290557	Fossorochromis rostratus	mitochondrion   mitochondrion
 81980	NC_049640	1869251611	0	MK637717	Fourraea alpina	plastid   chloroplast
-512567	NC_061951	2216736020	0	OK110208	Fowlea piscator	mitochondrion   mitochondrion
+2879141	NC_061951	2216736020	0	OK110208	Fowlea piscator	mitochondrion   mitochondrion
 101007	NC_019601	428697178	0	JN884816	Fragaria chiloensis	plastid   chloroplast
 674467	NC_058802	2127878631	0	MZ851747	Fragaria chinensis	plastid   chloroplast
 538576	NC_058803	2127878717	0	MZ851749	Fragaria corymbosa	plastid   chloroplast
@@ -14774,6 +14780,7 @@
 9032	NC_007239	71657952	0	AP003325	Gallus lafayettii	mitochondrion   mitochondrion
 9033	NC_007240	71657970	0	AP006741	Gallus sonneratii	mitochondrion   mitochondrion
 9034	NC_007238	71657993	0	AP003324	Gallus varius	mitochondrion   mitochondrion
+1561780	NC_043795	1707507094	0	MK726010	Galphimia angustifolia	plastid   chloroplast
 43593	NC_012831	240266528	0	AB218884	Gambelia wislizenii	mitochondrion   mitochondrion
 33528	NC_057868	2097423162	0	CM034011	Gambusia affinis	linkage group LG01 chromosome
 33528	NC_057869	2097423161	0	CM034012	Gambusia affinis	linkage group LG02 chromosome
@@ -15968,6 +15975,7 @@
 1643492	NC_026991	817530128	0	KP793062	Guadua weberbaueri	plastid   plastid
 2885236	NC_061343	2206974343	0	OK539724	Guaduella macrostachys	plastid   chloroplast
 2886332	NC_061344	2206974430	0	OK539725	Guaduella oblonga	plastid   chloroplast
+228647	NC_043796	1707507180	0	MK726011	Guaiacum angustifolium	plastid   chloroplast
 51906	NC_026031	745999189	0	JQ782217	Guaruba guarouba	mitochondrion   mitochondrion
 691797	NC_016715	372291949	0	AP011603	Gudusia chapra	mitochondrion   mitochondrion
 84648	NC_050025	1883996416	0	MT259078	Guerlinguetus aestuans	mitochondrion   mitochondrion
@@ -16399,6 +16407,7 @@
 199644	NC_060763	2192935029	0	MW769780	Hedychium villosum	plastid   chloroplast
 1641295	NC_047344	1834970935	0	MN709827	Hedysarum semenovii	plastid   plastid
 1641298	NC_046493	1824664367	0	MK426698	Hedysarum taipeicum	plastid   chloroplast
+1053376	NC_043797	1707507261	0	MK726012	Heimia apetala	plastid   chloroplast
 209871	NC_049120	1863134194	0	MN964123	Heimyscus fumosus	mitochondrion   mitochondrion
 9634	NC_009968	159524371	0	EF196664	Helarctos malayanus	mitochondrion   mitochondrion
 1604231	NC_029844	1016472583	0	KT354968	Helcystogramma macroscopa	mitochondrion   mitochondrion
@@ -16808,6 +16817,7 @@
 290721	NC_046537	1824669205	0	MN083170	Heteropternis respondens	mitochondrion   mitochondrion
 876081	NC_028506	959122159	0	KF881050	Heteropterus morpheus	mitochondrion   mitochondrion
 173795	NC_014680	312233193	0	AB477468	Heteropteryx dilatata	mitochondrion   mitochondrion
+40015	NC_043799	1707512222	0	MK726014	Heteropyxis natalensis	plastid   chloroplast
 37862	NC_008534	116510830	0	EF043402	Heterorhabditis bacteriophora	mitochondrion   mitochondrion
 51550	NC_040293	1567481479	0	MH119603	Heterorhabditis indica	mitochondrion   mitochondrion
 215262	NC_043788	1707506574	0	MH064515	Heteroscyphus argutus	plastid   chloroplast
@@ -18669,11 +18679,14 @@
 457520	NC_018755	408772068	0	JN607253	Koreocobitis rotundicaudata	mitochondrion   mitochondrion
 874459	NC_046494	1824664444	0	MK256614	Koreoleptoxis nodifila	mitochondrion   mitochondrion
 2684215	NC_067039	2314987406	0	OK299515	Korinchia angustiabdomena	mitochondrion   mitochondrion
+2559495	NC_043798	1707507346	0	MK726013	Korupodendron songweanum	plastid   chloroplast
 692125	NC_030565	1043376300	0	KX180073	Kostermanthus robustus	plastid   chloroplast
 114995	NC_057459	2091525431	0	MN966653	Kotschya aeschynomenoides	plastid   chloroplast
 457524	NC_031597	1088481419	0	AP011343	Kottelatlimia pristes	mitochondrion   mitochondrion
 86209	NC_035716	1238820593	0	AP018053	Kraemeria cunicularia	mitochondrion   mitochondrion
+2042419	NC_043800	1707507430	0	MK726015	Krameria bicolor	plastid   chloroplast
 228641	NC_063627	2248504246	0	OL889926	Krameria erecta	plastid   chloroplast
+66689	NC_043801	1707507515	0	MK726016	Krameria lanceolata	plastid   chloroplast
 1962554	NC_046067	1819291684	0	MN577635	Krisna concava	mitochondrion   mitochondrion
 1962558	NC_046068	1819291698	0	MN577636	Krisna rufimarginata	mitochondrion   mitochondrion
 449282	NC_031440	1079489375	0	KR233978	Krobia guianensis	mitochondrion   mitochondrion
@@ -18886,6 +18899,7 @@
 2967321	NC_066773	2312620795	0	ON782538	Lactuca reviersii	plastid   chloroplast
 75948	NC_042406	1678641559	0	MK759657	Lactuca saligna	mitochondrion   mitochondrion
 75948	NC_066756	2312619564	0	ON782515	Lactuca saligna	plastid   chloroplast
+4236	NC_042756	1693291089	0	MK642355	Lactuca sativa	mitochondrion   mitochondrion
 4236	NC_056623	2414128381	0	CM022518	Lactuca sativa	chromosome 1 chromosome
 4236	NC_056624	2414128380	0	CM022519	Lactuca sativa	chromosome 2 chromosome
 4236	NC_056625	2414128379	0	CM022520	Lactuca sativa	chromosome 3 chromosome
@@ -18895,11 +18909,11 @@
 4236	NC_056629	2414128375	0	CM022524	Lactuca sativa	chromosome 7 chromosome
 4236	NC_056630	2414128374	0	CM022525	Lactuca sativa	chromosome 8 chromosome
 4236	NC_056631	2414128373	0	CM022526	Lactuca sativa	chromosome 9 chromosome
-4236	NC_042756	1693291089	0	MK642355	Lactuca sativa	mitochondrion MT mitochondrion
 4236	NC_007578	81176229	0	AP007232	Lactuca sativa	plastid Pltd chloroplast
 1049370	NC_061693	2214673642	0	MT215016	Lactuca sativa var. angustana	plastid   chloroplast
 2768802	NC_066757	2312624058	0	ON782516	Lactuca scarioloides	plastid   chloroplast
 2967322	NC_066789	2312621835	0	ON782564	Lactuca schweinfurthii	plastid   chloroplast
+75943	NC_042378	1678639900	0	MK820672	Lactuca serriola	mitochondrion   mitochondrion
 1941387	NC_066759	2312624575	0	ON782518	Lactuca setosa	plastid   chloroplast
 75950	NC_066760	2312619740	0	ON782519	Lactuca sibirica	plastid   chloroplast
 75952	NC_058613	2127861636	0	MT845217	Lactuca tatarica	plastid   chloroplast
@@ -20262,7 +20276,9 @@
 587524	NC_034860	1199891139	0	KX063875	Linochilus tenuifolius	plastid   chloroplast
 587525	NC_034887	1199892945	0	KX063914	Linochilus venezuelensis	plastid   chloroplast
 1716037	NC_034817	1198314795	0	KX063891	Linochilus violaceus	plastid   chloroplast
+559336	NC_058845	2127882180	0	MW387225	Linum grandiflorum	plastid   chloroplast
 586382	NC_058799	2127878463	0	MW375416	Linum lewisii	plastid   chloroplast
+544668	NC_058855	2127882985	0	MW376864	Linum narbonense	plastid   chloroplast
 586388	NC_067592	2328349175	0	OL322024	Linum pallescens	plastid   chloroplast
 4006	NC_036356	1284805301	0	KY849971	Linum usitatissimum	plastid   chloroplast
 198218	NC_049031	1863128778	0	MT038418	Linuparus trigonus	mitochondrion   mitochondrion
@@ -22322,6 +22338,7 @@
 1204437	NC_032041	1111669101	0	KT266849	Membranoptera platyphylla	plastid   plastid
 158698	NC_032399	1125814334	0	KP675983	Membranoptera tenuis	plastid   plastid
 158720	NC_032396	1125814121	0	KJ513670	Membranoptera weeksiae	plastid   chloroplast
+672974	NC_043809	1707508216	0	MK726029	Memecylon pauciflorum	plastid   chloroplast
 80383	NC_060510	2192922223	0	OK267390	Memnoniella echinata	mitochondrion   mitochondrion
 1491751	NC_062859	2231644141	0	OM718871	Menacanthus cornutus	mitochondrion   mitochondrion
 508960	NC_031405	1079487645	0	KU747972	Menathais tuberosa	mitochondrion   mitochondrion
@@ -26306,6 +26323,7 @@
 38123	NC_006157	51830063	0	AY278317	Pachypsylla venusta	mitochondrion   mitochondrion
 369605	NC_051035	1919576890	0	MN356230	Pachyramphus minor	mitochondrion   mitochondrion
 109171	NC_026682	772657094	0	KJ468100	Pachyrhizus erosus	plastid   chloroplast
+122319	NC_073021	2473934524	0	OQ397655	Pachysandra axillaris	plastid   chloroplast
 74825	NC_029433	1002164724	0	KU204904	Pachysandra terminalis	plastid   chloroplast
 76374	NC_070340	2431530140	0	OP546128	Pachystachys lutea	plastid   chloroplast
 377299	NC_053711	2018119419	0	MT993830	Pachytriton brevipes	mitochondrion   mitochondrion
@@ -29575,6 +29593,7 @@
 445213	NC_039964	1526692069	0	MH500232	Pleoticus muelleri	mitochondrion   mitochondrion
 244861	NC_069232	2424879643	0	MW936598	Plerogyra sinuosa	mitochondrion   mitochondrion
 596822	NC_053325	1999115096	0	MT700492	Pleroma semidecandrum	plastid   chloroplast
+40009	NC_043810	1707508301	0	MK726030	Pleroma urvilleanum	plastid   chloroplast
 1812310	NC_046925	1829776572	0	MN816343	Plerotes anchietae	mitochondrion   mitochondrion
 187483	NC_042481	1678645305	0	MH025639	Plesiastrea versipora	mitochondrion   mitochondrion
 195321	NC_007230	71658106	0	AY597334	Plesiobatis daviesi	mitochondrion   mitochondrion
@@ -31692,6 +31711,7 @@
 30357	NC_044480	1735237720	0	MK460224	Pyxicephalus adspersus	mitochondrion   mitochondrion
 1655349	NC_027187	827046350	0	KR108252	Qinlingacris taibaiensis	mitochondrion   mitochondrion
 52372	NC_013658	281428770	0	FJ809750	Quadrula quadrula	mitochondrion   mitochondrion
+178107	NC_043803	1707507683	0	MK726022	Qualea grandiflora	plastid   chloroplast
 2859485	NC_061541	2214664577	0	MZ274345	Quasilineus sinicus	mitochondrion   mitochondrion
 120502	NC_021937	529217110	0	KC686711	Quasipaa boulengeri	mitochondrion   mitochondrion
 586021	NC_032305	1125812579	0	KX021903	Quasipaa delacouri	mitochondrion   mitochondrion
@@ -32863,6 +32883,7 @@
 63238	NC_067628	2328351165	0	OL582568	Rugopharynx australis	mitochondrion   mitochondrion
 2708008	NC_046548	1824665842	0	MN083188	Ruidocollaris convexipennis	mitochondrion   mitochondrion
 948400	NC_028160	944541658	0	KT345952	Ruidocollaris obscura	mitochondrion   mitochondrion
+376213	NC_043804	1707507768	0	MK726023	Ruizterania albiflora	plastid   chloroplast
 41241	NC_042390	1678640689	0	MH359405	Rumex acetosa	plastid   chloroplast
 174650	NC_050928	1919572050	0	MT075556	Rumex hastatus	plastid   chloroplast
 1046566	NC_050054	1883997825	0	MT017652	Rumex hypogaeus	plastid   chloroplast
@@ -33248,6 +33269,7 @@
 1048809	NC_057096	2088247112	0	MW123092	Salsola abrotanoides	plastid   chloroplast
 525237	NC_066995	2314983986	0	OK189514	Salsola collina	plastid   chloroplast
 555342	NC_045366	1783497275	0	MK419316	Saltator similis	mitochondrion   mitochondrion
+216165	NC_043805	1707507853	0	MK726025	Saltera sarcocolla	plastid   chloroplast
 4326	NC_057955	2104504666	0	MW233589	Salvadora persica	plastid   chloroplast
 83385	NC_028018	937547007	0	KT266870	Salvelinus albus	mitochondrion   mitochondrion
 8036	NC_036838	1340981081	0	CM009399	Salvelinus alpinus	linkage group LG1 chromosome
@@ -33349,6 +33371,7 @@
 8040	NC_036392	1299048865	0	MF621742	Salvelinus namaycush	mitochondrion MT mitochondrion
 359311	NC_059927	2172620563	0	MW664923	Salvelinus schmidti	mitochondrion   mitochondrion
 152113	NC_046710	1829765223	0	MK695630	Salvelinus taranetzi	mitochondrion   mitochondrion
+260119	NC_043806	1707507938	0	MK726026	Salvertia convallariodora	plastid   chloroplast
 152109	NC_046709	1829765209	0	MK695627	Salvethymus svetovidovi	mitochondrion   mitochondrion
 476449	NC_067739	2328359140	0	MW752209	Salvia aerea	plastid   chloroplast
 424416	NC_063911	2248517739	0	MW435404	Salvia bowleyana	plastid   chloroplast
@@ -36134,6 +36157,7 @@
 235837	NC_070235	2431523991	0	MN253544	Stelechocarpus burahol	plastid   chloroplast
 142738	NC_042714	1693288789	0	MK681211	Stellera chamaejasme	plastid   chloroplast
 85282	NC_039675	1511252409	0	MH191381	Stemona japonica	plastid   chloroplast
+448267	NC_039676	1511252497	0	MH191382	Stemona mairei	plastid   chloroplast
 339780	NC_064125	2252656945	0	MZ151339	Stemona parviflora	plastid   chloroplast
 339784	NC_065767	2289428793	0	MZ595142	Stemona sessilifolia	plastid   chloroplast
 167572	NC_056376	2055417298	0	MW246829	Stemona tuberosa	plastid   chloroplast
@@ -37261,6 +37285,7 @@
 1934608	NC_034043	1152273942	0	KY224442	Termes rostratus	mitochondrion   mitochondrion
 39993	NC_053323	1999114933	0	MT700489	Terminalia catappa	plastid   chloroplast
 155022	NC_047468	1834979595	0	MN736954	Terminalia chebula	plastid   chloroplast
+597418	NC_043807	1707508037	0	MK726027	Terminalia guyanensis	plastid   chloroplast
 578554	NC_061409	2206978130	0	OM202511	Terminalia myriocarpa	plastid   chloroplast
 1799636	NC_053924	2018130888	0	MN251603	Terminalia neotaliala	plastid   chloroplast
 2777731	NC_049897	1878350197	0	MT242598	Terminalia phillyreifolia	plastid   chloroplast
@@ -39688,6 +39713,7 @@
 94196	NC_025296	699256607	0	KM276554	Viverricula indica	mitochondrion   mitochondrion
 28971	NC_023259	570880090	0	KF240615	Viviania marifolia	plastid   chloroplast
 2023714	NC_035733	1238821653	0	KY679829	Viviparus chui	mitochondrion   mitochondrion
+2559496	NC_043811	1707508386	0	MK726031	Vochysia acuminata	plastid   chloroplast
 411798	NC_030176	1030178264	0	KU550061	Vollenhovia emeryi	mitochondrion   mitochondrion
 2992822	NC_068613	2386956062	0	OK484991	Volucella inanoides	mitochondrion   mitochondrion
 2992823	NC_068614	2386956076	0	OK484992	Volucella latifasciata	mitochondrion   mitochondrion
