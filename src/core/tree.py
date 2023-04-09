@@ -201,6 +201,6 @@ class Tree:
         error(f'failed to update {name} (file not found)')
         continue
       # if the file is found
-      with open(f'data/ids/{file}', 'wb', encoding='utf-8') as f:
+      with open(f'data/ids/{file}', 'wb') as f:
         f.write(r.content)
       info(f'updated {file}')
