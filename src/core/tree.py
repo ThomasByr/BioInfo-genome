@@ -204,3 +204,22 @@ class Tree:
       with open(f'data/ids/{file}', 'wb') as f:
         f.write(r.content)
       info(f'updated {file}')
+
+  def union(self, o: 'Tree') -> 'Tree':
+    """
+    returns a new tree that is the union of this tree and the given tree.
+
+    ## Parameters
+    ```py
+    >>> o : Tree
+    ```
+    the tree to union with
+
+    ## Returns
+    ```py
+    Tree : Tree
+    ```
+    """
+    tree = Tree(self.__name)
+    tree.__data = {**self.__data, **o.__data}
+    return tree

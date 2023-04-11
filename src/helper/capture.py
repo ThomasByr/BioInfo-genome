@@ -9,7 +9,7 @@ orig___stdout__ = sys.__stdout__
 orig___stderr__ = sys.__stderr__
 orig_stdout = sys.stdout
 orig_stderr = sys.stderr
-thread_proxies = {}
+thread_proxies: dict[int, StringIO] = {}
 
 __all__ = ['redirect', 'stop_redirect', 'enable_proxy', 'disable_proxy']
 
