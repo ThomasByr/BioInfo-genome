@@ -4,6 +4,7 @@ import os
 
 from copy import deepcopy
 from pathlib import Path
+import subprocess
 from threading import Thread, Lock
 from typing import Any
 
@@ -390,7 +391,18 @@ class GenomeGUI:
           path = Path(node['path']).joinpath(node['file'])
           try:
             info(f'Opening {path}')
-            os.startfile(path)
+            if os.name == 'nt':
+              os.startfile(path)
+            elif os.name == 'posix':
+              try:
+                subprocess.call(('xdg-open', path))
+              except FileNotFoundError:
+                try:
+                  subprocess.call(('wslview', path))
+                except FileNotFoundError:
+                  error('xdg-open and wslview not found, please install one of them')
+            else:
+              error(f'Unhandled OS: {os.name}')
           except PermissionError:
             error(f'Permission denied: {path}')
 
