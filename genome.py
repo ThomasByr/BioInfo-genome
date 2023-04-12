@@ -35,6 +35,10 @@
 
 import sys
 
+if sys.version_info < (3, 10):
+  print('Python 3.10 or higher is required.')
+  sys.exit(1)
+
 from src import Tree, GenomeGUI
 
 overview = Tree()
