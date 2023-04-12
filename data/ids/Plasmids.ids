@@ -14685,6 +14685,7 @@
 562	NZ_CP072317	2023384288	0	CP072317	Escherichia coli	plasmid pE105-6  
 562	NZ_CP025574	1553523335	0	CP025574	Escherichia coli	plasmid pE1246_1  
 562	NZ_CP025575	1553523336	0	CP025575	Escherichia coli	plasmid pE1246_2  
+562	NZ_CP121150	2482310404	0	CP121150	Escherichia coli	plasmid pE14-1  
 562	NZ_AP024519	2102798576	0	AP024519	Escherichia coli	plasmid pE148-1  
 562	NZ_AP024520	2102798579	0	AP024520	Escherichia coli	plasmid pE148-2  
 562	NZ_CP119747	2463574974	0	CP119747	Escherichia coli	plasmid pE15-1  
@@ -14702,6 +14703,7 @@
 562	NZ_CP048919	2054988323	0	CP048919	Escherichia coli	plasmid pE2-4  
 562	NZ_CP048916	2054988304	0	CP048916	Escherichia coli	plasmid pE2-NDM-CTX-M  
 562	NZ_CP048918	2054988319	0	CP048918	Escherichia coli	plasmid pE2-OXA-181  
+562	NZ_CP121148	2482296145	0	CP121148	Escherichia coli	plasmid pE20-1  
 562	NZ_CP076273	2283904813	0	CP076273	Escherichia coli	plasmid pE21845IncF  
 562	NZ_CP035873	2055039286	0	CP035873	Escherichia coli	plasmid pE2528C1_53  
 562	NZ_CP035872	2055039285	0	CP035872	Escherichia coli	plasmid pE2528C1_95  
@@ -14731,14 +14733,19 @@
 562	NZ_CP075730	2281512401	0	CP075730	Escherichia coli	plasmid pE35-ColpVC  
 562	NZ_CP075725	2281512396	0	CP075725	Escherichia coli	plasmid pE35-IncFII  
 562	NZ_CP075727	2281512398	0	CP075727	Escherichia coli	plasmid pE35-IncQ  
+562	NZ_CP121152	2482304053	0	CP121152	Escherichia coli	plasmid pE47-1  
+562	NZ_CP121200	2482313729	0	CP121200	Escherichia coli	plasmid pE50-1  
+562	NZ_CP121154	2482317448	0	CP121154	Escherichia coli	plasmid pE57-1  
 562	NZ_CP116982	2441820785	0	CP116982	Escherichia coli	plasmid pE6474.1  
 562	NZ_CP116983	2441820790	0	CP116983	Escherichia coli	plasmid pE6474.2  
 562	NZ_CP116984	2441820796	0	CP116984	Escherichia coli	plasmid pE6474.3  
 562	NZ_CP116985	2441820800	0	CP116985	Escherichia coli	plasmid pE6474.4  
 562	NZ_CP116986	2441820801	0	CP116986	Escherichia coli	plasmid pE6474.5  
+562	NZ_CP121156	2482296257	0	CP121156	Escherichia coli	plasmid pE67-1  
 562	NZ_CP035818	2054989156	0	CP035818	Escherichia coli	plasmid pE7476_162  
 562	NZ_CM004373	1033136666	0	CM004373	Escherichia coli	plasmid pE78.1  
 562	NZ_CM004374	1033136667	0	CM004374	Escherichia coli	plasmid pE78.2  
+562	NZ_CP121158	2482296230	0	CP121158	Escherichia coli	plasmid pE89-1  
 562	NZ_CP119735	2463549784	0	CP119735	Escherichia coli	plasmid pE92-1  
 562	NZ_CP119736	2463549793	0	CP119736	Escherichia coli	plasmid pE92-2  
 562	NZ_CP119737	2463549805	0	CP119737	Escherichia coli	plasmid pE92-3  
@@ -17501,57 +17508,57 @@
 562	NZ_CP033161	1818192457	0	CP033161	Escherichia coli	plasmid unnamed  
 562	NZ_CP027473	1372032307	0	CP027473	Escherichia coli	plasmid unnamed  
 562	NZ_CP027311	1372028122	0	CP027311	Escherichia coli	plasmid unnamed  
-562	NZ_CP027391	1372034698	0	CP027391	Escherichia coli	plasmid unnamed  
-562	NZ_CP069481	1986913348	0	CP069481	Escherichia coli	plasmid unnamed  
-562	NZ_CP027571	1372042641	0	CP027571	Escherichia coli	plasmid unnamed  
-562	NZ_CP027389	1372041405	0	CP027389	Escherichia coli	plasmid unnamed  
-562	NZ_CP027460	1372043390	0	CP027460	Escherichia coli	plasmid unnamed  
-562	NZ_CP069446	1987629683	0	CP069446	Escherichia coli	plasmid unnamed  
-562	NZ_CP027578	1372048019	0	CP027578	Escherichia coli	plasmid unnamed  
-562	NZ_CP061338	1906171529	0	CP061338	Escherichia coli	plasmid unnamed  
-562	NZ_CP027220	1372048938	0	CP027220	Escherichia coli	plasmid unnamed  
-562	NZ_CP070171	1992987488	0	CP070171	Escherichia coli	plasmid unnamed  
-562	NZ_CP028715	1382343146	0	CP028715	Escherichia coli	plasmid unnamed  
-562	NZ_CP062859	1934783645	0	CP062859	Escherichia coli	plasmid unnamed  
-562	NZ_CP039405	1624668469	0	CP039405	Escherichia coli	plasmid unnamed  
-562	NZ_CP070044	1993007684	0	CP070044	Escherichia coli	plasmid unnamed  
-562	NZ_CM016891	1692980411	0	CM016891	Escherichia coli	plasmid unnamed  
-562	NZ_CP062904	1934786171	0	CP062904	Escherichia coli	plasmid unnamed  
-562	NZ_CP020515	1729615495	0	CP020515	Escherichia coli	plasmid unnamed  
-562	NZ_CP034659	2036645225	0	CP034659	Escherichia coli	plasmid unnamed  
-562	NZ_CP065623	1945023232	0	CP065623	Escherichia coli	plasmid unnamed  
-562	NZ_CP048648	1816335060	0	CP048648	Escherichia coli	plasmid unnamed  
-562	NZ_CP097369	2245792763	0	CP097369	Escherichia coli	plasmid unnamed  
 562	NZ_CP027547	1372043099	0	CP027547	Escherichia coli	plasmid unnamed  
-562	NZ_JAFEKJ010000001	1986782190	0	JAFEKJ010000001	Escherichia coli	plasmid unnamed  
-562	NZ_CP037450	1838742040	0	CP037450	Escherichia coli	plasmid unnamed  
-562	NZ_CP097362	2245832604	0	CP097362	Escherichia coli	plasmid unnamed  
+562	NZ_CP069481	1986913348	0	CP069481	Escherichia coli	plasmid unnamed  
+562	NZ_CP027391	1372034698	0	CP027391	Escherichia coli	plasmid unnamed  
+562	NZ_CP027389	1372041405	0	CP027389	Escherichia coli	plasmid unnamed  
 562	NZ_CP027350	1372043468	0	CP027350	Escherichia coli	plasmid unnamed  
-562	NZ_CP069439	1987629656	0	CP069439	Escherichia coli	plasmid unnamed  
-562	NZ_JAFEKJ000000000	1986782194	0	JAFEKJ000000000	Escherichia coli	plasmid unnamed  
-562	NZ_CP097372	2245850502	0	CP097372	Escherichia coli	plasmid unnamed  
+562	NZ_CP069446	1987629683	0	CP069446	Escherichia coli	plasmid unnamed  
+562	NZ_CP027571	1372042641	0	CP027571	Escherichia coli	plasmid unnamed  
+562	NZ_CP061338	1906171529	0	CP061338	Escherichia coli	plasmid unnamed  
 562	NZ_CP027343	1372044009	0	CP027343	Escherichia coli	plasmid unnamed  
-562	NZ_CP069991	1992969034	0	CP069991	Escherichia coli	plasmid unnamed  
-562	NZ_CP069452	1987651417	0	CP069452	Escherichia coli	plasmid unnamed  
-562	NZ_CP104443	2308551611	0	CP104443	Escherichia coli	plasmid unnamed  
+562	NZ_CP070171	1992987488	0	CP070171	Escherichia coli	plasmid unnamed  
+562	NZ_CP027460	1372043390	0	CP027460	Escherichia coli	plasmid unnamed  
+562	NZ_CP062859	1934783645	0	CP062859	Escherichia coli	plasmid unnamed  
 562	NZ_CP032205	1477513900	0	CP032205	Escherichia coli	plasmid unnamed  
-562	NZ_CP063957	2006873035	0	CP063957	Escherichia coli	plasmid unnamed  
-562	NZ_CP069979	1992969988	0	CP069979	Escherichia coli	plasmid unnamed  
-562	NZ_CP072987	2027611737	0	CP072987	Escherichia coli	plasmid unnamed  
+562	NZ_CP070044	1993007684	0	CP070044	Escherichia coli	plasmid unnamed  
+562	NZ_CP027578	1372048019	0	CP027578	Escherichia coli	plasmid unnamed  
+562	NZ_CP062904	1934786171	0	CP062904	Escherichia coli	plasmid unnamed  
 562	NZ_CM016893	1692836916	0	CM016893	Escherichia coli	plasmid unnamed  
-562	NZ_CP099589	2261775759	0	CP099589	Escherichia coli	plasmid unnamed  
-562	NZ_CP070104	1993012022	0	CP070104	Escherichia coli	plasmid unnamed  
-562	NZ_CP075735	2281505162	0	CP075735	Escherichia coli	plasmid unnamed  
+562	NZ_CP034659	2036645225	0	CP034659	Escherichia coli	plasmid unnamed  
+562	NZ_CP027220	1372048938	0	CP027220	Escherichia coli	plasmid unnamed  
+562	NZ_CP065623	1945023232	0	CP065623	Escherichia coli	plasmid unnamed  
 562	NZ_CM016892	1692982530	0	CM016892	Escherichia coli	plasmid unnamed  
-562	NZ_CP082832	2091885901	0	CP082832	Escherichia coli	plasmid unnamed  
+562	NZ_CP097369	2245792763	0	CP097369	Escherichia coli	plasmid unnamed  
+562	NZ_CP028715	1382343146	0	CP028715	Escherichia coli	plasmid unnamed  
+562	NZ_JAFEKJ010000001	1986782190	0	JAFEKJ010000001	Escherichia coli	plasmid unnamed  
 562	NZ_CP015854	1707025264	0	CP015854	Escherichia coli	plasmid unnamed  
-562	NZ_CP068681	2181100599	0	CP068681	Escherichia coli	plasmid unnamed  
+562	NZ_CP097362	2245832604	0	CP097362	Escherichia coli	plasmid unnamed  
+562	NZ_CP039405	1624668469	0	CP039405	Escherichia coli	plasmid unnamed  
+562	NZ_CP069439	1987629656	0	CP069439	Escherichia coli	plasmid unnamed  
 562	NZ_CP061340	1906152696	0	CP061340	Escherichia coli	plasmid unnamed  
-562	NZ_CP099591	2261784163	0	CP099591	Escherichia coli	plasmid unnamed  
+562	NZ_CP097372	2245850502	0	CP097372	Escherichia coli	plasmid unnamed  
+562	NZ_CM016891	1692980411	0	CM016891	Escherichia coli	plasmid unnamed  
+562	NZ_CP069991	1992969034	0	CP069991	Escherichia coli	plasmid unnamed  
 562	NZ_CP065614	1945023886	0	CP065614	Escherichia coli	plasmid unnamed  
+562	NZ_CP104443	2308551611	0	CP104443	Escherichia coli	plasmid unnamed  
+562	NZ_CP020515	1729615495	0	CP020515	Escherichia coli	plasmid unnamed  
+562	NZ_CP063957	2006873035	0	CP063957	Escherichia coli	plasmid unnamed  
 562	NZ_CP069499	1986777036	0	CP069499	Escherichia coli	plasmid unnamed  
+562	NZ_CP072987	2027611737	0	CP072987	Escherichia coli	plasmid unnamed  
+562	NZ_CP048648	1816335060	0	CP048648	Escherichia coli	plasmid unnamed  
+562	NZ_CP099589	2261775759	0	CP099589	Escherichia coli	plasmid unnamed  
 562	NZ_CP069891	1992957782	0	CP069891	Escherichia coli	plasmid unnamed  
+562	NZ_CP075735	2281505162	0	CP075735	Escherichia coli	plasmid unnamed  
+562	NZ_CP037450	1838742040	0	CP037450	Escherichia coli	plasmid unnamed  
 562	NZ_CP076655	2056576402	0	CP076655	Escherichia coli	plasmid unnamed  
+562	NZ_JAFEKJ000000000	1986782194	0	JAFEKJ000000000	Escherichia coli	plasmid unnamed  
+562	NZ_CP069452	1987651417	0	CP069452	Escherichia coli	plasmid unnamed  
+562	NZ_CP069979	1992969988	0	CP069979	Escherichia coli	plasmid unnamed  
+562	NZ_CP070104	1993012022	0	CP070104	Escherichia coli	plasmid unnamed  
+562	NZ_CP082832	2091885901	0	CP082832	Escherichia coli	plasmid unnamed  
+562	NZ_CP068681	2181100599	0	CP068681	Escherichia coli	plasmid unnamed  
+562	NZ_CP099591	2261784163	0	CP099591	Escherichia coli	plasmid unnamed  
 562	NZ_CP081783	2100585335	0	CP081783	Escherichia coli	plasmid unnamed 1  
 562	NZ_CP081785	2100585370	0	CP081785	Escherichia coli	plasmid unnamed 3  
 562	NZ_CP081786	2100585380	0	CP081786	Escherichia coli	plasmid unnamed 4  
@@ -22627,6 +22634,16 @@
 573	NZ_CP089098	2164695013	0	CP089098	Klebsiella pneumoniae	plasmid pEH13_1  
 573	NZ_CP089099	2164695056	0	CP089099	Klebsiella pneumoniae	plasmid pEH13_2  
 573	NZ_CP059296	2077038812	0	CP059296	Klebsiella pneumoniae	plasmid pER17974.3  
+573	NZ_CP121138	2482336741	0	CP121138	Klebsiella pneumoniae	plasmid pESBL-PH-33  
+573	NZ_CP121140	2482336734	0	CP121140	Klebsiella pneumoniae	plasmid pESBL-PH-4  
+573	NZ_CP121136	2482324426	0	CP121136	Klebsiella pneumoniae	plasmid pESBL-PH-41  
+573	NZ_CP121134	2482336916	0	CP121134	Klebsiella pneumoniae	plasmid pESBL-PH-45  
+573	NZ_CP121130	2482323595	0	CP121130	Klebsiella pneumoniae	plasmid pESBL-PH-49  
+573	NZ_CP121132	2482336907	0	CP121132	Klebsiella pneumoniae	plasmid pESBL-PH-50  
+573	NZ_CP121128	2482323603	0	CP121128	Klebsiella pneumoniae	plasmid pESBL-PH-53  
+573	NZ_CP121146	2482336745	0	CP121146	Klebsiella pneumoniae	plasmid pESBL-PH-56  
+573	NZ_CP121144	2482323599	0	CP121144	Klebsiella pneumoniae	plasmid pESBL-PH-57  
+573	NZ_CP121142	2482323597	0	CP121142	Klebsiella pneumoniae	plasmid pESBL-PH-58  
 573	NZ_CP067256	2020520871	0	CP067256	Klebsiella pneumoniae	plasmid pESBL_DR09a  
 573	NZ_CP067257	2020520873	0	CP067257	Klebsiella pneumoniae	plasmid pESBL_DR09b  
 573	NZ_CP067258	2020520874	0	CP067258	Klebsiella pneumoniae	plasmid pESBL_DR09c  
@@ -30530,6 +30547,8 @@
 1763538	NZ_CP017772	1096255724	0	CP017772	Paenibacillus crassostreae	plasmid pPC02  
 1763538	NZ_CP017773	1096255725	0	CP017773	Paenibacillus crassostreae	plasmid pPC03  
 44251	NZ_CP009289	754848906	0	CP009289	Paenibacillus durus	plasmid unnamed  
+189691	NZ_CP121216	2482336886	0	CP121216	Paenibacillus elgii	plasmid unnamed1  
+189691	NZ_CP121217	2482336887	0	CP121217	Paenibacillus elgii	plasmid unnamed2  
 2807095	NZ_JAFFQR000000000	2154544593	0	JAFFQR000000000	Paenibacillus farraposensis	plasmid pUY79  
 1473112	NZ_CP045294	1769971468	0	CP045294	Paenibacillus guangzhouensis	plasmid unnamed1  
 147375	NZ_CP019656	1353424245	0	CP019656	Paenibacillus larvae subsp. larvae	plasmid unnamed1  
@@ -37979,6 +37998,8 @@
 1280	NZ_CP053076	1840151727	0	CP053076	Staphylococcus aureus	plasmid pSA01-tet  
 1280	NZ_CM011642	1524680078	0	CM011642	Staphylococcus aureus	plasmid pSA053-1  
 1280	NZ_CM011643	1524680079	0	CM011643	Staphylococcus aureus	plasmid pSA053-2  
+1280	NZ_CP121205	2482337437	0	CP121205	Staphylococcus aureus	plasmid pSA0907-1  
+1280	NZ_CP121206	2482337438	0	CP121206	Staphylococcus aureus	plasmid pSA0907-2  
 1280	NZ_AP024512	2044969877	0	AP024512	Staphylococcus aureus	plasmid pSA13  
 1280	NZ_CP090408	2456054446	0	CP090408	Staphylococcus aureus	plasmid pSA159  
 1280	NZ_CP104560	2310757395	0	CP104560	Staphylococcus aureus	plasmid pSA2107-1  
@@ -39467,6 +39488,7 @@
 1501662	NZ_CP076722	2057459496	0	CP076722	Streptococcus parasuis	plasmid pH35-cfrD  
 1348	NZ_CP104191	2303819393	0	CP104191	Streptococcus parauberis	plasmid pSPseroIa  
 1348	NZ_CP025421	1337751547	0	CP025421	Streptococcus parauberis	plasmid unnamed  
+82348	NZ_CP121202	2482318083	0	CP121202	Streptococcus pluranimalium	plasmid pSP28  
 1313	NZ_LR595849	1690991136	0	LR595849	Streptococcus pneumoniae	plasmid 2  
 1313	NZ_CP020552	2021349869	0	CP020552	Streptococcus pneumoniae	plasmid pSpn_Hu15  
 1313	NZ_CP020550	2021317495	0	CP020550	Streptococcus pneumoniae	plasmid pSpn_Hu17  
@@ -40993,8 +41015,8 @@
 487862	NZ_CP066347	2289592768	0	CP066347	Xanthomonas citri pv. durantae	plasmid pLMG696-4  
 366649	NZ_CP072397	2022243926	0	CP072397	Xanthomonas citri pv. fuscans	plasmid pA  
 366649	NZ_CP012052	1552992422	0	CP012052	Xanthomonas citri pv. fuscans	plasmid pXff45  
-366649	NZ_CP012054	1552996526	0	CP012054	Xanthomonas citri pv. fuscans	plasmid pXff45  
 366649	NZ_CP012056	1553006164	0	CP012056	Xanthomonas citri pv. fuscans	plasmid pXff45  
+366649	NZ_CP012054	1552996526	0	CP012054	Xanthomonas citri pv. fuscans	plasmid pXff45  
 366649	NZ_CP023295	1243942457	0	CP023295	Xanthomonas citri pv. fuscans	plasmid pla  
 366649	NC_022539	549710672	0	FO681495	Xanthomonas citri pv. fuscans	plasmid pla  
 366649	NC_022540	549710864	0	FO681496	Xanthomonas citri pv. fuscans	plasmid plb  
