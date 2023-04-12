@@ -234,6 +234,7 @@ class GenomeGUI:
       gui.__component_lock.release()
       info('Tree has been loaded')
       return
+
     load_tree(self)
 
     DIR, FILE = True, False
@@ -333,6 +334,7 @@ class GenomeGUI:
         if node['kind'] == DIR:
           parent_path = Path(node['path']).joinpath(node['file'])
           files: list
+          self.__selected_organisms.clear()  # todo: this is actually a fix for a bug
           try:
             files = sorted(list(parent_path.iterdir()), key=lambda file: file.is_file())
           except PermissionError:
@@ -347,10 +349,11 @@ class GenomeGUI:
                 self.__known_files.add(str(item))
                 self.__component_lock.acquire()
                 key = new_key()
-                self.__tree_data.insert(parent_key,
-                                        key,
-                                        str(file), [],
-                                        icon=folder_icon if kind == DIR else file_icon)
+                icon = folder_checked_icon if kind == DIR and item.name in self.__selected_organisms else \
+                  folder_icon if kind == DIR else \
+                  file_checked_icon if item.name in self.__selected_organisms else \
+                  file_icon
+                self.__tree_data.insert(parent_key, key, str(file), [], icon=icon)
                 node['children'].append(key)
                 self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
                 self.__component_lock.release()
@@ -366,10 +369,11 @@ class GenomeGUI:
               key = new_key()
               if kind == FILE:
                 self.__known_files.add(str(item))
-              self.__tree_data.insert(parent_key,
-                                      key,
-                                      str(file), [],
-                                      icon=folder_icon if kind == DIR else file_icon)
+              icon = folder_checked_icon if kind == DIR and item.name in self.__selected_organisms else \
+                folder_icon if kind == DIR else \
+                file_checked_icon if item.name in self.__selected_organisms else \
+                file_icon
+              self.__tree_data.insert(parent_key, key, str(file), [], icon=icon)
               node['children'].append(key)
               self.__data_component[key] = {'kind': kind, 'path': path, 'file': file, 'children': None}
               self.__component_lock.release()

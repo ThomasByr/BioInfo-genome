@@ -59,10 +59,6 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   info(f'downloading [{name}]')
   for NC in NC_list:
     info('NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
-    name = name.replace(' ', '_')
-    name = name.replace('[', '_')
-    name = name.replace(']', '_')
-    name = name.replace(':', '_')
     NC_i += 1              # increment here so we do not forget after continue
     debug(f'NC id  = {NC}')
     debug('----------------------------')
