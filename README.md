@@ -25,13 +25,13 @@
 > **Note**
 > This project is part of a M1 project at the University of Strasbourg, France.
 
-First, make sure you have `python >= 3.10` installed with the required dependencies :
+First, make sure you have `python >= 3.10.6` installed with the required dependencies (make sure to add `python -m` beforehands if you are using a conda environment) :
 
 ```ps1
 pip install --upgrade -r requirements.txt
 ```
 
-Then, you can run the program with :
+Then, you can run the program with (or double-click on [genome.py](genome.py)) :
 
 ```ps1
 python .\genome.py
@@ -128,7 +128,7 @@ If you ever want to contribute, either request the contributor status, or, more 
 We are using [yapf](https://github.com/google/yapf) to format the code, so make sure you have it installed and run :
 
 ```ps1
-yapf -ir src
+yapf -ir .
 ```
 
 > The standard procedure is :
@@ -148,7 +148,7 @@ Happy coding ! 🙂
 
 ## ⚖️ License
 
-This project is licensed under the AGPL-3.0 new or revised license. Please read the [LICENSE](LICENSE) file.
+This project is licensed under the AGPL-3.0 new or revised license. Please read the [LICENSE](LICENSE) file. Additionally :
 
 - Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
 
@@ -166,6 +166,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 - [x] add multi organisms selection feature and thread it
 - [x] open txt file on double click
 - [x] add checkboxes to select organisms
+- [ ] separate reload and update (for ids)
+- [ ] maybe save `overview.txt` ?
+- [ ] take into account all `.txt` files when building the tree
 
 **Known Bugs** (latest fix)
 
