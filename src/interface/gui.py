@@ -335,7 +335,7 @@ class GenomeGUI:
         if node['kind'] == DIR:
           parent_path = Path(node['path']).joinpath(node['file'])
           files: list
-          self.__selected_organisms.clear()  # todo: this is actually a fix for a bug
+
           try:
             files = sorted(list(parent_path.iterdir()), key=lambda file: file.is_file())
           except PermissionError:
@@ -385,6 +385,15 @@ class GenomeGUI:
           iid = self.__tree_component.KeyToID[parent_key]
           self.__tree_component.Widget.see(iid)
           self.__component_lock.release()
+
+          for organism_name in self.__selected_organisms:
+            # change the icon of the selected organisms (ugly fix)
+            value = self.__tree.get_info(organism_name)
+            path = value.path
+            icon = folder_checked_icon if os.path.isdir(path) else file_checked_icon
+            self.__component_lock.acquire()
+            self.__tree_component.update(key=self.__selected_organisms[organism_name], icon=icon)
+            self.__component_lock.release()
 
         else:
           # here we open the file
