@@ -173,4 +173,4 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 - ~~dynamic selection does not display newly created files~~
 - ~~double click not working~~ (removed `if __name__ == "__main__":` from `genome.py`)
 - ~~bad paths~~ (hopefully fixed by removing `.pkl` files from sync to force rebuild on unknown OS)
-- folder expansion resets all checked icons to unchecked
+- ~~folder expansion resets all checked icons to unchecked~~ (fixed by re-changing all selected items icons to checked)
