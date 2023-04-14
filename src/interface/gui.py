@@ -386,7 +386,7 @@ class GenomeGUI:
           self.__tree_component.Widget.see(iid)
           self.__component_lock.release()
 
-          for organism_name in self.__selected_organisms:
+          for organism_name, _ in self.__selected_organisms.items():
             # change the icon of the selected organisms (ugly fix)
             value = self.__tree.get_info(organism_name)
             path = value.path

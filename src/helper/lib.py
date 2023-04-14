@@ -27,9 +27,9 @@ __print_msg_lock = threading.Lock()
 
 
 def __print_msg(msg: str | Any) -> None:
-  __print_msg_lock.acquire()
-  print(msg if msg is not None else '', file=sys.stderr, flush=True)
-  __print_msg_lock.release()
+  with __print_msg_lock:
+    print(msg if msg is not None else '', file=sys.stderr, flush=True)
+
 
 
 def debug(msg: str | Any = None) -> None:

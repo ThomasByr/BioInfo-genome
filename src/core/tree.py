@@ -124,7 +124,7 @@ class Tree:
     if silent:
       capture.stop_redirect()
     self.update_ids()
-    ids_files = os.listdir('data/ids')
+    ids_files = os.listdir(os.path.join('data', 'ids'))
     for ids in ids_files:
       info(f'updating ids data from {ids}')
       with open(f'data/ids/{ids}', 'r', encoding='utf-8') as f:
