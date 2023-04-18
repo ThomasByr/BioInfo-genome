@@ -44,7 +44,7 @@ def debug(msg: str | Any = None) -> None:
   """
   if not __is_debug:
     return
-  __print_msg(colored('  [debug] ', 'green') + msg)
+  __print_msg(colored('  [DEBUG] ', 'green') + msg)
 
 
 def info(msg: str | Any = None) -> None:
@@ -57,7 +57,7 @@ def info(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  __print_msg(colored('   [info] ', 'blue') + msg)
+  __print_msg(colored('   [INFO] ', 'blue') + msg)
 
 
 def error(msg: str | Any = None) -> None:
@@ -70,7 +70,7 @@ def error(msg: str | Any = None) -> None:
   ```
   string to print
   """
-  __print_msg(colored('  [error] ', 'yellow') + msg)
+  __print_msg(colored('  [ERROR] ', 'yellow') + msg)
 
 
 def panic(msg: str | Any = None) -> NoReturn:
@@ -90,7 +90,7 @@ def panic(msg: str | Any = None) -> NoReturn:
   """
   # yapf: disable
   output = [
-    colored('  [panic] ', 'red'), msg, '\n',
+    colored('  [PANIC] ', 'red'), msg, '\n',
     colored('       -> ', 'red'),
     f'stack trace: {os.path.basename(inspect.stack()[1].filename)}:'
     f'{inspect.stack()[1].function}:'f'{inspect.stack()[1].lineno}',
