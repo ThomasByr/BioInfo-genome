@@ -1012,7 +1012,6 @@
 1675535	NC_039136	1464312509	0	AP018343	Aldrovandia oleosa	mitochondrion   mitochondrion
 461220	NC_053088	1998563602	0	MN356346	Aleadryas rufinucha	mitochondrion   mitochondrion
 179359	NC_025566	722490066	0	KM522837	Alectis ciliaris	mitochondrion   mitochondrion
-436001	NC_037050	1347731903	0	KP710215	Alectis indica	mitochondrion   mitochondrion
 1903189	NC_037233	1369124022	0	MG711470	Alectoria fallacina	mitochondrion   mitochondrion
 9078	NC_020585	470226427	0	FJ752426	Alectoris chukar	mitochondrion   mitochondrion
 1826597	NC_067906	2328367128	0	ON800845	Alectorobius atacamensis	mitochondrion   mitochondrion
@@ -1295,7 +1294,7 @@
 27448	NC_049092	1863132516	0	MT165524	Alphitobius diaperinus	mitochondrion   mitochondrion
 1370097	NC_070234	2431523906	0	MN253543	Alphonsea hainanensis	plastid   chloroplast
 518704	NC_050165	1892964057	0	MT239402	Alpinia chinensis	plastid   chloroplast
-1934112	NC_048461	1847690567	0	MK262728	Alpinia katsumadae	plastid   chloroplast
+1934112	NC_048461	1847690567	0	MK262728	Alpinia hainanensis	plastid   chloroplast
 105678	NC_062463	2222324439	0	MT334395	Alpinia nigra	plastid   chloroplast
 125261	NC_035895	1247582645	0	KY985237	Alpinia oxyphylla	plastid   chloroplast
 125263	NC_048462	1847690655	0	MK262731	Alpinia pumila	plastid   chloroplast
@@ -6412,7 +6411,6 @@
 181460	NC_004405	25057815	0	AP004444	Carangoides armatus	mitochondrion   mitochondrion
 274469	NC_025644	722491432	0	KM201334	Carangoides equula	mitochondrion   mitochondrion
 274471	NC_023968	608788110	0	KJ174514	Carangoides malabaricus	mitochondrion   mitochondrion
-456961	NC_051884	1942099481	0	MT677872	Carangoides plagiotaenia	mitochondrion   mitochondrion
 173309	NC_057648	2091535442	0	MW435597	Caranx crysos	mitochondrion   mitochondrion
 376895	NC_022932	560877732	0	KF649842	Caranx ignobilis	mitochondrion   mitochondrion
 181461	NC_004406	25057829	0	AP004445	Caranx melampygus	mitochondrion   mitochondrion
@@ -9655,6 +9653,7 @@
 1826781	NC_065672	2289397336	0	ON032471	Crataegus scabrifolia	plastid   chloroplast
 753902	NC_035148	1211677725	0	AP018134	Craterocephalus eyresii	mitochondrion   mitochondrion
 753914	NC_043854	1707510957	0	MK029350	Craterocephalus stramineus	mitochondrion   mitochondrion
+456961	NC_051884	1942099481	0	MT677872	Craterognathus plagiotaenia	mitochondrion   mitochondrion
 202635	NC_049621	1869249949	0	MK637696	Crateva tapia	plastid   chloroplast
 2759425	NC_050353	1904807256	0	MT679554	Crateva unilocularis	plastid   chloroplast
 99398	NC_049073	1863131300	0	MT354755	Cratoneuron filicinum	plastid   chloroplast
@@ -34410,6 +34409,7 @@
 86994	NC_049078	1863131647	0	MN390972	Scyphiphora hydrophyllacea	plastid   chloroplast
 86994	NC_057654	2091535528	0	MT610041	Scyphiphora hydrophyllacea	mitochondrion   mitochondrion
 1235674	NC_057485	2091526568	0	MW451225	Scyra compressipes	mitochondrion   mitochondrion
+436001	NC_037050	1347731903	0	KP710215	Scyris indica	mitochondrion   mitochondrion
 312124	NC_053064	1998563266	0	MN356266	Scytalopus superciliaris	mitochondrion   mitochondrion
 1448917	NC_048471	1847690998	0	MH230111	Scythris sinensis	mitochondrion   mitochondrion
 753227	NC_067752	2328359690	0	ON755208	Scythropia crataegella	mitochondrion   mitochondrion
