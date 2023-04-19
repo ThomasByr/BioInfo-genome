@@ -54,6 +54,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   letters = string.ascii_lowercase
   local_random = random.Random(hash(name))
   Entrez.email = ''.join(local_random.choice(letters) for _ in range(10)) + '@gmail.com'
+  debug(f'searching for [{region}] in [{name}] with NC ids {NC_list}')
   NC_i = 1
   no_region_found = 0
   info(f'downloading [{name}]')
@@ -80,7 +81,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
       no_region_found += 1 # we found a region
 
       # make sure we decrement NC_i because we incremented it at the beginning of the loop
-      NC_filename = str(name) + '_' + feature_key + '_NC_' + str(NC_i - 1) + '.txt'
+      NC_filename = str(name) + '_' + feature_key + '_' + NC + '.txt'
 
       file_path = os.path.join(path, NC_filename)
       if len(list_file) != 0:
@@ -113,7 +114,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -131,7 +132,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
             debug('COMPLEMENT')
             debug(f.extract(record_fasta.seq).complement())
             out.write(str(f.extract(record_fasta.seq).complement()))
@@ -150,7 +151,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -168,7 +169,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
             debug('COMPLEMENT')
             debug(f.extract(record_fasta.seq).complement())
             out.write(str(f.extract(record_fasta.seq).complement()))
@@ -187,7 +188,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0]), int(xi[1])))
+              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -204,7 +205,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0]), int(x[1])), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
             debug('EXTRACT')
             debug(f.extract(record_fasta.seq))
             out.write(str(f.extract(record_fasta.seq)))
@@ -212,7 +213,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   if no_region_found == 0:
     info(f'Selected functional region not found for organism : [{name}]')
     return 0
-  info(f'{name} downloaded successfully')
+  info(f'{name} downloaded successfully ({no_region_found})')
   return no_region_found
 
 
