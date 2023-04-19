@@ -15,7 +15,7 @@ from ..helper import info, error, panic, capture
 
 __all__ = ['Tree', 'Value']
 datetime_format = '%Y-%m-%d %H:%M:%S'
-non_valid_chars = string.punctuation.join(string.whitespace)
+non_valid_chars = string.punctuation + string.whitespace
 timeouts = (5, 10)
 
 
@@ -85,7 +85,8 @@ class Tree:
         self.__data = pickle.load(f)
       for organism in tqdm.tqdm(self.__data, desc='building tree'):
         path = self.__data[organism].path
-        os.makedirs(path, exist_ok=True)
+        if not os.path.exists(path):       # check here to save kernel time
+          os.makedirs(path, exist_ok=True) # (useless) extra layer of safety
       if silent:
         capture.stop_redirect()
         info(f'loaded tree ({pickle_path}) from pickle')
@@ -106,18 +107,30 @@ class Tree:
 
     total_rows = len(df.index)
     self.__data.clear()
-    info(f'building tree from {self.__name}.txt ({total_rows} rows)')
+    info(f'building tree from online {self.__name}.txt ({total_rows} rows)')
     if silent:
       capture.redirect()
     for _, row in tqdm.tqdm(df.iterrows(), total=total_rows, desc='building tree'):
       # transform non valid chars to underscores
-      organism = re.sub(f'[{non_valid_chars}]', '_', row['#Organism/Name'])
-      subgroup = re.sub(f'[{non_valid_chars}]', '_', row['SubGroup'])
-      group = re.sub(f'[{non_valid_chars}]', '_', row['Group'])
-      kingdom = re.sub(f'[{non_valid_chars}]', '_', row['Kingdom'])
-      path = os.path.join('Results', kingdom, group, subgroup, organism)
+      try:
+        organism = re.sub(f'[{non_valid_chars}]', '_', row['#Organism/Name'])
+        subgroup = re.sub(f'[{non_valid_chars}]', '_', row['SubGroup'])
+        group = re.sub(f'[{non_valid_chars}]', '_', row['Group'])
+        kingdom = re.sub(f'[{non_valid_chars}]', '_', row['Kingdom'])
+        path = os.path.join('Results', kingdom, group, subgroup, organism)
+      except TypeError:
+        nan_entries = [
+          k for k, v in row.items() if pd.isna(v) and k in {
+            '#Organism/Name',
+            'SubGroup',
+            'Group',
+            'Kingdom',
+          }
+        ]
+        error(f'failed to parse row:\n{row}\nnan (needed) entries: {nan_entries}')
 
       if organism not in self.__data:
+        # create new entry
         self.__data[organism] = Value(organism, path, [])
 
     valid_organisms: set[str] = set()
@@ -127,7 +140,7 @@ class Tree:
     ids_files = os.listdir(os.path.join('data', 'ids'))
     for ids in ids_files:
       info(f'updating ids data from {ids}')
-      with open(f'data/ids/{ids}', 'r', encoding='utf-8') as f:
+      with open(os.path.join('data', 'ids', ids), 'r', encoding='utf-8') as f:
         for line in f.readlines():
           row = line.split('\t')
           if not row[1].startswith('NC'):
@@ -152,7 +165,7 @@ class Tree:
       info('system file tree reset successfully')
 
     # save the tree
-    with open('data/tree.pkl', 'wb') as f:
+    with open(pickle_path, 'wb') as f:
       pickle.dump(self.__data, f)
 
   def get_info(self, organism: str) -> Value:
