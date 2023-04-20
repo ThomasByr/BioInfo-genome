@@ -11,7 +11,7 @@ from ..helper import info, debug, error
 __all__ = ['create_data_from_NC']
 
 
-def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -> int:
+def create_data_from_NC(name: str, path: str, NC_list: set[str], region: str) -> int:
   """
   create data from list of NC ids and region\\
   saves data in a file in the given path

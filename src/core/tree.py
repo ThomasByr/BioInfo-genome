@@ -23,7 +23,7 @@ timeouts = (5, 10)
 class Value:
   name: str
   path: str
-  nc: list[str]
+  nc: set[str]
 
 
 class Tree:
@@ -131,7 +131,7 @@ class Tree:
 
       if organism not in self.__data:
         # create new entry
-        self.__data[organism] = Value(organism, path, [])
+        self.__data[organism] = Value(organism, path, set())
 
     valid_organisms: set[str] = set()
     if silent:
@@ -146,7 +146,7 @@ class Tree:
           if not row[1].startswith('NC'):
             continue
           if (organism := re.sub(f'[{non_valid_chars}]', '_', row[5])) in self.__data:
-            self.__data[organism].nc.append(row[1])
+            self.__data[organism].nc.add(row[1])
             valid_organisms.add(organism)
 
     info(f'found {len(valid_organisms)} valid organisms')
