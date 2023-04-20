@@ -11,15 +11,6 @@ from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 
 from ..helper import info, debug, error
 
-
-# yapf: disable
-class Comparable(metaclass=ABCMeta):
-  @abstractmethod
-  def __lt__(self, other: Any) -> bool: ...
-# yapf: enable
-
-CT = TypeVar('CT', bound=Comparable)
-
 __all__ = ['create_data_from_NC']
 
 
@@ -110,7 +101,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
       out.write(NC_filename + '\n')
       for i in range(no_total_features):
         feature_location = record[0]['GBSeq_feature-table'][i]['GBFeature_location']
-        if (feature_key := record[0]['GBSeq_feature-table'][i]['GBFeature_key']) != region:
+        if (feature_key := record[0]['GBSeq_feature-table'][i]['GBFeature_key']).lower() != region.lower():
           continue
         no_region_found += 1 # we found a region
 
@@ -175,7 +166,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             continue
           f = CompoundLocation(fn)
           debug('COMPLEMENT JOIN')
-          debug(f.extract(record_fasta.seq).complement())
+          debug(f.extract(record_fasta.seq))
           out.write(str(f.extract(record_fasta.seq)))
 
         # elif feature_location.find('complement') != -1:
@@ -237,8 +228,5 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
 
 
 # wtf is this atrocious code and why is it here ??
-def check_inf_sup(inf: CT, sup: CT) -> bool:
-  if (int(inf) <= int(sup)):
-    return True
-  else:
-    return False
+def check_inf_sup(inf: str, sup: str) -> bool:
+  return int(inf) <= int(sup)
