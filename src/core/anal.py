@@ -3,9 +3,6 @@ import os
 import string
 import random
 
-from abc import ABCMeta, abstractmethod
-from typing import Any, TypeVar
-
 from Bio import Entrez, SeqIO
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 
@@ -110,7 +107,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
         # todo: tests on regions (part 2.3)
         out.write(feature_key + ' ' + feature_location + '\n')
 
-        if feature_location.find('complement') != -1 and feature_location.find('join') != -1:
+        if 'complement' in feature_location.lower() and 'join' in feature_location.lower():
           feature_location = feature_location[16:-1]
           x = feature_location.split(',')
           fn = []
@@ -132,7 +129,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           debug(f.extract(record_fasta.seq).complement())
           out.write(str(f.extract(record_fasta.seq).complement()))
 
-        elif feature_location.find('complement') != -1:
+        elif 'complement' in feature_location.lower():
           feature_location = feature_location[11:-1]
           x = feature_location.split('..')
           try:
@@ -147,7 +144,7 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             debug(f.extract(record_fasta.seq).complement())
             out.write(str(f.extract(record_fasta.seq).complement()))
 
-        elif feature_location.find('join') != -1:
+        elif 'join' in feature_location.lower():
           feature_location = feature_location[5:-1]
           x = feature_location.split(',')
           fn = []
