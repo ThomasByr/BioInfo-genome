@@ -9,7 +9,7 @@ from typing import Any, TypeVar
 from Bio import Entrez, SeqIO
 from Bio.SeqFeature import SeqFeature, FeatureLocation, CompoundLocation
 
-from ..helper import info, debug
+from ..helper import info, debug, error
 
 
 # yapf: disable
@@ -59,16 +59,32 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
   no_region_found = 0
   info(f'downloading [{name}]')
   for NC in NC_list:
-    info('NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
-    NC_i += 1              # increment here so we do not forget after continue
+    info(name + ' - NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
+    NC_i += 1 # increment here so we do not forget after continue
     debug(f'NC id  = {NC}')
     debug('----------------------------')
-    handle_fasta = Entrez.efetch(db='nucleotide', id=NC, rettype='fasta', retmode='text')
+    try:
+      handle_fasta = Entrez.efetch(db='nucleotide', id=NC, rettype='fasta', retmode='text')
+    except Exception as e:
+      if '429' in str(e):
+        error('429 : too many requests, please wait a few minutes and try again')
+        return 0
+      error(f'error while fetching NC id {NC} : {e}')
+      continue
+
     record_fasta = SeqIO.read(handle_fasta, 'fasta')
     debug(record_fasta)
     debug('----------------------------')
     handle_fasta.close()
-    handle_text = Entrez.efetch(db='nucleotide', id=NC, retmode='xml')
+    try:
+      handle_text = Entrez.efetch(db='nucleotide', id=NC, retmode='xml')
+    except Exception as e:
+      if '429' in str(e):
+        error('429 : too many requests, please wait a few minutes and try again')
+        return 0
+      error(f'error while fetching NC id {NC} : {e}')
+      continue
+
     record = Entrez.read(handle_text)
     handle_text.close()
     list_file = []
@@ -109,12 +125,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             xi = xi.split('..')
             try:
               (int(xi[0]), int(xi[1]))
-            except ValueError:
+            except Exception:
               is_valid = False
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
+              fn.append(FeatureLocation(int(xi[0]) - 1, int(xi[1]) - 1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -127,12 +143,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           x = feature_location.split('..')
           try:
             (int(x[0]), int(x[1]))
-          except ValueError:
+          except Exception:
             continue
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0]) - 1, int(x[1]) - 1), type='domain')
             debug('COMPLEMENT')
             debug(f.extract(record_fasta.seq).complement())
             out.write(str(f.extract(record_fasta.seq).complement()))
@@ -146,12 +162,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             xi = xi.split('..')
             try:
               (int(xi[0]), int(xi[1]))
-            except ValueError:
+            except Exception:
               is_valid = False
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
+              fn.append(FeatureLocation(int(xi[0]) - 1, int(xi[1]) - 1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -164,12 +180,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           x = feature_location.split('..')
           try:
             (int(x[0]), int(x[1]))
-          except ValueError:
+          except Exception:
             continue
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0]) - 1, int(x[1]) - 1), type='domain')
             debug('COMPLEMENT')
             debug(f.extract(record_fasta.seq).complement())
             out.write(str(f.extract(record_fasta.seq).complement()))
@@ -183,12 +199,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
             xi = xi.split('..')
             try:
               (int(x[0]), int(x[1]))
-            except ValueError:
+            except Exception:
               is_valid = False
             else:
               if (check_inf_sup(xi[0], xi[1]) == False):
                 is_valid = False
-              fn.append(FeatureLocation(int(xi[0])-1, int(xi[1])-1))
+              fn.append(FeatureLocation(int(xi[0]) - 1, int(xi[1]) - 1))
           if not is_valid:
             continue
           f = CompoundLocation(fn)
@@ -200,12 +216,12 @@ def create_data_from_NC(name: str, path: str, NC_list: list[str], region: str) -
           x = feature_location.split('..')
           try:
             (int(x[0]), int(x[1]))
-          except ValueError:
+          except Exception:
             continue
           else:
             if (check_inf_sup(x[0], x[1]) == False):
               continue
-            f = SeqFeature(FeatureLocation(int(x[0])-1, int(x[1])-1), type='domain')
+            f = SeqFeature(FeatureLocation(int(x[0]) - 1, int(x[1]) - 1), type='domain')
             debug('EXTRACT')
             debug(f.extract(record_fasta.seq))
             out.write(str(f.extract(record_fasta.seq)))
