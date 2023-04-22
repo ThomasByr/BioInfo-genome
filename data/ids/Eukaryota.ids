@@ -24174,8 +24174,8 @@
 796936	NC_028084	938340470	0	KT031802	Nepa hoffmanni	mitochondrion   mitochondrion
 122310	NC_051455	1935444748	0	MH923233	Nepenthes khasiana	plastid   chloroplast
 150983	NC_041271	1600728693	0	MK397879	Nepenthes mirabilis	plastid   plastid
-1744888	NC_039531	1509835773	0	MH798871	Nepenthes x ventrata	mitochondrion   mitochondrion
-1744888	NC_044185	1714235610	0	MK758110	Nepenthes x ventrata	plastid   chloroplast
+1744888	NC_044185	1714235610	0	MK758110	Nepenthes ventricosa x Nepenthes alata	plastid   chloroplast
+1744888	NC_039531	1509835773	0	MH798871	Nepenthes ventricosa x Nepenthes alata	mitochondrion   mitochondrion
 39347	NC_051544	1935448139	0	MT663220	Nepeta cataria	plastid   chloroplast
 3024959	NC_071848	2452629299	0	OP186463	Nepeta dentata	plastid   chloroplast
 2182725	NC_058882	2127885139	0	MZ618620	Nepeta hemsleyana	plastid   chloroplast
@@ -27978,7 +27978,7 @@
 166755	NC_063130	2235262818	0	OM312054	Periophthalmus barbarus	mitochondrion   mitochondrion
 409849	NC_047126	1834377984	0	CM020591	Periophthalmus magnuspinnatus	chromosome 1 chromosome
 409849	NC_047135	1834377975	0	CM020600	Periophthalmus magnuspinnatus	chromosome 10 chromosome
-409849	NC_047136	1834377974	0	CM020601	Periophthalmus magnuspinnatus	chromosome 11 chromosome
+409849	NC_047136	2484261795	0	CM020601	Periophthalmus magnuspinnatus	chromosome 11 chromosome
 409849	NC_047137	1834377973	0	CM020602	Periophthalmus magnuspinnatus	chromosome 12 chromosome
 409849	NC_047138	1834377972	0	CM020603	Periophthalmus magnuspinnatus	chromosome 13 chromosome
 409849	NC_047139	1834377971	0	CM020604	Periophthalmus magnuspinnatus	chromosome 14 chromosome
