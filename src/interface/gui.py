@@ -196,7 +196,7 @@ class GenomeGUI:
       load_tree(gui)
 
     def get_data(gui: 'GenomeGUI', val: Value, parent_key: int) -> None:
-      create_data_from_NC(val.name, val.path, val.nc, gui.__selected_region)
+      create_data_from_NC(val.name, val.path, val.nc, [gui.__selected_region])
       files = os.listdir(val.path)
       for f in files:
         gui.__component_lock.acquire()
