@@ -187,25 +187,22 @@ class GenomeGUI:
     return self.__tree_data
 
   def __build_layout(self):
-    layout = [[sg.Text('GENOME', font=self.__font)], [sg.HSeparator()],
-              [
-                sg.Column(self.__file_tree, justification='center'),
-                sg.VSeparator(),
-                sg.Column(self.__right_side)
-              ], [sg.HSeparator()],
-              [
-                sg.Button('Run', font=self.__font, size=(10, 2)),
-                sg.Button('Toggle Selection', font=self.__font, size=(10, 2)),
-                sg.VSeparator(),
-                sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
-                sg.Button('Reset', font=self.__font, size=(10, 2)),
-              ], [sg.Text('Developed with ❤', font=self.__font, justification='right', expand_x=True)],
-              [
-                sg.Text('by: @ThomasByr, @m7415, @JBrandstaedt and @Bas6700',
-                        font=self.__font,
-                        justification='right',
-                        expand_x=True)
-              ]]
+    layout = [
+      [sg.Text('GENOME - by @ThomasByr, @m7415, @JBrandstaedt and @Bas6700', font=self.__font, expand_x=True)],
+      [sg.HSeparator()],
+      [sg.Column(self.__file_tree, justification='center'),
+       sg.VSeparator(),
+       sg.Column(self.__right_side)],
+      [sg.HSeparator()],
+      [
+        sg.Button('Run', font=self.__font, size=(10, 2)),
+        sg.Button('Toggle Selection', font=self.__font, size=(10, 2)),
+        sg.VSeparator(),
+        sg.Button('Dry Reload', font=self.__font, size=(10, 2)),
+        sg.Button('Reset', font=self.__font, size=(10, 2)),
+      ],
+      [sg.Text('Developed with ❤', font=self.__font, justification='right', expand_x=True)],
+    ]
     return layout
 
   def __build_file_tree(self):
@@ -214,7 +211,7 @@ class GenomeGUI:
         data=sg.TreeData(),      # empty tree, will be filled later
         headings=[],             # no headings
         auto_size_columns=False,
-        num_rows=25,
+        num_rows=28,
         col0_width=40,
         key='-TREE-',
         show_expanded=True,
