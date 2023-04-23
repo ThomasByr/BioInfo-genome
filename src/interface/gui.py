@@ -47,7 +47,7 @@ class GenomeGUI:
     self.__tree_data: sg.TreeData = None         # file tree data
 
     self.__selected_organisms: dict[str, int] = {} # selected organisms
-    self.__selected_region: str = 'CDS'            # selected region
+    self.__selected_region: list[str] = ['CDS']    # selected region
     self.__tree = tree                             # tree stored to recieve `Value` data
 
     # this one bellow is stored here
@@ -61,28 +61,101 @@ class GenomeGUI:
 
     # some layouts
 
-    self.__info = [[sg.Text('Region Selection', font=self.__font)],
-                   [
-                     sg.Combo(
-                       [
-                         'CDS',
-                         'centromere',
-                         'intron',
-                         'mobile_element',
-                         'ncRNA',
-                         'rRNA',
-                         'telomere',
-                         'tRNA',
-                         '3\'UTR',
-                         '5\'UTR',
-                       ],
-                       enable_events=True,
-                       bind_return_key=True,
-                       expand_x=True,
-                       default_value='CDS',
-                       key='-SELECT-',
-                     )
-                   ]]
+    self.__checkboxes = {
+      '-CDS-': 'CDS',
+      '-CENTROMERE-': 'centromere',
+      '-INTRON-': 'intron',
+      '-MOBILE_ELEMENT-': 'mobile_element',
+      '-NCRNA-': 'ncRNA',
+      '-RRNA-': 'rRNA',
+      '-TELOMERE-': 'telomere',
+      '-TRNA-': 'tRNA',
+      '-3UTR-': '3\'UTR',
+      '-5UTR-': '5\'UTR',
+    }
+
+    size = (10, 1)
+    self.__info = [
+      [sg.Text('Region Selection', font=self.__font)],
+      [
+        sg.Column(
+          [
+            [
+              sg.Checkbox(
+                'CDS', key='-CDS-', font=self.__monospace_font, size=size, enable_events=True, default=True),
+              sg.Checkbox(
+                'centromere',
+                key='-CENTROMERE-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                'intron',
+                key='-INTRON-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                'mobile_element',
+                key='-MOBILE_ELEMENT-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+            ],
+            [
+              sg.Checkbox(
+                'ncRNA',
+                key='-NCRNA-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                'rRNA',
+                key='-RRNA-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                'telomere',
+                key='-TELOMERE-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                'tRNA',
+                key='-TRNA-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+            ],
+            [
+              sg.Checkbox(
+                '3\'UTR',
+                key='-3UTR-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+              sg.Checkbox(
+                '5\'UTR',
+                key='-5UTR-',
+                font=self.__monospace_font,
+                size=size,
+                enable_events=True,
+              ),
+            ],
+          ],
+          expand_x=True,
+        )
+      ],
+    ]
 
     self.__log = [[sg.Text('Logs', font=self.__font)],
                   [
@@ -156,7 +229,7 @@ class GenomeGUI:
     self.__window = sg.Window(
       'Genome',
       self.__build_layout(),
-      size=(800, 600),
+      size=(900, 600),
       auto_size_text=False,
       auto_size_buttons=False,
       icon=bioinformatics,
@@ -196,7 +269,7 @@ class GenomeGUI:
       load_tree(gui)
 
     def get_data(gui: 'GenomeGUI', val: Value, parent_key: int) -> None:
-      create_data_from_stuff(val.name, val.path, val.nc, [gui.__selected_region])
+      create_data_from_stuff(val.name, val.path, val.nc, gui.__selected_region)
       files = os.listdir(val.path)
       for f in files:
         gui.__component_lock.acquire()
@@ -256,15 +329,21 @@ class GenomeGUI:
       if event in (sg.WIN_CLOSED, 'Exit'):
         running = False
 
-      if event == '-SELECT-':
-        self.__selected_region = values['-SELECT-']
+      if event in self.__checkboxes:
+        # we do this with `in` list because there will never be more than 10 elements
+        # otherwise we would use a dict with bool values
+        region = self.__checkboxes[event]
+        if values[event] and region not in self.__selected_region:
+          self.__selected_region.append(region)
+        elif not values[event] and region in self.__selected_region:
+          self.__selected_region.remove(region)
         info(f'Selected region: {self.__selected_region}')
 
       if event == 'Run':
         if len(self.__selected_organisms) == 0:
           error('No organism selected')
           continue
-        if self.__selected_region is None:
+        if len(self.__selected_region) == 0:
           error('No region selected')
           continue
         values: list[Value] = []

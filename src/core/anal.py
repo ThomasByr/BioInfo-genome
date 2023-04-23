@@ -112,18 +112,6 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
 
       if not os.path.isdir(path):
         os.mkdir(path)
-      all_region = [
-        'CDS',
-        'centromere',
-        'intron',
-        'mobile_element',
-        'ncRNA',
-        'rRNA',
-        'telomere',
-        'tRNA',
-        '3\'UTR',
-        '5\'UTR',
-      ]
 
       filename_suffix = '_' + record.annotations.get('organism',
                                                      record.description.split(',')[0]).replace(
@@ -272,5 +260,4 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
     info(f'Selected functional region not found for organism : [{name}]')
     return 0
   info(f'{name} downloaded successfully ({n_regions})')
-  print(filenames)
   return n_regions
