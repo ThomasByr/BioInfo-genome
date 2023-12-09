@@ -41,9 +41,11 @@ if sys.version_info < (3, 10, 6):
 
 if __name__ == '__main__':
   from src import Tree, App
+  from src.helper.logger import init_logger
+  init_logger()
 
   overview = Tree()
   overview.build()
 
-  app = App()
+  app = App(overview)
   app.mainloop()
