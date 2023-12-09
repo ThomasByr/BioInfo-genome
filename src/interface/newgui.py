@@ -91,6 +91,14 @@ class App(ctk.CTk):
                 )
             )
             self.checkbox_list[-1].pack(side="left")
+        
+        # bellow, put a text box to view logs
+        self.log_frame = ctk.CTkFrame(self.right_frame)
+        self.log_frame.pack(side="bottom", fill="both", expand=True)
+        self.log_text = ctk.CTkTextbox(self.log_frame)
+        self.log_text.pack(side="bottom", fill="both", expand=True)
+        self.log_text.insert("end", "Logs will appear here")
+        self.log_text.configure(state="disabled")
 
         # Frame pour la prévisualisation au milieu
         self.preview_frame = ctk.CTkFrame(self)
@@ -101,13 +109,25 @@ class App(ctk.CTk):
         self.bottom_frame.pack(side="bottom", fill="x")
 
         # Label pour la prévisualisation
-        self.preview_label = ctk.CTkLabel(self.preview_frame, text="Aucune sélection")
+        self.preview_label = ctk.CTkLabel(self.preview_frame, text="No selection")
         self.preview_label.pack(pady=10)
+        self.preview_box = ctk.CTkTextbox(self.preview_frame)
+        self.preview_box.pack(fill="both", expand=True)
 
         # Fonction pour mettre à jour la prévisualisation en fonction de la sélection
         def update_preview(selection):
-            # Mettez ici la logique pour mettre à jour la prévisualisation en fonction de la sélection
-            self.preview_label.configure(text=f"Prévisualisation pour {selection}")
+            if os.path.isfile(selection):
+                self.preview_label.configure(text=f"Preview for {os.path.basename(selection)}")
+                with open(selection, "r") as f:
+                    self.preview_box.configure(state="normal")
+                    self.preview_box.delete("1.0", "end")
+                    self.preview_box.insert("end", f.read())
+                    self.preview_box.configure(state="disabled")
+            else:
+                self.preview_label.configure(text=f"Not a file: {os.path.basename(selection)}")
+                self.preview_box.configure(state="normal")
+                self.preview_box.delete("1.0", "end")
+                self.preview_box.configure(state="disabled")
 
         # Fonction de gestion de la sélection dans l'arbre de fichiers
         def on_tree_select(event):
