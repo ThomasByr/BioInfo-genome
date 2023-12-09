@@ -238,7 +238,7 @@ class GenomeGUI:
     run the GUI\n
     captures stdout and stderr and quits on window close
     """
-    sg.theme('DarkTeal9')
+    sg.theme('DarkBlue1')
     self.__build_file_tree()
     self.__build_window()
 
