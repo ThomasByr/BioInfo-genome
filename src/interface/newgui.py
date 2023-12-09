@@ -1,9 +1,12 @@
 import os
+import threading
 import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
 from .checkboxtreeview import CheckboxTreeview
+from ..helper import info
+from ..core import Tree, create_data_from_stuff
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -26,7 +29,7 @@ __all__ = ["App"]
 
 
 class App(ctk.CTk):
-    def __init__(self):
+    def __init__(self, tree: Tree):
         super().__init__()
 
         # treeview Customisation (theme colors are selected)
@@ -60,11 +63,11 @@ class App(ctk.CTk):
         self.title("BioInfo-Genome")
         self.geometry(f"{1100}x{580}")
 
-        # Frame pour l'arbre de fichiers à gauche
+        # left frame
         self.file_tree_frame = ctk.CTkFrame(self, width=450)
         self.file_tree_frame.pack(side="left", fill="y")
 
-        # Frames empilées sur la droite
+        # right frame
         self.right_frame = ctk.CTkFrame(self, width=250)
         self.right_frame.pack(side="right", fill="both", expand=False)
 
@@ -91,50 +94,52 @@ class App(ctk.CTk):
                 )
             )
             self.checkbox_list[-1].pack(side="left")
-        
+
         # bellow, put a text box to view logs
         self.log_frame = ctk.CTkFrame(self.right_frame)
         self.log_frame.pack(side="bottom", fill="both", expand=True)
         self.log_text = ctk.CTkTextbox(self.log_frame)
         self.log_text.pack(side="bottom", fill="both", expand=True)
-        self.log_text.insert("end", "Logs will appear here")
+        self.log_text.insert("end", "Logs will appear here\n")
         self.log_text.configure(state="disabled")
 
-        # Frame pour la prévisualisation au milieu
+        # preview frame
         self.preview_frame = ctk.CTkFrame(self)
         self.preview_frame.pack(side="top", fill="both", expand=True)
 
-        # Frame tout en bas avec des boutons et du texte
+        # bottom frame
         self.bottom_frame = ctk.CTkFrame(self)
         self.bottom_frame.pack(side="bottom", fill="x")
 
-        # Label pour la prévisualisation
+        # preview stuff
         self.preview_label = ctk.CTkLabel(self.preview_frame, text="No selection")
         self.preview_label.pack(pady=10)
         self.preview_box = ctk.CTkTextbox(self.preview_frame)
         self.preview_box.pack(fill="both", expand=True)
 
-        # Fonction pour mettre à jour la prévisualisation en fonction de la sélection
         def update_preview(selection):
             if os.path.isfile(selection):
-                self.preview_label.configure(text=f"Preview for {os.path.basename(selection)}")
+                self.preview_label.configure(
+                    text=f"Preview for {os.path.basename(selection)}"
+                )
                 with open(selection, "r") as f:
                     self.preview_box.configure(state="normal")
                     self.preview_box.delete("1.0", "end")
                     self.preview_box.insert("end", f.read())
                     self.preview_box.configure(state="disabled")
             else:
-                self.preview_label.configure(text=f"Not a file: {os.path.basename(selection)}")
+                self.preview_label.configure(
+                    text=f"Not a file: {os.path.basename(selection)}"
+                )
                 self.preview_box.configure(state="normal")
                 self.preview_box.delete("1.0", "end")
                 self.preview_box.configure(state="disabled")
 
-        # Fonction de gestion de la sélection dans l'arbre de fichiers
-        def on_tree_select(event):
+        def on_tree_select(_):
             selected_item = self.tree_view.selection()[0]
             update_preview(selected_item)
 
-        # Arbre de fichiers
+        # file tree
         self.tree_view = CheckboxTreeview(self.file_tree_frame)
         self.tree_view.pack(expand=True, fill="both")
         self.tree_view["columns"] = ("Depth", "Type", "Size")
@@ -149,11 +154,17 @@ class App(ctk.CTk):
         self.tree_view.bind("<<TreeviewSelect>>", on_tree_select)
         self.fill_tree_view("Results", "")
 
-        # Boutons dans la frame du bas
-        self.button1 = ctk.CTkButton(self.bottom_frame, text="Button 1")
+        # bottom frame stuff
+        self.button1 = ctk.CTkButton(
+            self.bottom_frame, text="run", fg_color="#556b2f", command=self.do_stuff_run
+        )
         self.button1.grid(row=0, column=0, padx=5, pady=5)
 
-        self.button2 = ctk.CTkButton(self.bottom_frame, text="Button 2")
+        self.button2 = ctk.CTkButton(
+            self.bottom_frame,
+            text="Button 2",
+            command=lambda: self.emit_log("Button 2 clicked\n"),
+        )
         self.button2.grid(row=1, column=0, padx=5, pady=5)
 
         self.button3 = ctk.CTkButton(self.bottom_frame, text="Button 3")
@@ -180,7 +191,23 @@ class App(ctk.CTk):
             for item in os.listdir(full_path):
                 self.fill_tree_view(item, full_path)
 
+    def emit_log(self, text: str):
+        self.log_text.configure(state="normal")
+        self.log_text.insert("end", text + "\n")
+        self.log_text.configure(state="disabled")
+        self.log_text.see("end")
+        info(text)
 
-if __name__ == "__main__":
-    app = App()
-    app.mainloop()
+    def do_stuff_run(self):
+        def internal():
+            selected_cdss = []
+            for checkbox in self.checkbox_list:
+                if checkbox.get():
+                    selected_cdss.append(checkbox.cget("text"))
+            self.emit_log(f"Selected CDSs: {selected_cdss}")
+            selected_organisms = []
+            for item in self.tree_view.get_checked():
+                selected_organisms.append(item)
+            self.emit_log(f"Selected organisms: {selected_organisms}")
+
+        threading.Thread(target=internal).start()  # !zorglub
