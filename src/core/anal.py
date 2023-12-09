@@ -1,4 +1,5 @@
 import os
+import logging
 
 import string
 import random
@@ -6,11 +7,11 @@ from io import TextIOWrapper
 
 from Bio import Entrez, SeqIO
 
-from ..helper import info, debug, error
-
 import re
 
 __all__ = ['create_data_from_stuff']
+
+logger = logging.getLogger()
 
 
 def valid_bounds(bounds, seq_length) -> bool:
@@ -64,30 +65,30 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
   letters = string.ascii_lowercase
   local_random = random.Random(hash(name))
   Entrez.email = ''.join(local_random.choice(letters) for _ in range(10)) + '@gmail.com'
-  debug(f'searching for [{region}] in [{name}] with NC ids {NC_list}')
+  logger.debug(f'searching for [{region}] in [{name}] with NC ids {NC_list}')
   NC_i = 1
-  info(f'downloading [{name}]')
+  logger.info(f'downloading [{name}]')
   for NC in NC_list:
-    info(name + ' - NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
+    logger.info(name + ' - NC : ' + str(NC_i) + ' / ' + str(len(NC_list)))
 
     # increment here so we do not forget after continue
     NC_i += 1
-    debug(f'NC id  = {NC}')
-    debug('----------------------------')
+    logger.debug(f'NC id  = {NC}')
+    logger.debug('----------------------------')
 
     try:
       handle_gb = Entrez.efetch(db='nuccore', id=NC, rettype='gbwithparts', retmode='text')
     except Exception as e:
       if '429' in str(e):
-        error('429 : too many requests, please wait a few minutes and try again')
+        logger.error('429 : too many requests, please wait a few minutes and try again')
         return 0
-      error(f'error while fetching NC id {NC} : {e}')
+      logger.error(f'error while fetching NC id {NC} : {e}')
       continue
 
     try:
       record = SeqIO.read(handle_gb, 'gb')
-      debug(record)
-      debug('----------------------------')
+      logger.debug(record)
+      logger.debug('----------------------------')
 
       last_header = ''
       n_regions = 0
@@ -253,11 +254,11 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
                     n_exon += 1
 
     except Exception as e:
-      error(f'{e}')
+      logger.error(f'{e}')
       pass
 
   if n_regions == 0:
-    info(f'Selected functional region not found for organism : [{name}]')
+    logger.info(f'Selected functional region not found for organism : [{name}]')
     return 0
-  info(f'{name} downloaded successfully ({n_regions})')
+  logger.info(f'{name} downloaded successfully ({n_regions})')
   return n_regions
