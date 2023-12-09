@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
-from checkboxtreeview import CheckboxTreeview
+from .checkboxtreeview import CheckboxTreeview
 
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("dark-blue")
@@ -21,6 +21,8 @@ checkboxes = {
     "-3UTR-": "3'UTR",
     "-5UTR-": "5'UTR",
 }
+
+__all__ = ["App"]
 
 
 class App(ctk.CTk):
@@ -58,59 +60,90 @@ class App(ctk.CTk):
         self.title("BioInfo-Genome")
         self.geometry(f"{1100}x{580}")
 
-        # geometry : 2 part left and right and a bottom bar with buttons
-        # left part is a treeview
-        # right part is a frame with checkboxes and a log window
-        # bottom part is a frame with buttons
-        self.grid_columnconfigure(0)
-        self.grid_columnconfigure(1)
-        self.grid_rowconfigure(3, weight=1)
+        # Frame pour l'arbre de fichiers à gauche
+        self.file_tree_frame = ctk.CTkFrame(self, width=450)
+        self.file_tree_frame.pack(side="left", fill="y")
 
-        self.sidebar_frame = ctk.CTkFrame(self, width=300, corner_radius=0)
-        self.sidebar_frame.grid(row=0, column=0, rowspan=4, sticky="nsew")
-        self.sidebar_frame.grid_rowconfigure(4, weight=1)
+        # Frames empilées sur la droite
+        self.right_frame = ctk.CTkFrame(self, width=250)
+        self.right_frame.pack(side="right", fill="both", expand=False)
 
-        # create the tree view on the left
-        self.tree_view = CheckboxTreeview(self.sidebar_frame)
-        self.tree_view.pack(fill=tk.BOTH, expand=1)
+        self.checkbox_frame = ctk.CTkFrame(self.right_frame)
+        self.checkbox_frame.pack(side="top", fill="both", expand=False)
 
-        # set up columns
+        # create the checkboxes
+        # max 2 checkboxes per line
+        self.checkbox_list = []
+        self.checkbox_frame_list = []
+        for i, (key, value) in enumerate(checkboxes.items()):
+            if i % 2 == 0:
+                self.checkbox_frame_list.append(ctk.CTkFrame(self.checkbox_frame))
+                self.checkbox_frame_list[-1].grid(
+                    row=i // 2, column=0, sticky="nsew", padx=5, pady=5
+                )
+            self.checkbox_list.append(
+                ctk.CTkCheckBox(
+                    self.checkbox_frame_list[-1],
+                    text=value,
+                    variable=tk.BooleanVar(),
+                    onvalue=True,
+                    offvalue=False,
+                )
+            )
+            self.checkbox_list[-1].pack(side="left")
+
+        # Frame pour la prévisualisation au milieu
+        self.preview_frame = ctk.CTkFrame(self)
+        self.preview_frame.pack(side="top", fill="both", expand=True)
+
+        # Frame tout en bas avec des boutons et du texte
+        self.bottom_frame = ctk.CTkFrame(self)
+        self.bottom_frame.pack(side="bottom", fill="x")
+
+        # Label pour la prévisualisation
+        self.preview_label = ctk.CTkLabel(self.preview_frame, text="Aucune sélection")
+        self.preview_label.pack(pady=10)
+
+        # Fonction pour mettre à jour la prévisualisation en fonction de la sélection
+        def update_preview(selection):
+            # Mettez ici la logique pour mettre à jour la prévisualisation en fonction de la sélection
+            self.preview_label.configure(text=f"Prévisualisation pour {selection}")
+
+        # Fonction de gestion de la sélection dans l'arbre de fichiers
+        def on_tree_select(event):
+            selected_item = self.tree_view.selection()[0]
+            update_preview(selected_item)
+
+        # Arbre de fichiers
+        self.tree_view = CheckboxTreeview(self.file_tree_frame)
+        self.tree_view.pack(expand=True, fill="both")
         self.tree_view["columns"] = ("Depth", "Type", "Size")
-        self.tree_view.column("#0", width=150, minwidth=150, stretch=tk.YES)
+        self.tree_view.column("#0", width=300, minwidth=300, stretch=tk.YES)
         self.tree_view.column("Depth", anchor=tk.W, width=50)
         self.tree_view.column("Type", anchor=tk.W, width=50)
         self.tree_view.column("Size", anchor=tk.W, width=50)
-
-        # add headings
         self.tree_view.heading("#0", text="File/Folder")
         self.tree_view.heading("Depth", text="Depth")
         self.tree_view.heading("Type", text="Type")
         self.tree_view.heading("Size", text="Size")
-
-        # fill tree view with the depth of elements in "Result" folder
+        self.tree_view.bind("<<TreeviewSelect>>", on_tree_select)
         self.fill_tree_view("Results", "")
 
-        # create on the right a frame with
-        # - checkboxes on top to select CDS (on multiple rows)
-        # - a log window on the bottom that redirects stdout and stderr
-        self.checkbox_frame = ctk.CTkFrame(self, corner_radius=0)
-        self.checkbox_frame.grid(row=0, column=1, sticky="nsew")
-        self.checkbox_frame.grid_columnconfigure(0, weight=1)
-        self.checkbox_frame.grid_rowconfigure(0, weight=1)
+        # Boutons dans la frame du bas
+        self.button1 = ctk.CTkButton(self.bottom_frame, text="Button 1")
+        self.button1.grid(row=0, column=0, padx=5, pady=5)
 
-        # create the checkboxes
-        # max 4 checkboxes per line
-        self.checkboxes = {}
-        self.checkbox_rows = []
-        self.checkbox_columns = []
-        self.checkbox_frame.grid_columnconfigure(0, weight=1)
-        self.checkbox_frame.grid_rowconfigure(0, weight=1)
+        self.button2 = ctk.CTkButton(self.bottom_frame, text="Button 2")
+        self.button2.grid(row=1, column=0, padx=5, pady=5)
 
-        for i, (key, value) in enumerate(checkboxes.items()):
-            self.checkboxes[key] = ctk.CTkCheckBox(self.checkbox_frame, text=value)
-            self.checkboxes[key].grid(row=i // 4, column=i % 4, sticky="w")
-            self.checkbox_rows.append(i // 4)
-            self.checkbox_columns.append(i % 4)
+        self.button3 = ctk.CTkButton(self.bottom_frame, text="Button 3")
+        self.button3.grid(row=1, column=1, padx=5, pady=5)
+
+        self.button4 = ctk.CTkButton(self.bottom_frame, text="Button 4")
+        self.button4.grid(row=1, column=2, padx=5, pady=5)
+
+        self.made_with_love_label = ctk.CTkLabel(self.bottom_frame, text="Made with ❤️")
+        self.made_with_love_label.grid(row=2, columnspan=2, pady=5)
 
     def fill_tree_view(self, folder, parent):
         full_path = os.path.join(parent, folder) if parent else folder
