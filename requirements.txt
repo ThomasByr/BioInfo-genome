@@ -10,3 +10,6 @@ pillow        >= 9.5
 requests      >= 2.28
 biopython     >= 1.81
 PySimpleGUI   >= 4.60
+
+customtkinter >= 0.3
+ttkwidgets    >= 0.13
