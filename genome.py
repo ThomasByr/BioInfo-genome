@@ -39,11 +39,11 @@ if sys.version_info < (3, 10, 6):
   print('Python 3.10.6 or higher is required.')
   sys.exit(1)
 
-from src import Tree, GenomeGUI
+if __name__ == '__main__':
+  from src import Tree, App
 
-overview = Tree()
-overview.build()
+  overview = Tree()
+  overview.build()
 
-gui = GenomeGUI(overview)
-gui.run()
-sys.exit()
+  app = App()
+  app.mainloop()
