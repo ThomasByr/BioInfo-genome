@@ -1,7 +1,5 @@
 # <img src="assets/bioinformatics.png" alt="icon" width="4%"/> BioInfo - Genome
 
-[![Linux](https://svgshare.com/i/Zhy.svg)](https://docs.microsoft.com/en-us/windows/wsl/tutorials/gui-apps)
-[![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
 [![GitHub license](https://img.shields.io/github/license/ThomasByr/BioInfo-genome)](https://github.com/ThomasByr/BioInfo-genome/blob/master/LICENSE)
 [![GitHub commits](https://badgen.net/github/commits/ThomasByr/BioInfo-genome)](https://GitHub.com/ThomasByr/BioInfo-genome/commit/)
 [![GitHub latest commit](https://badgen.net/github/last-commit/ThomasByr/BioInfo-genome)](https://gitHub.com/ThomasByr/BioInfo-genome/commit/)
@@ -25,7 +23,7 @@
 > **Note**
 > This project is part of a M1 project at the University of Strasbourg, France.
 
-First, make sure you have `python >= 3.10.6` installed with the required dependencies (make sure to add `python -m` beforehands if you are using a conda environment) :
+First, make sure you have `python >= 3.10.6` installed with the required dependencies:
 
 ```ps1
 pip install --upgrade -r requirements.txt
