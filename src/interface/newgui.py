@@ -4,6 +4,8 @@ import tkinter as tk
 from tkinter import ttk
 import customtkinter as ctk
 
+from PIL import Image, ImageTk
+
 from .checkboxtreeview import CheckboxTreeview
 from ..helper import info
 from ..core import Tree, create_data_from_stuff
@@ -57,6 +59,9 @@ class App(ctk.CTk):
         # configure window
         self.title("BioInfo-Genome")
         self.geometry(f"{1100}x{580}")
+        icon = ImageTk.PhotoImage(Image.open(os.path.join("assets", "favicon.png")))
+        self.wm_iconbitmap()
+        self.iconphoto(True, icon)
 
         # left frame
         self.file_tree_frame = ctk.CTkFrame(self, width=450)
@@ -71,12 +76,15 @@ class App(ctk.CTk):
 
         # create the checkboxes
         # max 2 checkboxes per line
-        self.checkbox_list = []
-        self.checkbox_frame_list = []
+        self.checkbox_list: list[ctk.CTkCheckBox] = []
+        self.checkbox_frame_list: list[ctk.CTkFrame] = []
+        checkbox_per_line = 2
         for i, (_, value) in enumerate(checkboxes.items()):
-            if i % 2 == 0:
+            if i % checkbox_per_line == 0:
                 self.checkbox_frame_list.append(ctk.CTkFrame(self.checkbox_frame))
-                self.checkbox_frame_list[-1].grid(row=i // 2, column=0, sticky="nsew", padx=5, pady=5)
+                self.checkbox_frame_list[-1].grid(
+                    row=i // checkbox_per_line, column=0, sticky="nsew", padx=5, pady=5
+                )
             self.checkbox_list.append(
                 ctk.CTkCheckBox(
                     self.checkbox_frame_list[-1],
@@ -99,7 +107,7 @@ class App(ctk.CTk):
         self.log_text = ctk.CTkTextbox(self.log_frame)
         self.log_text.pack(side="bottom", fill="both", expand=True)
         self.log_text.insert("end", "Logs will appear here\n")
-        self.log_text.configure(state="disabled")
+        self.log_text.configure(font=("TkFixedFont", 10), state="disabled")
 
         # bottom frame
         self.bottom_frame = ctk.CTkFrame(self)
@@ -192,6 +200,7 @@ class App(ctk.CTk):
             for checkbox in self.checkbox_list:
                 if checkbox.get():
                     selected_regions.append(checkbox.cget("text"))
+
             selected_organisms = []
             for item in self.tree_view.get_checked():
                 # item is a path
@@ -202,16 +211,14 @@ class App(ctk.CTk):
                 # get the last folder
                 item = os.path.basename(item)
                 selected_organisms.append(item)
+            self.tree_view.uncheck_all()
 
-            # create the data
             for organism in selected_organisms:
                 value = self.__tree.get_info(organism)
                 r = create_data_from_stuff(value.name, value.path, value.nc, selected_regions)
                 # push new created file to the tree view
                 self.fill_tree_view("Results", "")  # todo: do not check for all tree
                 # uncheck the checkbox
-                self.tree_view.change_state(value.path, "unchecked")
                 self.emit_log(f"{organism} {selected_regions} ({r})")
-            self.tree_view.uncheck_all()
 
         threading.Thread(target=internal).start()  # !zorglub
