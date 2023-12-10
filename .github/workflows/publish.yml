@@ -24,7 +24,11 @@ jobs:
           cache: "pip"
       - run: pip install -r requirements.txt pyinstaller
       - run: pyinstaller --add-data assets:assets genome.py
-      - uses: actions/upload-artifact@v3
+      - uses: svenstaro/upload-release-action@v2
         with:
-          name: genome (${{ matrix.os }} py${{ matrix.python-version }})
-          path: dist/*
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: dist/genome/*
+          tag: ${{ github.ref }}
+          asset_name: genome (${{ matrix.os }} py${{ matrix.python-version }})
+          overwrite: true
+          file_glob: true
