@@ -119,6 +119,10 @@ class CheckboxTreeview(ttk.Treeview):
         :param state: "checked", "unchecked" or "tristate": new state of the item
         :type state: str
         """
+        if item.endswith(".txt"):
+            # remove tag so that there is no box
+            self.item(item, tags=tuple([t for t in self.item(item, "tags") if t not in ("checked", "unchecked", "tristate")]))
+            return
         tags = self.item(item, "tags")
         states = ("checked", "unchecked", "tristate")
         new_tags = [t for t in tags if t not in states]
@@ -179,6 +183,9 @@ class CheckboxTreeview(ttk.Treeview):
             kw["tags"] = (tag,)
         elif not ("unchecked" in kw["tags"] or "checked" in kw["tags"] or "tristate" in kw["tags"]):
             kw["tags"] += (tag,)
+        if "text" in kw and kw["text"].endswith(".txt"):
+            # remove tag so that there is no box
+            kw["tags"] = tuple([t for t in kw["tags"] if t not in ("checked", "unchecked", "tristate")])
 
         return ttk.Treeview.insert(self, parent, index, iid, **kw)
 
