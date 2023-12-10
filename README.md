@@ -1,4 +1,4 @@
-# <img src="assets/bioinformatics.png" alt="icon" width="4%"/> BioInfo - Genome
+# <img src="assets/favicon.png" alt="icon" width="4%"/> BioInfo - Genome
 
 [![GitHub license](https://img.shields.io/github/license/ThomasByr/BioInfo-genome)](https://github.com/ThomasByr/BioInfo-genome/blob/master/LICENSE)
 [![GitHub commits](https://badgen.net/github/commits/ThomasByr/BioInfo-genome)](https://GitHub.com/ThomasByr/BioInfo-genome/commit/)
