@@ -68,7 +68,7 @@ class App(ctk.CTk):
         search_bar_style.map(
             "TCombobox", background=[("selected", bg_color)], foreground=[("selected", selected_color)]
         )
-        self.bind("<<TreeviewSelect>>", lambda event: self.focus_set())
+        self.bind("<<TreeviewSelect>>", lambda _: self.focus_set())
 
         # configure window
         self.title("BioInfo-Genome")
