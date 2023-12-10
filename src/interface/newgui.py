@@ -151,14 +151,10 @@ class App(ctk.CTk):
         # file tree
         self.tree_view = CheckboxTreeview(self.file_tree_frame)
         self.tree_view.pack(expand=True, fill="both")
-        self.tree_view["columns"] = ("Depth", "Type", "Size")
-        self.tree_view.column("#0", width=300, minwidth=300, stretch=tk.YES)
-        self.tree_view.column("Depth", anchor=tk.W, width=50)
-        self.tree_view.column("Type", anchor=tk.W, width=50)
+        self.tree_view["columns"] = ("Size",)
+        self.tree_view.column("#0", width=400, minwidth=400, stretch=tk.YES)
         self.tree_view.column("Size", anchor=tk.W, width=50)
         self.tree_view.heading("#0", text="File/Folder")
-        self.tree_view.heading("Depth", text="Depth")
-        self.tree_view.heading("Type", text="Type")
         self.tree_view.heading("Size", text="Size")
         self.tree_view.bind("<<TreeviewSelect>>", on_tree_select)
         self.fill_tree_view("Results", "")
@@ -191,13 +187,11 @@ class App(ctk.CTk):
 
     def fill_tree_view(self, folder, parent):
         full_path = os.path.join(parent, folder) if parent else folder
-        depth = full_path.count(os.sep) if os.sep in full_path else 0
-        type_of = "Folder" if os.path.isdir(full_path) else "File"
         size = os.path.getsize(full_path) if os.path.isfile(full_path) else ""
 
         # insert the current folder or file into the tree view
         try:
-            self.tree_view.insert(parent, "end", full_path, text=folder, values=(depth, type_of, size))
+            self.tree_view.insert(parent, "end", full_path, text=folder, values=(size,))
         except tk.TclError:
             pass
 
