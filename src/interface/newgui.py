@@ -1,11 +1,11 @@
 import os
 import logging
-import copy
 from multiprocessing.pool import ThreadPool
 import tkinter as tk
 from tkinter import ttk
 from CTkMessagebox import CTkMessagebox
 import customtkinter as ctk
+from ttkwidgets.autocomplete import AutocompleteCombobox
 
 from PIL import Image, ImageTk
 
@@ -43,6 +43,8 @@ class App(ctk.CTk):
     def __init__(self, tree: Tree):
         super().__init__()
         self.__tree = tree
+        self.__all_organisms = self.__tree.organisms
+        self.__all_organisms_sorted = sorted(self.__all_organisms)
         self.pool = ThreadPool(processes=4)  #! 4 is max of concurrent requests on server
 
         # treeview Customisation (theme colors are selected)
@@ -51,18 +53,20 @@ class App(ctk.CTk):
         selected_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkButton"]["fg_color"])
 
         treestyle = ttk.Style()
+        search_bar_style = ttk.Style()
         treestyle.theme_use("default")
+        search_bar_style.theme_use("default")
         treestyle.configure(
-            "Treeview",
-            background=bg_color,
-            foreground=text_color,
-            fieldbackground=bg_color,
-            borderwidth=0,
+            "Treeview", background=bg_color, foreground=text_color, fieldbackground=bg_color, borderwidth=0
+        )
+        search_bar_style.configure(
+            "TCombobox", background=bg_color, foreground=text_color, fieldbackground=bg_color, borderwidth=0
         )
         treestyle.map(
-            "Treeview",
-            background=[("selected", bg_color)],
-            foreground=[("selected", selected_color)],
+            "Treeview", background=[("selected", bg_color)], foreground=[("selected", selected_color)]
+        )
+        search_bar_style.map(
+            "TCombobox", background=[("selected", bg_color)], foreground=[("selected", selected_color)]
         )
         self.bind("<<TreeviewSelect>>", lambda event: self.focus_set())
 
@@ -119,6 +123,14 @@ class App(ctk.CTk):
         self.log_text.insert("end", "Logs will appear here\n")
         self.log_text.configure(font=("TkFixedFont", 10), state="disabled")
 
+        # create a small one-line input to search for organisms in the tree
+        self.search_bar = AutocompleteCombobox(
+            self.file_tree_frame, completevalues=self.__all_organisms_sorted
+        )
+        self.search_bar.pack(side="top", fill="x", padx=5, pady=5)
+        self.search_bar.bind("<KeyRelease>", func=lambda e: self.search_bar_callback(e))
+        self.search_bar.bind("<Return>", func=lambda e: self.search_bar_selection_callback(e))
+
         # bottom frame
         self.bottom_frame = ctk.CTkFrame(self)
         self.bottom_frame.pack(side="bottom", fill="x")
@@ -149,8 +161,14 @@ class App(ctk.CTk):
             update_preview(selected_item)
 
         # file tree
-        self.tree_view = CheckboxTreeview(self.file_tree_frame)
+        self.tree_scrollbar = ctk.CTkScrollbar(self.file_tree_frame)
+        self.tree_scrollbar.pack(side="right", fill="y")
+
+        self.tree_view = CheckboxTreeview(self.file_tree_frame, yscrollcommand=self.tree_scrollbar.set)
         self.tree_view.pack(expand=True, fill="both")
+
+        self.tree_scrollbar.configure(command=self.tree_view.yview)
+
         self.tree_view["columns"] = ("Size",)
         self.tree_view.column("#0", width=400, minwidth=400, stretch=tk.YES)
         self.tree_view.column("Size", anchor=tk.W, width=50)
@@ -185,6 +203,85 @@ class App(ctk.CTk):
         )
         self.made_with_love_label.grid(row=2, column=0, columnspan=3, pady=5)
 
+    def search_bar_callback(self, event: tk.Event):
+        """
+        Callback for the search bar\\
+        This is called whenever the user types something in the search bar
+        """
+        # get the current value of the search bar
+        value = event.widget.get()
+        # if the value is empty, show all organisms
+        if not value or value.isspace():
+            self.search_bar.configure(completevalues=self.__all_organisms_sorted)
+            return
+        # filter out all organisms that do not match the search bar
+        filtered = [x for x in self.__all_organisms if value.lower() in x.lower()]
+        # update the search bar
+        self.search_bar.configure(completevalues=sorted(filtered))
+
+    def search_bar_selection_callback(self, event: tk.Event):
+        """
+        Callback for the search bar\\
+        This is called whenever the user presses enter in the search bar
+        """
+        # get the current value of the search bar
+        value = event.widget.get()
+        # if the value is empty, show all organisms
+        if not value:
+            self.search_bar.configure(completevalues=self.__all_organisms_sorted)
+            return
+        # filter out all organisms that do not match the search bar
+        filtered = [x for x in self.__all_organisms if value.lower() in x.lower()]
+        __filtered = list(map(lambda x: self.__tree.get_info(x).path, filtered))
+        # update the search bar
+        self.search_bar.configure(completevalues=sorted(filtered))
+        # if there is only one organism, select it
+        if len(filtered) == 1:
+            self.tree_view.focus(__filtered[0])
+            self.tree_view.selection_set(__filtered[0])
+            self.tree_view.change_state(__filtered[0], "checked")
+            self.tree_view.see(__filtered[0])
+            self.tree_view.focus_set()
+            self.search_bar.set("")
+        # if there are multiple organisms, show a list
+        elif len(filtered) > 1:
+            self.search_bar.set("")
+            msg = CTkMessagebox(
+                master=self,
+                title="Multiple organisms found",
+                width=600,
+                message=f"Multiple organisms found ({len(filtered)}):\n{', '.join(filtered[:5])}...",
+                icon="info",
+                option_1="Cancel",
+                option_2="Select all",
+            )
+            msg.wait_window()
+            if msg.get() == "Select all":
+                for organism in __filtered:
+                    self.tree_view.focus(organism)
+                    self.tree_view.selection_set(organism)
+                    self.tree_view.change_state(organism, "checked")
+                    self.tree_view.see(organism)
+                    self.tree_view.focus_set()
+            self.search_bar.set("")
+        # if there are no organisms, show a warning
+        else:
+            self.search_bar.set("")
+            msg = CTkMessagebox(
+                master=self,
+                title="No organisms found",
+                width=600,
+                message=f"No organisms found for '{value}'",
+                icon="warning",
+                option_1="OK",
+            )
+            msg.wait_window()
+            if msg.get() == "OK":
+                self.search_bar.set("")
+
+        # in all cases, reset the search bar complete values
+        self.search_bar.configure(completevalues=self.__all_organisms_sorted)
+
     def fill_tree_view(self, folder, parent):
         full_path = os.path.join(parent, folder) if parent else folder
         size = os.path.getsize(full_path) if os.path.isfile(full_path) else ""
@@ -203,6 +300,9 @@ class App(ctk.CTk):
         def __callback():
             self.tree_view.delete(*self.tree_view.get_children())
             self.fill_tree_view("Results", "")
+            self.__all_organisms = self.__tree.organisms
+            self.__all_organisms_sorted = sorted(self.__all_organisms)
+            self.search_bar.configure(completevalues=self.__all_organisms_sorted)
             self.emit_log("Reset done ✅")
             for button in self.__all_buttons:
                 button.configure(require_redraw=True, state="normal")
