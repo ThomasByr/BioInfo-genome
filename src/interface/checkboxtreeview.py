@@ -11,9 +11,9 @@ IM_TRISTATE = os.path.join("assets", "box", "tristate.png")
 class CheckboxTreeview(ttk.Treeview):
     """
     :class:`ttk.Treeview` widget with checkboxes left of each item.
-    
+
     .. note::
-        The checkboxes are done via the image attribute of the item, 
+        The checkboxes are done via the image attribute of the item,
         so to keep the checkbox, you cannot add an image to the item.
     """
 
@@ -25,13 +25,15 @@ class CheckboxTreeview(ttk.Treeview):
         :type master: widget
         :param kw: options to be passed on to the :class:`ttk.Treeview` initializer
         """
-        ttk.Treeview.__init__(self, master, style='Checkbox.Treeview', **kw)
+        ttk.Treeview.__init__(self, master, style="Checkbox.Treeview", **kw)
         # style (make a noticeable disabled style)
         style = ttk.Style(self)
-        style.map("Checkbox.Treeview",
-                  fieldbackground=[("disabled", '#E6E6E6')],
-                  foreground=[("disabled", 'gray40')],
-                  background=[("disabled", '#E6E6E6')])
+        style.map(
+            "Checkbox.Treeview",
+            fieldbackground=[("disabled", "#E6E6E6")],
+            foreground=[("disabled", "gray40")],
+            background=[("disabled", "#E6E6E6")],
+        )
         # checkboxes are implemented with pictures
         self.im_checked = ImageTk.PhotoImage(Image.open(IM_CHECKED).resize((15, 15)), master=self)
         self.im_unchecked = ImageTk.PhotoImage(Image.open(IM_UNCHECKED).resize((15, 15)), master=self)
@@ -51,6 +53,7 @@ class CheckboxTreeview(ttk.Treeview):
             children = self.get_children(item)
             for c in children:
                 aux(c)
+
         aux("")
 
     def expand_all(self):
@@ -88,16 +91,16 @@ class CheckboxTreeview(ttk.Treeview):
     def state(self, statespec=None):
         """
         Modify or inquire widget state.
-        
-        :param statespec: Widget state is returned if `statespec` is None, 
-                          otherwise it is set according to the statespec 
-                          flags and then a new state spec is returned 
+
+        :param statespec: Widget state is returned if `statespec` is None,
+                          otherwise it is set according to the statespec
+                          flags and then a new state spec is returned
                           indicating which flags were changed.
         :type statespec: None or sequence[str]
         """
         if statespec:
             if "disabled" in statespec:
-                self.bind('<Button-1>', lambda e: 'break')
+                self.bind("<Button-1>", lambda e: "break")
             elif "!disabled" in statespec:
                 self.unbind("<Button-1>")
                 self.bind("<Button-1>", self._box_click, True)
@@ -110,10 +113,10 @@ class CheckboxTreeview(ttk.Treeview):
         Replace the current state of the item.
 
         i.e. replace the current state tag but keeps the other tags.
-        
+
         :param item: item id
         :type item: str
-        :param state: "checked", "unchecked" or "tristate": new state of the item 
+        :param state: "checked", "unchecked" or "tristate": new state of the item
         :type state: str
         """
         tags = self.item(item, "tags")
@@ -125,7 +128,7 @@ class CheckboxTreeview(ttk.Treeview):
     def tag_add(self, item, tag):
         """
         Add tag to the tags of item.
-        
+
         :param item: item identifier
         :type item: str
         :param tag: tag name
@@ -137,7 +140,7 @@ class CheckboxTreeview(ttk.Treeview):
     def tag_del(self, item, tag):
         """
         Remove tag from the tags of item.
-        
+
         :param item: item identifier
         :type item: str
         :param tag: tag name
@@ -151,7 +154,7 @@ class CheckboxTreeview(ttk.Treeview):
     def insert(self, parent, index, iid=None, **kw):
         """
         Creates a new item and return the item identifier of the newly created item.
-        
+
         :param parent: identifier of the parent item
         :type parent: str
         :param index: where in the list of parent's children to insert the new item
@@ -159,23 +162,22 @@ class CheckboxTreeview(ttk.Treeview):
         :param iid: item identifier, iid must not already exist in the tree. If iid is None a new unique identifier is generated.
         :type iid: None or str
         :param kw: other options to be passed on to the :meth:`ttk.Treeview.insert` method
-        
+
         :return: the item identifier of the newly created item
         :rtype: str
 
-        .. note:: Same method as for the standard :class:`ttk.Treeview` but 
-                  add the tag for the box state accordingly to the parent 
-                  state if no tag among 
+        .. note:: Same method as for the standard :class:`ttk.Treeview` but
+                  add the tag for the box state accordingly to the parent
+                  state if no tag among
                   ('checked', 'unchecked', 'tristate') is given.
         """
         if self.tag_has("checked", parent):
             tag = "checked"
         else:
-            tag = 'unchecked'
+            tag = "unchecked"
         if "tags" not in kw:
             kw["tags"] = (tag,)
-        elif not ("unchecked" in kw["tags"] or "checked" in kw["tags"] or
-                  "tristate" in kw["tags"]):
+        elif not ("unchecked" in kw["tags"] or "checked" in kw["tags"] or "tristate" in kw["tags"]):
             kw["tags"] += (tag,)
 
         return ttk.Treeview.insert(self, parent, index, iid, **kw)

@@ -34,15 +34,9 @@ class App(ctk.CTk):
         self.__tree = tree
 
         # treeview Customisation (theme colors are selected)
-        bg_color = self._apply_appearance_mode(
-            ctk.ThemeManager.theme["CTkFrame"]["fg_color"]
-        )
-        text_color = self._apply_appearance_mode(
-            ctk.ThemeManager.theme["CTkLabel"]["text_color"]
-        )
-        selected_color = self._apply_appearance_mode(
-            ctk.ThemeManager.theme["CTkButton"]["fg_color"]
-        )
+        bg_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkFrame"]["fg_color"])
+        text_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkLabel"]["text_color"])
+        selected_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkButton"]["fg_color"])
 
         treestyle = ttk.Style()
         treestyle.theme_use("default")
@@ -82,9 +76,7 @@ class App(ctk.CTk):
         for i, (_, value) in enumerate(checkboxes.items()):
             if i % 2 == 0:
                 self.checkbox_frame_list.append(ctk.CTkFrame(self.checkbox_frame))
-                self.checkbox_frame_list[-1].grid(
-                    row=i // 2, column=0, sticky="nsew", padx=5, pady=5
-                )
+                self.checkbox_frame_list[-1].grid(row=i // 2, column=0, sticky="nsew", padx=5, pady=5)
             self.checkbox_list.append(
                 ctk.CTkCheckBox(
                     self.checkbox_frame_list[-1],
@@ -122,18 +114,14 @@ class App(ctk.CTk):
 
         def update_preview(selection):
             if os.path.isfile(selection):
-                self.preview_label.configure(
-                    text=f"Preview for {os.path.basename(selection)}"
-                )
+                self.preview_label.configure(text=f"Preview for {os.path.basename(selection)}")
                 with open(selection, "r") as f:
                     self.preview_box.configure(state="normal")
                     self.preview_box.delete("1.0", "end")
                     self.preview_box.insert("end", f.read())
                     self.preview_box.configure(state="disabled")
             else:
-                self.preview_label.configure(
-                    text=f"Not a file: {os.path.basename(selection)}"
-                )
+                self.preview_label.configure(text=f"Not a file: {os.path.basename(selection)}")
                 self.preview_box.configure(state="normal")
                 self.preview_box.delete("1.0", "end")
                 self.preview_box.configure(state="disabled")
@@ -163,11 +151,7 @@ class App(ctk.CTk):
         )
         self.button1.grid(row=0, column=0, padx=5, pady=5)
 
-        self.button2 = ctk.CTkButton(
-            self.bottom_frame,
-            text="Button 2",
-            command=lambda: self.emit_log("Button 2 clicked\n"),
-        )
+        self.button2 = ctk.CTkButton(self.bottom_frame, text="Button 2")
         self.button2.grid(row=1, column=0, padx=5, pady=5)
 
         self.button3 = ctk.CTkButton(self.bottom_frame, text="Button 3")
@@ -187,9 +171,7 @@ class App(ctk.CTk):
 
         # insert the current folder or file into the tree view
         try:
-            self.tree_view.insert(
-                parent, "end", full_path, text=folder, values=(depth, type_of, size)
-            )
+            self.tree_view.insert(parent, "end", full_path, text=folder, values=(depth, type_of, size))
         except tk.TclError:
             pass
 
@@ -210,31 +192,26 @@ class App(ctk.CTk):
             for checkbox in self.checkbox_list:
                 if checkbox.get():
                     selected_regions.append(checkbox.cget("text"))
-            self.emit_log(f"Selected CDSs: {selected_regions}")
             selected_organisms = []
-            full_paths = []
             for item in self.tree_view.get_checked():
                 # item is a path
                 # if it is a file, remove the file name
                 # keep only the last folder
                 if os.path.isfile(item):
                     item = os.path.dirname(item)
-                full_paths.append(item)
                 # get the last folder
                 item = os.path.basename(item)
                 selected_organisms.append(item)
-            self.emit_log(f"Selected organisms: {selected_organisms}")
 
             # create the data
-            for i, organism in enumerate(selected_organisms):
+            for organism in selected_organisms:
                 value = self.__tree.get_info(organism)
-                r = create_data_from_stuff(
-                    value.name, value.path, value.nc, selected_regions
-                )
+                r = create_data_from_stuff(value.name, value.path, value.nc, selected_regions)
                 # push new created file to the tree view
-                self.fill_tree_view("Results", "")
+                self.fill_tree_view("Results", "")  # todo: do not check for all tree
                 # uncheck the checkbox
                 self.tree_view.change_state(value.path, "unchecked")
-                self.emit_log(f"Done with {r} results ({i+1}/{len(selected_organisms)})")
+                self.emit_log(f"{organism} {selected_regions} ({r})")
+            self.tree_view.uncheck_all()
 
         threading.Thread(target=internal).start()  # !zorglub
