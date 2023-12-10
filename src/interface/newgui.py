@@ -1,13 +1,14 @@
 import os
-import threading
+import logging
+from multiprocessing.pool import ThreadPool
 import tkinter as tk
 from tkinter import ttk
+from CTkMessagebox import CTkMessagebox
 import customtkinter as ctk
 
 from PIL import Image, ImageTk
 
 from .checkboxtreeview import CheckboxTreeview
-from ..helper import info
 from ..core import Tree, create_data_from_stuff
 
 ctk.set_appearance_mode("dark")
@@ -29,11 +30,19 @@ checkboxes = {
 
 __all__ = ["App"]
 
+logger = logging.getLogger("newgui")
+
+
+def run_internal(organism: str, selected_regions: list[str], tree: Tree):
+    value = tree.get_info(organism)
+    return create_data_from_stuff(value.name, value.path, value.nc, selected_regions)
+
 
 class App(ctk.CTk):
     def __init__(self, tree: Tree):
         super().__init__()
         self.__tree = tree
+        self.pool = ThreadPool(processes=4)  #! 4 is max of concurrent requests on server
 
         # treeview Customisation (theme colors are selected)
         bg_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkFrame"]["fg_color"])
@@ -159,17 +168,23 @@ class App(ctk.CTk):
         )
         self.button1.grid(row=0, column=0, padx=5, pady=5)
 
-        self.button2 = ctk.CTkButton(self.bottom_frame, text="Button 2")
+        self.button2 = ctk.CTkButton(
+            self.bottom_frame, text="Collapse All", command=self.tree_view.collapse_all
+        )
         self.button2.grid(row=1, column=0, padx=5, pady=5)
 
-        self.button3 = ctk.CTkButton(self.bottom_frame, text="Button 3")
+        self.button3 = ctk.CTkButton(self.bottom_frame, text="Expand All", command=self.tree_view.expand_all)
         self.button3.grid(row=1, column=1, padx=5, pady=5)
 
-        self.button4 = ctk.CTkButton(self.bottom_frame, text="Button 4")
+        self.button4 = ctk.CTkButton(
+            self.bottom_frame, text="Reset", fg_color="#6d3c3c", command=self.reset_tree_view
+        )
         self.button4.grid(row=1, column=2, padx=5, pady=5)
 
-        self.made_with_love_label = ctk.CTkLabel(self.bottom_frame, text="Made with ❤️")
-        self.made_with_love_label.grid(row=2, columnspan=2, pady=5)
+        self.__all_buttons = [self.button1, self.button2, self.button3, self.button4]
+
+        self.made_with_love_label = ctk.CTkLabel(self.bottom_frame, text="@ThomasByr, @m7415, @JBrandstaedt and @Bas6700 | Made with ❤️")
+        self.made_with_love_label.grid(row=2, column=0, columnspan=3, pady=5)
 
     def fill_tree_view(self, folder, parent):
         full_path = os.path.join(parent, folder) if parent else folder
@@ -187,38 +202,63 @@ class App(ctk.CTk):
             for item in os.listdir(full_path):
                 self.fill_tree_view(item, full_path)
 
+    def reset_tree_view(self):
+        def __callback():
+            self.tree_view.delete(*self.tree_view.get_children())
+            self.fill_tree_view("Results", "")
+            self.emit_log("Reset done ✅")
+            for button in self.__all_buttons:
+                button.configure(require_redraw=True, state="normal")
+
+        # Show some retry/cancel warnings
+        msg = CTkMessagebox(
+            master=self,
+            title="Warning!",
+            width=600,
+            message="Performing this action will reset the tree view as well as delete all the files you have downloaded. Are you sure you want to continue?",
+            icon="warning",
+            option_1="Cancel",
+            option_2="Continue",
+        )
+        msg.wait_window()
+        if msg.get() == "Continue":
+            self.emit_log("Reset requested (please wait) ❗")
+            for button in self.__all_buttons:
+                button.configure(state="disabled")
+            self.pool.apply_async(self.__tree.build, args=(True, True), callback=lambda _: __callback())
+
     def emit_log(self, text: str):
         self.log_text.configure(state="normal")
         self.log_text.insert("end", text + "\n")
+        logger.info(text)
         self.log_text.configure(state="disabled")
         self.log_text.see("end")
-        info(text)
 
     def do_stuff_run(self):
-        def internal():
-            selected_regions = []
-            for checkbox in self.checkbox_list:
-                if checkbox.get():
-                    selected_regions.append(checkbox.cget("text"))
+        def __callback(x: int, organism: str):
+            self.fill_tree_view("Results", "")  # todo: do not check for all tree
+            self.emit_log(f"{organism} {selected_regions} ({x})")
 
-            selected_organisms = []
-            for item in self.tree_view.get_checked():
-                # item is a path
-                # if it is a file, remove the file name
-                # keep only the last folder
-                if os.path.isfile(item):
-                    item = os.path.dirname(item)
-                # get the last folder
-                item = os.path.basename(item)
-                selected_organisms.append(item)
-            self.tree_view.uncheck_all()
+        selected_regions: list[str] = []
+        for checkbox in self.checkbox_list:
+            if checkbox.get():
+                selected_regions.append(checkbox.cget("text"))
 
-            for organism in selected_organisms:
-                value = self.__tree.get_info(organism)
-                r = create_data_from_stuff(value.name, value.path, value.nc, selected_regions)
-                # push new created file to the tree view
-                self.fill_tree_view("Results", "")  # todo: do not check for all tree
-                # uncheck the checkbox
-                self.emit_log(f"{organism} {selected_regions} ({r})")
+        selected_organisms: set[str] = set()
+        for item in self.tree_view.get_checked():
+            # item is a path
+            # if it is a file, remove the file name
+            # keep only the last folder
+            if os.path.isfile(item):
+                item = os.path.dirname(item)
+            # get the last folder
+            item = os.path.basename(item)
+            selected_organisms.add(item)
+        self.tree_view.uncheck_all()
 
-        threading.Thread(target=internal).start()  # !zorglub
+        for organism in selected_organisms:
+            self.pool.apply_async(
+                run_internal,
+                args=(organism, selected_regions, self.__tree),
+                callback=lambda x: __callback(x, organism),  # noqa
+            )
