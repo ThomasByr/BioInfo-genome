@@ -14,9 +14,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
         python-version: ["3.11"]
-    permissions:
-      contents: read
-      packages: write
+    permissions: write-all
 
     steps:
       - uses: actions/checkout@v4
