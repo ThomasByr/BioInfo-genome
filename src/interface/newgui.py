@@ -1,5 +1,6 @@
 import os
 import logging
+import copy
 from multiprocessing.pool import ThreadPool
 import tkinter as tk
 from tkinter import ttk
@@ -33,9 +34,9 @@ __all__ = ["App"]
 logger = logging.getLogger("newgui")
 
 
-def run_internal(organism: str, selected_regions: list[str], tree: Tree):
+def run_internal(organism: str, selected_regions: list[str], tree: Tree) -> tuple[int, str]:
     value = tree.get_info(organism)
-    return create_data_from_stuff(value.name, value.path, value.nc, selected_regions)
+    return create_data_from_stuff(value.name, value.path, value.nc, selected_regions), organism
 
 
 class App(ctk.CTk):
@@ -183,7 +184,9 @@ class App(ctk.CTk):
 
         self.__all_buttons = [self.button1, self.button2, self.button3, self.button4]
 
-        self.made_with_love_label = ctk.CTkLabel(self.bottom_frame, text="@ThomasByr, @m7415, @JBrandstaedt and @Bas6700 | Made with ❤️")
+        self.made_with_love_label = ctk.CTkLabel(
+            self.bottom_frame, text="@ThomasByr, @m7415, @JBrandstaedt and @Bas6700 | Made with ❤️"
+        )
         self.made_with_love_label.grid(row=2, column=0, columnspan=3, pady=5)
 
     def fill_tree_view(self, folder, parent):
@@ -235,9 +238,9 @@ class App(ctk.CTk):
         self.log_text.see("end")
 
     def do_stuff_run(self):
-        def __callback(x: int, organism: str):
+        def __callback(x: int, o: str):
             self.fill_tree_view("Results", "")  # todo: do not check for all tree
-            self.emit_log(f"{organism} {selected_regions} ({x})")
+            self.emit_log(f"{o} {selected_regions} ({x})")
 
         selected_regions: list[str] = []
         for checkbox in self.checkbox_list:
@@ -245,6 +248,7 @@ class App(ctk.CTk):
                 selected_regions.append(checkbox.cget("text"))
 
         selected_organisms: set[str] = set()
+        print(self.tree_view.get_checked())
         for item in self.tree_view.get_checked():
             # item is a path
             # if it is a file, remove the file name
@@ -260,5 +264,5 @@ class App(ctk.CTk):
             self.pool.apply_async(
                 run_internal,
                 args=(organism, selected_regions, self.__tree),
-                callback=lambda x: __callback(x, organism),  # noqa
+                callback=lambda x: __callback(*x),
             )
