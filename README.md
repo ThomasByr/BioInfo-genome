@@ -131,6 +131,7 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 - ~~double click not working~~ (removed `if __name__ == "__main__":` from `genome.py`)
 - ~~bad paths~~ (hopefully fixed by removing `.pkl` files from sync to force rebuild on unknown OS)
 - ~~folder expansion resets all checked icons to unchecked~~ (fixed by re-changing all selected items icons to checked)
+- manually inserting files in "Results" may cause errors (especially if the file is not a `.txt` file)
 
 ## 🎨 Logo and Icons
 
