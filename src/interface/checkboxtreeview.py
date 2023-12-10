@@ -190,22 +190,24 @@ class CheckboxTreeview(ttk.Treeview):
         return ttk.Treeview.insert(self, parent, index, iid, **kw)
 
     def get_checked(self):
-        """Return the list of checked items that do not have any child."""
-        checked = []
+        """Return the list of checked items that do not have any valid child."""
+        checked = set()
 
         def get_checked_children(item):
             if not self.tag_has("unchecked", item):
                 ch = self.get_children(item)
                 if not ch and self.tag_has("checked", item):
-                    checked.append(item)
+                    checked.add(item)
                 else:
                     for c in ch:
+                        if c.endswith(".txt"):
+                            checked.add(item)
                         get_checked_children(c)
 
         ch = self.get_children("")
         for c in ch:
             get_checked_children(c)
-        return checked
+        return list(checked)
 
     def _check_descendant(self, item):
         """Check the boxes of item's descendants."""
