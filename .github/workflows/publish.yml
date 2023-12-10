@@ -1,27 +1,27 @@
 name: Build and Publish
 
 on:
-  release:
-    types: [published]
+  push:
+    tags:
+      - v* # Push events to matching v*, i.e. v1.0, v20.15.10
 
 jobs:
   publish:
-    name: Publish for ${{ matrix.os }} Python ${{ matrix.python-version }}
+    name: Publish for ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
       max-parallel: 4
       matrix:
         os: [macos-latest, ubuntu-latest, windows-latest]
-        python-version: ["3.11"]
     permissions: write-all
 
     steps:
       - uses: actions/checkout@v4
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: ${{ matrix.python-version }}
+          python-version: 3.11
           cache: "pip"
       - run: pip install -r requirements.txt pyinstaller
       - run: pyinstaller --add-data assets:assets genome.py
@@ -36,4 +36,4 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: genome.exe.zip
           tag: ${{ github.ref }}
-          asset_name: "genome (${{ matrix.os }} py${{ matrix.python-version }}).zip"
+          asset_name: "genome_${{ matrix.os }}.zip"
