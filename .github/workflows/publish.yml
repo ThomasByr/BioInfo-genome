@@ -1,8 +1,8 @@
 name: Build and Publish
 
 on:
-  push:
-    branches: [master]
+  release:
+    types: [published]
 
 jobs:
   publish:
@@ -26,5 +26,5 @@ jobs:
       - run: pyinstaller --add-data assets:assets genome.py
       - uses: actions/upload-artifact@v3
         with:
-          name: genome (${{ matrix.os }} ${{ matrix.python-version }})
+          name: genome (${{ matrix.os }} py${{ matrix.python-version }})
           path: dist/*
