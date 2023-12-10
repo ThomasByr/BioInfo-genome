@@ -36,16 +36,17 @@
 import sys
 
 if sys.version_info < (3, 10, 6):
-  print('Python 3.10.6 or higher is required.')
-  sys.exit(1)
+    print("Python 3.10.6 or higher is required.")
+    sys.exit(1)
 
-if __name__ == '__main__':
-  from src import Tree, App
-  from src.helper.logger import init_logger
-  init_logger()
+if __name__ == "__main__":
+    from src import Tree, App
+    from src.helper.logger import init_logger
 
-  overview = Tree()
-  overview.build()
+    init_logger()
 
-  app = App(overview)
-  app.mainloop()
+    overview = Tree()
+    overview.build()
+
+    app = App(overview)
+    app.mainloop()
