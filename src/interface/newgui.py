@@ -1,5 +1,6 @@
 import os
 import logging
+import re
 from multiprocessing.pool import ThreadPool
 import tkinter as tk
 from tkinter import ttk
@@ -60,6 +61,13 @@ def open_file(file_path: str):
         raise NotImplementedError(f"Unsupported OS: {os.name}")
 
 
+def open_file_from_selection(selection: tuple[str, ...]):
+    try:
+        open_file(selection[0])
+    except IndexError:
+        pass
+
+
 def run_internal(organism: str, selected_regions: list[str], tree: Tree) -> tuple[int, str]:
     value = tree.get_info(organism)
     return create_data_from_stuff(value.name, value.path, value.nc, selected_regions), organism
@@ -74,26 +82,29 @@ class App(ctk.CTk):
         self.pool = ThreadPool(processes=4)  #! 4 is max of concurrent requests on server
 
         # treeview Customisation (theme colors are selected)
-        bg_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkFrame"]["fg_color"])
-        text_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkLabel"]["text_color"])
-        selected_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkButton"]["fg_color"])
+        self.__bg_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkFrame"]["fg_color"])
+        self.__text_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkLabel"]["text_color"])
+        self.__selected_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkButton"]["fg_color"])
 
-        treestyle = ttk.Style()
-        search_bar_style = ttk.Style()
-        treestyle.theme_use("default")
-        search_bar_style.theme_use("default")
-        treestyle.configure(
-            "Treeview", background=bg_color, foreground=text_color, fieldbackground=bg_color, borderwidth=0
-        )
-        search_bar_style.configure(
-            "TCombobox", background=bg_color, foreground=text_color, fieldbackground=bg_color, borderwidth=0
-        )
-        treestyle.map(
-            "Treeview", background=[("selected", bg_color)], foreground=[("selected", selected_color)]
-        )
-        search_bar_style.map(
-            "TCombobox", background=[("selected", bg_color)], foreground=[("selected", selected_color)]
-        )
+        customstyle = ttk.Style()
+        customstyle.theme_use("default")
+        for w in (
+            "Treeview",
+            "TCombobox",
+            "TEntry",
+            "TScrollbar",
+            "Treeview.Heading",
+            "Treeview.Cell",
+            "TLabel",
+        ):
+            customstyle.configure(
+                w, background=self.__bg_color, foreground=self.__text_color, fieldbackground=self.__bg_color
+            )
+            customstyle.map(
+                w,
+                background=[("selected", self.__bg_color)],
+                foreground=[("selected", self.__selected_color)],
+            )
         self.bind("<<TreeviewSelect>>", lambda _: self.focus_set())
 
         # configure window
@@ -168,6 +179,34 @@ class App(ctk.CTk):
         self.preview_box.configure(state="disabled")
         self.preview_box.pack(fill="both", expand=True)
 
+        # put a floating button on top of the preview box with 3 dashes to open a sliding menu
+        self.menu_button = ctk.CTkButton(
+            self.preview_box,
+            text="≡",
+            width=30,
+            height=30,
+            command=lambda: self.toggle_menu(self.tree_view.selection()),
+        )
+        self.menu_button.place(relx=0.01, rely=0.01)
+        # color the button soft gray
+        self.menu_button.configure(fg_color="#696969", hover_color="#757575")
+        self.menu_button.configure(state="disabled")
+
+        # put a floating button on top of the preview box next to the menu button to open the file
+        self.open_file_button = ctk.CTkButton(
+            self.preview_box,
+            text="open",
+            width=30,
+            height=30,
+            command=lambda: open_file_from_selection(self.tree_view.selection()),
+        )
+        self.open_file_button.place(relx=0.08, rely=0.01)
+        # color the button soft gray
+        self.open_file_button.configure(fg_color="#696969", hover_color="#757575")
+        self.open_file_button.configure(state="disabled")
+
+        self.__all_dynamic_buttons = [self.open_file_button, self.menu_button]
+
         def write_in_preview(text: str):
             self.preview_box.configure(state="normal")
             self.preview_box.delete("1.0", "end")
@@ -177,17 +216,23 @@ class App(ctk.CTk):
         def update_preview(selection: str):
             base_selection = os.path.basename(selection)
             if os.path.isfile(selection):
+                for button in self.__all_dynamic_buttons:
+                    button.configure(state="normal")
                 self.preview_label.configure(text=f"Preview for {base_selection}")
                 with open(selection, "r") as f:
                     write_in_preview(f.read())
             else:
+                for button in self.__all_dynamic_buttons:
+                    button.configure(state="disabled")
                 self.preview_label.configure(text=f"Not a file: {base_selection}")
                 depth = len(os.path.normpath(selection).split(os.sep)) - 1
                 size = self.tree_view.item(selection)["values"][0]
                 write_in_preview("")
                 if 0 < depth < 5:
                     write_in_preview(
-                        f"{depths[depth]} {base_selection} : {size} {depths[depth+1]}{'s' if size > 1 else ''}",
+                        "\n\n\n"
+                        f"{depths[depth]} {base_selection} :"
+                        f" {size} {depths[depth+1]}{'s' if size > 1 else ''}",
                     )
 
         def on_tree_select(_: tk.Event):
@@ -237,6 +282,43 @@ class App(ctk.CTk):
             self.bottom_frame, text="@ThomasByr, @m7415, @JBrandstaedt and @Bas6700 | Made with ❤️"
         )
         self.made_with_love_label.grid(row=2, column=0, columnspan=3, pady=5)
+
+    def toggle_menu(self, selections: tuple[str, ...]):
+        # show a menu with clickable elements showing lines containing:
+        # "NC_016049:"
+        try:
+            file_path = selections[0]
+        except IndexError:
+            return
+        if not os.path.isfile(file_path):
+            return
+
+        with open(file_path, "r") as f:
+            lines = f.readlines()
+        matched_lines = []
+        for line in lines:
+            if re.search(r"NC_\d+:", line):
+                matched_lines.append(line)
+        if not matched_lines:
+            return
+
+        def __callback(line: str):
+            # scroll to the line
+            line_number = lines.index(line) + 1
+            self.preview_box.see(f"{line_number}.0")
+            # unselect all
+            self.preview_box.tag_remove("sel", "1.0", "end")
+            # select the line
+            self.preview_box.tag_add("sel", f"{line_number}.0", f"{line_number}.end")
+            # focus the preview box
+            self.preview_box.focus_set()
+
+        menu = tk.Menu(self)
+        menu.configure(bg=self.__bg_color, fg=self.__text_color)
+
+        for line in matched_lines:
+            menu.add_command(label=line, command=lambda line=line: __callback(line))
+        menu.post(self.menu_button.winfo_rootx(), self.menu_button.winfo_rooty())
 
     def search_bar_callback(self, event: tk.Event):
         """
