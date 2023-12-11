@@ -24,7 +24,7 @@ jobs:
           python-version: 3.11
           cache: "pip"
       - run: pip install -r requirements.txt pyinstaller
-      - run: pyinstaller --clean --add-data assets:assets genome.py -y
+      - run: pyinstaller --icon assets/favicon.png --add-data assets:assets genome.py -y
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.7.6
         with:
