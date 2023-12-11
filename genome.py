@@ -39,20 +39,12 @@ if sys.version_info < (3, 10, 6):
     print("Python 3.10.6 or higher is required.")
     sys.exit(1)
 
-from alive_progress import config_handler
-from alive_progress.animations.bars import bar_factory
-from alive_progress.animations.spinners import frame_spinner_factory
-from termcolor import colored
 
 if __name__ == "__main__":
     from src import Tree, App
     from src.helper.logger import init_logger
 
-    supports_color = init_logger()
-
-    bar = bar_factory("\u2501", borders=(" ", " "), background=" ")
-    spinner = frame_spinner_factory([colored(p, "cyan") if supports_color else p for p in "⠋⠙⠹⠸⠼⠴⠦⠧⠇⠏"])
-    config_handler.set_global(length=40, max_cols=110, enrich_print=False, bar=bar, spinner=spinner)
+    init_logger()
 
     overview = Tree()
     overview.build()
