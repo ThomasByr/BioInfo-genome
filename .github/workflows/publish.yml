@@ -34,6 +34,6 @@ jobs:
         uses: svenstaro/upload-release-action@v2
         with:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: genome.exe.zip
+          file: dist/genome/genome.exe.zip
           tag: ${{ github.ref }}
           asset_name: "genome_${{ matrix.os }}.zip"
