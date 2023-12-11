@@ -28,10 +28,36 @@ checkboxes = {
     "-3UTR-": "3'UTR",
     "-5UTR-": "5'UTR",
 }
+depths = {
+    1: "Kingdom",
+    2: "Specie",
+    3: "Subspecie",
+    4: "Organism",
+    5: "CDS Record",
+}
 
 __all__ = ["App"]
 
 logger = logging.getLogger("newgui")
+
+
+def open_file(file_path: str):
+    """Opens a file using the default program for the file type"""
+    if not os.path.isfile(file_path):
+        return
+    if os.name == "nt":
+        os.startfile(file_path)
+    elif os.name == "posix":
+        try:
+            os.system(f"wslview {file_path}")
+        except:  # noqa
+            try:
+                os.system(f"xdg-open {file_path}")
+            except:  # noqa
+                raise NotImplementedError("please install xdg-open (or wslu)")  # noqa
+
+    else:
+        raise NotImplementedError(f"Unsupported OS: {os.name}")
 
 
 def run_internal(organism: str, selected_regions: list[str], tree: Tree) -> tuple[int, str]:
@@ -142,21 +168,29 @@ class App(ctk.CTk):
         self.preview_box.configure(state="disabled")
         self.preview_box.pack(fill="both", expand=True)
 
-        def update_preview(selection):
-            if os.path.isfile(selection):
-                self.preview_label.configure(text=f"Preview for {os.path.basename(selection)}")
-                with open(selection, "r") as f:
-                    self.preview_box.configure(state="normal")
-                    self.preview_box.delete("1.0", "end")
-                    self.preview_box.insert("end", f.read())
-                    self.preview_box.configure(state="disabled")
-            else:
-                self.preview_label.configure(text=f"Not a file: {os.path.basename(selection)}")
-                self.preview_box.configure(state="normal")
-                self.preview_box.delete("1.0", "end")
-                self.preview_box.configure(state="disabled")
+        def write_in_preview(text: str):
+            self.preview_box.configure(state="normal")
+            self.preview_box.delete("1.0", "end")
+            self.preview_box.insert("end", text)
+            self.preview_box.configure(state="disabled")
 
-        def on_tree_select(_):
+        def update_preview(selection: str):
+            base_selection = os.path.basename(selection)
+            if os.path.isfile(selection):
+                self.preview_label.configure(text=f"Preview for {base_selection}")
+                with open(selection, "r") as f:
+                    write_in_preview(f.read())
+            else:
+                self.preview_label.configure(text=f"Not a file: {base_selection}")
+                depth = len(os.path.normpath(selection).split(os.sep)) - 1
+                size = self.tree_view.item(selection)["values"][0]
+                write_in_preview("")
+                if 0 < depth < 5:
+                    write_in_preview(
+                        f"{depths[depth]} {base_selection} : {size} {depths[depth+1]}{'s' if size > 1 else ''}",
+                    )
+
+        def on_tree_select(_: tk.Event):
             selected_item = self.tree_view.selection()[0]
             update_preview(selected_item)
 
@@ -175,6 +209,7 @@ class App(ctk.CTk):
         self.tree_view.heading("#0", text="File/Folder")
         self.tree_view.heading("Size", text="Size")
         self.tree_view.bind("<<TreeviewSelect>>", on_tree_select)
+        self.tree_view.bind("<Double-1>", lambda _: open_file(self.tree_view.selection()[0]))
         self.fill_tree_view("Results", "")
 
         # bottom frame stuff
@@ -283,6 +318,7 @@ class App(ctk.CTk):
         self.search_bar.configure(completevalues=self.__all_organisms_sorted)
 
     def fill_tree_view(self, folder, parent):
+        """Recursively fill the tree view with the files and folders in the given folder"""
         full_path = os.path.join(parent, folder) if parent else folder
         number_of_files = len(os.listdir(full_path)) if os.path.isdir(full_path) else ""
         size = os.path.getsize(full_path) if os.path.isfile(full_path) else number_of_files
