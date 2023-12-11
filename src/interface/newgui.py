@@ -272,7 +272,7 @@ class App(ctk.CTk):
                 title="No organisms found",
                 width=600,
                 message=f"No organisms found for '{value}'",
-                icon="warning",
+                icon="cancel",
                 option_1="OK",
             )
             msg.wait_window()
@@ -284,7 +284,8 @@ class App(ctk.CTk):
 
     def fill_tree_view(self, folder, parent):
         full_path = os.path.join(parent, folder) if parent else folder
-        size = os.path.getsize(full_path) if os.path.isfile(full_path) else ""
+        number_of_files = len(os.listdir(full_path)) if os.path.isdir(full_path) else ""
+        size = os.path.getsize(full_path) if os.path.isfile(full_path) else number_of_files
 
         # insert the current folder or file into the tree view
         try:
@@ -307,12 +308,12 @@ class App(ctk.CTk):
             for button in self.__all_buttons:
                 button.configure(require_redraw=True, state="normal")
 
-        # Show some retry/cancel warnings
+        # show some retry/cancel warnings
         msg = CTkMessagebox(
             master=self,
             title="Warning!",
             width=600,
-            message="Performing this action will reset the tree view as well as delete all the files you have downloaded. Are you sure you want to continue?",
+            message="Performing this action will reset the tree view as well as delete all the files you have downloaded.\n\nAre you sure you want to continue?",
             icon="warning",
             option_1="Cancel",
             option_2="Continue",
@@ -327,7 +328,7 @@ class App(ctk.CTk):
     def emit_log(self, text: str):
         self.log_text.configure(state="normal")
         self.log_text.insert("end", text + "\n")
-        logger.info(text)
+        logger.info("%s", text)
         self.log_text.configure(state="disabled")
         self.log_text.see("end")
 

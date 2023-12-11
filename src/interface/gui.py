@@ -375,7 +375,7 @@ class GenomeGUI:
                 for i, val in enumerate(values):
                     Thread(target=get_data, args=(self, val, keys[i])).start()
                 self.__component_lock.acquire()
-                for organism, val in self.__selected_organisms.items():
+                for _, val in self.__selected_organisms.items():
                     full_path = self.__data_component[val]["path"]
                     self.__tree_component.update(
                         key=val, icon=folder_icon if os.path.isdir(full_path) else file_icon

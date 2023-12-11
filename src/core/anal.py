@@ -65,15 +65,16 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
     letters = string.ascii_lowercase
     local_random = random.Random(hash(name))
     Entrez.email = "".join(local_random.choice(letters) for _ in range(10)) + "@gmail.com"
-    logger.debug(f"searching for [{region}] in [{name}] with NC ids {NC_list}")
+    logger.debug("searching for [%s] in [%s] with NC ids %s", ", ".join(region), name, ", ".join(NC_list))
     NC_i = 1
-    logger.info(f"downloading [{name}]")
+    logger.info("downloading [%s]", name)
+    n_regions = 0
     for NC in NC_list:
         logger.info(name + " - NC : " + str(NC_i) + " / " + str(len(NC_list)))
 
         # increment here so we do not forget after continue
         NC_i += 1
-        logger.debug(f"NC id  = {NC}")
+        logger.debug("NC id  = %s", NC)
         logger.debug("----------------------------")
 
         try:
@@ -82,7 +83,7 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
             if "429" in str(e):
                 logger.error("429 : too many requests, please wait a few minutes and try again")
                 return 0
-            logger.error(f"error while fetching NC id {NC} : {e}")
+            logger.error("error while fetching NC id %s : %s", NC, e)
             continue
 
         try:
@@ -91,19 +92,18 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
             logger.debug("----------------------------")
 
             last_header = ""
-            n_regions = 0
 
             region_count = []
 
             bool_introns = False  # to know if introns are in region
-            save_intron = False  # suppose no intron are saved in file (delete intron file if empty)
+            # save_intron = False  # suppose no intron are saved in file (delete intron file if empty)
             n_introns_total = 0
 
             # if region is intron, add CDS to region
-            delete_cds = False  # this is to delete CDS files after if we added it
+            # delete_cds = False  # this is to delete CDS files after if we added it
             if "intron" in region and "CDS" not in region:
                 region.insert(0, "CDS")
-                delete_cds = True
+                # delete_cds = True
 
             # are there introns ?
             for k in range(0, len(region)):
@@ -203,9 +203,9 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
                             )
 
                             # search for exons and introns
-                            if join == True:
-                                if (bool_introns == True) and (record.features[k].type == "CDS"):
-                                    save_intron = True
+                            if join:
+                                if (bool_introns) and (record.features[k].type == "CDS"):
+                                    # save_intron = True
                                     # files[region.index('intron')].write(header + header2 + '\n')
                                     for i in range(0, len(bounds) - 1):
                                         if i % 2 == 0:
@@ -282,11 +282,11 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
                                         n_exon += 1
 
         except Exception as e:
-            logger.error(f"{e}")
+            logger.error("%s : %s", type(e).__name__, e)
             pass
 
     if n_regions == 0:
-        logger.info(f"Selected functional region not found for organism : [{name}]")
+        logger.info("Selected functional region not found for organism : [%s]", name)
         return 0
-    logger.info(f"{name} downloaded successfully ({n_regions})")
+    logger.info("%s downloaded successfully (%d)", name, n_regions)
     return n_regions

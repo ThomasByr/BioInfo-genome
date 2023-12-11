@@ -83,7 +83,7 @@ class Tree:
         """
         pickle_path = os.path.join("data", "tree.pkl")
         if not (force_rebuild or self.__is_rebuild) and os.path.exists(pickle_path):
-            self.logger.info(f"loading tree ({pickle_path}) from pickle")
+            self.logger.info("loading tree (%s) from pickle", pickle_path)
             if silent:
                 capture.redirect()
             with open(pickle_path, "rb") as f:
@@ -95,12 +95,12 @@ class Tree:
                     os.makedirs(path, exist_ok=True)  # (useless) extra layer of safety
             if silent:
                 capture.stop_redirect()
-                self.logger.info(f"loaded tree ({pickle_path}) from pickle")
+                self.logger.info("loaded tree (%s) from pickle", pickle_path)
             return
 
         r = requests.get(f"{self.BASE_URL}{self.__name}.txt", stream=True, timeout=timeouts)
         if r.status_code != 200:
-            self.logger.critical(f"failed to fetch {self.__name}.txt")
+            self.logger.critical("failed to fetch %s.txt", self.__name)
 
         r.raw.decode_content = True
 
@@ -108,12 +108,12 @@ class Tree:
         try:
             df = pd.read_csv(r.raw, sep="\t", low_memory=False)
         except pd.errors.EmptyDataError:
-            self.logger.error(f"failed to parse {self.__name}.txt (file is empty)")
+            self.logger.error("failed to parse %s.txt (file is empty)", self.__name)
             return
 
         total_rows = len(df.index)
         self.__data.clear()
-        self.logger.info(f"building tree from online {self.__name}.txt ({total_rows} rows)")
+        self.logger.info("building tree from online %s.txt (%d rows)", self.__name, total_rows)
         if silent:
             capture.redirect()
         for _, row in tqdm(df.iterrows(), total=total_rows, desc="building tree"):
@@ -137,7 +137,11 @@ class Tree:
                         "Kingdom",
                     }
                 ]
-                self.logger.error(f"failed to parse row:\n{row}\nnan (needed) entries: {nan_entries}")
+                self.logger.error(
+                    "failed to parse row:\n%s\nnan (needed) entries: %s",
+                    row.to_string(),
+                    ", ".join(nan_entries),
+                )
 
             if organism not in self.__data:
                 # create new entry
@@ -161,12 +165,12 @@ class Tree:
         ]
         url = self.BASE_URL + "IDS/"
         for ids in ids_files:
-            self.logger.info(f"getting ids data online from {ids}")
+            self.logger.info("getting ids data online from %s", ids)
             # get the file from the server
             r = requests.get(url + ids, stream=True)
             # if the file is not found
             if r.status_code == 404:
-                self.logger.error(f"failed to get {ids} (file not found)")
+                self.logger.error("failed to get %s (file not found)", ids)
                 continue
             for line in r.iter_lines():
                 row = line.decode("utf-8").split("\t")
@@ -176,7 +180,7 @@ class Tree:
                     self.__data[organism].nc.add(row[1])
                     valid_organisms.add(organism)
 
-        self.logger.info(f"found {len(valid_organisms)} valid organisms")
+        self.logger.info("found %d valid organisms", len(valid_organisms))
         self.clean_folders()
         if silent:
             capture.redirect()
@@ -186,7 +190,7 @@ class Tree:
 
         # filter out invalid organisms
         self.__data = {k: v for k, v in self.__data.items() if k in valid_organisms}
-        self.logger.info(f"filtered out {total_rows - len(self.__data)} invalid organisms")
+        self.logger.info("filtered out %d invalid organisms", total_rows - len(self.__data))
         if silent:
             capture.stop_redirect()
             self.logger.info("system file tree reset successfully")

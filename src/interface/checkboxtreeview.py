@@ -121,7 +121,12 @@ class CheckboxTreeview(ttk.Treeview):
         """
         if item.endswith(".txt"):
             # remove tag so that there is no box
-            self.item(item, tags=tuple([t for t in self.item(item, "tags") if t not in ("checked", "unchecked", "tristate")]))
+            self.item(
+                item,
+                tags=tuple(
+                    [t for t in self.item(item, "tags") if t not in ("checked", "unchecked", "tristate")]
+                ),
+            )
             return
         tags = self.item(item, "tags")
         states = ("checked", "unchecked", "tristate")
