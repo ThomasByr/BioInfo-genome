@@ -6,7 +6,7 @@ import string
 import pickle
 import re
 import pandas as pd
-from alive_progress import alive_it
+from tqdm import tqdm
 
 import requests
 
@@ -89,7 +89,7 @@ class Tree:
             with open(pickle_path, "rb") as f:
                 self.__data.clear()
                 self.__data = pickle.load(f)
-            for organism in alive_it(self.__data, title="building tree"):
+            for organism in tqdm(self.__data, desc="building tree"):
                 path = self.__data[organism].path
                 if not os.path.exists(path):  # check here to save kernel time
                     os.makedirs(path, exist_ok=True)  # (useless) extra layer of safety
@@ -116,7 +116,7 @@ class Tree:
         self.logger.info(f"building tree from online {self.__name}.txt ({total_rows} rows)")
         if silent:
             capture.redirect()
-        for _, row in alive_it(df.iterrows(), total=total_rows, title="building tree"):
+        for _, row in tqdm(df.iterrows(), total=total_rows, desc="building tree"):
             # transform non valid chars to underscores
             try:
                 organism = re.sub(f"[{non_valid_chars}]", "_", row["#Organism/Name"])
@@ -180,7 +180,7 @@ class Tree:
         self.clean_folders()
         if silent:
             capture.redirect()
-        for organism in alive_it(valid_organisms, title="creating folders"):
+        for organism in tqdm(valid_organisms, desc="creating folders"):
             path = self.__data[organism].path
             os.makedirs(path, exist_ok=True)
 

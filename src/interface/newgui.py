@@ -239,7 +239,7 @@ class App(ctk.CTk):
         if len(filtered) == 1:
             self.tree_view.focus(__filtered[0])
             self.tree_view.selection_set(__filtered[0])
-            self.tree_view.change_state(__filtered[0], "checked")
+            self.tree_view._check_ancestor(__filtered[0])
             self.tree_view.see(__filtered[0])
             self.tree_view.focus_set()
             self.search_bar.set("")
@@ -260,7 +260,7 @@ class App(ctk.CTk):
                 for organism in __filtered:
                     self.tree_view.focus(organism)
                     self.tree_view.selection_set(organism)
-                    self.tree_view.change_state(organism, "checked")
+                    self.tree_view._check_ancestor(organism)
                     self.tree_view.see(organism)
                     self.tree_view.focus_set()
             self.search_bar.set("")
