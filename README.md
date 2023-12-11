@@ -120,8 +120,8 @@ along with this program. If not, see <http://www.gnu.org/licenses/>.
 - [x] add multi organisms selection feature and thread it
 - [x] open txt file on double click
 - [x] add checkboxes to select organisms
-- [ ] separate reload and update (for ids)
-- [ ] maybe save `overview.txt` ?
+- [x] separate reload and update (for ids) (are no longer saved)
+- [x] maybe save `overview.txt` ? (no longer needed)
 - [ ] take into account all `.txt` files when building the tree
 
 **Known Bugs** (latest fix)
