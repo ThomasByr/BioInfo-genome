@@ -1,5 +1,6 @@
 # <img src="assets/favicon.png" alt="icon" width="4%"/> BioInfo - Genome
 
+[![Python Package](https://github.com/ThomasByr/BioInfo-genome/actions/workflows/python-package.yml/badge.svg)](https://github.com/ThomasByr/BioInfo-genome/actions/workflows/python-package.yml)
 [![GitHub license](https://img.shields.io/github/license/ThomasByr/BioInfo-genome)](https://github.com/ThomasByr/BioInfo-genome/blob/master/LICENSE)
 [![GitHub commits](https://badgen.net/github/commits/ThomasByr/BioInfo-genome)](https://GitHub.com/ThomasByr/BioInfo-genome/commit/)
 [![GitHub latest commit](https://badgen.net/github/last-commit/ThomasByr/BioInfo-genome)](https://gitHub.com/ThomasByr/BioInfo-genome/commit/)
