@@ -24,11 +24,11 @@ jobs:
           python-version: 3.11
           cache: "pip"
       - run: pip install -r requirements.txt pyinstaller
-      - run: pyinstaller --add-data assets:assets genome.py
+      - run: pyinstaller --clean --add-data assets:assets genome.py -y
       - name: Zip Release
         uses: TheDoctor0/zip-release@0.7.6
         with:
-          path: dist/genome
+          directory: dist/genome
           filename: genome.exe.zip
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
