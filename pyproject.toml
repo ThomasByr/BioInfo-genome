@@ -6,7 +6,9 @@ build-backend = "hatchling.build"
 name = "BioInfo-genome"
 authors = [
   { name = "ThomasByr", email = "tbouyer2000@gmail.com" },
-  { name = "Bas6700", email = "thomas.dumond2001@gmail.com" },
+  { name = "m7415", email = "n/@" },
+  { name = "JBrandstaedt", email = "n/@" },
+  { name = "Bas6700", email = "n/@" },
 ]
 description = "BioInfo-genome, large scale database analysis"
 readme = "README.md"
