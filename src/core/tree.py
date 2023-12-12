@@ -30,7 +30,7 @@ class Value:
 class Tree:
     BASE_URL = "https://ftp.ncbi.nlm.nih.gov/genomes/GENOME_REPORTS/"
 
-    def __init__(self, name: str = None) -> None:
+    def __init__(self, name: str = None, should_rebuild: bool | str | int = None) -> None:
         """
         Build a tree from a given name.\\
         If no name is given, the tree will be built from the overview file.
@@ -40,6 +40,11 @@ class Tree:
         name : str, (optional)
         ```
         the name of the tree to build\\
+        defaults to `None`
+        ```py
+        should_rebuild : bool, (optional)
+        ```
+        force the tree to be rebuilt from https request\\
         defaults to `None`
         """
         self.__name = "overview" if name is None else name
@@ -52,17 +57,16 @@ class Tree:
         except FileExistsError:
             pass
 
-        __rebuild = os.getenv("REBUILD")
-        self.__is_rebuild: bool = False
-        if __rebuild is not None:
-            if isinstance(__rebuild, str):
-                if __rebuild.lower() in {"true", "1"}:
-                    self.__is_rebuild = True
-            elif isinstance(__rebuild, int):
-                if __rebuild == 1:
-                    self.__is_rebuild = True
-            elif isinstance(__rebuild, bool):
-                self.__is_rebuild = __rebuild
+        self.__should_rebuild: bool = False
+        if should_rebuild is not None:
+            if isinstance(should_rebuild, str):
+                if should_rebuild.lower() in {"true", "yes", "1"}:
+                    self.__should_rebuild = True
+            elif isinstance(should_rebuild, int):
+                if should_rebuild == 1:
+                    self.__should_rebuild = True
+            elif isinstance(should_rebuild, bool):
+                self.__should_rebuild = should_rebuild
 
     def build(self, force_rebuild: bool = False, silent: bool = False) -> None:
         """
@@ -82,7 +86,7 @@ class Tree:
         defaults to `False`
         """
         pickle_path = os.path.join("data", "tree.pkl")
-        if not (force_rebuild or self.__is_rebuild) and os.path.exists(pickle_path):
+        if not (force_rebuild or self.__should_rebuild) and os.path.exists(pickle_path):
             self.logger.info("loading tree (%s) from pickle", pickle_path)
             if silent:
                 capture.redirect()
