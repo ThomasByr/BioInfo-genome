@@ -28,7 +28,7 @@ jobs:
         uses: TheDoctor0/zip-release@0.7.6
         with:
           directory: dist
-          command: cp -r assets dist/genome
+          command: cp -r assets dist/genome && mv .env.example dist/genome/.env
           filename: genome.exe.zip
       - name: Upload Release Asset
         uses: svenstaro/upload-release-action@v2
