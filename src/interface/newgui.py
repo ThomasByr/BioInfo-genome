@@ -88,17 +88,13 @@ class App(ctk.CTk):
 
         customstyle = ttk.Style()
         customstyle.theme_use("default")
-        for w in (
-            "Treeview",
-            "TCombobox",
-            "TEntry",
-            "TScrollbar",
-            "Treeview.Heading",
-            "Treeview.Cell",
-            "TLabel",
-        ):
+        for w in ("Treeview", "TCombobox", "Treeview.Heading"):
             customstyle.configure(
-                w, background=self.__bg_color, foreground=self.__text_color, fieldbackground=self.__bg_color
+                w,
+                background=self.__bg_color,
+                foreground=self.__text_color,
+                fieldbackground=self.__bg_color,
+                borderwidth=0,
             )
             customstyle.map(
                 w,
