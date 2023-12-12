@@ -46,9 +46,9 @@ if __name__ == "__main__":
     import logging
     from src import Tree, App
     from src.helper.logger import init_logger
-    
+
     dotenv.load_dotenv()
-    DEBUG = bool(os.getenv("DEBUG"))
+    DEBUG = os.getenv("DEBUG", "false").lower() in {"true", "yes", "1"}
     REBUILD = os.getenv("REBUILD")
 
     init_logger(logging.DEBUG if DEBUG else logging.INFO)
