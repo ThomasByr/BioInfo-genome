@@ -41,12 +41,19 @@ if sys.version_info < (3, 10, 6):
 
 
 if __name__ == "__main__":
+    import os
+    import dotenv
+    import logging
     from src import Tree, App
     from src.helper.logger import init_logger
+    
+    dotenv.load_dotenv()
+    DEBUG = bool(os.getenv("DEBUG"))
+    REBUILD = os.getenv("REBUILD")
 
-    init_logger()
+    init_logger(logging.DEBUG if DEBUG else logging.INFO)
 
-    overview = Tree()
+    overview = Tree(should_rebuild=REBUILD)
     overview.build()
 
     app = App(overview)
