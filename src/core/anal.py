@@ -11,7 +11,7 @@ import re
 
 __all__ = ["create_data_from_stuff"]
 
-logger = logging.getLogger()
+logger = logging.getLogger("ana")
 
 
 def valid_bounds(bounds, seq_length) -> bool:

@@ -51,7 +51,7 @@ class Tree:
         self.__data: dict[str, Value] = {}
 
         load_dotenv()
-        self.logger = logging.getLogger()
+        self.logger = logging.getLogger("tree")
         try:
             os.mkdir("data")
         except FileExistsError:

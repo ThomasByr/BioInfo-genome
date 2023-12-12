@@ -39,8 +39,6 @@ depths = {
 
 __all__ = ["App"]
 
-logger = logging.getLogger("newgui")
-
 
 def open_file(file_path: str):
     """Opens a file using the default program for the file type"""
@@ -80,6 +78,7 @@ class App(ctk.CTk):
         self.__all_organisms = self.__tree.organisms
         self.__all_organisms_sorted = sorted(self.__all_organisms)
         self.pool = ThreadPool(processes=4)  #! 4 is max of concurrent requests on server
+        self.logger = logging.getLogger("newgui")
 
         # treeview Customisation (theme colors are selected)
         self.__bg_color = self._apply_appearance_mode(ctk.ThemeManager.theme["CTkFrame"]["fg_color"])
@@ -442,7 +441,7 @@ class App(ctk.CTk):
     def emit_log(self, text: str):
         self.log_text.configure(state="normal")
         self.log_text.insert("end", text + "\n")
-        logger.info("%s", text)
+        self.logger.info("%s", text)
         self.log_text.configure(state="disabled")
         self.log_text.see("end")
 
