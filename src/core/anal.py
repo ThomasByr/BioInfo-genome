@@ -88,7 +88,7 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
 
         try:
             record = SeqIO.read(handle_gb, "gb")
-            logger.debug(record)
+            logger.debug("%s", str(record))
             logger.debug("----------------------------")
 
             last_header = ""
