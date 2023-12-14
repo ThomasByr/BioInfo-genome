@@ -66,9 +66,9 @@ def open_file_from_selection(selection: tuple[str, ...]):
         pass
 
 
-def run_internal(organism: str, selected_regions: list[str], tree: Tree) -> tuple[int, str]:
+def run_internal(organism: str, selected_regions: list[str], tree: Tree) -> tuple[int, str, str]:
     value = tree.get_info(organism)
-    return create_data_from_stuff(value.name, value.path, value.nc, selected_regions), organism
+    return create_data_from_stuff(value.name, value.path, value.nc, selected_regions), value.name, value.path
 
 
 class App(ctk.CTk):
@@ -77,6 +77,7 @@ class App(ctk.CTk):
         self.__tree = tree
         self.__all_organisms = self.__tree.organisms
         self.__all_organisms_sorted = sorted(self.__all_organisms)
+        self.__menu_data: dict[str, tuple[list[str], list[int]]] = {}
         self.pool = ThreadPool(processes=4)  #! 4 is max of concurrent requests on server
         self.logger = logging.getLogger("newgui")
 
@@ -288,18 +289,26 @@ class App(ctk.CTk):
         if not os.path.isfile(file_path):
             return
 
-        with open(file_path, "r") as f:
-            lines = f.readlines()
-        matched_lines = []
-        for line in lines:
-            if re.search(r"NC_\d+:", line):
-                matched_lines.append(line)
-        if not matched_lines:
-            return
+        matched_lines: list[str] = []
+        matched_lines_index: list[int] = []
 
-        def __callback(line: str):
+        try:
+            matched_lines, matched_lines_index = self.__menu_data[file_path]
+        except KeyError:
+            with open(file_path, "r") as f:
+                lines = f.readlines()
+            index = 1
+            for line in lines:
+                if re.search(r"NC_\d+:", line):
+                    matched_lines.append(line)
+                    matched_lines_index.append(index)
+                index += 1
+            if not matched_lines:
+                return
+            self.__menu_data[file_path] = (matched_lines, matched_lines_index)
+
+        def __callback(line_number: int):
             # scroll to the line
-            line_number = lines.index(line) + 1
             self.preview_box.see(f"{line_number}.0")
             # unselect all
             self.preview_box.tag_remove("sel", "1.0", "end")
@@ -308,12 +317,22 @@ class App(ctk.CTk):
             # focus the preview box
             self.preview_box.focus_set()
 
-        menu = tk.Menu(self)
-        menu.configure(bg=self.__bg_color, fg=self.__text_color)
-
+        menu = tk.Listbox(self.preview_box, width=80)
+        menu.configure(bg=self.__bg_color, fg=self.__text_color, selectbackground=self.__selected_color)
+        scrollbar = ctk.CTkScrollbar(menu)
         for line in matched_lines:
-            menu.add_command(label=line, command=lambda line=line: __callback(line))
-        menu.post(self.menu_button.winfo_rootx(), self.menu_button.winfo_rooty())
+            menu.insert("end", line)
+        scrollbar.configure(command=menu.yview)
+        menu.configure(yscrollcommand=scrollbar.set)
+        menu.bind("<Double-1>", lambda _: __callback(matched_lines_index[menu.curselection()[0]]))
+        menu.place(relx=0.01, rely=0.01)
+        scrollbar.place(relx=0.94, rely=0.01, relheight=0.98)
+
+        def __close_menu():
+            menu.destroy()
+            self.preview_box.focus_set()
+
+        self.preview_box.bind("<Button-1>", lambda _: __close_menu())
 
     def search_bar_callback(self, event: tk.Event):
         """
@@ -394,17 +413,18 @@ class App(ctk.CTk):
         # in all cases, reset the search bar complete values
         self.search_bar.configure(completevalues=self.__all_organisms_sorted)
 
-    def fill_tree_view(self, folder, parent):
+    def fill_tree_view(self, folder: str, parent: str):
         """Recursively fill the tree view with the files and folders in the given folder"""
         full_path = os.path.join(parent, folder) if parent else folder
         number_of_files = len(os.listdir(full_path)) if os.path.isdir(full_path) else ""
         size = os.path.getsize(full_path) if os.path.isfile(full_path) else number_of_files
 
-        # insert the current folder or file into the tree view
         try:
+            # insert the current folder or file into the tree view
             self.tree_view.insert(parent, "end", full_path, text=folder, values=(size,))
         except tk.TclError:
-            pass
+            # most likely, the folder already exists, so we just update it (in case the size changed)
+            self.tree_view.item(full_path, values=(size,))
 
         if os.path.isdir(full_path):
             for item in os.listdir(full_path):
@@ -446,8 +466,11 @@ class App(ctk.CTk):
         self.log_text.see("end")
 
     def do_stuff_run(self):
-        def __callback(x: int, o: str):
-            self.fill_tree_view("Results", "")  # todo: do not check for all tree
+        def __callback(x: int, o: str, p: str):
+            # remove last folder from path
+            p = os.path.dirname(p)
+            self.fill_tree_view(o, p)
+            self.tree_view._uncheck_ancestor(os.path.join(p, o))
             self.emit_log(f"{o} {selected_regions} ({x})")
 
         selected_regions: list[str] = []
@@ -456,7 +479,6 @@ class App(ctk.CTk):
                 selected_regions.append(checkbox.cget("text"))
 
         selected_organisms: set[str] = set()
-        print(self.tree_view.get_checked())
         for item in self.tree_view.get_checked():
             # item is a path
             # if it is a file, remove the file name
@@ -466,7 +488,6 @@ class App(ctk.CTk):
             # get the last folder
             item = os.path.basename(item)
             selected_organisms.add(item)
-        self.tree_view.uncheck_all()
 
         for organism in selected_organisms:
             self.pool.apply_async(
