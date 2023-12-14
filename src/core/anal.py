@@ -1,5 +1,6 @@
 import os
 import logging
+import time
 
 import string
 import random
@@ -12,6 +13,7 @@ import re
 __all__ = ["create_data_from_stuff"]
 
 logger = logging.getLogger("ana")
+max_tries = 5
 
 
 def valid_bounds(bounds, seq_length) -> bool:
@@ -77,14 +79,32 @@ def create_data_from_stuff(name: str, path: str, NC_list: list[str], region: lis
         logger.debug("NC id  = %s", NC)
         logger.debug("----------------------------")
 
-        try:
-            handle_gb = Entrez.efetch(db="nuccore", id=NC, rettype="gbwithparts", retmode="text")
-        except Exception as e:
-            if "429" in str(e):
-                logger.error("429 : too many requests, please wait a few minutes and try again")
-                return 0
-            logger.error("error while fetching NC id %s : %s", NC, e)
-            continue
+        done = False
+        n_tries = 0
+        # try:
+        #     handle_gb = Entrez.efetch(db="nuccore", id=NC, rettype="gbwithparts", retmode="text")
+        # except Exception as e:
+        #     if "429" in str(e):
+        #         logger.error("429 : too many requests, please wait a few minutes and try again")
+        #         return 0
+        #     logger.error("error while fetching NC id %s : %s", NC, e)
+        #     continue
+
+        while not done and n_tries < max_tries:
+            try:
+                handle_gb = Entrez.efetch(db="nuccore", id=NC, rettype="gbwithparts", retmode="text")
+                done = True
+            except Exception as e:
+                if "429" in str(e):
+                    logger.error("429 : too many requests, retrying in 5 seconds")
+                else:
+                    logger.error("error while fetching NC id %s : %s, retrying in 5 seconds", NC, str(e))
+                time.sleep(5)
+                n_tries += 1
+                continue
+
+        if n_tries >= max_tries:
+            logger.critical("too many tries, aborting")
 
         try:
             record = SeqIO.read(handle_gb, "gb")
